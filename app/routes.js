@@ -16,7 +16,7 @@
                 template:`<newpro-component></newpro-component>`
             })
             .when('/user/:id/profile',{
-                template:`<h1>Perfil de Usuario</h1>`
+                template:`<user-profile-component></user-profile-component>`
             })
             .when('/project/:project_id/edit',{
                 template:`<h1>Editar Proyecto</h1>`
