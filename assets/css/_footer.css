@@ -5,3 +5,10 @@
     background-repeat: no-repeat;
     background-position: right;
 }
+.footer{
+	background-color: #002F52;
+	margin-color: #002F52;
+}
+.footer h1{
+	margin: 0px;
+}
