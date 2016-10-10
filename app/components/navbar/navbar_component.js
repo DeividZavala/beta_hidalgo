@@ -1,7 +1,7 @@
 (function () {
 
     var navbar = {
-        template:`<h1>navbar</h1>`
+        templateUrl: 'app/components/navbar/navbar.html'
     }
 
     angular
