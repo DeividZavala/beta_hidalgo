@@ -1,9 +1,9 @@
 (function(){
-	len project = {
-		template: `<h1>Crea tu nuevo proyecto</h1>`
+	let project_new = {
+		templateUrl: 'app/components/newproject/newproject.html'
 	}
 
 	angular
-	.module('hidalgo')
-	.component('newproComponent', project);
+		.module('hidalgo')
+		.component('newproComponent', project_new);
 })();
