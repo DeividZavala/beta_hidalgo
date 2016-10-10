@@ -1,7 +1,22 @@
 .navbar{
 	margin-bottom:0px !important;
+	border-radius: 0px;
 }
 .navbar-default{
-	background-color: #092432;
-	border-color:#000000;
+	background-color: #002F52;
+	border-color:#002F52;
 }
+.btn-default{
+	background-color: #E73C4E;
+	border-color: #E73C4E;
+}
+.btn-default a{
+	color:#fff;
+}
+.navbar-default .navbar-brand{
+	color: #fff;
+}
+.linknav{
+	color: #fff !important;
+}
+
