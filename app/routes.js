@@ -10,9 +10,9 @@
                 template:`<h1>beta hidalgo</h1>`
             })
             .when('/login',{
-                template:`<h1>Login</h1>`
+                template:`<login-component></login-component>`
             })
-            .when('project/new',{
+            .when('/project/new',{
                 template:`<h1>Nuevo Proyecto</h1>`
             })
             .when('/user/:id/profile',{

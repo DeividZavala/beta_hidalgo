@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Hidalgo</title>
     <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/_login.css">
 </head>
 <body>
 
@@ -19,5 +20,19 @@
     <!-- Angular Modules -->
     <script src="app/app.js"></script>
     <script src="app/routes.js"></script>
+
+    <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCF74a_S31pSmQb0ZqfbKLSRdO4XOPgv3k",
+            authDomain: "autonomo-7e183.firebaseapp.com",
+            databaseURL: "https://autonomo-7e183.firebaseio.com",
+            storageBucket: "autonomo-7e183.appspot.com",
+            messagingSenderId: "192787601022"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+    <script src="app/components/login/login.js"></script>
 </body>
 </html>

@@ -1,37 +1,9 @@
 (function() {
 
     let login = {
-        templateUrl: 'app/components/login/login.html',
-        controller: loginController
+        templateUrl: 'app/components/login/login.html'
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
     // function loginController($firebaseAuth) {
     //     var self = this;
     //     self.auth = $firebaseAuth();
@@ -76,8 +48,9 @@
     //         } //cerrar sesión
     //
     // }
-    // angular
-    //     .module('hidalgo')
-    //     .component('loginComponent', login);
+
+    angular
+        .module('hidalgo')
+        .component('loginComponent', login);
 
 })();
