@@ -1,7 +1,8 @@
 .user_profile .user_menu_container{
     display: inline-block;
 }
-.user_profile .user_menu_container .user_menu{
+.user_profile .user_menu_container .user_menu button.list-group-item{
+    outline: none;
 }
 .user_profile .user_menu_container .user_menu .profile_img_container{
     width: 25%;
@@ -10,4 +11,8 @@
 }
 .user_option{
     padding-top: 3%;
+}
+.user_option .thumbnail .caption .description{
+    overflow: scroll;
+    height: 100px;
 }

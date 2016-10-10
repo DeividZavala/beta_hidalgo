@@ -1,4 +1,4 @@
 (function () {
     angular
-        .module('hidalgo',['ngRoute']);
+        .module('hidalgo',['ngRoute','firebase']);
 })();
