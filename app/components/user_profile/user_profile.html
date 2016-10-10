@@ -1,1 +1,52 @@
-<h1>User Profile</h1>
+<section class="user_profile row">
+    <article class="user_menu_container col-md-3 hidden-sm hidden-xs">
+        <aside class="user_menu">
+            <figure class="profile_img_container col-md-offset-4">
+                <img class="img-responsive user_img" src="assets/images/logo_hidalgo.png" alt="profile_img">
+            </figure>
+            <div class="list-group col-md-offset-1">
+                <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(1)}" ng-click="$ctrl.panelSetTab(1)">Mis proyectos <span class="badge">14</span></button>
+                <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(2)}" ng-click="$ctrl.panelSetTab(2)">Mi Perfil</button>
+                <button type="button" class="list-group-item">Cerrar sesión</button>
+            </div>
+        </aside>
+    </article>
+    <article class="user_option col-md-9 col-sm-12">
+
+        <div ng-show="$ctrl.checkTab(1)">
+            <div class="col-sm-12 col-md-4">
+                <div class="thumbnail">
+                <img src="assets/images/logo_hidalgo.png" alt="...">
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                         Commodi, facere. Repudiandae illo ipsam fuga explicabo 
+                         veniam, asperiores suscipit nam, perferendis, voluptates,
+                          voluptas vero amet. Quasi, officia provident. Laboriosam
+                           fugit, dicta!
+                    </p>
+                    <p><a href="#" class="btn btn-primary" role="button">Detalle</a></p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="perfil col-md-8" ng-show="$ctrl.checkTab(2)">
+            <figure class="profile_img_container col-md-offset-2">
+                <img class="img-responsive user_img" src="assets/images/logo_hidalgo.png" alt="profile_img">
+            </figure>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Nombre:</span>
+                <input type="text" class="form-control"  aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Correo</span>
+                <input type="text" class="form-control"  aria-describedby="basic-addon1">
+            </div>
+
+        </div>
+
+    </article>
+</section>
