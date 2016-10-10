@@ -18,7 +18,9 @@
             .when('/user/:id/profile',{
                 template:`<h1>Perfil de Usuario</h1>`
             })
-            .when('/project/:project_id/edit')
+            .when('/project/:project_id/edit',{
+                template:`<h1>Editar Proyecto</h1>`
+            })
     }
 
 })();
