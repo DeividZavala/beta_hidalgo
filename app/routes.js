@@ -10,7 +10,7 @@
                 template:`<landing-component></landing-component>`
             })
             .when('/login',{
-                template:`<h1>Login</h1>`
+                template:`<login-component></login-component>`
             })
             .when('/project/new',{
                 template:`<newpro-component></newpro-component>`
