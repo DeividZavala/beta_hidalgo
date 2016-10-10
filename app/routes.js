@@ -7,7 +7,7 @@
     function config($routeProvider) {
         $routeProvider
             .when('/',{
-                template:`<h1>beta hidalgo</h1>`
+                template:`<landing-component></landing-component>`
             })
             .when('/login',{
                 template:`<h1>Login</h1>`
