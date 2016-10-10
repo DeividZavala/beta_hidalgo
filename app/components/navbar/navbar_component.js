@@ -7,5 +7,5 @@
     angular
         .module('hidalgo')
         .component('navbarComponent',navbar);
-    
+
 })();

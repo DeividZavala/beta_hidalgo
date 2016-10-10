@@ -7,16 +7,16 @@
     function config($routeProvider) {
         $routeProvider
             .when('/',{
-                template:`<h1>beta hidalgo</h1>`
+                template:`<landing-component></landing-component>`
             })
             .when('/login',{
                 template:`<login-component></login-component>`
             })
             .when('/project/new',{
-                template:`<h1>Nuevo Proyecto</h1>`
+                template:`<newpro-component></newpro-component>`
             })
             .when('/user/:id/profile',{
-                template:`<h1>Perfil de Usuario</h1>`
+                template:`<user-profile-component></user-profile-component>`
             })
             .when('/project/:project_id/edit',{
                 template:`<h1>Editar Proyecto</h1>`
