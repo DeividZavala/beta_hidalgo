@@ -1,3 +1,8 @@
 @import "_footer.css";
+
+@import "_landing.css";
+@import "_navbar.css";
+
 @import "_newproject.css";
 @import "_login.css"; 
+
