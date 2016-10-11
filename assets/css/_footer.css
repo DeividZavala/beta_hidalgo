@@ -6,6 +6,7 @@
     background-position: right;
 }
 .footer{
+	margin-top: 200px;
 	background-color: #002F52;
 	background-image:url(/assets/images/trama_footer.png);
 	background-repeat: no-repeat;
