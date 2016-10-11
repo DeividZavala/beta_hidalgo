@@ -18,11 +18,6 @@
         ]);
 
 
-
-
-
-
-
     config.$inject = ['$routeProvider']
     function config($routeProvider) {
         $routeProvider
@@ -56,10 +51,22 @@
                   }]
                 } //resolve
             })
-            .when('/project/:project_id/edit',{
+            .when('/login',{
+                template:`<login-component></login-component>`
+            })
+            .when('/project/new',{
+                template:`<newpro-component></newpro-component>`
+            })
+            .when('/project/edit',{
+                template:`<edit-component></edit-component>`
+            })
+            .when('/user/:id/profile',{
+                template:`<user-profile-component></user-profile-component>`
+            })
+            .when('/project/:id/edit',{
                 template:`<h1>Editar Proyecto</h1>`
             })
-            .when('/project/details',{
+            .when('/project/:id/details',{
                 template:`<project-details-component></project-details-component>`
             })
     }
