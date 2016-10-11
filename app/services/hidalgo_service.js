@@ -9,7 +9,17 @@
         return{
             allProjects : getAllProjects,
             projectDetail: getProjectDetail,
-            userDetail : getUserDetail
+            userDetail : getUserDetail,
+            newProject : createNewProject,
+            newUser : createNewUser
+        }
+
+        function createNewProject(data) {
+            $http.post('http://hidalgo.fixter.org/projects/',data)
+        }
+
+        function createNewUser(data) {
+            $http.post('http://hidalgo.fixter.org/users/',data)
         }
 
         function getAllProjects() {
@@ -21,7 +31,7 @@
         }
 
         function getProjectDetail(id) {
-            return $http.get('http://hidalgo.fixter.org/projects/:id/')
+            return $http.get('http://hidalgo.fixter.org/projects/'+ id +'/')
         }
     }
 })();
