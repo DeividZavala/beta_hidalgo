@@ -3,7 +3,7 @@
 		<div class="row text-left" id="container-pro">
 			<div class="opacos">
 			<img class="blur" src="http://cuartopoder.blob.core.windows.net/images/2015/07/11/d2-3.jpg">
-		
+
 			<div class="col-sm-12 col-md-12">
 
 				<div class="text-center en_medio">
@@ -20,8 +20,20 @@
 							<div class="form-group">
 								<label><h4>¿Cual es tu gran idea?</h4></label>
 								<br>
+
 								<input ng-model="$ctrl.title" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi gran idea" autofocus ng-model="project.titulo"></input>
 								<small>{{50-$ctrl.title.length}} caracteres máximo</small>
+
+								<br>
+								<select class="form-control input-lg">
+									<option>Selecciona una opción</option>
+									<option value="">1.-Gobierno Honesto, Cercano y Moderno</option>
+									<option value="">2.-Hidalgo Próspero y Dinámico</option>
+									<option value="">3.-Hidalgo Humano e Igualitario</option>
+									<option value="">4.-Un Hidalgo Seguro con Justicia y en Paz</option>
+									<option value="">5.-Un Hidalgo Con Desarrollo Sustentable</option>
+								</select>
+
 							</div> <!-- div form-group -->
 							<br>
 							<input type="Submit" class="btn btn-primary btn-lg" value="Crear Proyecto">
