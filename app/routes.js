@@ -18,6 +18,11 @@
         ]);
 
 
+
+
+
+
+
     config.$inject = ['$routeProvider']
     function config($routeProvider) {
         $routeProvider
@@ -51,6 +56,7 @@
                   }]
                 } //resolve
             })
+
             .when('/login',{
                 template:`<login-component></login-component>`
             })
