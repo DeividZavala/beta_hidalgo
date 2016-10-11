@@ -21,24 +21,24 @@
     </article>
     <article class="user_option col-md-9 col-sm-12">
 
-        <div ng-show="$ctrl.checkTab(1)">
+        <div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects">
             <div class="col-sm-12 col-md-4">
                 <div class="thumbnail efectito_y">
                 <img src="http://visitamexico10.galeon.com/hidl900.jpg" alt="...">
                 <div class="caption">
-                    <h3>{{$ctrl.titulon}}</h3>
+                    <h3>{{project.title}}</h3>
                     <p ng-model="$ctrl.cuerpon" class="description">
-                        {{$ctrl.cuerpon}}
+                        {{project.eje}}
                     </p>
                     <p><a class="btn btn-primary" role="button"
                         data-toggle="modal" data-target="#exampleModal"
-                        >Editar mi Proyecto</a></p>
+                        >Completa tu proyecto</a></p>
                 </div>
                 </div>
             </div>
         </div>
 
-        <div ng-show="$ctrl.checkTab(1)">
+        <!-- <div ng-show="$ctrl.checkTab(1)">
             <div class="col-sm-12 col-md-4">
                 <div class="thumbnail efectito_y">
                 <img src="http://de10.com.mx/sites/default/files/field/image/huejutla.jpg" alt="...">
@@ -53,7 +53,7 @@
                 </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="perfil col-md-8" ng-show="$ctrl.checkTab(2)">
             <div class="input-group">
