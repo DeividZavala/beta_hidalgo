@@ -21,7 +21,7 @@
           }else{
             console.log(self.user);
           }
-        });
+        }); //checklogin
 
         self.signIn = function(provider){
 
