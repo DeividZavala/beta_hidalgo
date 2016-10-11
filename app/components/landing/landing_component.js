@@ -10,6 +10,4 @@
 	.module('hidalgo')
 	.component('landingComponent',landing);
 
-
-
 })()
