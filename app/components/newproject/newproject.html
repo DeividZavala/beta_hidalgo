@@ -20,8 +20,8 @@
 							<div class="form-group">
 								<label><h4>¿Cual es tu gran idea?</h4></label>
 								<br>
-								<input type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi gran idea" autofocus ng-model="project.titulo"></input>
-								<small>100 caracteres maximo</small>
+								<input ng-model="$ctrl.title" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi gran idea" autofocus ng-model="project.titulo"></input>
+								<small>{{50-$ctrl.title.length}} caracteres máximo</small>
 							</div> <!-- div form-group -->
 							<br>
 							<input type="Submit" class="btn btn-primary btn-lg" value="Crear Proyecto">
