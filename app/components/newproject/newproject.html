@@ -1,39 +1,51 @@
 <section>
- 	<div class="background-image"></div>
- 	<div class="content">
- 
- 		<div class="row text-left" id="container-pro">
- 
- 			<div class="col-sm-12 col-md-12">
- 
- 				<div class="text-center">
- 
- 					<h1><strong>Start a Project</strong></h1>
- 					<h2> Raise funds for creative, entrepreneurial, or other passion projects. </h2>
- 
- 				</div><!-- text-center -->
- 
- 				<div class="container" id="container-pro">
- 					<div class="jumbotron hh">
- 
- 						<form role="form">
- 							<div class="form-group">
- 								<label><h4>What is the title of your project?</h4></label>
- 								<br>
- 								<input type="text" class="form-control input-lg" id="tituloProyecto" placeholder="My proyect title..." autofocus></input>
- 								<small>50 characters maximum</small>
- 							</div> <!-- div form-group -->
- 							<br>
-							<button type="Submit" class="btn btn-primary btn-lg">Create My Project</button>
-							</form> <!-- form -->
- 
- 					</div>
- 
- 				</div> <!-- div col-sm-12 -->
- 
- 			</div>
- 
- 		</div><!-- div row -->
- 
- 	</div>
+		<div class="row text-left" id="container-pro">
+			<div class="opacos">
+			<img class="blur" src="http://cuartopoder.blob.core.windows.net/images/2015/07/11/d2-3.jpg">
+
+			<div class="col-sm-12 col-md-12">
+
+				<div class="text-center en_medio">
+
+					<h1><strong>¡Comparte tu gran idea!</strong></h1>
+					<h2> Hidalgo-Go! es una plataforma para elaborar y compartir proyectos creativos<br> y sabemos que tu tienes grandes ideas. </h2>
+
+				</div><!-- text-center -->
+
+				<div class="container" id="">
+					<div class="jumbotron hh">
+
+						<form role="form" ng-submit="$ctrl.addProject()">
+							<div class="form-group">
+								<label><h4>¿Cual es tu gran idea?</h4></label>
+								<br>
+
+								<input ng-model="$ctrl.title" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi gran idea" autofocus ng-model="project.titulo"></input>
+								<small>{{50-$ctrl.title.length}} caracteres máximo</small>
+
+								<br>
+								<select required ng-model="$ctrl.eje" class="form-control input-lg">
+									<option value="">Selecciona una opción</option>
+									<option value="1.-Gobierno Honesto, Cercano y Moderno">1.-Gobierno Honesto, Cercano y Moderno</option>
+									<option value="2.-Hidalgo Próspero y Dinámico">2.-Hidalgo Próspero y Dinámico</option>
+									<option value="3.-Hidalgo Humano e Igualitario">3.-Hidalgo Humano e Igualitario</option>
+									<option value="4.-Un Hidalgo Seguro con Justicia y en Paz">4.-Un Hidalgo Seguro con Justicia y en Paz</option>
+									<option value="5.-Un Hidalgo Con Desarrollo Sustentable">5.-Un Hidalgo Con Desarrollo Sustentable</option>
+								</select>
+
+							</div> <!-- div form-group -->
+							<br>
+							<input type="Submit" class="btn btn-primary btn-lg" value="Crear Proyecto">
+						</form> <!-- form -->
+
+					</div>
+
+				</div> <!-- div col-sm-12 -->
+
+
+
+		</div><!-- div row -->
+</div> <!--opcaco-->
+	</div> <!--container pro-->
+
 </section>
