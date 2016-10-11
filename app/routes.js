@@ -18,6 +18,11 @@
         ]);
 
 
+
+
+
+
+
     config.$inject = ['$routeProvider']
     function config($routeProvider) {
         $routeProvider
@@ -51,6 +56,7 @@
                   }]
                 } //resolve
             })
+
             .when('/login',{
                 template:`<login-component></login-component>`
             })
@@ -63,11 +69,14 @@
             .when('/user/:id/profile',{
                 template:`<user-profile-component></user-profile-component>`
             })
-            .when('/project/:project_id/edit',{
+            .when('/project/:id/edit',{
                 template:`<h1>Editar Proyecto</h1>`
             })
-            .when('/project/details',{
+            .when('/project/:id/details',{
                 template:`<project-details-component></project-details-component>`
+            })
+            .otherwise({
+                rediretTo:'/'
             })
     }
 
