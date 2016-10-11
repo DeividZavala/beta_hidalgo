@@ -1,13 +1,42 @@
 (function () {
     angular
         .module('hidalgo')
-        .config(config);
+        .config(config)
+        .run(["$rootScope", "$location", function($rootScope, $location) {
+          $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
+            // We can catch the error thrown when the $requireSignIn promise is rejected
+            // and redirect the user back to the home page
+            if (error === "AUTH_REQUIRED") {
+              $location.path("/login");
+            }
+          });
+        }])
+        .factory("Auth", ["$firebaseAuth",
+          function($firebaseAuth) {
+            return $firebaseAuth();
+          }
+        ]);
+
+
+
+
+
+
 
     config.$inject = ['$routeProvider']
     function config($routeProvider) {
         $routeProvider
             .when('/',{
-                template:`<landing-component></landing-component>`
+                template:`<landing-component></landing-component>`,
+                resolve: {
+                  // controller will not be loaded until $requireSignIn resolves
+                  // Auth refers to our $firebaseAuth wrapper in the factory below
+                  "currentAuth": ["Auth", function(Auth) {
+                    // $requireSignIn returns a promise so the resolve waits for it to complete
+                    // If the promise is rejected, it will throw a $stateChangeError (see above)
+                    return Auth.$requireSignIn();
+                  }]
+                } //resolve
             })
             .when('/login',{
                 template:`<login-component></login-component>`
