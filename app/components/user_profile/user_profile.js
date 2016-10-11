@@ -8,6 +8,10 @@
     profileController.$inject = ['$routeParams','hidalgoService','$firebaseAuth'];
     function profileController($routeParams,hidalgoService,$firebaseAuth) {
         let profile = this;
+        let self = this;
+
+        self.titulon = "Mi Proyecto";
+        self.cuerpon = "Descripción de mi proyecto";
 
         var auth = $firebaseAuth();
 
@@ -17,7 +21,9 @@
           if(self.usuario){
             // self.alert = "Bienvenido "+self.user.displayName;
             // self.cuentale()
-            console.log('mi user: ',self.usuario)
+            console.log('rayos: ',self.usuario.photoURL);
+            console.log('mi user: ',self.usuario);
+
 
           }else{
             console.log(self.usuario);

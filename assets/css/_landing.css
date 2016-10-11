@@ -1,12 +1,25 @@
 /* Styles llamada a la accion slider landing page */
-.greenBox{
+.portada{
+	width:100%;
+	height:100vh;
+	background:url('http://image.posta.com.mx/sites/default/files/germen-1_0.jpg') center;
+	background-size:cover;
 
-
-	height: 160px;
-	margin-top: 12%;
-	background-color: rgba(33,107,61,0.6);
 }
-div.greenBox h3{
+@media(max-width: 600px){
+	.portada{
+		height:400px; 
+	}
+}
+
+.greenBox{
+	height: 100%;
+	margin-top: 12%;
+	padding-bottom: 12px;
+	background-color: rgba(0,0,0,0.6);
+	color:white;
+}
+/*div.greenBox h3{
 
 	color:#fdf;
 }
@@ -14,11 +27,11 @@ div.greenBox p{
 
 	text-align: justify;
 	color:#fdf;
-}
+}*/
 .greenBox  .btnSliderRojo{
 
 	background-color: #E73C4E !important;
-	color: #fff;
+	color: white !important;
 }
 
 
@@ -30,7 +43,7 @@ div.greenBox p{
 
 	width:100%;
 	height: 250px;
-	background: url("http://www.quarkss.com/wp-content/uploads/2015/07/automo.jpg") center center fixed;
+	background: url("http://www.vetahidalgo.com/news/61.jpg") center center fixed;
 	background-size: cover;
 	color:#fff;
 	vertical-align: middle;
@@ -47,5 +60,58 @@ div.greenBox p{
 	color:#002f52;
 }
 
+/*Categorias*/
 
+.categoria{
+	background-image: url('/assets/images/go.jpg');
+	background-size: cover;
+	/*width: 200px;*/
+	height: 250px;
+	/*margin: 0;*/
+	position: relative;
+	cursor: pointer;
+	border:10px solid white;
+	transition:all 0.3s ease;
+	overflow: hidden;
+}
+.categoria:hover{
+	/*transform: scaleX(1.1);*/
+	transform: scaleY(1.1);
+}
+
+.opaco{
+	width: 100%;
+	height: 100%;
+	background:rgba(0,0,0,0.5);
+	position: absolute;
+	left:0;
+	transition:all 0.5s ease;
+	text-align: center;
+}
+.opaco:hover{
+	/*background-color: transparent;*/
+	background:rgba(255,255,255,0.7);
+}
+.opaco i{
+	margin-top: 80px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid white;
+	font-size: 6rem;
+
+}
+.opaco p, i{
+	color:white;
+	transition:all 0.5s ease;
+}
+.opaco:hover > p{
+	color:black;
+}
+.opaco:hover > i{
+	color:black;
+	border-bottom: 1px solid black;
+}
+.mosaico{
+	margin-top: 100px;
+	text-align: center;
+}
 
