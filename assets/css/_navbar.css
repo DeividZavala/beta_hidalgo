@@ -1,6 +1,8 @@
 .navbar{
 	margin-bottom:0px !important;
 	border-radius: 0px;
+	position: relative;
+	z-index: 999;
 }
 .navbar-default{
 	background-color: #002F52;
