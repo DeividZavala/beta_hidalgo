@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Hidalgo</title>
+    <!-- Font awezome -->
+    <link rel="stylesheet" href="assets/bower_components/components-font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -22,22 +24,19 @@
     <!-- Firebase -->
     <script src="assets/bower_components/firebase/firebase.js"></script>
     <!-- AngularFire -->
-    <script src="assets/bower_components/angularfire/dist/angularfire.js">
-    </script>
+    <script src="assets/bower_components/angularfire/dist/angularfire.js"></script>
+
     <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAnF8mq6Qyxsh9N6s-TdOUH9EpwOxr8jKw",
-    authDomain: "hidalgo-f65ba.firebaseapp.com",
-    databaseURL: "https://hidalgo-f65ba.firebaseio.com",
-    storageBucket: "hidalgo-f65ba.appspot.com",
-    messagingSenderId: "821336519111"
-  };
-  firebase.initializeApp(config);
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAnF8mq6Qyxsh9N6s-TdOUH9EpwOxr8jKw",
+        authDomain: "hidalgo-f65ba.firebaseapp.com",
+        databaseURL: "https://hidalgo-f65ba.firebaseio.com",
+        storageBucket: "hidalgo-f65ba.appspot.com",
+        messagingSenderId: "821336519111"
+      };
+      firebase.initializeApp(config);
     </script>
-
-
-
 
 
     <!-- Angular Modules -->
@@ -52,6 +51,7 @@
     <script src="app/components/user_profile/user_profile.js"></script>
     <script src="app/components/login/login.js"></script>
     <script src="app/components/footer/footer.js"></script>
+    <script src="app/components/project_details/project_details.js"></script>
 
 </body>
 </html>

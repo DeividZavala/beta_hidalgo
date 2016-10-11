@@ -1,4 +1,4 @@
-    <div style="text-align:center" ng-show="$ctrl.timeInMs" class="alert alert-success" role="alert">
+<div style="text-align:center" ng-show="$ctrl.timeInMs" class="alert alert-success" role="alert">
         {{$ctrl.alert}} seras redireccionado en: {{$ctrl.timeInMs}}
     </div>
 
@@ -39,15 +39,15 @@
                 <form ng-submit="$ctrl.signIn()" class="omb_loginForm"  autocomplete="on">
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-user" style="color:black"></i>
                         </span>
-                        <input ng-model="$ctrl.email" required type="email" class="form-control" name="username" placeholder="@Coreo electronico">
+                        <input ng-model="$ctrl.email" required type="email" class="form-control" name="username" placeholder="@Correo electronico">
                     </div>
                     <span class="help-block"></span>
 
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="fa fa-lock"></i>
+                            <i class="fa fa-lock" style="color:black"></i>
                         </span>
                         <input ng-model="$ctrl.password" required type="password" class="form-control" name="password" placeholder="Contraseña">
                     </div>
