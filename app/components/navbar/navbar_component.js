@@ -24,7 +24,7 @@
         }); //checklogin
 
         self.goProfile = function(){
-        	window.location.replace('/user/'+self.user.uid+'/profile');
+        	window.location.replace('#/profile');
         } //go profile
 
         //logout del usuario

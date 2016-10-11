@@ -1,1 +1,51 @@
-_landing.css
+/* Styles llamada a la accion slider landing page */
+.greenBox{
+
+
+	height: 160px;
+	margin-top: 12%;
+	background-color: rgba(33,107,61,0.6);
+}
+div.greenBox h3{
+
+	color:#fdf;
+}
+div.greenBox p{
+
+	text-align: justify;
+	color:#fdf;
+}
+.greenBox  .btnSliderRojo{
+
+	background-color: #E73C4E !important;
+	color: #fff;
+}
+
+
+.carousel-container {
+    margin-left:0;
+}
+
+.parallax-project{
+
+	width:100%;
+	height: 250px;
+	background: url("http://www.quarkss.com/wp-content/uploads/2015/07/automo.jpg") center center fixed;
+	background-size: cover;
+	color:#fff;
+	vertical-align: middle;
+	font-weight: 900;
+
+}
+.parallax-project h2{
+
+	padding-top: 100px;
+	
+}
+.iconosLanding i{
+
+	color:#002f52;
+}
+
+
+

@@ -2,14 +2,14 @@
     <article class="user_menu_container col-md-3 hidden-sm hidden-xs">
         <aside class="user_menu">
             <figure class="profile_img_container col-md-offset-4">
-                <img class="img-responsive user_img" src="assets/images/logo_hidalgo.png" alt="profile_img">
+                <img class="img-responsive user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
             </figure>
             <div class="user_data">
                 <p>
-                    <strong>{{$ctrl.userProfile.username}}</strong>
+                    <strong>{{$ctrl.usuario.displayName}}</strong>
                 </p>
                 <p>
-                    <strong>{{$ctrl.userProfile.email}}</strong>
+                    <strong>{{$ctrl.usuario.email}}</strong>
                 </p>
 
             </div>

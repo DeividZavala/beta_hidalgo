@@ -5,9 +5,25 @@
         controller:profileController
     }
 
-    profileController.$inject = ['$routeParams','hidalgoService'];
-    function profileController($routeParams,hidalgoService) {
+    profileController.$inject = ['$routeParams','hidalgoService','$firebaseAuth'];
+    function profileController($routeParams,hidalgoService,$firebaseAuth) {
         let profile = this;
+
+        var auth = $firebaseAuth();
+
+        //obtenemos al usuario si ya está
+        auth.$onAuthStateChanged(function(firebaseUser) {
+          self.usuario = firebaseUser;
+          if(self.usuario){
+            // self.alert = "Bienvenido "+self.user.displayName;
+            // self.cuentale()
+            console.log('mi user: ',self.usuario)
+
+          }else{
+            console.log(self.usuario);
+          }
+        }); //checklogin
+
 
         profile.panelSetTab = panelSetTab;
         profile.checkTab = checkTab;

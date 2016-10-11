@@ -19,6 +19,11 @@ a .btn-default {
 .linknav{
 	color: #fff !important;
 }
+ul li .linknav:hover{
+	color: #fff;
+	border-color:#002F52;
+	background-color: rgba(0,47,82,0.7);	
+}
 .navbar-default .navbar-nav > li > a{
 	color: #fff;
 }
