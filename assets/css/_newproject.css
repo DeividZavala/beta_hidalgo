@@ -3,7 +3,7 @@
 }
 
 .background-image {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   z-index: 1;
@@ -22,7 +22,7 @@
 }
 
 .content {
-  position: fixed;
+  position: relative;
   left: 0;
   right: 0;
   z-index: 9999;
