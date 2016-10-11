@@ -70,7 +70,7 @@
                 template:`<project-details-component></project-details-component>`
             })
             .otherwise({
-                rediretTo:'/'
+                redirectTo:'/'
             })
     }
 
