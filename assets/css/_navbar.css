@@ -1,7 +1,29 @@
 .navbar{
 	margin-bottom:0px !important;
+	border-radius: 0px;
 }
 .navbar-default{
-	background-color: #092432;
-	border-color:#000000;
+	background-color: #002F52;
+	border-color:#002F52;
+}
+.btn-default{
+	background-color: #E73C4E;
+	border-color: #E73C4E;
+}
+a .btn-default {
+	color:#fff;
+}
+.navbar-default .navbar-brand{
+	color: #fff;
+}
+.linknav{
+	color: #fff !important;
+}
+.navbar-default .navbar-nav > li > a{
+	color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover{
+	color: #fff;
+	border-color:#E73C4E;
+	background-color: rgba(231,60,78,0.7);
 }
