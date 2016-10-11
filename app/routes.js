@@ -18,11 +18,6 @@
         ]);
 
 
-
-
-
-
-
     config.$inject = ['$routeProvider']
     function config($routeProvider) {
         $routeProvider
@@ -43,6 +38,9 @@
             })
             .when('/project/new',{
                 template:`<newpro-component></newpro-component>`
+            })
+            .when('/project/edit',{
+                template:`<edit-component></edit-component>`
             })
             .when('/user/:id/profile',{
                 template:`<user-profile-component></user-profile-component>`
