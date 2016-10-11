@@ -50,6 +50,9 @@
             .when('/project/:project_id/edit',{
                 template:`<h1>Editar Proyecto</h1>`
             })
+            .when('/project/details',{
+                template:`<project-details-component></project-details-component>`
+            })
     }
 
 })();

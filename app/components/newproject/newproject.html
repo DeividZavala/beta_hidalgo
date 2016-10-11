@@ -17,15 +17,15 @@
 				<div class="container" id="container-pro">
 					<div class="jumbotron hh">
 
-						<form role="form">
+						<form role="form" ng-submit="$ctrl.add(project)">
 							<div class="form-group">
 								<label><h4>What is the title of your project?</h4></label>
 								<br>
-								<input type="text" class="form-control input-lg" id="tituloProyecto" placeholder="My proyect title..." autofocus></input>
+								<input type="text" class="form-control input-lg" id="tituloProyecto" placeholder="My proyect title..." autofocus ng-model="project.titulo"></input>
 								<small>50 characters maximum</small>
 							</div> <!-- div form-group -->
 							<br>
-							<button type="Submit" class="btn btn-primary btn-lg">Create My Project</button>
+							<input type="Submit" class="btn btn-primary btn-lg">
 						</form> <!-- form -->
 
 					</div>
