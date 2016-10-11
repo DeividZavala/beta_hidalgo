@@ -56,6 +56,19 @@
                   }]
                 } //resolve
             })
+
+            .when('/login',{
+                template:`<login-component></login-component>`
+            })
+            .when('/project/new',{
+                template:`<newpro-component></newpro-component>`
+            })
+            .when('/project/edit',{
+                template:`<edit-component></edit-component>`
+            })
+            .when('/user/:id/profile',{
+                template:`<user-profile-component></user-profile-component>`
+            })
             .when('/project/:project_id/edit',{
                 template:`<h1>Editar Proyecto</h1>`
             })
