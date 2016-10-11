@@ -9,3 +9,14 @@
 @import "_footer.css";
 @import "_navbar.css";
 
+.btn:visited{
+	background-color: transparent;
+	color: black;
+	border-color: transparent;
+}
+.btn:active{
+	background: red;
+}
+
+
+
