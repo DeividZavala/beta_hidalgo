@@ -10,7 +10,7 @@
 	background-color: #E73C4E;
 	border-color: #E73C4E;
 }
-.btn-default a{
+a .btn-default {
 	color:#fff;
 }
 .navbar-default .navbar-brand{
@@ -19,4 +19,11 @@
 .linknav{
 	color: #fff !important;
 }
-
+.navbar-default .navbar-nav > li > a{
+	color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover{
+	color: #fff;
+	border-color:#E73C4E;
+	background-color: rgba(231,60,78,0.7);
+}
