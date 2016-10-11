@@ -5,14 +5,28 @@
 		controller: newProjectController
 	}
 
-	newProjectController.$inject = ['hidalgoService'];
-	function newProjectController(hidalgoService) {
+	newProjectController.$inject = ['hidalgoService','$http'];
+	function newProjectController(hidalgoService,$http) {
 		let new_project = this;
+		let self = this;
 
-		new_project.add = addProject;
 
-		function addProject(project) {
-			hidalgoService.newProject(project.titulo)
+		self.addProject = function() {
+			// hidalgoService.addProject({
+			// 	title:"Proyecto Prueba",
+			// 	uid:"Prueba"
+			// })
+			$http.post('http://hidalgo.fixter.org/projects/',{
+				title:"Proyecto Prueba",
+				uid:"Prueba"
+			})
+			.then(function(response){
+				console.log("Guardado con exito",response)
+			})
+			.catch(function(err){
+				console.log("Error",err)
+			})
+			
 		}
 
 	}
