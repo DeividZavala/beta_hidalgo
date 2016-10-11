@@ -10,12 +10,18 @@
             allProjects : getAllProjects,
             projectDetail: getProjectDetail,
             userDetail : getUserDetail,
-            newProject : createNewProject,
+            addProject : addProject,
             newUser : createNewUser
         }
 
-        function createNewProject(data) {
+        function addProject(data) {
             $http.post('http://hidalgo.fixter.org/projects/',data)
+            .then(function(response){
+                return response
+            })
+            .catch(function(err){
+                return err
+            })
         }
 
         function createNewUser(data) {
