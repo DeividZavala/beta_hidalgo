@@ -4,6 +4,15 @@
             <figure class="profile_img_container col-md-offset-4">
                 <img class="img-responsive user_img" src="assets/images/logo_hidalgo.png" alt="profile_img">
             </figure>
+            <div class="user_data">
+                <p>
+                    <strong>{{$ctrl.userProfile.username}}</strong>
+                </p>
+                <p>
+                    <strong>{{$ctrl.userProfile.email}}</strong>
+                </p>
+
+            </div>
             <div class="list-group col-md-offset-1">
                 <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(1)}" ng-click="$ctrl.panelSetTab(1)">Mis proyectos <span class="badge">14</span></button>
                 <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(2)}" ng-click="$ctrl.panelSetTab(2)">Mi Perfil</button>
