@@ -1,0 +1,22 @@
+/*footer*/
+#blue_footer {
+    background: #002F52;
+    background-image: url(http://www.hidalgo.gob.mx/images/trama_footer.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.footer{
+	/*margin-top: 5%;*/
+	background-color: #002F52;
+	background-image:url(/assets/images/trama_footer.png);
+	background-repeat: no-repeat;
+    background-position: right;
+	color: #fff;
+	text-align: center;
+}
+.footer .logo{
+	width: 80%
+}
+.row{
+	padding-top: 2%;
+}

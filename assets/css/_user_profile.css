@@ -1,0 +1,52 @@
+.user_profile .user_menu_container{
+    display: inline-block;
+}
+.user_profile .user_menu_container .user_menu button.list-group-item{
+    outline: none;
+}
+.user_profile .user_menu_container .user_menu .profile_img_container{
+    width: 25%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+.user_profile .user_menu_container .user_menu .user_data{
+    text-align: center;
+}
+.user_option{
+    padding-top: 3%;
+}
+.user_option .thumbnail .caption .description{
+    overflow: scroll;
+    height: 100px;
+}
+.user_img{
+	width: 50%;
+	border-radius:50%; 
+	margin-left: 30%;	
+	transition:all 0.3s ease;
+}
+.user_img:hover{
+	border-radius:20%; 
+/*	transform: scaleX(-1);*/
+    /*filter: FlipH;*/
+}
+.efectito_y{
+	transition:all 0.2s ease;
+}
+.efectito_y:hover > img{
+	transform: scaleX(-1);
+}
+
+img{
+	transition:all 0.2s ease;
+}
+.input-group{
+	margin-bottom: 10px;
+}
+.border-green{
+	border-color:green;
+}
+
+
+
+

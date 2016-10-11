@@ -1,0 +1,22 @@
+@import "_user_profile.css";
+
+@import "_landing.css";
+
+
+@import "_newproject.css";
+@import "_login.css"; 
+
+@import "_footer.css";
+@import "_navbar.css";
+
+.btn:visited{
+	background-color: transparent;
+	color: black;
+	border-color: transparent;
+}
+.btn:active{
+	background: red;
+}
+
+
+
