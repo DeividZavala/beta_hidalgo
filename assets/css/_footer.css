@@ -5,3 +5,17 @@
     background-repeat: no-repeat;
     background-position: right;
 }
+.footer{
+	background-color: #002F52;
+	background-image:url(/assets/images/trama_footer.png);
+	background-repeat: no-repeat;
+    background-position: right;
+	color: #fff;
+	text-align: center;
+}
+.footer .logo{
+	width: 80%
+}
+.row{
+	padding-top: 2%;
+}
