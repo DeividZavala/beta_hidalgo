@@ -9,6 +9,9 @@
     margin-bottom: 10%;
     margin-top: 5%;
 }
+.user_profile .user_menu_container .user_menu .user_data{
+    text-align: center;
+}
 .user_option{
     padding-top: 3%;
 }
