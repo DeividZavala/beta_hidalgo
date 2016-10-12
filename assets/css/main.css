@@ -4,10 +4,12 @@
 
 
 @import "_newproject.css";
-@import "_login.css"; 
+@import "_login.css";
 
 @import "_footer.css";
 @import "_navbar.css";
+
+@import "_project_details.css";
 
 .btn:visited{
 	background-color: transparent;
@@ -17,6 +19,3 @@
 .btn:active{
 	background: red;
 }
-
-
-
