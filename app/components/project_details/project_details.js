@@ -5,8 +5,18 @@
         controller: projectDetailsController
     }
 
-    function projectDetailsController() {
+    function projectDetailsController(hidalgoService,$routeParams) {
         let projectDetails = this;
+        
+        projectDetails.id = $routeParams.id;
+        console.log(projectDetails.id)
+
+        hidalgoService.getProjectDetail(projectDetails.id)
+            .then(function (response) {
+                projectDetails.data = response.data[0]
+                console.log(projectDetails.data)
+            })
+
     }
 
     angular
