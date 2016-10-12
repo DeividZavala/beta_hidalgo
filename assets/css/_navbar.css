@@ -44,3 +44,23 @@ ul li .linknav:hover{
 	background-color: transparent;	
 }
 
+.brand-logo{
+	max-height: 50px;
+}
+.navbar-brand{
+	padding: 0;
+}
+
+
+
+@media(min-width: 600px){
+	.perfil-phone{
+		display: none;
+	}
+	
+}
+
+.navbar-header{
+	display: inline-block
+}
+
