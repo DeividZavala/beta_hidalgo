@@ -412,7 +412,7 @@ div.greenBox p{
     border-radius: 300px;
     font-weight: 700;
     text-transform: uppercase;
-    text-decoration: n
+    
 }
 .btn-r:hover{
     text-decoration: none;
@@ -433,3 +433,19 @@ div.greenBox p{
     -moz-transition: all .35s;
     transition: all .35s;
 }
+.memorias{
+
+ font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  color:#111 !important;
+  font-style: italic;
+   font-weight: 700;
+}
+.bg-memorias{
+
+
+  
+  background-color: #efefef;
+
+}
+
+
