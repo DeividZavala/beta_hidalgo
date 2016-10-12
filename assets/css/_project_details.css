@@ -65,27 +65,28 @@
 .container .well .row{
 	padding-top:0; 
 }
-.row{
+.containerm .row{
 	width: 100%;
 	margin:0;
 }
-.opaco p, i{
+.containerm.opaco p, i{
 	color:black;
 }
-.fa{
+.container3 .fa{
 	font-size:5vh;
 	padding-top: 10%;
 }
-.well{
+.container2 .well{
 	padding: 1%;
+	margin:2% 0 2% 0;
 }
-.col-md-1{
+.container3 .col-md-1{
 	display: flex;
 	justify-content: center;
 }
 
 /* input to pick a project's axis*/
-.input-group{
+.containerm .input-group{
 	margin: 0;
 }
 /* Uploading images styles */
