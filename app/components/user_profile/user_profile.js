@@ -23,7 +23,11 @@
             // self.cuentale()
             console.log('rayos: ',self.usuario.photoURL);
             console.log('mi user: ',self.usuario);
-
+            hidalgoService.getUserProjects(self.usuario.uid)
+                .then(function (response) {
+                    profile.userProjects = response.data
+                    console.log(profile.userProjects)
+                })
 
           }else{
             console.log(self.usuario);
@@ -34,15 +38,7 @@
         profile.panelSetTab = panelSetTab;
         profile.checkTab = checkTab;
         profile.tab = 1;
-
-        profile.userId = $routeParams.id;
-        console.log(profile.userId)
-
-        hidalgoService.userDetail(profile.userId).then(function (response) {
-            profile.userProfile = response.data[0].fields
-            console.log(profile.userProfile)
-        })
-
+        
         function panelSetTab(setTab) {
             profile.tab = setTab;
         }
