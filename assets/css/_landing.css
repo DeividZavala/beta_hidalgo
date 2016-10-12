@@ -1,3 +1,17 @@
+@font-face {
+  font-family: gobierno;
+  font-weight: bold;
+  src: url("../fonts/Graphik-Light.otf") format("opentype");
+}
+
+
+.iconosLanding{
+
+  font-family: gobierno, tahoma, sans-serif;
+}
+
+
+
 /*
 Fade content bs-carousel with hero headers
 Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
