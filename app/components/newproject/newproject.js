@@ -26,8 +26,8 @@
 
 					})
 					.then(function(response){
-						console.log("Guardado con exito",response)
-						 window.location.replace('#/profile');
+						console.log("Guardado con exito",response);
+						window.location.replace('#/profile');
 					})
 					.catch(function(err){
 						console.log("Error",err)
@@ -38,9 +38,13 @@
 	          }
 	        }); //checklogin
 
+
+
+
 			
 			
-		}
+		} //addProject
+
 
 	}
 

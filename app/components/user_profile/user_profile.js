@@ -7,6 +7,10 @@
 
     profileController.$inject = ['$routeParams','hidalgoService','$firebaseAuth'];
     function profileController($routeParams,hidalgoService,$firebaseAuth) {
+
+        $('#myModal').modal('toggle')
+
+
         let profile = this;
         let self = this;
 

@@ -43,7 +43,7 @@ div.greenBox p{
 
 	width:100%;
 	height: 250px;
-	background: url("http://www.vetahidalgo.com/news/61.jpg") center center fixed;
+	background: url("/assets/images/parallax.jpg") center center fixed;
 	background-size: cover;
 	color:#fff;
 	vertical-align: middle;
