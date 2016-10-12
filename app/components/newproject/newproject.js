@@ -5,15 +5,56 @@
 		controller: newProjectController
 	}
 
-	newProjectController.$inject = ['hidalgoService'];
-	function newProjectController(hidalgoService) {
+	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth'];
+	function newProjectController(hidalgoService,$http,$firebaseAuth) {
 		let new_project = this;
+		let self = this;
+		var auth = $firebaseAuth();
 
-		new_project.add = addProject;
 
-		function addProject(project) {
-			hidalgoService.newProject(project.titulo)
-		}
+		self.addProject = function() {
+			
+				//obtenemos al usuario si ya está
+	        auth.$onAuthStateChanged(function(firebaseUser) {
+	          self.user = firebaseUser;
+	          if(self.user){
+	            
+			        $http.post('http://hidalgo.fixter.org/projects/',{
+						title:self.title,
+						eje:self.eje,
+						uid:self.user.uid
+
+					})
+					.then(function(response){
+						console.log("Guardado con exito",response);
+						window.location.replace('#/profile');
+					})
+					.catch(function(err){
+						console.log("Error",err)
+					})
+
+	          }else{
+		            auth.$signInWithPopup("google")
+	            .then(function(result) {
+	              console.log("Signed in as:", result.user.uid);
+	                self.alert = "Bienvenido "+result.user.displayName;
+	            })
+	            .catch(function(error) {
+	              console.error("Authentication failed:", error);
+	            });
+	            
+
+
+	          }
+	        }); //checklogin
+
+
+
+
+			
+			
+		} //addProject
+
 
 	}
 

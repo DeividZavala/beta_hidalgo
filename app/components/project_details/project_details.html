@@ -1,93 +1,481 @@
-<section class="container">
-    <article class="row">
-        <div class="col-md-6 col-sm-12">
-            <img class="img-responsive user_img" src="https://www.mexicodesconocido.com.mx/drupal/sites/default/files/styles/adaptive/public/nodes/3245/hidalgo_estado.jpg?itok=iRvfhsKe" alt="img del proyecto">
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <h4>Nombre del proyecto</h4>
-            <p>
-                <strong style="display:block;">Pequeña descripción:</strong>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Excepturi expedita similique ipsum laboriosam at labore doloremque,
-                 beatae, impedit ipsa provident atque, architecto? Non itaque est,
-                  voluptatem vel iure rerum beatae.
-            </p>
-            <div>
-                <p>
-                    Publicado por: <strong>Nombre de usuario</strong>
-                </p>
-                <p>
-                    Fechas de publicación: <strong>12/08/2016</strong>
-                </p>
+    <style type="text/css">
+
+        .glyphicon{
+            font-size:9vh;
+        }
+        .foldercito{
+            font-size: 2vh;
+        }
+
+    </style>
+    <script type="text/javascript">
+            $(document).on('click', '#close-preview', function(){
+            $('.image-preview').popover('hide');
+            // Hover befor close the preview
+            $('.image-preview').hover(
+                function () {
+                   $('.image-preview').popover('show');
+                },
+                 function () {
+                   $('.image-preview').popover('hide');
+                }
+            );
+        });
+
+        $(function() {
+            // Create the close button
+            var closebtn = $('<button/>', {
+                type:"button",
+                text: 'x',
+                id: 'close-preview',
+                style: 'font-size: initial;',
+            });
+            closebtn.attr("class","close pull-right");
+            // Set the popover default content
+            $('.image-preview').popover({
+                trigger:'manual',
+                html:true,
+                title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
+                content: "There's no image",
+                placement:'bottom'
+            });
+            // Clear event
+            $('.image-preview-clear').click(function(){
+                $('.image-preview').attr("data-content","").popover('hide');
+                $('.image-preview-filename').val("");
+                $('.image-preview-clear').hide();
+                $('.image-preview-input input:file').val("");
+                $(".image-preview-input-title").text("Browse");
+            });
+            // Create the preview image
+            $(".image-preview-input input:file").change(function (){
+                var img = $('<img/>', {
+                    id: 'dynamic',
+                    width:250,
+                    height:200
+                });
+                var file = this.files[0];
+                var reader = new FileReader();
+                // Set preview image into the popover data-content
+                reader.onload = function (e) {
+                    $(".image-preview-input-title").text("Change");
+                    $(".image-preview-clear").show();
+                    $(".image-preview-filename").val(file.name);
+                    img.attr('src', e.target.result);
+                    $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
+    <h1 align="center">Detalle del Proyecto</h1>
+    <div align="center"> <h3>Hacer una buena primera impresión: introducir a sus objetivos de la campaña y atraer a la gente a aprender más. Esta información básica representará su projecto en su página, y en las búsquedas.</h3> </div>
+    <div class="container">
+        <div class="form-group">
+            <label for="ejemplo_avance_1">
+                <h4>Etapa del projecto*</h4>
+            </label>
+            <div class="help-block">
+                ¿Va a crear un producto físico (dispositivo, la ropa, equipos, accesorios, etc)? Si es así, seleccione su etapa actual de desarrollo de productos a continuación.
             </div>
-        </div>
-        
-    </article>
-    <article class="row">
-        <div class="col-md-4 col-sm-12">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                 Magni est quod impedit. Itaque similique quae excepturi, 
-                 iste eos unde iusto tenetur, impedit dolorem labore fuga. 
-                 Illo omnis sapiente non, atque.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Velit ut, provident, perferendis facere minus debitis porro 
-                iusto enim voluptatibus consequatur itaque. Ad aliquid, 
-                consequuntur! Suscipit adipisci iusto maxime voluptas ipsum.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Impedit deserunt ad, dolorum sunt corporis voluptas voluptates,
-                 animi velit repudiandae voluptatum dolores ea eius eos. Suscipit,
-                  adipisci ipsum iste expedita distinctio.
-            </p>
-        </div>
-        <div class="col-md-8 col-sm-12">
-            <div class="media">
-                <div class="media-left">
-                    <a href="#">
-                    <img style="width: 80px;background:#002F52;    border-radius: 3px;" class="media-object" src="assets/images/logo_hidalgo.png" alt="...">
-                    </a>
+
+            <div class="text-center">
+                <button type="button" class="btn btn-default">Nada</button>
+
+                <button type="button" class="btn btn-primary">Concepto</button>
+
+                <button type="button" class="btn btn-success">Propotipo</button>
+
+                <button type="button" class="btn btn-info">Producción</button>
+
+                <button type="button" class="btn btn-warning">Para enviar</button>
+
+            </div>
+            <br>
+            <div class="progress progress-striped active">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                    <span class="sr-only">45% completado</span>
                 </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Título</h4>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Culpa excepturi nostrum quae quis debitis maiores facilis consequatur?
-                     Aspernatur eum fugit corporis, voluptas eveniet fugiat ut recusandae ad, 
-                     velit laboriosam ipsam?
-                     <div class="media">
-                        <div class="media-left" >
-                            <a href="#">
-                            <img class="media-object" style="width: 80px;background:#002F52;    border-radius: 3px;" src="assets/images/logo_hidalgo.png" alt="...">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">Subtítulo</h4>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Culpa excepturi nostrum quae quis debitis maiores facilis consequatur?
-                            Aspernatur eum fugit corporis, voluptas eveniet fugiat ut recusandae ad, 
-                            velit laboriosam ipsam?
-                        </div>
+            </div>
+
+        </div>
+        <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Título</div>
+                    <div >¿Qué deseas para recaudar dinero?</div>
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-search"></span>
+
+
                     </div>
                 </div>
-            </div>
-            <div class="media">
-                <div class="media-left" >
-                    <a href="#">
-                    <img style="width: 80px;background:#002F52;    border-radius: 3px;" class="media-object" src="assets/images/logo_hidalgo.png" alt="...">
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Título </h4>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Culpa excepturi nostrum quae quis debitis maiores facilis consequatur?
-                     Aspernatur eum fugit corporis, voluptas eveniet fugiat ut recusandae ad, 
-                     velit laboriosam ipsam?
-                     
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <input type="text" class="form-control" placeholder="Título del proyecto">
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
+
+            </div>
+
         </div>
-    </article>
-</section>
+        <hr><!-- Título -->
+        <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Eje</div>
+                    <div >Selecciona un eje (Categoría)</div>
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-apple"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <div class="input-group">
+                                  <div class="input-group-btn">
+                                    <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seleccionar Eje <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="javascript:void(0)">Gobierno Honesto Cercano y Moderno</a></li>
+                                      <li><a href="javascript:void(0)">Hidalgo Próspero y Dinámico</a></li>
+                                      <li><a href="javascript:void(0)">Hidalgo Humano e Igualitario</a></li>
+                                      <li><a href="javascript:void(0)">Un Hidalgo Seguro con Justicia y Paz</a></li>
+                                      <li><a href="javascript:void(0)">Un Hidalgo con Desarrollo Sustentable</a></li>
+                                    </ul>
+                                  </div><!-- /btn-group -->
+                                  <input type="text" class="form-control" aria-label="...">
+                                </div><!-- /input-group -->
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <hr><!-- Eje -->
+        <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Imágen</div>
+                    <div >Sube una imágen del proyecto</div>
+
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-sunglasses"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <div class="input-group image-preview">
+                    <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                    <span class="input-group-btn">
+                        <!-- image-preview-clear button -->
+                        <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                            <span class="foldercito glyphicon glyphicon-remove"></span> Clear
+                        </button>
+                        <!-- image-preview-input -->
+                        <div class="btn btn-default image-preview-input">
+                            <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                            <span class="image-preview-input-title">Browse</span>
+                            <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                        </div>
+                    </span>
+                </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <hr><!-- Img -->
+        <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Objetivos Estratégicos</div>
+                    <div >Escribe los objbetivos estratégicos</div>
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-cd"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <input type="text" class="form-control" placeholder="Objetivos Estratégicos">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <hr><!-- Objetivos estratégicos-->
+        <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Línea Estratégica</div>
+                    <div >Escribe la Línea Estratégica</div>
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-leaf"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <input type="text" class="form-control" placeholder="Línea Estratégica">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <hr><!-- Linea estratégica -->
+        <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Objetivo General</div>
+                    <div >Escribe el Línea Estratégica</div>
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-king"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <hr><!-- Objetivo gral -->
+        <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Título</div>
+                    <div >¿Qué deseas para recaudar dinero?</div>
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-bell"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <input type="text" class="form-control" placeholder="Título del proyecto">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <hr><!-- Indicador estratégico -->
+        <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Estrategia General</div>
+                    <div >Escribe la Estrategia General</div>
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-search"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <hr>
+        <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Programas Asociados</div>
+                    <div >Selecciona un programa asociado</div>
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-fire"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <div class="input-group">
+                                  <div class="input-group-btn">
+                                    <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seleccionar Eje <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="javascript:void(0)">programa 1</a></li>
+                                      <li><a href="javascript:void(0)">programa 1</a></li>
+                                      <li><a href="javascript:void(0)">programa 1</a></li>
+                                      <li><a href="javascript:void(0)">programa 1</a></li>
+                                      <li><a href="javascript:void(0)">programa 1</a></li>
+                                    </ul>
+                                  </div><!-- /btn-group -->
+                                  <input type="text" class="form-control" aria-label="...">
+                                </div><!-- /input-group -->
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <hr><!-- Programas Asociados -->
+            <div class="paso">
+            <div class="row">
+            <div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div >Indicadores de Gestión</div>
+                    <div >Indicadores de gestión</div>
+                    <!--<div class="i-field-value visible-xs ng-binding">El título de mi recaudación de fondos</div>-->
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                    <div id="icono">
+                        <span class="glyphicon glyphicon-queen"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="entrance">
+
+                        <div id="boxtext">
+                            <input type="text" class="form-control" placeholder="Indicadores de Gestión">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <hr><!-- Indicadores de gestiónl -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-default">Guardar y mandar a revision</button>
+            </div>
+        </form>
+        <br>
+
+
+    </div>
+

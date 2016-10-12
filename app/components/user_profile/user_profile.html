@@ -21,24 +21,23 @@
     </article>
     <article class="user_option col-md-9 col-sm-12">
 
-        <div ng-show="$ctrl.checkTab(1)">
+        <div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects">
             <div class="col-sm-12 col-md-4">
                 <div class="thumbnail efectito_y">
                 <img src="http://visitamexico10.galeon.com/hidl900.jpg" alt="...">
                 <div class="caption">
-                    <h3>{{$ctrl.titulon}}</h3>
+                    <h3>{{project.fields.title}}</h3>
                     <p ng-model="$ctrl.cuerpon" class="description">
-                        {{$ctrl.cuerpon}}
+                        {{project.fields.eje}}
                     </p>
-                    <p><a class="btn btn-primary" role="button"
-                        data-toggle="modal" data-target="#exampleModal"
-                        >Editar mi Proyecto</a></p>
+                    <p><a class="btn btn-primary" href="#/project/{{project.pk}}/details"
+                        >Completa tu proyecto</a></p>
                 </div>
                 </div>
             </div>
         </div>
 
-        <div ng-show="$ctrl.checkTab(1)">
+        <!-- <div ng-show="$ctrl.checkTab(1)">
             <div class="col-sm-12 col-md-4">
                 <div class="thumbnail efectito_y">
                 <img src="http://de10.com.mx/sites/default/files/field/image/huejutla.jpg" alt="...">
@@ -53,7 +52,7 @@
                 </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="perfil col-md-8" ng-show="$ctrl.checkTab(2)">
             <div class="input-group">
@@ -148,6 +147,53 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal"> Guardar Cambios</button>
       </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- el modal -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Editar Proyecto</h4>
+      </div>
+      <div style="text-align:center;" class="modal-body">
+        
+
+        <img src="/assets/images/TROFEO.png">
+        <h3>¡Gracias!</h3>
+        <h4>Tu idea ya está considerada para</h4>
+        <h4>El Plan de Desarrollo Estatal</h4>
+        <h5>Compartelo en tus redes sociales</h5>
+        <button class="btn btn-primary">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            Facebook
+        </button>
+        <button class="btn btn-info">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            Twitter
+        </button>
+        <h5>Ahora completa los detalles de tu proyecto:</h5>
+        <button data-dismiss="modal" class="btn btn-default">
+            Continuar
+        </button>
+
+
+
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"> Guardar Cambios</button>
+      </div> -->
     </div>
   </div>
 </div>
