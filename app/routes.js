@@ -57,8 +57,8 @@
             .when('/project/new',{
                 template:`<newpro-component></newpro-component>`
             })
-            .when('/project/edit',{
-                template:`<edit-component></edit-component>`
+            .when('/project/details',{
+                template:`<details-component></details-component>`
             })
             .when('/user/:id/profile',{
                 template:`<user-profile-component></user-profile-component>`
