@@ -14,7 +14,7 @@
         <li ng-hide="$ctrl.user">
           <a class="linknav" href="#/login">Ingresa</a>
         </li>
-        <li ng-show="$ctrl.user">
+        <li  ng-show="$ctrl.user">
          <a href="" ng-click="$ctrl.logOut()" >Cerrar Sesión</a> 
         </li>
         <li title="Ir a tu Perfil" data-placement="bottom" data-toggle="tooltip" style="cursor:pointer" ng-click="$ctrl.goProfile()" ng-show="$ctrl.user.photoURL">
