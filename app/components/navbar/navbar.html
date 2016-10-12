@@ -3,7 +3,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       
-      <a class="navbar-brand" href="#/">Hidal-GO!</a>
+      <a class="navbar-brand" href="#/"><img class="img-responsive brand-logo" src="assets/images/PNG/3 monograma_H.png" alt=""></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,7 +18,7 @@
          <a href="" ng-click="$ctrl.logOut()" >Cerrar Sesión</a> 
         </li>
         <li title="Ir a tu Perfil" data-placement="bottom" data-toggle="tooltip" style="cursor:pointer" ng-click="$ctrl.goProfile()" ng-show="$ctrl.user.photoURL">
-          <img style="border-radius:50%;width:55px;" ng-src="{{$ctrl.user.photoURL}}">
+          <img style="border-radius:50%;width:55px;max-height:50px;" ng-src="{{$ctrl.user.photoURL}}">
         </li> 
 
         <!--<li class="dropdown">
