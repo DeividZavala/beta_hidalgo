@@ -39,6 +39,24 @@ div{
   vertical-align: middle;
   padding-top: 8%;
 }
-.en_medio h1, h2{
+.en_medio h1, h2, h3, h4, .textt{
   color: white;
 }
+
+.btns{
+  border: 0px 0px 0px 0px;
+  background: #71b631;
+  color: white;
+}
+
+.btns:active {
+  background: #006638;
+  color: white;
+}
+.btns:hover {
+ background: #00703e;
+ color: white;
+}
+
+
+

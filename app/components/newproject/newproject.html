@@ -10,22 +10,26 @@
 			<img class="blur" src="http://cuartopoder.blob.core.windows.net/images/2015/07/11/d2-3.jpg">
 
 
-				<div class="text-center en_medio">
+				<div class="text-center en_medio animated bounceInDown">
 
 					<h1><strong>¡Comparte tu gran idea!</strong></h1>
-					<h2> Hidalgo-Go! es una plataforma para elaborar y compartir proyectos creativos<br> y sabemos que tu tienes grandes ideas. </h2>
+					<h3>
+					Hidalgo-Go! es una plataforma para elaborar y compartir proyectos creativos<br> y sabemos que tu tienes grandes ideas.
+					</h3>
+					<br><br>
 
 				</div><!-- text-center -->
 
 				<div class="container" id="">
-					<div class="jumbotron hh">
+					<div class="hh">
 
-						<form role="form" ng-submit="$ctrl.addProject()">
+						<form role="form" ng-submit="$ctrl.addProject()" class="animated fadeInRight">
 							<div class="form-group">
 								<label><h4>¿Cual es tu gran idea?</h4></label>
 								<br>
 								<input ng-model="$ctrl.title" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi gran idea" autofocus ng-model="project.titulo"></input>
-								<small>{{50-$ctrl.title.length}} caracteres máximo</small>
+								<small class="textt">{{50-$ctrl.title.length}} caracteres máximo</small>
+								<br>
 								<br>
 								<select required ng-model="$ctrl.eje" class="form-control input-lg">
 									<option value="">Selecciona un Eje</option>
@@ -37,9 +41,19 @@
 								</select>
 							</div> <!-- div form-group -->
 							<br>
-							<input type="Submit" class="btn btn-primary btn-lg" value="Sube tu Proyecto">
+							<div class="">
+								<input type="Submit" class="btn btn-primary btn-lg" value="Sube tu Proyecto">
+							</div>
+							<br>
+							<br>
+								<div class="container text-center">
+									<div class="row">
+										<div class="col-md-6 col-md-offset-4">
+											<div class="g-recaptcha" data-sitekey="6LcsCAkUAAAAAKgM9QH_wHM0Ku2MWSdQt2pAvXQp"></div>
+										</div>
+									</div>
+								</div>
 
-							<div class="g-recaptcha" data-sitekey="6LcsCAkUAAAAAKgM9QH_wHM0Ku2MWSdQt2pAvXQp"></div>
 
 						</form> <!-- form -->
 

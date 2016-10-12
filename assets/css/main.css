@@ -11,6 +11,18 @@
 
 @import "_project_details.css";
 
+@font-face {
+  font-family: gobierno;
+  font-weight: bold;
+  src: url("../fonts/Graphik-Light.otf") format("opentype");
+}
+
+
+body *{
+
+  font-family: gobierno, tahoma, sans-serif;
+}
+
 .btn:visited{
 	background-color: transparent;
 	color: black;
