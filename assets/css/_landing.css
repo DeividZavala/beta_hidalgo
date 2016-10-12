@@ -412,7 +412,7 @@ div.greenBox p{
     border-radius: 300px;
     font-weight: 700;
     text-transform: uppercase;
-    text-decoration: n
+    
 }
 .btn-r:hover{
     text-decoration: none;
@@ -435,5 +435,6 @@ div.greenBox p{
 }
 .memorias{
 
-  color:#000;
+  color:#000 !important;
+  font-style: italic;
 }
