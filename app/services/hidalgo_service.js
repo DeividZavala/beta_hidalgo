@@ -8,10 +8,10 @@
 
         return{
             allProjects : getAllProjects,
-            projectDetail: getProjectDetail,
-            userDetail : getUserDetail,
+            getProjectDetail: getProjectDetail,
             addProject : addProject,
-            newUser : createNewUser
+            createNewUser : createNewUser,
+            getUserProjects : getUserProjects
         }
 
         function addProject(data) {
@@ -26,18 +26,24 @@
 
         function createNewUser(data) {
             $http.post('http://hidalgo.fixter.org/users/',data)
+            .then(function(response){
+                return response
+            })
+            .catch(function(err){
+                return err
+            })
+        }
+
+        function getUserProjects(uid) {
+             return $http.get('http://hidalgo.fixter.org/projects?user_id='+uid)
         }
 
         function getAllProjects() {
             return $http.get('http://hidalgo.fixter.org/projects/')
         }
 
-        function getUserDetail(id) {
-            return $http.get('http://hidalgo.fixter.org/users/'+ id +'/')
-        }
-
         function getProjectDetail(id) {
-            return $http.get('http://hidalgo.fixter.org/projects/'+ id +'/')
+            return $http.get('http://hidalgo.fixter.org/projects/'+id+'/')
         }
     }
 })();
