@@ -49,10 +49,15 @@ ul li .linknav:hover{
 }
 
 
+
 @media(min-width: 600px){
 	.perfil-phone{
 		display: none;
 	}
+	
 }
 
+.navbar-header{
+	display: inline-block
+}
 
