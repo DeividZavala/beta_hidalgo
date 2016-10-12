@@ -34,7 +34,17 @@
 					})
 
 	          }else{
-	            console.log(self.user);
+		            auth.$signInWithPopup("google")
+	            .then(function(result) {
+	              console.log("Signed in as:", result.user.uid);
+	                self.alert = "Bienvenido "+result.user.displayName;
+	            })
+	            .catch(function(error) {
+	              console.error("Authentication failed:", error);
+	            });
+	            
+
+
 	          }
 	        }); //checklogin
 
