@@ -171,7 +171,7 @@ Image credits: unsplash.com
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url('http://image.posta.com.mx/sites/default/files/germen-1_0.jpg');
+  background-image: url('/assets/images/port.jpg');
 }
 .fade-carousel .slides .slide-2 {
   background-image: url('https://javiernavaquintanar.files.wordpress.com/2013/01/tulas.jpg');
