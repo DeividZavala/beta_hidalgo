@@ -1,7 +1,3 @@
-.margen {
-
-  margin: 0% 10% 0% 10%;
-}
 
 .image-preview-input {
     position: relative;
@@ -25,10 +21,3 @@
 .image-preview-input-title {
     margin-left:2px;
 }
-
-.glyphicon{
-            font-size:9vh;
-        }
-        .foldercito{
-            font-size: 2vh;
-        }
