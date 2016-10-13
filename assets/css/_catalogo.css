@@ -1,0 +1,10 @@
+.catalogo .titulo{
+    text-align: center;
+}
+.catalogo .projects_container .description{
+    overflow: scroll;
+    height: 100px;
+}
+.projects_container .pagination_container{
+    text-align: center;
+}

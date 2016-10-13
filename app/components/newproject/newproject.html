@@ -9,7 +9,7 @@
 				<div class="col-md-6 col-md-offset-3">
 			<div class="text-center en_medio animated bounceInDown">
 				<h1><strong>¡Comparte tu gran idea!</strong></h1>
-				<h3>
+				<h3 class="textt">
 					Hidalgo-Go! es una plataforma para elaborar y compartir proyectos creativos<br> y sabemos que tu tienes grandes ideas.
 				</h3>
 			</div><!-- text-center -->
@@ -24,36 +24,34 @@
 
 					<div class="form-group">
 
-
-											<div class="col-md-6">
-											<label><h4>¿Que problematica resuelve?</h4></label>
-											<br>
-											<input ng-model="$ctrl.prob" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Problematica" autofocus ng-model="project.titulo"></input>
-										</div>
+						<div class="col-md-6">
+							<label><h4 class="textt">¿Cual es tu gran idea?</h4></label>
+							<br>
+							<input ng-model="$ctrl.title" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi gran idea" autofocus ng-model="project.titulo"></input>
+							<small class="textt">{{50-$ctrl.title.length}} caracteres máximo</small>
+							<br>
+							<br>
+						</div>
 
 
 						<div class="col-md-6">
-						<label><h4>¿Cual es tu gran idea?</h4></label>
-						<br>
-						<input ng-model="$ctrl.title" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi gran idea" autofocus ng-model="project.titulo"></input>
-						<small class="textt">{{50-$ctrl.title.length}} caracteres máximo</small>
-						<br>
-						<br>
+							<label><h4 class="textt">¿Que problematica resuelve?</h4></label>
+							<br>
+							<input ng-model="$ctrl.prob" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Problematica" autofocus ng-model="project.titulo"></input>
 						</div>
+
+
+						
 
 
 						<div class="row">
 						  </div>
 
-						<div class="col-md-6">
-						<label><h4>Municipio</h4></label>
-						<br>
-						<input ng-model="$ctrl.mun" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="De que municio eres" autofocus ng-model="project.titulo"></input>
-					</div>
 
 				<div class="col-md-6">
 					<label><h4>Selecciona un eje</h4></label>
-				<select required ng-model="relacion" class="form-control input-lg">
+				<select required ng-model="$ctrl.eje" class="form-control input-lg">
+
 					<option value="">Selecciona un Eje</option>
 					<option value="1.-Gobierno Honesto, Cercano y Moderno">1.-Gobierno Honesto, Cercano y Moderno</option>
 					<option value="2.-Hidalgo Próspero y Dinámico">2.-Hidalgo Próspero y Dinámico</option>
@@ -63,16 +61,22 @@
 				</select>
 				</div>
 
+				<div class="col-md-6">
+						<label><h4 class="textt">Municipio</h4></label>
+						<br>
+						<input ng-model="$ctrl.mun" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="De que municio eres" autofocus ng-model="project.titulo"></input>
+					</div>
 
+				<br><br><br><br><br>
+				<div align="center">
+									<input type="Submit" class="btn btn-primary btn-lg" value="Sube tu Proyecto">
+
+									<br>
+									<br>
+				</div>
+									<div align="center" class="g-recaptcha" data-sitekey="6LcsCAkUAAAAAKgM9QH_wHM0Ku2MWSdQt2pAvXQp"></div>
 					</div> <!-- div form-group -->
-<br><br><br><br><br>
-<div align="center">
-					<input type="Submit" class="btn btn-primary btn-lg" value="Sube tu Proyecto">
 
-					<br>
-					<br>
-</div>
-					<div align="center" class="g-recaptcha" data-sitekey="6LcsCAkUAAAAAKgM9QH_wHM0Ku2MWSdQt2pAvXQp"></div>
 				</form> <!-- form -->
 				</div>
 			</div>
