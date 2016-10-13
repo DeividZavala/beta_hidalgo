@@ -216,13 +216,13 @@ Image credits: unsplash.com
   background-image: url('/assets/images/background_oficial.png');
 }
 .fade-carousel .slides .slide-2 {
-  background-image: url('https://javiernavaquintanar.files.wordpress.com/2013/01/tulas.jpg');
+  background-image: url('/assets/images/slider/DJI_0005.JPG');
 }
 .fade-carousel .slides .slide-3 {
-  background-image: url('http://unhidalgo.com/wp-content/uploads/2009/11/2054594688_4e96369e45.jpg');
+  background-image: url('/assets/images/slider/DJI_0007.JPG');
 }
 .fade-carousel .slides .slide-4 {
-  background-image: url('https://pbs.twimg.com/profile_banners/77372998/1474683872/1500x500');
+  background-image: url('/assets/images/slider/DJI_0009.JPG');
 }
 
 /********************************/
