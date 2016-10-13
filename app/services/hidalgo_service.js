@@ -7,7 +7,7 @@
     function hidalgoService($http) {
 
         return{
-            allProjects : getAllProjects,
+            getAllProjects : getAllProjects,
             getProjectDetail: getProjectDetail,
             addProject : addProject,
             createNewUser : createNewUser,

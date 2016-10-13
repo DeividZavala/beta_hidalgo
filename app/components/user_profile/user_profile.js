@@ -9,10 +9,7 @@
     function profileController($routeParams,hidalgoService,$firebaseAuth) {
 
         $('#myModal').modal('toggle')
-
-
-        let profile = this;
-        let self = this;
+        var self = this;
 
         self.titulon = "Mi Proyecto";
         self.cuerpon = "Descripción de mi proyecto";
@@ -29,8 +26,8 @@
             console.log('mi user: ',self.usuario);
             hidalgoService.getUserProjects(self.usuario.uid)
                 .then(function (response) {
-                    profile.userProjects = response.data
-                    console.log(profile.userProjects)
+                    self.userProjects = response.data
+                    console.log(self.userProjects)
                 })
 
           }else{
@@ -39,16 +36,16 @@
         }); //checklogin
 
 
-        profile.panelSetTab = panelSetTab;
-        profile.checkTab = checkTab;
-        profile.tab = 1;
+        self.panelSetTab = panelSetTab;
+        self.checkTab = checkTab;
+        self.tab = 1;
         
         function panelSetTab(setTab) {
-            profile.tab = setTab;
+            self.tab = setTab;
         }
 
         function checkTab(checkTab) {
-            return profile.tab === checkTab;
+            return self.tab === checkTab;
         }
     }
 
