@@ -26,7 +26,7 @@
 
             <div class="contenedor"> 
    
-                <div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects" class="well well-sm info row">
+                <div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects |orderBy:'-pk'" class="well well-sm info row">
                     <img syle="float:left" class="img-mini" src="/assets/images/go.jpg">
                     <h4 style="float:center" class="col-ms-4 en-linea">{{project.fields.title}}</h4>
                     <a style="float:right" class="col-ms-4 col-ms-offset-4 btn btn-primary" href="#/project/{{project.pk}}/details">Completa tu proyecto</a>
