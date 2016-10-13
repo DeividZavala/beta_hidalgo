@@ -17,7 +17,7 @@
 }
 .i-color{
 
-  color :#71b631;
+  color :#fff;
 }
 .b-i-color{
 
@@ -27,7 +27,8 @@
 
 .hov-c:hover  i.i-color, .hov-c:active  i.i-color, .hov-c:focus  i.i-color{
 
-    color:#00703e;
+    transition: 1s ease;
+    font-size: 1.5em;
 }
 
 .l-titulo{
@@ -39,7 +40,7 @@
 .l-titulo-trans{
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
-  text-transform: uppercase;
+  
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -108,7 +109,7 @@ Image credits: unsplash.com
     z-index: 1000;
     color: rgba(255,255,255,0.8);
     text-align: center;
-    text-transform: uppercase;
+  
     text-shadow: 1px 1px 0 rgba(0,0,0,.75);
       -webkit-transform: translate3d(-50%,-50%,0);
          -moz-transform: translate3d(-50%,-50%,0);
@@ -257,7 +258,7 @@ div.greenBox p{
 
 	width:100%;
 	height: 250px;
-	background: url("/assets/images/parallax.jpg") center center fixed;
+	background: url("/assets/images/parallax.jpg") center 360px;
 	background-size: cover;
 	color:#fff;
 	vertical-align: middle;
@@ -353,7 +354,7 @@ div.greenBox p{
   border: none;
     border-radius: 300px;
     font-weight: 700;
-    text-transform: uppercase;
+
     
 }
 .btn-r:hover{
@@ -404,14 +405,19 @@ div.greenBox p{
 
 .l-format{
 
-  margin-top: 50px;
-  margin-bottom: 150px;
+
+  margin-bottom: 160px;
 }
 .l-articulo{
   padding-top:60px;
 }
 
-p.l-ejes{
+span.l-icon-ej{
+
+  margin-bottom:40px;
+}
+.l-icon-ej p {
+
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
      font-weight: 900 !important;
 }
@@ -426,11 +432,17 @@ p.l-ejes{
 
   color: #bc1826;
 }
-.img_gob{
-
-  padding-top: 20px;
+.l-bienvenida{
+  color:#fff;
+  margin-bottom: 120px;
 }
-.lvideo{
+.l-bienvenida h2{
+  color:#fff;
+}
 
-  padding-top: 20px
+.titEjes p, .titEjes h3 {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-weight: 900;
+  color:#333;
+  font-size: 1.3em;
 }
