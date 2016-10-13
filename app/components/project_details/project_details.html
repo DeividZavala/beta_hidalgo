@@ -95,7 +95,8 @@
         <div class="well">
             <h1 align="center">Detalle del Proyecto</h1>
         </div>
-            <h2>Porcentaje Completado</h2>
+            <br>
+            <h3 class="name" align="center">Porcentaje Completado</h2>
             <div class="progress meter">
 
                 <div id="percentage"></div>
@@ -158,44 +159,8 @@
                 </div>
 
             </div>
-            <!-- Imagen del proyecto-->
-            <div class="container3">     
-
-                <div class="row">         
-                    <div class="col-xs-6 col-md-3">
-                        <h3 class="name">Imágen</h3>
-                        <p>Sube una imágen relacionada</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-9">
-                        <div class="well">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="input-group image-preview">
-                                        <input type="text" class="form-control required image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                        <span class="input-group-btn">
-                                            <!-- image-preview-clear button -->
-                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
-                                            </button>
-                                            <!-- image-preview-input -->
-                                            <div class="btn btn-default image-preview-input">
-                                                <span class="foldercito glyphicon glyphicon-folder-open"></span>
-                                                <span class="image-preview-input-title">Buscar</span>
-                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
-                                            </div>
-                                        </span>
-                                    </div><!-- /input-group image-preview [TO HERE]-->
-                                </div>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-                    <!-- Objetivos estratégicos-->
+            
+                <!-- Objetivos estratégicos-->
             <div class="container3">     
 
                 <div class="row">         
@@ -218,30 +183,7 @@
                 </div>
 
             </div>
-             <!-- Linea estr-->
-            <div class="container3">     
-
-                <div class="row">         
-                    <div class="col-xs-6 col-md-3">
-                        <h3 class="name">Línea Estratégica</h3>
-                        <p>Línea estratégica de acción</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-9">
-                        <div class="well">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <i class="fa fa-line-chart" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-11">
-                                    <input width="100%" type="text" class="form-control required" placeholder="Línea Estratégica">
-                                </div>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-                    <!-- Objetivo General-->
+            <!-- Objetivo General-->
             <div class="container3">     
 
                 <div class="row">         
@@ -308,13 +250,13 @@
                 </div>
 
             </div>
-            <!-- Prgrama de asociados-->
+            <!-- Planteamiento-->
             <div class="container3">     
 
                 <div class="row">         
                     <div class="col-xs-6 col-md-3">
-                        <h3 class="name">Programas Asociados</h3>
-                        <p>Escribe los programas de gestión que pueda incluir</p>
+                        <h3 class="name">Planteamiento</h3>
+                        <p>Escribe el planteamiento del proyecto</p>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-9">
                         <div class="well">
@@ -348,7 +290,7 @@
                                 <div class="col-md-11">
                                     <div class="radio">
                                       <label>
-                                        <input class="required" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                        <input class="required" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
                                         Estatal
                                       </label>
                                     </div>
@@ -362,12 +304,95 @@
                                         <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Metropolitano
                                       </label>
                                     </div>
+                                    <div class="radio">
+                                      <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Otro
+                                      </label>
+                                    </div>
                                 </div>
                             </div>    
                         </div>
                     </div>
                 </div>
 
+            </div>
+            <!-- Imagen del proyecto-->
+            <div class="container3">     
+
+                <div class="row">         
+                    <div class="col-xs-6 col-md-3">
+                        <h3 class="name">Imágen</h3>
+                        <p>Sube una imágen relacionada</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="input-group image-preview">
+                                        <input type="text" class="form-control required image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <span class="input-group-btn">
+                                            <!-- image-preview-clear button -->
+                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
+                                            </button>
+                                            <!-- image-preview-input -->
+                                            <div class="btn btn-default image-preview-input">
+                                                <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                                                <span class="image-preview-input-title">Buscar</span>
+                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                            </div>
+                                        </span>
+                                    </div><!-- /input-group image-preview [TO HERE]-->
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Anexo-->
+            <div class="container3">     
+
+                <div class="row">         
+                    <div class="col-xs-6 col-md-3">
+                        <h3 class="name">Anexo</h3>
+                        <p>Sube archivos anexos del proyecto</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <i class="fa fa-file-word-o" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="input-group file-preview">
+                                        <input type="text" class="form-control file-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <span class="input-group-btn">
+                                            <!-- file-preview-clear button -->
+                                            <button type="button" class="btn btn-default file-preview-clear" style="display:none;">
+                                                <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
+                                            </button>
+                                            <!-- file-preview-input -->
+                                            <div class="btn btn-default file-preview-input">
+                                                <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                                                <span class="file-preview-input-title">Buscar</span>
+                                                <input class="required" type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
+                                            </div>
+                                        </span>
+                                    </div>                                    
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container3">
+                <a href="" class="osw-btn"><span>Revisar</span></a>
             </div>
         </form>
 

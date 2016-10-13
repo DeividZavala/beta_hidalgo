@@ -12,6 +12,8 @@
 .footer .logo{
 	width: 80%
 }
-.row{
-	padding-top: 2%;
+
+.footer_container{
+	padding-top: 5%;
+	margin-right: 0 !important;
 }
