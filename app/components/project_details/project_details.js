@@ -7,7 +7,7 @@
 
     function projectDetailsController(hidalgoService,$routeParams) {
         var projectDetails = this;
-        
+
         projectDetails.id = $routeParams.id;
         console.log(projectDetails.id)
 
@@ -16,7 +16,7 @@
                 projectDetails.data = response.data[0]
                 console.log(projectDetails.data)
             })
-            //Upload images 
+            //Upload images
         $(document).on('click', '#close-preview', function(){
             // Hover befor close the preview
             $('.image-preview').hover(
@@ -200,7 +200,7 @@
                         function barData() {
                             var filled = $(sel).filter(function() {
                                 return $(this).val();
-                                
+
                             }).not(":checkbox, :radio").length + $(sel + ":checked").length;
                             return {
                                 filled: filled,
