@@ -214,15 +214,7 @@
 	}
 
 
-<<<<<<< HEAD
- Make things perty
-html {  height: 100%;}
-body { font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; background: url(http://www.jmchristensendesign.com/wp-content/themes/jmcdsn/images/intro_default-background.jpg); color: #fff; height: 100%; padding-top: 2em; text-align: center;}
-h1, h2{ margin: 0; text-transform: uppercase;text-shadow: 0 0 0.5em black;}
-h2 { font-weight: 300}
-input { border: 1px solid #666; background: #333; color: #fff; padding: 0.5em; box-shadow: none; outline: none !important; margin: 1em  auto; text-align: center;}
-*/
-=======
+
 	.bubble {
 	    position: absolute;
 	    text-align: center;
@@ -280,4 +272,3 @@ input { border: 1px solid #666; background: #333; color: #fff; padding: 0.5em; b
 	text-decoration: none;
 	color: white;
 }
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
