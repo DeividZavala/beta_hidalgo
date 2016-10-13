@@ -1,5 +1,5 @@
 <section class="user_profile row">
-    <article class="user_menu_container col-md-3 hidden-sm hidden-xs">
+    <article class="user_menu_container col-md-3">
         <aside class="user_menu">
             
                 <img class="user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
@@ -22,7 +22,7 @@
     <article class="user_option col-md-9 col-sm-12">
 
         <div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects">
-            <div class="col-sm-12 col-md-4">
+            <div class="col-xs-12 col-sm-4 col-lg-3 col-md-4">
                 <div class="thumbnail efectito_y">
                 <img src="http://visitamexico10.galeon.com/hidl900.jpg" alt="...">
                 <div class="caption">
@@ -35,7 +35,10 @@
                 </div>
                 </div>
             </div>
+
+
         </div>
+        
 
         <!-- <div ng-show="$ctrl.checkTab(1)">
             <div class="col-sm-12 col-md-4">
@@ -159,7 +162,7 @@
 
 <!-- el modal -->
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -199,4 +202,4 @@
       </div> -->
     </div>
   </div>
-</div>
+</div> -->
