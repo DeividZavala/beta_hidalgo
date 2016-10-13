@@ -272,3 +272,6 @@
 	text-decoration: none;
 	color: white;
 }
+.osw-btn:visited{
+	border-color: #E73C4E;
+}
