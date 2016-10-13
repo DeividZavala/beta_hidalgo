@@ -2,12 +2,13 @@
   background: rgba(0,0,0,0.3);
   width: 100%;
   height: 100%;
+  background-size: cover;
 }
 
 #backk {
+  background-size: cover;
   background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-57201.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
   /*width: 100%;
   height: 100%;*/
 }
@@ -17,7 +18,7 @@
   margin: 0;
   /*padding-top: 5%;*/
   /*position: relative;*/
-  min-height: 600px;
+  min-height: 950px;
   height: 100vh;
   /*display: block;*/
 
@@ -52,7 +53,3 @@
 .en_medio, .textt{
   color: white;
 }
-
-
-
-

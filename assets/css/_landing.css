@@ -1,8 +1,4 @@
-@font-face {
-  font-family: gobierno;
-  font-weight: bold;
-  src: url("../fonts/Graphik-Light.otf") format("opentype");
-}
+
 
 
 .iconosLanding{
@@ -21,17 +17,20 @@
 }
 .i-color{
 
-  color :#71b631;
+  color :#fff;
 }
 .b-i-color{
 
   color:#fff;
   
 }
+
 .hov-c:hover  i.i-color, .hov-c:active  i.i-color, .hov-c:focus  i.i-color{
 
-    color:#00703e;
+    transition: 1s ease;
+    font-size: 1.5em;
 }
+
 .l-titulo{
 
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
@@ -41,7 +40,7 @@
 .l-titulo-trans{
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
-  text-transform: uppercase;
+  
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -56,6 +55,7 @@ hr.color-hr{
     
     margin: 15px auto;
 }
+
 
 @media (min-width: 768px) {
 
@@ -106,10 +106,10 @@ Image credits: unsplash.com
     position: absolute;
     top: 45%;
     left: 50%;
-    z-index: 9;
-    color: #fff;
+    z-index: 1000;
+    color: rgba(255,255,255,0.8);
     text-align: center;
-    text-transform: uppercase;
+  
     text-shadow: 1px 1px 0 rgba(0,0,0,.75);
       -webkit-transform: translate3d(-50%,-50%,0);
          -moz-transform: translate3d(-50%,-50%,0);
@@ -117,9 +117,14 @@ Image credits: unsplash.com
            -o-transform: translate3d(-50%,-50%,0);
               transform: translate3d(-50%,-50%,0);
 }
+.hero h3{
+  color: rgba(255,255,255,0.8);
+}
 .hero h1 {
+   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+  font-weight: 900;
     font-size: 3em;
-    font-weight: bold;
+  
     margin: 0;
     padding: 0;
 }
@@ -141,69 +146,7 @@ Image credits: unsplash.com
             transition: 2s all ease-in-out .1s;
 }
 
-.hero2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 9;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
-      -webkit-transform: translate3d(-50%,-50%,0);
-         -moz-transform: translate3d(-50%,-50%,0);
-          -ms-transform: translate3d(-50%,-50%,0);
-           -o-transform: translate3d(-50%,-50%,0);
-              transform: translate3d(-50%,-50%,0);
-}
-.hero2 h1 {
-    font-size: 4em;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-}
-.hero3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 9;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
-      -webkit-transform: translate3d(-50%,-50%,0);
-         -moz-transform: translate3d(-50%,-50%,0);
-          -ms-transform: translate3d(-50%,-50%,0);
-           -o-transform: translate3d(-50%,-50%,0);
-              transform: translate3d(-50%,-50%,0);
-}
-.hero3 h1 {
-    font-size: 3em;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-}
-.hero4 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 9;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
-      -webkit-transform: translate3d(-50%,-50%,0);
-         -moz-transform: translate3d(-50%,-50%,0);
-          -ms-transform: translate3d(-50%,-50%,0);
-           -o-transform: translate3d(-50%,-50%,0);
-              transform: translate3d(-50%,-50%,0);
-}
-.hero4 h1 {
-    font-size: 4em;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-}
+
 
 /********************************/
 /*            Overlay           */
@@ -212,9 +155,9 @@ Image credits: unsplash.com
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 2;
     background-color: #080d15;
-    opacity: .7;
+    opacity: .4;
 }
 
 /********************************/
@@ -244,7 +187,7 @@ Image credits: unsplash.com
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url('/assets/images/port.jpg');
+  background-image: url('/assets/images/background_oficial.png');
 }
 .fade-carousel .slides .slide-2 {
   background-image: url('https://javiernavaquintanar.files.wordpress.com/2013/01/tulas.jpg');
@@ -315,7 +258,7 @@ div.greenBox p{
 
 	width:100%;
 	height: 250px;
-	background: url("/assets/images/parallax.jpg") center center fixed;
+	background: url("/assets/images/parallax.jpg") center 360px;
 	background-size: cover;
 	color:#fff;
 	vertical-align: middle;
@@ -411,7 +354,7 @@ div.greenBox p{
   border: none;
     border-radius: 300px;
     font-weight: 700;
-    text-transform: uppercase;
+
     
 }
 .btn-r:hover{
@@ -425,6 +368,12 @@ div.greenBox p{
     -moz-transition: all .35s;
     transition: all .35s;
 }
+
+.btn-verdebandera:hover {
+    color: #00703e;
+    background-color: #71b631;
+   
+}
 .btn-rojoobsuro {
     color: #00703e;
     background-color: #bc1826;
@@ -432,6 +381,12 @@ div.greenBox p{
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
+}
+
+.btn-rojoobsuro:hover{
+    color: #00703e;
+    background-color: #e73c4e;
+    
 }
 .memorias{
 
@@ -450,9 +405,44 @@ div.greenBox p{
 
 .l-format{
 
-  margin-top: 50px;
-  margin-bottom: 150px;
+
+  margin-bottom: 160px;
 }
 .l-articulo{
   padding-top:60px;
+}
+
+span.l-icon-ej{
+
+  margin-bottom:40px;
+}
+.l-icon-ej p {
+
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+     font-weight: 900 !important;
+}
+.l-ejes h4{
+
+  color:#111 ;
+ 
+
+}
+
+.e-i-color{
+
+  color: #bc1826;
+}
+.l-bienvenida{
+  color:#fff;
+  margin-bottom: 120px;
+}
+.l-bienvenida h2{
+  color:#fff;
+}
+
+.titEjes p, .titEjes h3 {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-weight: 900;
+  color:#333;
+  font-size: 1.3em;
 }
