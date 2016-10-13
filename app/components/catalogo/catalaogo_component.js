@@ -1,7 +1,7 @@
 (function () {
 
     var catalogo = {
-        templateUrl:'',
+        templateUrl:'app/components/catalogo/catalogo.html',
         controller:catalogController
     }
 
@@ -18,5 +18,5 @@
 
     angular
         .module('hidalgo')
-        .component('catalogoComponent',catalogo)
+        .component('catalogoComponent',catalogo);
 })();
