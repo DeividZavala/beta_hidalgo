@@ -1,91 +1,5 @@
 <script type="text/javascript">
     //progress bar
-<<<<<<< HEAD
-    (function($) {
-        $.fn.extend({
-            formProgress: function(options) {
-                var st = {
-                    speed: 300,
-                    style: "green",
-                    bubble: false,
-                    selector: ".required",
-                    minPercent: false,
-                    message: "Please complete all required fields !"
-                };
-                if (options) {
-                    $.extend(st, options);
-                }
-                var _this = $(this),
-                    sel = st.selector,
-                    mainForm = $(sel).parents("form"),
-                    names = [],
-                    timer;
-                $(sel + ":radio").each(function() {
-                    var n = $(this).attr("name");
-                    if ($.inArray(n, names) < 0) {
-                        names.push(n);
-                    }
-                });
-                var totalInputs = $(sel).not(":radio").length + names.length;
-                $(mainForm).find(sel + ":checkbox, " + sel + ":radio, select" + sel).on("change", function() {
-                    animateBar.call(_this);
-                });
-                $(mainForm).find("input[type=text]" + sel + ", input[type=password]" + sel + ", textarea" + sel).on("keyup", function() {
-                    timer && clearTimeout(timer);
-                    timer = setTimeout(function() {
-                        animateBar.call(_this);
-                    }, 300);
-                });
-                return this.each(function() {
-                    animateBar.call(_this);
-                });
-                function animateBar() {
-                    var vars = barData();
-                    _this.attr("class", st.style);
-                    $(this).stop().animate({
-                        width: vars.toPercent * vars.ratio
-                    }, st.speed);
-                    if (st.bubble) {
-                        if (vars.bubble.length === 0) {
-                            $(this).parent().append('<div class="bubble"><div class="percent">' + vars.toPercent + '%</div><div class="arrow"></div></div>');
-                            vars.bubble = $(this).next();
-                        } else {
-                            vars.bubble.find(".percent").text(vars.toPercent + "%");
-                        }
-                        vars.bubble.stop().animate({
-                            left: (vars.toPercent * vars.ratio) - 5
-                        }, st.speed);
-                    } else {
-                        $(this).parent().parent().find('label').find('span').text(vars.toPercent + "% completado");
-                    }
-                    preventSubmit(vars.toPercent);
-                }
-                function barData() {
-                    var filled = $(sel).filter(function() {
-                        return $(this).val();
-                    }).not(":checkbox, :radio").length + $(sel + ":checked").length;
-                    return {
-                        filled: filled,
-                        ratio: _this.parent().width() / 100,
-                        toPercent: Math.round((filled * 100) / totalInputs),
-                        bubble: _this.next()
-                    };
-                }
-                function preventSubmit(percentage) {
-                    if (!st.minPercent) {
-                        return false;
-                    }
-                    var targetInput = mainForm.find("input[type=submit]");
-                    targetInput.removeAttr("onclick");
-                    if (percentage < st.minPercent) {
-                        targetInput.attr("onclick", "alert('" + st.message + " Minimum percentage: " + st.minPercent + "%'); return false;");
-                    }
-                }
-            }
-        });
-    })(jQuery);
-    //progress bar
-=======
             (function($) {
             $.fn.extend({
                 formProgress: function(options) {
@@ -124,7 +38,6 @@
                         return this.each(function() {
                             animateBar.call(_this);
                         });
-
                         function animateBar() {
                             var vars = barData();
                             _this.attr("class", st.style);
@@ -146,7 +59,6 @@
                             }
                             preventSubmit(vars.toPercent);
                         }
-
                         function barData() {
                             var filled = $(sel).filter(function() {
                                 return $(this).val();
@@ -158,7 +70,6 @@
                                 bubble: _this.next()
                             };
                         }
-
                         function preventSubmit(percentage) {
                             if (!st.minPercent) {
                                 return false;
@@ -173,21 +84,14 @@
                 });
             })(jQuery);
         //progress bar
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
 </script>
 
 <div class="containerm">
     <div class="container2">
         <div class="row">
-<<<<<<< HEAD
-            <div class="well">
-                <h1 align="center">Detalle del Proyecto</h1>
-            </div>
-=======
         <div class="well">
             <h1 align="center">Detalle del Proyecto</h1>
         </div>
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
             <br>
             <h3 class="name" align="center">Porcentaje Completado</h2>
             <div class="progress meter">
@@ -195,19 +99,13 @@
                 <div id="percentage"></div>
             </div>
 
-            <hr>
+        <hr>
         </div>
         <form>
             <!-- Título-->
-<<<<<<< HEAD
             <div class="container3">
 
                 <div class="row">
-=======
-            <div class="container3">     
-
-                <div class="row">         
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
                     <div class="col-xs-6 col-md-3">
                         <h3 class="name">Título</h3>
                         <p>Nombre del proyecto</p>
@@ -221,26 +119,16 @@
                                 <div class="col-md-11">
                                     <input id="percent" width="100%" type="text" class="form-control required" placeholder="Título del proyecto">
                                 </div>
-<<<<<<< HEAD
                             </div>
-=======
-                            </div>    
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
                         </div>
                     </div>
                 </div>
 
             </div>
             <!-- Eje del proyecto-->
-<<<<<<< HEAD
             <div class="container3">
 
                 <div class="row">
-=======
-            <div class="container3">     
-
-                <div class="row">         
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
                     <div class="col-xs-6 col-md-3">
                         <h3 class="name">Eje</h3>
                         <p>Escoge un eje</p>
@@ -253,11 +141,7 @@
                                 </div>
                                 <div class="col-md-11">
                                     <select class="form-control required">
-<<<<<<< HEAD
                                         <option value="">Selecciona una opcion</option>
-=======
-                                        <option value="">Selecciona una opcion</option>                          
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
                                         <option>Gobierno Honesto Cercano y Moderno</option>
                                         <option>Hidalgo Próspero y Dinámico</option>
                                         <option>Hidalgo Humano e Igualitario</option>
@@ -266,28 +150,17 @@
                                     </select>
 
                                 </div>
-<<<<<<< HEAD
                             </div>
-=======
-                            </div>    
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
                         </div>
                     </div>
                 </div>
 
             </div>
-<<<<<<< HEAD
-            <!-- Objetivos estratégicos-->
+
+                <!-- Objetivos estratégicos-->
             <div class="container3">
 
                 <div class="row">
-=======
-            
-                <!-- Objetivos estratégicos-->
-            <div class="container3">     
-
-                <div class="row">         
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
                     <div class="col-xs-6 col-md-3">
                         <h3 class="name">Objetivo Estratégico</h3>
                         <p>Objetivos estratégicos del proyecto</p>
@@ -301,30 +174,16 @@
                                 <div class="col-md-11">
                                     <textarea class="form-control required" rows="3"></textarea>
                                 </div>
-<<<<<<< HEAD
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-
             <!-- Objetivo General-->
             <div class="container3">
 
                 <div class="row">
-=======
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- Objetivo General-->
-            <div class="container3">     
-
-                <div class="row">         
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
                     <div class="col-xs-6 col-md-3">
                         <h3 class="name">Objetivo General</h3>
                         <p>Objetivo General del Proyecto a revisar</p>
@@ -338,341 +197,200 @@
                                 <div class="col-md-11">
                                     <textarea class="form-control required" rows="3"></textarea>
                                 </div>
-<<<<<<< HEAD
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Indicador estratégico-->
-            <div class="container3">
-
-                <div class="row">
-=======
-                            </div>    
                         </div>
                     </div>
                 </div>
 
             </div>
             <!-- Indicador estratégico-->
-            <div class="container3">     
+           <div class="container3">
 
-                <div class="row">         
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                    <div class="col-xs-6 col-md-3">
-                        <h3 class="name">Indicador Estratégico</h3>
-                        <p>Línea estratégica de acción</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-9">
-                        <div class="well">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-11">
-<<<<<<< HEAD
-                                    <select class="form-control required">
-                                        <option value="">Selecciona una opción</option>
-                                        <option value='Tasa de Prevalencia de Corrupción (INEGI)'>Tasa de Prevalencia de Corrupción (INEGI)</option>
-                                        <option value='Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)'>Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)</option>
-                                        <option value='Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)'>Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)</option>
-=======
-                                    <select class="form-control required" >
-                                        <option value="">Selecciona una opción</option>
-                                        <option  value='Tasa de Prevalencia de Corrupción (INEGI)'>Tasa de Prevalencia de Corrupción (INEGI)</option>
-                                        <option  value='Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)'>Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)</option>
-                                        <option  value='Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)'>Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)</option>
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                                        <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población en condición de pobreza</option>
-                                        <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por acceso a los servicios de salud</option>
-                                        <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por rezago educativo</option>
-                                        <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por calidad y espacios de la vivienda</option>
-                                        <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)</option>
-<<<<<<< HEAD
-                                        <option value='Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria'>Proporción de alumnos en el nivel insuficiente de competencias matemáticas y de comprensión lectora para sexto grado de primaria y tercer año de secundaria</option>
-                                        <option value='Tasa de informalidad laboral'>Tasa de informalidad laboral</option>
-                                        <option value='Tasa de personas de 18 años y más que considera inseguro su municipio '>Tasa de personas de 18 años y más que considera inseguro su municipio
-                                        </option>
-                                        <option value='Tasa de prevalencia delictiva'>Tasa de prevalencia delictiva</option>
-                                        <option value='Tasa de crecimiento anual del PIB per cápita (INEGI)'>Tasa de crecimiento anual del PIB per cápita (INEGI)</option>
-                                        <option value='Porcentaje de hogares con conectividad a internet (INEGI)'>Porcentaje de hogares con conectividad a internet (INEGI)</option>
-                                        <option value='Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)'>Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)</option>
-                                        <option value='Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)'>Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)</option>
-=======
-                                        <option value='Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria'>Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria</option>
-                                        <option value='Tasa de informalidad laboral'>Tasa de informalidad laboral</option>
-                                        <option value='Tasa de personas de 18 años y más que considera inseguro su municipio '>Tasa de personas de 18 años y más que considera inseguro su municipio </option>
-                                        <option  value='Tasa de prevalencia delictiva'>Tasa de prevalencia delictiva</option>
-                                        <option  value='Tasa de crecimiento anual del PIB per cápita (INEGI)'>Tasa de crecimiento anual del PIB per cápita (INEGI)</option>
-                                        <option  value='Porcentaje de hogares con conectividad a internet (INEGI)'>Porcentaje de hogares con conectividad a internet (INEGI)</option>
-                                        <option  value='Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)'>Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)</option>
-                                        <option  value='Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)'>Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)</option>
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                                        <option value='Volumen tratado de aguas residuales'>Volumen tratado de aguas residuales</option>
-                                        <option value='Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)'>Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)</option>
-                                        <option value='Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)'>* Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)</option>
-                                    </select>
-                                </div>
-<<<<<<< HEAD
-                            </div>
-=======
-                            </div>    
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                        </div>
-                    </div>
-                </div>
+               <div class="row">
+                   <div class="col-xs-6 col-md-3">
+                       <h3 class="name">Indicador Estratégico</h3>
+                       <p>Línea estratégica de acción</p>
+                   </div>
+                   <div class="col-xs-12 col-sm-6 col-md-9">
+                       <div class="well">
+                           <div class="row">
+                               <div class="col-md-1">
+                                   <i class="fa fa-check-square" aria-hidden="true"></i>
+                               </div>
+                               <div class="col-md-11">
+                                   <select class="form-control required" >
+                                       <option value="">Selecciona una opción</option>
+                                       <option  value='Tasa de Prevalencia de Corrupción (INEGI)'>Tasa de Prevalencia de Corrupción (INEGI)</option>
+                                       <option  value='Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)'>Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)</option>
+                                       <option  value='Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)'>Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)</option>
+                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población en condición de pobreza</option>
+                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por acceso a los servicios de salud</option>
+                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por rezago educativo</option>
+                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por calidad y espacios de la vivienda</option>
+                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)</option>
+                                       <option value='Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria'>Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria</option>
+                                       <option value='Tasa de informalidad laboral'>Tasa de informalidad laboral</option>
+                                       <option value='Tasa de personas de 18 años y más que considera inseguro su municipio '>Tasa de personas de 18 años y más que considera inseguro su municipio </option>
+                                       <option  value='Tasa de prevalencia delictiva'>Tasa de prevalencia delictiva</option>
+                                       <option  value='Tasa de crecimiento anual del PIB per cápita (INEGI)'>Tasa de crecimiento anual del PIB per cápita (INEGI)</option>
+                                       <option  value='Porcentaje de hogares con conectividad a internet (INEGI)'>Porcentaje de hogares con conectividad a internet (INEGI)</option>
+                                       <option  value='Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)'>Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)</option>
+                                       <option  value='Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)'>Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)</option>
+                                       <option value='Volumen tratado de aguas residuales'>Volumen tratado de aguas residuales</option>
+                                       <option value='Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)'>Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)</option>
+                                       <option value='Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)'>* Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
 
-            </div>
-            <!-- Planteamiento-->
-<<<<<<< HEAD
-            <div class="container3">
+           </div>
+           <!-- Planteamiento-->
+           <div class="container3">
 
-                <div class="row">
-=======
-            <div class="container3">     
+               <div class="row">
+                   <div class="col-xs-6 col-md-3">
+                       <h3 class="name">Planteamiento</h3>
+                       <p>Escribe el planteamiento del proyecto</p>
+                   </div>
+                   <div class="col-xs-12 col-sm-6 col-md-9">
+                       <div class="well">
+                           <div class="row">
+                               <div class="col-md-1">
+                                   <i class="fa fa-tasks" aria-hidden="true"></i>
+                               </div>
+                               <div class="col-md-11">
+                                  <textarea class="form-control required" rows="3"></textarea>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+             </div>
+          <!-- Alcance-->
+          <div class="container3">
 
-                <div class="row">         
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                    <div class="col-xs-6 col-md-3">
-                        <h3 class="name">Planteamiento</h3>
-                        <p>Escribe el planteamiento del proyecto</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-9">
-                        <div class="well">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <i class="fa fa-tasks" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-11">
-<<<<<<< HEAD
-                                    <textarea class="form-control required" rows="3"></textarea>
-                                </div>
-                            </div>
-=======
-                                   <textarea class="form-control required" rows="3"></textarea>
-                                </div>
-                            </div>    
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                        </div>
-                    </div>
-                </div>
+              <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                      <h3 class="name">Alcance</h3>
+                      <p>Selecciona el alcance al que llegará tu proyecto</p>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-9">
+                      <div class="well">
+                          <div class="row">
+                              <div class="col-md-1">
+                                  <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+                              </div>
+                              <div class="col-md-11">
+                                  <div class="radio">
+                                    <label>
+                                      <input class="required" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
+                                      Estatal
+                                    </label>
+                                  </div>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Regional
+                                    </label>
+                                  </div>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Metropolitano
+                                    </label>
+                                  </div>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Otro
+                                    </label>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
-            </div>
-            <!-- Alcance-->
-<<<<<<< HEAD
-            <div class="container3">
+          </div>
+          <!-- Imagen del proyecto-->
+          <div class="container3">
 
-                <div class="row">
-=======
-            <div class="container3">     
+              <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                      <h3 class="name">Imágen</h3>
+                      <p>Sube una imágen relacionada</p>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-9">
+                      <div class="well">
+                          <div class="row">
+                              <div class="col-md-1">
+                                  <i class="fa fa-picture-o" aria-hidden="true"></i>
+                              </div>
+                              <div class="col-md-11">
+                                  <div class="input-group image-preview">
+                                      <input type="text" class="form-control required image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                      <span class="input-group-btn">
+                                          <!-- image-preview-clear button -->
+                                          <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                              <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
+                                          </button>
+                                          <!-- image-preview-input -->
+                                          <div class="btn btn-default image-preview-input">
+                                              <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                                              <span class="image-preview-input-title">Buscar</span>
+                                              <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                          </div>
+                                      </span>
+                                  </div><!-- /input-group image-preview [TO HERE]-->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
-                <div class="row">         
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                    <div class="col-xs-6 col-md-3">
-                        <h3 class="name">Alcance</h3>
-                        <p>Selecciona el alcance al que llegará tu proyecto</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-9">
-                        <div class="well">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <i class="fa fa-thumb-tack" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="radio">
-<<<<<<< HEAD
-                                        <label>
-                                            <input class="required" type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-                                            Estatal
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Regional
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Metropolitano
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Otro
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-=======
-                                      <label>
-                                        <input class="required" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
-                                        Estatal
-                                      </label>
-                                    </div>
-                                    <div class="radio">
-                                      <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Regional
-                                      </label>
-                                    </div>
-                                    <div class="radio">
-                                      <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Metropolitano
-                                      </label>
-                                    </div>
-                                    <div class="radio">
-                                      <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Otro
-                                      </label>
-                                    </div>
-                                </div>
-                            </div>    
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <!-- Anexo-->
+          <div class="container3">
 
-            </div>
-            <!-- Imagen del proyecto-->
-<<<<<<< HEAD
-            <div class="container3">
+              <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                      <h3 class="name">Anexo</h3>
+                      <p>Sube archivos anexos del proyecto</p>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-9">
+                      <div class="well">
+                          <div class="row">
+                              <div class="col-md-1">
+                                  <i class="fa fa-file-word-o" aria-hidden="true"></i>
+                              </div>
+                              <div class="col-md-11">
+                                  <div class="input-group file-preview">
+                                      <input type="text" class="form-control file-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                      <span class="input-group-btn">
+                                          <!-- file-preview-clear button -->
+                                          <button type="button" class="btn btn-default file-preview-clear" style="display:none;">
+                                              <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
+                                          </button>
+                                          <!-- file-preview-input -->
+                                          <div class="btn btn-default file-preview-input">
+                                              <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                                              <span class="file-preview-input-title">Buscar</span>
+                                              <input class="required" type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
+                                          </div>
+                                      </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
-                <div class="row">
-=======
-            <div class="container3">     
+          </div>
 
-                <div class="row">         
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                    <div class="col-xs-6 col-md-3">
-                        <h3 class="name">Imágen</h3>
-                        <p>Sube una imágen relacionada</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-9">
-                        <div class="well">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="input-group image-preview">
-<<<<<<< HEAD
-                                        <input type="text" class="form-control required image-preview-filename" disabled="disabled">
-                                        <!-- don't give a name === doesn't send on POST/GET -->
-                                        <span class="input-group-btn">
-                                            <!-- image-preview-clear button -->
-                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                <span class="foldercito glyphicon glyphicon-remove"></span>
-                                                Borrar
-=======
-                                        <input type="text" class="form-control required image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                        <span class="input-group-btn">
-                                            <!-- image-preview-clear button -->
-                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                                            </button>
-                                            <!-- image-preview-input -->
-                                            <div class="btn btn-default image-preview-input">
-                                                <span class="foldercito glyphicon glyphicon-folder-open"></span>
-                                                <span class="image-preview-input-title">Buscar</span>
-<<<<<<< HEAD
-                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
-                                                <!-- rename it -->
-                                            </div>
-                                        </span>
-                                    </div>
-                                    <!-- /input-group image-preview [TO HERE]-->
-                                </div>
-                            </div>
-=======
-                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
-                                            </div>
-                                        </span>
-                                    </div><!-- /input-group image-preview [TO HERE]-->
-                                </div>
-                            </div>    
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                        </div>
-                    </div>
-                </div>
+          <div class="container3">
+              <a href="" class="osw-btn"><span>Revisar</span></a>
+          </div>
+      </form>
 
-            </div>
-            <!-- Anexo-->
-<<<<<<< HEAD
-            <div class="container3">
-
-                <div class="row">
-=======
-            <div class="container3">     
-
-                <div class="row">         
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                    <div class="col-xs-6 col-md-3">
-                        <h3 class="name">Anexo</h3>
-                        <p>Sube archivos anexos del proyecto</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-9">
-                        <div class="well">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <i class="fa fa-file-word-o" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="input-group file-preview">
-<<<<<<< HEAD
-                                        <input type="text" class="form-control file-preview-filename" disabled="disabled">
-                                        <!-- don't give a name === doesn't send on POST/GET -->
-                                        <span class="input-group-btn">
-                                            <!-- file-preview-clear button -->
-                                            <button type="button" class="btn btn-default file-preview-clear" style="display:none;">
-                                                <span class="foldercito glyphicon glyphicon-remove"></span>
-                                                Borrar
-=======
-                                        <input type="text" class="form-control file-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                        <span class="input-group-btn">
-                                            <!-- file-preview-clear button -->
-                                            <button type="button" class="btn btn-default file-preview-clear" style="display:none;">
-                                                <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                                            </button>
-                                            <!-- file-preview-input -->
-                                            <div class="btn btn-default file-preview-input">
-                                                <span class="foldercito glyphicon glyphicon-folder-open"></span>
-                                                <span class="file-preview-input-title">Buscar</span>
-<<<<<<< HEAD
-                                                <input class="required" type="file" accept="file_extension" name="input-file-preview"/>
-                                                <!-- rename it -->
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-=======
-                                                <input class="required" type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
-                                            </div>
-                                        </span>
-                                    </div>                                    
-                                </div>
-                            </div>    
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="container3">
-<<<<<<< HEAD
-                <a href="" class="osw-btn">
-                    <span>Revisar</span>
-                </a>
-=======
-                <a href="" class="osw-btn"><span>Revisar</span></a>
->>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
-            </div>
-        </form>
-
-    </div>
+  </div>
 </div>
