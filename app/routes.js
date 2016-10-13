@@ -38,12 +38,6 @@
                 //   }]
                 // } //resolve
             })
-            .when('/login',{
-                template:`<login-component></login-component>`
-            })
-            .when('/project/new',{
-                template:`<newpro-component></newpro-component>`
-            })
             .when('/profile',{
                 template:`<user-profile-component></user-profile-component>`,
                 resolve: {
@@ -62,12 +56,6 @@
             })
             .when('/project/new',{
                 template:`<newpro-component></newpro-component>`
-            })
-            .when('/project/details',{
-                template:`<details-component></details-component>`
-            })
-            .when('/user/:id/profile',{
-                template:`<user-profile-component></user-profile-component>`
             })
             .when('/project/:id/edit',{
                 template:`<h1>Editar Proyecto</h1>`
