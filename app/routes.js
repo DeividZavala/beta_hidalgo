@@ -67,6 +67,9 @@
             .when('/catalogo/id',{
                 template:`<catalog-detail-component></catalog-detail-component>`
             })
+            .when('/catalogo',{
+                template:`<catalogo-component></catalogo-component>`
+            })
             .otherwise({
                 redirectTo:'/'
             })
