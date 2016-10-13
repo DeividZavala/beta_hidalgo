@@ -18,7 +18,9 @@
 		})
 		.catch(function(err){
 			 window.location.replace('/');
-		})
+		});
+		//Bajammos al usuario
+		
 		
 
 		$scope.titulo = "Proyecto enfocado a los borrachos"
