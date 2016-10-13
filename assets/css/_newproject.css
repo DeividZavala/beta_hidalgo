@@ -1,20 +1,30 @@
-/*div{
-  margin: 0;
-  padding: 0;
-}*/
+#frontt {
+  background: rgba(0,0,0,0.3);
+  width: 100%;
+  height: 100%;
+}
+
+#backk {
+  background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-57201.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /*width: 100%;
+  height: 100%;*/
+}
 
 #container-pro {
   padding: 0;
   margin: 0;
-	/*padding-top: 5%;*/
+  /*padding-top: 5%;*/
   /*position: relative;*/
   min-height: 600px;
-  height: 93vh;
+  height: 100vh;
   /*display: block;*/
 
 }
 
-.opacos {
+
+/*.opacos {
   background: rgba(0,0,0,0.3);
   width: 100%;
   height: 100%;
@@ -33,7 +43,7 @@
   position: absolute;
   z-index: -1;
   top:0;
-}
+}*/
 
 .en_medio{
   vertical-align: middle;
