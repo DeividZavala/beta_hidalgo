@@ -75,7 +75,7 @@
             var countDown = function() {
                 self.timeInMs-= 1;
                 if(self.timeInMs<1){
-                window.location.replace('/');
+                window.location.replace('#/profile');
             }
                 $timeout(countDown,1000);
             }

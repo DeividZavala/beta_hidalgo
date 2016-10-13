@@ -47,6 +47,16 @@ img{
 	border-color:green;
 }
 
+.img-mini{
+	height: 30px;
+}
+.contenedor{
+	width: 80%;
+	margin: 0 auto;
+}
+.en-linea{
+	display: inline-block;
+}
 
 
 
