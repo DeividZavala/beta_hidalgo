@@ -1,14 +1,14 @@
 (function(){
 
-	let project_new = {
+	var project_new = {
 		templateUrl: 'app/components/newproject/newproject.html',
 		controller: newProjectController
 	}
 
 	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth'];
 	function newProjectController(hidalgoService,$http,$firebaseAuth) {
-		let new_project = this;
-		let self = this;
+		var new_project = this;
+		var self = this;
 		var auth = $firebaseAuth();
 
 

@@ -1,5 +1,5 @@
 (function (){
-	let footer ={
+	var footer ={
 		templateUrl:'app/components/footer/footer.html'
 	}
 

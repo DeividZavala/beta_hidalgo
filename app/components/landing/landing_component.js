@@ -1,7 +1,7 @@
 (function(){
 
 
-	let landing ={
+	var landing ={
 
 		templateUrl : 'app/components/landing/landing.html'
 	}
