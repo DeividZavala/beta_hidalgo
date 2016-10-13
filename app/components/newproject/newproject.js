@@ -23,8 +23,9 @@
 						title:self.title,
 						eje:self.eje,
 						uid:self.user.uid,
-						mun:self.mun,
-						prob:self.prob
+						// mun:self.mun,
+						// prob:self.prob,
+						// slug:self.user.photoURL
 
 					})
 					.then(function(response){
