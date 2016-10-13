@@ -5,9 +5,14 @@
 	}
 
 	function CatDetController($firebaseAuth,$firebaseArray,$scope){
-		car self = this;
+		var self = this;
+		$scope.tab=1;
+		//tooltip
 
-		$scope.bliss = "BlisS"
+		$('[data-toggle="tooltip"]').tooltip()
+
+
+		$scope.titulo = "Proyecto enfocado a los borrachos"
 
 
 
