@@ -64,7 +64,7 @@
                 template:`<project-details-component></project-details-component>`
             })
             //catalogo routes
-            .when('/catalogo/id',{
+            .when('/catalogo/:id',{
                 template:`<catalog-detail-component></catalog-detail-component>`
             })
             .when('/catalogo',{
