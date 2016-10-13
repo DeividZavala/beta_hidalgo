@@ -10,8 +10,8 @@
 
         hidalgoService.getAllProjects()
             .then(function (response) {
-                self.projects = response;
-                console.log(self.response);
+                self.projects = response.data;
+                console.log(self.projects);
             })
     }
 
