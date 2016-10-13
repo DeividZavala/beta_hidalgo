@@ -24,36 +24,34 @@
 
 					<div class="form-group">
 
-
-											<div class="col-md-6">
-											<label><h4 class="textt">¿Que problematica resuelve?</h4></label>
-											<br>
-											<input ng-model="$ctrl.prob" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Problematica" autofocus ng-model="project.titulo"></input>
-										</div>
+						<div class="col-md-6">
+							<label><h4 class="textt">¿Cual es tu gran idea?</h4></label>
+							<br>
+							<input ng-model="$ctrl.title" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi gran idea" autofocus ng-model="project.titulo"></input>
+							<small class="textt">{{50-$ctrl.title.length}} caracteres máximo</small>
+							<br>
+							<br>
+						</div>
 
 
 						<div class="col-md-6">
-						<label><h4 class="textt">¿Cual es tu gran idea?</h4></label>
-						<br>
-						<input ng-model="$ctrl.title" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi gran idea" autofocus ng-model="project.titulo"></input>
-						<small class="textt">{{50-$ctrl.title.length}} caracteres máximo</small>
-						<br>
-						<br>
+							<label><h4 class="textt">¿Que problematica resuelve?</h4></label>
+							<br>
+							<input ng-model="$ctrl.prob" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Problematica" autofocus ng-model="project.titulo"></input>
 						</div>
+
+
+						
 
 
 						<div class="row">
 						  </div>
 
-						<div class="col-md-6">
-						<label><h4 class="textt">Municipio</h4></label>
-						<br>
-						<input ng-model="$ctrl.mun" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="De que municio eres" autofocus ng-model="project.titulo"></input>
-					</div>
 
 				<div class="col-md-6">
-					<label><h4 class="textt">Selecciona un eje</h4></label>
-				<select required ng-model="relacion" class="form-control input-lg">
+					<label><h4>Selecciona un eje</h4></label>
+				<select required ng-model="$ctrl.eje" class="form-control input-lg">
+
 					<option value="">Selecciona un Eje</option>
 					<option value="1.-Gobierno Honesto, Cercano y Moderno">1.-Gobierno Honesto, Cercano y Moderno</option>
 					<option value="2.-Hidalgo Próspero y Dinámico">2.-Hidalgo Próspero y Dinámico</option>
@@ -62,6 +60,12 @@
 					<option value="5.-Un Hidalgo Con Desarrollo Sustentable">5.-Un Hidalgo Con Desarrollo Sustentable</option>
 				</select>
 				</div>
+
+				<div class="col-md-6">
+						<label><h4 class="textt">Municipio</h4></label>
+						<br>
+						<input ng-model="$ctrl.mun" maxlength="50" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="De que municio eres" autofocus ng-model="project.titulo"></input>
+					</div>
 
 				<br><br><br><br><br>
 				<div align="center">
