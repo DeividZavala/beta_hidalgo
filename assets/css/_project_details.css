@@ -6,10 +6,10 @@
 .image-preview-input {
     position: relative;
 	overflow: hidden;
-	margin: 0px;    
+	margin: 0px;
     color: #333;
     background-color: #fff;
-    border-color: #ccc;    
+    border-color: #ccc;
 }
 .image-preview-input input[type=file] {
 	position: absolute;
@@ -55,14 +55,14 @@
 }
 .container2 hr{
 	margin-left:10%;
-	margin-right:10%; 
+	margin-right:10%;
 }
 .container3{
 	width: 95%;
 	margin-left: 3%;
 	display: flex;
 	justify-content: center;
-	
+
 }
 .container3 .row .col-md-3{
 	padding-top: 1%;
@@ -78,7 +78,7 @@
 	padding-top: 1%;
 }
 .container .well .row{
-	padding-top:0; 
+	padding-top:0;
 }
 .containerm .row{
 	width: 100%;
@@ -108,10 +108,10 @@
 .image-preview-input {
     position: relative;
 	overflow: hidden;
-	margin: 0px;    
+	margin: 0px;
     color: #333;
     background-color: #fff;
-    border-color: #ccc;    
+    border-color: #ccc;
 }
 .image-preview-input input[type=file] {
 	position: absolute;
@@ -214,6 +214,15 @@
 	}
 
 
+<<<<<<< HEAD
+ Make things perty
+html {  height: 100%;}
+body { font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; background: url(http://www.jmchristensendesign.com/wp-content/themes/jmcdsn/images/intro_default-background.jpg); color: #fff; height: 100%; padding-top: 2em; text-align: center;}
+h1, h2{ margin: 0; text-transform: uppercase;text-shadow: 0 0 0.5em black;}
+h2 { font-weight: 300}
+input { border: 1px solid #666; background: #333; color: #fff; padding: 0.5em; box-shadow: none; outline: none !important; margin: 1em  auto; text-align: center;}
+*/
+=======
 	.bubble {
 	    position: absolute;
 	    text-align: center;
@@ -271,3 +280,4 @@
 	text-decoration: none;
 	color: white;
 }
+>>>>>>> 80a07925b14db13743efd3e96f0d920ef739a573
