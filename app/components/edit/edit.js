@@ -1,5 +1,5 @@
 (function(){
-	let edit ={
+	var edit ={
 		templateUrl : 'app/components/edit/edit.html'
 	}
 

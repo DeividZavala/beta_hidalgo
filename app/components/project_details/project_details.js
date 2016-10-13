@@ -6,7 +6,7 @@
     }
 
     function projectDetailsController(hidalgoService,$routeParams) {
-        let projectDetails = this;
+        var projectDetails = this;
         
         projectDetails.id = $routeParams.id;
         console.log(projectDetails.id)

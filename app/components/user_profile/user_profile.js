@@ -11,8 +11,8 @@
         $('#myModal').modal('toggle')
 
 
-        let profile = this;
-        let self = this;
+        var profile = this;
+        var self = this;
 
         self.titulon = "Mi Proyecto";
         self.cuerpon = "Descripción de mi proyecto";
