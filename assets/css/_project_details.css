@@ -127,6 +127,29 @@
 .image-preview-input-title {
     margin-left:2px;
 }
+/* Uploading  styles */
+.file-preview-input {
+    position: relative;
+	overflow: hidden;
+	margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    
+}
+.file-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.file-preview-input-title {
+    margin-left:2px;
+}
 /* progress bar*/
 	.meter {
 	    width: 80%; /* edit here to change the progress bar width. Max width for spectrum style is 400px */
@@ -233,7 +256,7 @@
     border-radius: 10px;
     padding: 1% 3% 1% 3%;
     box-shadow: 0 5px 10px rgba(0,0,0,.5);
-    margin: 3%;
+    margin: 3	%;
 
 }
 .osw-btn:active{
