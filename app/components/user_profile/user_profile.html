@@ -1,9 +1,10 @@
+<br>
 <section class="user_profile row">
     <article class="user_menu_container col-md-3">
         <aside class="user_menu">
-            
-                <img class="user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
-           
+
+            <img class="user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
+
             <div class="user_data">
                 <p>
                     <strong>{{$ctrl.usuario.displayName}}</strong>
@@ -14,7 +15,9 @@
 
             </div>
             <div class="list-group col-md-offset-1">
-                <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(1)}" ng-click="$ctrl.panelSetTab(1)">Mis proyectos <span class="badge">{{$ctrl.userProjects.length}}</span></button>
+                <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(1)}" ng-click="$ctrl.panelSetTab(1)">Mis proyectos
+                    <span class="badge">{{$ctrl.userProjects.length}}</span>
+                </button>
                 <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(2)}" ng-click="$ctrl.panelSetTab(2)">Mi Perfil</button>
             </div>
         </aside>
@@ -24,21 +27,20 @@
         <div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects">
             <div class="col-xs-12 col-sm-4 col-lg-3 col-md-4">
                 <div class="thumbnail efectito_y">
-                <img src="http://visitamexico10.galeon.com/hidl900.jpg" alt="...">
-                <div class="caption">
-                    <h3>{{project.fields.title}}</h3>
-                    <p ng-model="$ctrl.cuerpon" class="description">
-                        {{project.fields.eje}}
-                    </p>
-                    <p><a class="btn btn-primary" href="#/project/{{project.pk}}/details"
-                        >Completa tu proyecto</a></p>
-                </div>
+                    <img src="http://visitamexico10.galeon.com/hidl900.jpg" alt="...">
+                    <div class="caption">
+                        <h3>{{project.fields.title}}</h3>
+                        <p ng-model="$ctrl.cuerpon" class="description">
+                            {{project.fields.eje}}
+                        </p>
+                        <p>
+                            <a class="btn btn-primary" href="#/project/{{project.pk}}/details">Completa tu proyecto</a>
+                        </p>
+                    </div>
                 </div>
             </div>
 
-
         </div>
-        
 
         <!-- <div ng-show="$ctrl.checkTab(1)">
             <div class="col-sm-12 col-md-4">
@@ -60,105 +62,73 @@
         <div class="perfil col-md-8" ng-show="$ctrl.checkTab(2)">
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Nombre:</span>
-                <input disabled type="text" class="border-green form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Edad:</span>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "25"'>
+                <input disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
             </div>
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Correo:</span>
-                <input type="text" class="border-green form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "juan@hotmail.com"' value="{{$ctrl.usuario.email}}">
+                <input type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "juan@hotmail.com"' value="{{$ctrl.usuario.email}}">
             </div>
 
             <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Dirección:</span>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "Venta Prieta, Pachuca"'>
-            </div>
-            
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Título:</span>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "Lic. Derecho"'>
+                <span class="input-group-addon" id="basic-addon1">Edad:</span>
+                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... 23'>
             </div>
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Ocupación:</span>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "Abogado"'>
+                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Abogado"'>
             </div>
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Teléfono:</span>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "7712454545"'>
+                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "7712454545"'>
             </div>
 
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Facebook:</span>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "/juanito"'>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Twitter:</span>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "@juanito"'>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Frase personal:</span>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder='ejem:... "Soy muy responsable con mi entorno..."'>
-            </div>
-
-            <button type="button" class="btn btn-success"> Guardar Perfil</button>
+            <button type="button" class="btn btn-success">
+                Guardar Perfil</button>
 
         </div>
 
     </article>
 </section>
 
-
-
-
-
-
 <!-- el modal -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Editar Proyecto</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Imagen:</label>
-            <img style="width:100px;" src="http://de10.com.mx/sites/default/files/field/image/huejutla.jpg" alt="...">
-            <input ng-model="$ctrl.titulon" type="file" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">Titulo:</label>
-            <input ng-model="$ctrl.titulon" type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="control-label">Datos:</label>
-            <textarea ng-model="$ctrl.cuerpon" class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal"> Guardar Cambios</button>
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="exampleModalLabel">Editar Proyecto</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Imagen:</label>
+                        <img style="width:100px;" src="http://de10.com.mx/sites/default/files/field/image/huejutla.jpg" alt="...">
+                        <input ng-model="$ctrl.titulon" type="file" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Titulo:</label>
+                        <input ng-model="$ctrl.titulon" type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="control-label">Datos:</label>
+                        <textarea ng-model="$ctrl.cuerpon" class="form-control" id="message-text"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Guardar Cambios</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-
-
-
-
-
-
 
 <!-- el modal -->
 
@@ -170,7 +140,7 @@
         <h4 class="modal-title" id="exampleModalLabel">Editar Proyecto</h4>
       </div>
       <div style="text-align:center;" class="modal-body">
-        
+
 
         <img src="/assets/images/TROFEO.png">
         <div style="color:blue">
@@ -200,6 +170,7 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal"> Guardar Cambios</button>
       </div> -->
-    </div>
-  </div>
-</div> -->
+</div>
+</div>
+<br>
+</div>

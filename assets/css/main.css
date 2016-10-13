@@ -11,6 +11,8 @@
 
 @import "_project_details.css";
 
+@import "_catalog_detail.css";
+
 @font-face {
   font-family: gobierno;
   font-weight: bold;
@@ -30,4 +32,7 @@ body *{
 }
 .btn:active{
 	background: red;
+}
+h4, h3{
+	color:black;
 }

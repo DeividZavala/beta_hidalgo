@@ -1,0 +1,37 @@
+.centrado{
+	text-align: center;
+}
+.margen-arriba{
+	margin-top: 20px;
+}
+.negro{
+	color:black;
+}
+.izquierda{
+	text-align: left;
+}
+.botoncillos{
+	display: inline-block;
+}
+.botoncillos i{
+	cursor: pointer;
+	margin: 5px;
+	border: 3px solid grey;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 30px;
+	padding-top: 8px;
+	color:grey;
+	transition:all 0.5s ease;
+	background:transparent;
+}
+.botoncillos i:hover{
+	color:white;
+	background:grey;
+}
+.nav-tabs a{
+	color:green;
+}
