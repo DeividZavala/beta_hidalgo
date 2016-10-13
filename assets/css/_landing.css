@@ -446,3 +446,8 @@ span.l-icon-ej{
   color:#333;
   font-size: 1.3em;
 }
+
+.l-icon-ej a {
+
+  cursor: pointer;
+}
