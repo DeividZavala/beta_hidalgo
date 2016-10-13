@@ -49,6 +49,17 @@ hr.color-hr{
 
   border-color: #EF4035;
 }
+hr.color-hr-r{
+
+border-color:#bc1826;
+
+}
+
+hr.color-hr-v{
+
+  border-color:#00703e;
+
+}
 
 hr.color-hr{
       max-width: 300px;
@@ -57,10 +68,24 @@ hr.color-hr{
     margin: 15px auto;
 }
 
+hr.color-hr-v{
+      max-width: 300px;
+    border-top: 3px solid rgba(255, 255, 255, 0.7);;
+    
+    margin: 15px auto;
+}
+
+hr.color-hr-r{
+      max-width: 300px;
+    border-top: 3px solid rgba(255, 255, 255, 0.7);;
+    
+    margin: 15px auto;
+}
+
 
 @media (min-width: 768px) {
 
-  hr.color-hr {
+  hr.color-hr, hr.color-hr-r, hr.color-hr-v {
     max-width: 300px;
     margin: 20px auto;
 }
