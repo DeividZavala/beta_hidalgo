@@ -7,7 +7,10 @@
 
     function projectDetailsController(hidalgoService,$routeParams) {
         let projectDetails = this;
-        
+
+        projectDetails.filter = [];
+
+
         projectDetails.id = $routeParams.id;
         console.log(projectDetails.id)
 
@@ -16,7 +19,7 @@
                 projectDetails.data = response.data[0]
                 console.log(projectDetails.data)
             })
-            //Upload images 
+            //Upload images
         $(document).on('click', '#close-preview', function(){
             $('.image-preview').popover('hide');
             // Hover befor close the preview
@@ -75,32 +78,59 @@
                 reader.readAsDataURL(file);
             });
         });
+
+
+
+        app.filter(‘filtro’, function(){});
+
+        $scope.opciones = [
+    {opcion: 'Gobierno Honesto Cercano y Moderno',  relacion: 'Tasa de Prevalencia de Corrupción (INEGI)'},
+    {opcion: 'Hidalgo Próspero y Dinámico', relacion: 'sfsdsdf'},
+    {opcion: 'Hidalgo Humano e Igualitario', relacion: 'asdasfasf'},
+    {opcion: 'Un Hidalgo Seguro con Justicia y Paz', relacion: 'asdasfasfwrg  '},
+    {opcion: 'Un Hidalgo con Desarrollo Sustentable', relacion: 'saEGwfegeweg'},
+    ];
+
+
+    app.filter(‘filtroOpcion’, function() {
+        return function(input, relacion) {
+            var salida = [];
+            angular.forEach(input, function(opcion) {
+                if (opcion.relacion === relacion) {
+                salida.push(opcion)
+                }
+            })
+            return salida;
+        }
+    });
+
         //finish uploading images
         //progress bar
         /*$('#percent').on('change', function(){
             var val = parseInt($(this).val());
             var $circle = $('#svg #bar');
-             
+
             if (isNaN(val)) {
-              val = 100; 
+              val = 100;
             }
             else{
                var r = $circle.attr('r');
                var c = Math.PI*(r*2);
-              
+
                if (val < 0) { val = 0;}
                if (val > 100) { val = 100;}
-                
+
                var pct = ((100-val)/100)*c;
-                
+
                $circle.css({ strokeDashoffset: pct});
-                
+
                $('#cont').attr('data-pct',val);
             }
         });*/
         //progress bar finishes
 
     }
+
 
     angular
         .module('hidalgo')

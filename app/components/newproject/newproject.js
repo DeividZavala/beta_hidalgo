@@ -13,16 +13,18 @@
 
 
 		self.addProject = function() {
-			
+
 				//obtenemos al usuario si ya está
 	        auth.$onAuthStateChanged(function(firebaseUser) {
 	          self.user = firebaseUser;
 	          if(self.user){
-	            
+
 			        $http.post('http://hidalgo.fixter.org/projects/',{
 						title:self.title,
 						eje:self.eje,
-						uid:self.user.uid
+						uid:self.user.uid,
+						mun:self.mun,
+						prob:self.prob
 
 					})
 					.then(function(response){
@@ -42,7 +44,7 @@
 	            .catch(function(error) {
 	              console.error("Authentication failed:", error);
 	            });
-	            
+
 
 
 	          }
@@ -51,8 +53,8 @@
 
 
 
-			
-			
+
+
 		} //addProject
 
 
