@@ -1,8 +1,60 @@
 <section class="container">
 
-<h1>{{bliss}}</h1>
+<article class="centrado row">
+
+	<div class="well margen-arriba">
+		<h1>{{titulo}}</h1>
+	</div>
+
+	<div class="well row">
+
+		<img class="img-responsive col-sm-5" src="/assets/images/port.jpg">
+		<div class="izquierda col-sm-6 col-sm-offset-1">
+			<h3>Texto</h3>
+			<span>
+				Lorem ipsum dolor sit atmet sit dolor greand fdanrh
+				sdfs sit atmet sit dolor greand fdanrh sdfs
+			</span>	
+			<h4>
+				In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, uam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.
+			</h4>
+			<button class="btn btn-success">Patrocinar este proyecto</button>
+			<button class="btn btn-danger">Reportar este proyecto</button>
+			<div class="botoncillos">
+				<i class="fa fa-heart-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Seguir Proyecto"></i>
+				<i class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Comparte en Facebook"></i>
+				<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Comparte en Twitter"></i>
+				<i class="fa fa-link" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Copia el link"></i>
+
+			</div>
+		</div>
+
+		<div class="well">
+
+			<ul class="nav nav-tabs">
+			  <li role="presentation" ng-class="{active: tab==1}"><a href="" ng-click="tab=1">Objetivo general</a></li>
+			  <li role="presentation" ng-class="{active: tab==2}"><a href="" ng-click="tab=2">Líneas de acción</a></li>
+			  <li role="presentation" ng-class="{active: tab==3}"><a href="" ng-click="tab=3">Programas asociados</a></li>
+			  <li role="presentation" ng-class="{active: tab==4}"><a href="" ng-click="tab=4">Indicadores de gestión</a></li>
+			</ul>
+
+		</div>
+
+		<div class="well">
+			<p ng-show="tab==1">Objetivo general</p>
+			<p ng-show="tab==2">Líneas de acción</p>
+			<p ng-show="tab==3">Programas Asociados</p>
+			<p ng-show="tab==4">Indicadores de gestión</p>
+			{{tab}}
+		</div>
 
 
+
+	</div>
+
+
+
+</article>
 
 
 
