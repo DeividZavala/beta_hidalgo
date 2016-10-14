@@ -206,7 +206,8 @@ Image credits: unsplash.com
 .fade-carousel .slides .slide-1,
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3,
-.fade-carousel .slides .slide-4 {
+.fade-carousel .slides .slide-4,
+.fade-carousel .slides .slide-5 {
   height: 100vh;
   background-size: cover;
   background-position: center center;
@@ -222,7 +223,11 @@ Image credits: unsplash.com
   background-image: url('/assets/images/slider/DJI_0007.JPG');
 }
 .fade-carousel .slides .slide-4 {
+  background-image: url('/assets/images/slider/DJI_0007.JPG');
+}
+.fade-carousel .slides .slide-5 {
   background-image: url('/assets/images/slider/gobernador.jpeg');
+
 }
 
 /********************************/
@@ -454,8 +459,9 @@ div.greenBox p{
 .l-format{
 
 
-  margin-bottom: 160px;
+  margin-bottom: 70px;
 }
+
 .l-articulo{
   padding-top:60px;
 }
@@ -498,4 +504,16 @@ span.l-icon-ej{
 .l-icon-ej a {
 
   cursor: pointer;
+}
+
+.iconito{
+  padding-left:5%;
+  padding-top:5%;
+}
+.container-fluid{
+  padding-left:55px;
+}
+
+#anime{
+    -vendor-animation-iteration-count: infinite;
 }
