@@ -1,6 +1,6 @@
-<section class="catalogo container">
-    <h2 class="titulo">Explora Proyectos</h2>
-    <article class="row filter_container">
+<section class="catalogo_header row">
+    <article class="container filter_container">
+        <h2 class="titulo">Explora Proyectos</h2>
         <div class="input-group input-group-lg col-md-4">
             <span class="input-group-addon" id="sizing-addon1">
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -8,6 +8,9 @@
             <input ng-model="searchField" type="text" class="form-control" placeholder="Buscar" aria-describedby="sizing-addon1">
         </div>
     </article>
+</section>
+
+<section class="catalogo container">
     <article class="row projects_container">
 
         <div ng-repeat="project in $ctrl.items | filter:searchField |orderBy:'-pk'">
@@ -19,10 +22,8 @@
                     <div class="caption">
                         <h3>{{project.fields.title}}</h3>
                         <p ng-model="$ctrl.cuerpon" class="description">
-                            {{project.fields.eje}}
-                            <p>
-                                {{project.fields.objetivo_general}}
-                            </p>
+                            <strong style="display:block;">{{project.fields.eje}}</strong>
+                            {{project.fields.objetivo_general}}
                         </p>
                         <p><a class="btn btn-primary" href="#/catalogo/{{project.pk}}/"
                             >Lee este proyecto</a></p>
