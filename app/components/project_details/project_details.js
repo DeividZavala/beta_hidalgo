@@ -5,8 +5,9 @@
         controller: projectDetailsController
     }
 
-    function projectDetailsController(hidalgoService,$routeParams,$scope) {
+    function projectDetailsController(hidalgoService,$routeParams,$scope,$http) {
         var projectDetails = this;
+        var self = this;
 
 
         projectDetails.id = $routeParams.id;
@@ -20,6 +21,50 @@
                 console.log(projectDetails.data.fields.eje)
                 $scope.proyecto = response.data[0].fields
             })
+
+        //obtenemos al usuario si ya está
+        auth.$onAuthStateChanged(function(firebaseUser) {
+          self.user = firebaseUser;
+          if(self.user){
+            // self.alert = "Bienvenido "+self.user.displayName;
+            // self.cuentale()
+
+          }else{
+            
+          }
+        }); //checklogin
+
+
+        $scope.updateProject = function(){
+
+            $http.post('http://hidalgo.fixter.org/projects/'+response.data[0].pk+'/',{
+                        title:$scope.proyecto.title,
+                        eje:$scope.proyecto.eje,
+                        objetivo_general:$scope.proyecto.objetivo_general,
+                        indicador:$scope.proyecto.indicador,
+                        planteamiento:$scope.proyecto.planteamiento,
+                        problematica:$scope.proyecto.problematica,
+                        municipio:$scope.proyecto.municpio,
+
+                        uid:self.user.uid
+                        // mun:self.mun,
+                        // prob:self.prob,
+                        // slug:self.user.photoURL
+
+            })
+            .then(function(response){
+                console.log("guardado con éxito",response)
+            })
+            .catch(function(err){
+                console.log("Error al guardar",err)
+            });
+
+        }
+
+
+
+
+    //desmadre de la barra de progreso        
     //Upload images
         $(document).on('click', '#close-preview', function(){
             // Hover befor close the preview
@@ -239,7 +284,7 @@
             speed : 500, // Duración de la animación
             style : 'green', // Clase asignada a tu barra de progreso
             bubble : false, // Mostrar el porcentaje debajo de la barra de progreso
-            minPercent : 45, // Límite mínimo para permitir enviar el formulario
+            minPercent : 100, // Límite mínimo para permitir enviar el formulario
             message : 'Llenar los campos !', // Mostrar error
             selector : '.required' // La clase asignada a cada campo
             });

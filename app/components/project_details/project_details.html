@@ -54,13 +54,13 @@
                                     <i class="fa fa-arrows" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-11">
-                                    <select class="form-control required" >
-                                        <option ng-model="proyecto.eje">{{proyecto.eje}}</option>
-                                        <option>Gobierno Honesto Cercano y Moderno</option>
-                                        <option>Hidalgo Próspero y Dinámico</option>
-                                        <option>Hidalgo Humano e Igualitario</option>
-                                        <option>Un Hidalgo Seguro con Justicia y Paz</option>
-                                        <option>Un Hidalgo con Desarrollo Sustentable</option>
+                                    <select ng-model="proyecto.eje" class="form-control required" >
+                                        <option value="{{proyecto.eje}}">{{proyecto.eje}}</option>
+                                        <option value="Gobierno Honesto Cercano y Moderno" >Gobierno Honesto Cercano y Moderno</option>
+                                        <option value="Hidalgo Próspero y Dinámico">Hidalgo Próspero y Dinámico</option>
+                                        <option value="Hidalgo Humano e Igualitario">Hidalgo Humano e Igualitario</option>
+                                        <option value="Un Hidalgo Seguro con Justicia y Paz">Un Hidalgo Seguro con Justicia y Paz</option>
+                                        <option value="Un Hidalgo con Desarrollo Sustentable">Un Hidalgo con Desarrollo Sustentable</option>
 
                                     </select>
 
@@ -86,7 +86,7 @@
                                     <i class="fa fa-flag" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-11">
-                                    <textarea class="form-control required" rows="3"></textarea>
+                                    <textarea ng-model="proyecto.objetivo_general" class="form-control required" rows="3"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                                    <i class="fa fa-check-square" aria-hidden="true"></i>
                                </div>
                                <div class="col-md-11">
-                                   <select class="form-control required" >
+                                   <select ng-model="proyecto.indicador" class="form-control required" >
                                        <option value="">Selecciona una opción</option>
                                        <option  value='Tasa de Prevalencia de Corrupción (INEGI)'>Tasa de Prevalencia de Corrupción (INEGI)</option>
                                        <option  value='Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)'>Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)</option>
@@ -153,7 +153,7 @@
                                    <i class="fa fa-tasks" aria-hidden="true"></i>
                                </div>
                                <div class="col-md-11">
-                                  <textarea class="form-control required" rows="3"></textarea>
+                                  <textarea ng-model="proyecto.planteamiento" class="form-control required" rows="3"></textarea>
                                </div>
                            </div>
                        </div>
@@ -315,8 +315,8 @@
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-11">
-                                  <select required class="form-control input-lg">
-                                      <option value="" ng-model="proyecto.mun">{{proyecto.mun}}</option>
+                                  <select ng-model="proyecto.municipio" required class="form-control input-lg">
+                                      <option value="">{{proyecto.mun}}</option>
                                       <option value="1">Acatlán</option>
                                       <option value="2">Acaxochitlán</option>
                                       <option value="3">Actopan</option>
@@ -417,7 +417,7 @@
 
           <div class="container3">
               
-              <input class="osw-btn" type="submit" value="Guardar">
+              <input class="osw-btn" type="submit" value="Guardar" ng-click="updateProject()">
               <input class="osw-btn subir" name="subir" type="submit" value="Subir Proyecto" disabled>
           </div>
       </form>
