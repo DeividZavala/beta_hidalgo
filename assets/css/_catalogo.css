@@ -1,5 +1,12 @@
-.catalogo .titulo{
+.catalogo_header{
+    background-image: url('/assets/images/slider/DJI_0005.JPG');
+    background-size: cover;
+    background-position: center;
+    height: 25vh
+}
+.catalogo_header .filter_container .titulo{
     text-align: center;
+    color: white;
 }
 .catalogo .projects_container .description{
     overflow: scroll;
