@@ -55,7 +55,16 @@
                 template:`<login-component></login-component>`
             })
             .when('/project/new',{
-                template:`<newpro-component></newpro-component>`
+                template:`<newpro-component></newpro-component>`,
+                resolve: {
+                  // controller will not be loaded until $requireSignIn resolves
+                  // Auth refers to our $firebaseAuth wrapper in the factory below
+                  "currentAuth": ["Auth", function(Auth) {
+                    // $requireSignIn returns a promise so the resolve waits for it to complete
+                    // If the promise is rejected, it will throw a $stateChangeError (see above)
+                    return Auth.$requireSignIn();
+                  }]
+                } //resolve
             })
             .when('/project/:id/edit',{
                 template:`<h1>Editar Proyecto</h1>`

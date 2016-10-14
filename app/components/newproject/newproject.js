@@ -5,8 +5,8 @@
 		controller: newProjectController
 	}
 
-	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth'];
-	function newProjectController(hidalgoService,$http,$firebaseAuth) {
+	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth','$location','$scope'];
+	function newProjectController(hidalgoService,$http,$firebaseAuth,$location,$scope) {
 		var new_project = this;
 		var self = this;
 		var auth = $firebaseAuth();
@@ -30,7 +30,12 @@
 					})
 					.then(function(response){
 						console.log("Guardado con exito",response);
-						window.location.replace('#/profile');
+						$('#badge').modal('show');
+						$("#badge").on('hidden.bs.modal', function () {
+						    $location.path("/profile");
+						    $scope.$apply();
+						});
+						// $location.path('/profile');
 					})
 					.catch(function(err){
 						console.log("Error",err)
