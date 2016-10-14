@@ -5,8 +5,9 @@
         controller: projectDetailsController
     }
 
-    function projectDetailsController(hidalgoService,$routeParams) {
+    function projectDetailsController(hidalgoService,$routeParams,$scope) {
         var projectDetails = this;
+
 
         projectDetails.id = $routeParams.id;
         console.log(projectDetails.id)
@@ -15,8 +16,11 @@
             .then(function (response) {
                 projectDetails.data = response.data[0]
                 console.log(projectDetails.data)
+                console.log(projectDetails.data.fields.title)
+                console.log(projectDetails.data.fields.eje)
+                $scope.proyecto = response.data[0].fields
             })
-            //Upload images
+    //Upload images
         $(document).on('click', '#close-preview', function(){
             // Hover befor close the preview
             $('.image-preview').hover(
@@ -217,7 +221,7 @@
                             var targetInput = mainForm.find("input[type=submit]");
                             targetInput.removeAttr("onclick");
                             if (percentage < st.minPercent) {
-                                targetInput.attr("onclick", "alert('" + st.message + " Minimum percentage: " + st.minPercent + "%'); return false;");
+                                targetInput.attr("onclick", "alert('Por favor completa el Formulario al 100%'); return false;");
                             }
                         }
                     }

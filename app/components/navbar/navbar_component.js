@@ -5,7 +5,7 @@
         controller:navController
     }
 
-    function navController($firebaseAuth){
+    function navController($firebaseAuth,$location){
     	var self = this;
     	var auth = $firebaseAuth();
 
@@ -24,7 +24,7 @@
         }); //checklogin
 
         self.goProfile = function(){
-        	window.location.replace('#/profile');
+        	$location.path('/profile');
         } //go profile
 
         //logout del usuario

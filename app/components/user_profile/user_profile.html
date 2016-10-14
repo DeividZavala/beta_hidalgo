@@ -24,7 +24,17 @@
     </article>
     <article class="user_option col-md-9 col-sm-12">
 
-        <div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects">
+<!--             <div class="contenedor"> 
+   
+                <div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects |orderBy:'-pk'" class="well well-sm info row">
+                    <img syle="float:left" class="img-mini" src="/assets/images/go.jpg">
+                    <h4 style="float:center" class="col-ms-4 en-linea">{{project.fields.title}}</h4>
+                    <a style="float:right" class="col-ms-4 col-ms-offset-4 btn btn-primary" href="#/project/{{project.pk}}/details">Completa tu proyecto</a>
+                </div>
+
+            </div> -->
+
+<div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects |orderBy:'-pk'">
             <div class="col-xs-12 col-sm-4 col-lg-3 col-md-4">
                 <div class="thumbnail efectito_y">
                     <img src="http://visitamexico10.galeon.com/hidl900.jpg" alt="...">
@@ -39,8 +49,11 @@
                     </div>
                 </div>
             </div>
+</div>
 
-        </div>
+           
+      
+
 
         <!-- <div ng-show="$ctrl.checkTab(1)">
             <div class="col-sm-12 col-md-4">

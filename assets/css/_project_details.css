@@ -39,6 +39,9 @@
 	background-color: #f5f5f5;
 	padding: 1%;
 }
+.containerm .container3 .row{
+	margin: 2%;
+}
 .container2{
 	width: 85%;
 	padding: 1% 0 3% 0;
@@ -274,4 +277,12 @@
 }
 .osw-btn:visited{
 	border-color: #E73C4E;
+}
+.osw-btn:disabled{
+	background-color: rgba(231, 60, 78, .5);
+}
+.osw-btn[disabled]:hover{
+	color: white;
+	text-shadow: 0px 0px  rgba(255,255,255,1);
+
 }

@@ -36,6 +36,7 @@
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   font-weight: 900;
 
+
 }
 .l-titulo-trans{
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -48,6 +49,17 @@ hr.color-hr{
 
   border-color: #EF4035;
 }
+hr.color-hr-r{
+
+border-color:#bc1826;
+
+}
+
+hr.color-hr-v{
+
+  border-color:#00703e;
+
+}
 
 hr.color-hr{
       max-width: 300px;
@@ -56,10 +68,24 @@ hr.color-hr{
     margin: 15px auto;
 }
 
+hr.color-hr-v{
+      max-width: 300px;
+    border-top: 3px solid rgba(255, 255, 255, 0.7);;
+    
+    margin: 15px auto;
+}
+
+hr.color-hr-r{
+      max-width: 300px;
+    border-top: 3px solid rgba(255, 255, 255, 0.7);;
+    
+    margin: 15px auto;
+}
+
 
 @media (min-width: 768px) {
 
-  hr.color-hr {
+  hr.color-hr, hr.color-hr-r, hr.color-hr-v {
     max-width: 300px;
     margin: 20px auto;
 }
@@ -123,7 +149,7 @@ Image credits: unsplash.com
 .hero h1 {
    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
   font-weight: 900;
-    font-size: 3em;
+    font-size: 5em;
   
     margin: 0;
     padding: 0;
@@ -190,13 +216,13 @@ Image credits: unsplash.com
   background-image: url('/assets/images/background_oficial.png');
 }
 .fade-carousel .slides .slide-2 {
-  background-image: url('https://javiernavaquintanar.files.wordpress.com/2013/01/tulas.jpg');
+  background-image: url('/assets/images/slider/DJI_0005.JPG');
 }
 .fade-carousel .slides .slide-3 {
-  background-image: url('http://unhidalgo.com/wp-content/uploads/2009/11/2054594688_4e96369e45.jpg');
+  background-image: url('/assets/images/slider/DJI_0007.JPG');
 }
 .fade-carousel .slides .slide-4 {
-  background-image: url('https://pbs.twimg.com/profile_banners/77372998/1474683872/1500x500');
+  background-image: url('/assets/images/slider/gobernador.jpeg');
 }
 
 /********************************/
@@ -221,11 +247,33 @@ Image credits: unsplash.com
 	background-size:cover;
 
 }
+
+@media(max-width: 980px){
+  .portada{
+    height:400px;
+  }
+
+    .hero h1 {
+ 
+      font-size: 3em;
+    
+     
+  }
+}
 @media(max-width: 600px){
 	.portada{
 		height:400px;
 	}
+
+    .hero h1 {
+ 
+      font-size: 3em;
+    
+     
+  }
 }
+
+
 
 .greenBox{
 	height: 100%;
@@ -445,4 +493,9 @@ span.l-icon-ej{
   font-weight: 900;
   color:#333;
   font-size: 1.3em;
+}
+
+.l-icon-ej a {
+
+  cursor: pointer;
 }
