@@ -53,8 +53,8 @@
             // default to first page
             currentPage = currentPage || 1;
 
-            // default page size is 10
-            pageSize = pageSize || 10;
+            // default page size is 9
+            pageSize = pageSize || 9;
 
             // calculate total pages
             var totalPages = Math.ceil(totalItems / pageSize);
