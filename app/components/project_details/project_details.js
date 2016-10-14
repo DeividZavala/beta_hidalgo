@@ -5,9 +5,11 @@
         controller: projectDetailsController
     }
 
-    function projectDetailsController(hidalgoService,$routeParams,$scope,$http) {
+    function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth) {
         var projectDetails = this;
         var self = this;
+
+        console.log("entre al controller");
 
 
         projectDetails.id = $routeParams.id;
@@ -20,9 +22,11 @@
                 console.log(projectDetails.data.fields.title)
                 console.log(projectDetails.data.fields.eje)
                 $scope.proyecto = response.data[0].fields
+                $scope.proyecto.pk = response.data[0].pk
             })
 
         //obtenemos al usuario si ya está
+        var auth = $firebaseAuth();
         auth.$onAuthStateChanged(function(firebaseUser) {
           self.user = firebaseUser;
           if(self.user){
@@ -36,21 +40,24 @@
 
 
         $scope.updateProject = function(){
-
-            $http.post('http://hidalgo.fixter.org/projects/'+response.data[0].pk+'/',{
-                        title:$scope.proyecto.title,
-                        eje:$scope.proyecto.eje,
-                        objetivo_general:$scope.proyecto.objetivo_general,
-                        indicador:$scope.proyecto.indicador,
-                        planteamiento:$scope.proyecto.planteamiento,
-                        problematica:$scope.proyecto.problematica,
-                        municipio:$scope.proyecto.municpio,
-
-                        uid:self.user.uid
+            console.log($scope.proyecto.objetivo_general)
+            $http({
+                method:'POST',
+                url:'http://localhost:8000/projects/'+$scope.proyecto.pk+'/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body:    {
+                    'title':$scope.proyecto.title,
+                    'eje':$scope.proyecto.eje,
+                    'objetivo_general':$scope.proyecto.objetivo_general,
+                    'indicador':$scope.proyecto.indicador,
+                    'planteamiento':$scope.proyecto.planteamiento,
+                    'problematica':$scope.proyecto.problematica,
+                    'municipio':$scope.proyecto.municpio,
+                    'uid':self.user.uid
                         // mun:self.mun,
                         // prob:self.prob,
                         // slug:self.user.photoURL
-
+                    }
             })
             .then(function(response){
                 console.log("guardado con éxito",response)
@@ -266,7 +273,7 @@
                             var targetInput = mainForm.find("input[type=submit]");
                             targetInput.removeAttr("onclick");
                             if (percentage < st.minPercent) {
-                                targetInput.attr("onclick", "alert('Por favor completa el Formulario al 100%'); return false;");
+                                // targetInput.attr("onclick", "alert('Por favor completa el Formulario al 100%'); return false;");
                             }
                             if (percentage>st.minPercent) {
                                 $(".subir").prop("disabled", false);
