@@ -10,7 +10,7 @@
     </article>
     <article class="row projects_container">
 
-        <div ng-repeat="project in $ctrl.projects | filter:searchField | limitTo : 12:$ctrl.inicio |orderBy:'-pk'">
+        <div ng-repeat="project in $ctrl.items | filter:searchField |orderBy:'-pk'">
             <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
                 <div class="thumbnail efectito_y">
                     <a href="#/catalogo/{{project.pk}}/">
