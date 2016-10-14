@@ -5,7 +5,7 @@
         controller: projectDetailsController
     }
 
-    function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth) {
+    function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth,$httpParamSerializerJQLike) {
         var projectDetails = this;
         var self = this;
 
@@ -41,23 +41,24 @@
 
         $scope.updateProject = function(){
             console.log($scope.proyecto.objetivo_general)
-            $http({
-                method:'POST',
-                url:'http://localhost:8000/projects/'+$scope.proyecto.pk+'/',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body:    {
+            var objeto = {
                     'title':$scope.proyecto.title,
                     'eje':$scope.proyecto.eje,
                     'objetivo_general':$scope.proyecto.objetivo_general,
                     'indicador':$scope.proyecto.indicador,
                     'planteamiento':$scope.proyecto.planteamiento,
                     'problematica':$scope.proyecto.problematica,
-                    'municipio':$scope.proyecto.municpio,
+                    'municipio':$scope.proyecto.municipio,
                     'uid':self.user.uid
                         // mun:self.mun,
                         // prob:self.prob,
                         // slug:self.user.photoURL
                     }
+            $http({
+                method:'POST',
+                url:'http://hidalgo.fixter.org/projects/'+$scope.proyecto.pk+'/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $httpParamSerializerJQLike(objeto)   
             })
             .then(function(response){
                 console.log("guardado con éxito",response)
@@ -275,7 +276,7 @@
                             if (percentage < st.minPercent) {
                                 // targetInput.attr("onclick", "alert('Por favor completa el Formulario al 100%'); return false;");
                             }
-                            if (percentage>st.minPercent) {
+                            if (percentage==st.minPercent) {
                                 $(".subir").prop("disabled", false);
                             }
                             else{
