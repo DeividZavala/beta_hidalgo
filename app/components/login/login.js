@@ -5,7 +5,7 @@
         controller:LoginController
     }
     // LoginController.$inject = ['$firebaseAuth'];
-    function LoginController($firebaseAuth,$timeout){
+    function LoginController($firebaseAuth,$timeout,$location){
 
         var auth = $firebaseAuth();
         var self = this;
@@ -16,10 +16,10 @@
           self.user = firebaseUser;
           if(self.user){
             // self.alert = "Bienvenido "+self.user.displayName;
-            self.cuentale()
+            // self.cuentale()
 
           }else{
-            console.log(self.user);
+            
           }
         }); //checklogin
 
@@ -32,7 +32,9 @@
             auth.$signInWithPopup(provider)
             .then(function(result) {
               console.log("Signed in as:", result.user.uid);
-                self.alert = "Bienvenido "+result.user.displayName;
+              self.alert = "Bienvenido "+result.user.displayName;
+              $location.path('/project/new');
+
             })
             .catch(function(error) {
               console.error("Authentication failed:", error);
@@ -70,12 +72,12 @@
         } //createUser
 
         self.cuentale = function(){
-            self.timeInMs = 7;
+            self.timeInMs = 3;
   
             var countDown = function() {
                 self.timeInMs-= 1;
                 if(self.timeInMs<1){
-                window.location.replace('#/profile');
+                $location.path('/profile');
             }
                 $timeout(countDown,1000);
             }
