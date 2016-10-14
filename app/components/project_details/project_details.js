@@ -223,6 +223,12 @@
                             if (percentage < st.minPercent) {
                                 targetInput.attr("onclick", "alert('Por favor completa el Formulario al 100%'); return false;");
                             }
+                            if (percentage>st.minPercent) {
+                                $(".subir").prop("disabled", false);
+                            }
+                            else{
+                                $(".subir").prop("disabled", true);
+                            }
                         }
                     }
                 });
