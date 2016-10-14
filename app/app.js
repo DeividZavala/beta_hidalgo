@@ -1,4 +1,4 @@
 (function () {
     angular
-        .module('hidalgo',['ngRoute','firebase']);
+        .module('hidalgo',['ngRoute','firebase','lr.upload']);
 })();

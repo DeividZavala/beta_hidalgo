@@ -5,8 +5,8 @@
 		controller: newProjectController
 	}
 
-	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth','$location','$scope'];
-	function newProjectController(hidalgoService,$http,$firebaseAuth,$location,$scope) {
+	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth','$location','$scope','$httpParamSerializerJQLike'];
+	function newProjectController(hidalgoService,$http,$firebaseAuth,$location,$scope,$httpParamSerializerJQLike) {
 		var new_project = this;
 		var self = this;
 		var auth = $firebaseAuth();
@@ -17,17 +17,27 @@
 				//obtenemos al usuario si ya está
 	        auth.$onAuthStateChanged(function(firebaseUser) {
 	          self.user = firebaseUser;
-	          if(self.user){
 
-			        $http.post('http://hidalgo.fixter.org/projects/',{
+	          var objeto = {
 						title:self.title,
 						eje:self.eje,
 						uid:self.user.uid,
-						// mun:self.mun,
-						// prob:self.prob,
+						municipio:self.mun,
+						problematica:self.prob,
 						// slug:self.user.photoURL
+						};
 
-					})
+	          if(self.user){
+
+			        $http({
+		                method:'POST',
+		                url:'http://hidalgo.fixter.org/projects/',
+		                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+		                // headers: { 'Content-Type': 'multipart/form-data' },
+		                // data: $httpParamSerializerJQLike(objeto),
+		                data:$httpParamSerializerJQLike(objeto),
+		                // file:self.theFile
+		            })
 					.then(function(response){
 						console.log("Guardado con exito",response);
 						$('#badge').modal('show');

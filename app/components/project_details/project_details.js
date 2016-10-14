@@ -38,6 +38,8 @@
           }
         }); //checklogin
 
+        var fd = new FormData();
+        fd.append('file', self.theFile);
 
         $scope.updateProject = function(){
             console.log($scope.proyecto.objetivo_general)
@@ -49,16 +51,25 @@
                     'planteamiento':$scope.proyecto.planteamiento,
                     'problematica':$scope.proyecto.problematica,
                     'municipio':$scope.proyecto.municipio,
-                    'uid':self.user.uid
+                    'uid':self.user.uid,
+                    'file':self.theFile
+                    // 'img':self.theFile
                         // mun:self.mun,
                         // prob:self.prob,
                         // slug:self.user.photoURL
                     }
+
+            var formData = new FormData();
+            formData.append('file',self.theFile);
+
             $http({
                 method:'POST',
                 url:'http://hidalgo.fixter.org/projects/'+$scope.proyecto.pk+'/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                data: $httpParamSerializerJQLike(objeto)   
+                // headers: { 'Content-Type': 'multipart/form-data' },
+                // data: $httpParamSerializerJQLike(objeto),
+                data:$httpParamSerializerJQLike(objeto),
+                file:self.theFile
             })
             .then(function(response){
                 console.log("guardado con éxito",response)
@@ -67,7 +78,10 @@
                 console.log("Error al guardar",err)
             });
 
-        }
+        } //updateProject
+
+
+        // projectDetailsController.prototype.$scope = $scope;
 
 
 
@@ -305,3 +319,14 @@
         .module('hidalgo')
         .component('projectDetailsComponent',details);
 })();
+
+
+
+
+  var setFile =  function(element){
+    // var $scope = this.$scope;
+    // self.$apply(function() {
+      self.theFile = element.files[0];
+      console.log(self.theFile)
+    // });
+  }

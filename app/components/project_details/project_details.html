@@ -210,6 +210,7 @@
                   <div class="col-xs-6 col-md-3">
                       <h3 class="name">Imágen</h3>
                       <p>Sube una imágen relacionada</p>
+                      <h1>{{theFile.name}}</h1>
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-9">
                       <div class="well">
@@ -229,7 +230,7 @@
                                           <div class="btn btn-default image-preview-input">
                                               <span class="foldercito glyphicon glyphicon-folder-open"></span>
                                               <span class="image-preview-input-title">Buscar</span>
-                                              <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                              <input onchange="setFile(this)" type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
                                           </div>
                                       </span>
                                   </div><!-- /input-group image-preview [TO HERE]-->
@@ -425,3 +426,7 @@
 
   </div>
 </div>
+
+<script type="text/javascript">
+
+</script>
