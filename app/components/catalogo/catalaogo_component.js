@@ -13,6 +13,11 @@
                 self.projects = response.data;
                 console.log(self.projects);
             })
+
+            self.inicio = 0;
+            self.pagination = function () {
+                self.inicio += 12
+            }
     }
 
 
