@@ -12,7 +12,7 @@
   text-align: center;
 }
 .slider-text{
-padding-top: 30%;
+padding-top: 20%;
 font-size: 5rem;
 color:white;
 }
@@ -546,4 +546,10 @@ span.l-icon-ej{
 }
 .btn_verde{
   background: #71b631;
+}
+.slider-img{
+  animation-duration: 4s;
+  animation-delay: 23s;
+  -webkit-animation-delay: 23s;
+  animation-iteration-count: infinite;
 }
