@@ -533,10 +533,8 @@ span.l-icon-ej{
   padding-left:5%;
   padding-top:5%;
 }
-/*.container-fluid{
-  padding-left:55px;
-}*/
+.textos{
+  font-family: 'Comfortaa', cursive;
 
-#anime{
-    -vendor-animation-iteration-count: infinite;
 }
+
