@@ -348,6 +348,7 @@
                   <div class="col-xs-6 col-md-3">
                       <h3 class="name">Imagen</h3>
                       <p>Sube una imagen acorde al proyecto</p>
+                      
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-9">
                       <div class="well">
@@ -357,17 +358,22 @@
                               </div>
                               <div class="col-md-11">
                                   <div class="input-group image-preview">
-                                      <input type="text" class="form-control required image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                      <input type="text" class="form-control required image-preview-filename" disabled="disabled" value="{{proyecto.laRef}}"> <!-- don't give a name === doesn't send on POST/GET -->
                                       <span class="input-group-btn">
                                           <!-- image-preview-clear button -->
                                           <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
                                               <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
                                           </button>
                                           <!-- image-preview-input -->
-                                          <div class="btn btn-default image-preview-input">
+                                          <div ng-hide="proyecto.imagen"  class="btn btn-default image-preview-input">
                                               <span class="foldercito glyphicon glyphicon-folder-open"></span>
                                               <span class="image-preview-input-title">Buscar</span>
-                                              <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                              <input id="laimg" onchange="setFile(this)" type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                          </div>
+                                          <div ng-show="proyecto.imagen">
+                                              <div ng-click="quitarFoto()" class="btn btn-danger">
+                                                  X Quitar Foto
+                                              </div>
                                           </div>
                                       </span>
                                   </div><!-- /input-group image-preview [TO HERE]-->
@@ -375,6 +381,9 @@
                           </div>
                       </div>
                   </div>
+                  <div class="col-md-12">
+                    <img ng-show="proyecto.imagen" style="width:100px" ng-src="{{proyecto.imagen}}">
+                  </div>  
               </div>
 
             </div>
@@ -404,7 +413,7 @@
                                           <div class="btn btn-default file-preview-input">
                                               <span class="foldercito glyphicon glyphicon-folder-open"></span>
                                               <span class="file-preview-input-title">Buscar</span>
-                                              <input class="required" type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
+                                              <input onchange="uploadDoc(this)" class="required" type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
                                           </div>
                                       </span>
                                   </div>
@@ -435,3 +444,7 @@
 <script type="text/javascript">
 
 </script>
+
+
+<input type="hidden" id="imgLink">
+<input type="hidden" id="fileLink">

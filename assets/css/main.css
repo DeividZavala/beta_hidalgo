@@ -23,7 +23,7 @@
 
 body *{
 
-  font-family: gobierno, tahoma, sans-serif;
+ /* font-family: gobierno, tahoma, sans-serif;*/
 }
 .btn:active{
 	background: red;
