@@ -36,19 +36,19 @@
              <nav ng-if="$ctrl.pager.pages.length" aria-label="Page navigation">
                 <div class="pagination_container">
                     <ul  class="pagination">
-                        <li ng-class="{disabled:$ctrl.pager.currentPage === 1}">
+                        <li ng-class="{disabled:$ctrl.pager.currentPage === 1}" class="page">
                             <a ng-click="$ctrl.setPage(1)">First</a>
                         </li>
-                        <li ng-class="{disabled:$ctrl.pager.currentPage === 1}">
+                        <li ng-class="{disabled:$ctrl.pager.currentPage === 1}" class="page">
                             <a ng-click="$ctrl.setPage($ctrl.pager.currentPage - 1)">Previous</a>
                         </li>
-                        <li ng-repeat="page in $ctrl.pager.pages" ng-class="{active:$ctrl.pager.currentPage === page}">
+                        <li ng-repeat="page in $ctrl.pager.pages" ng-class="{active:$ctrl.pager.currentPage === page}" class="page">
                             <a ng-click="$ctrl.setPage(page)">{{page}}</a>
                         </li>               
-                        <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}">
+                        <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}" class="page">
                             <a ng-click="$ctrl.setPage($ctrl.pager.currentPage + 1)">Next</a>
                         </li>
-                        <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}">
+                        <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}" class="page">
                             <a ng-click="$ctrl.setPage($ctrl.pager.totalPages)">Last</a>
                         </li>
                     </ul>

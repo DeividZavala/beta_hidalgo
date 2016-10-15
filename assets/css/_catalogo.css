@@ -2,7 +2,8 @@
     background-image: url('/assets/images/slider/DJI_0005.JPG');
     background-size: cover;
     background-position: center;
-    height: 25vh
+    height: 25vh;
+    margin-bottom: 3%;
 }
 .catalogo_header .filter_container .titulo{
     text-align: center;
@@ -14,4 +15,7 @@
 }
 .pagination_container{
     text-align: center;
+}
+.page{
+    cursor: pointer;
 }
