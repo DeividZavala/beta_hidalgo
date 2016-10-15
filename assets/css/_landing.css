@@ -548,6 +548,7 @@ span.l-icon-ej{
   background: #71b631;
 }
 .slider-img{
+  margin-top: 5%;
   animation-duration: 4s;
   animation-delay: 23s;
   -webkit-animation-delay: 23s;

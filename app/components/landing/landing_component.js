@@ -12,7 +12,7 @@
 		
 		  $(".owl-carousel").owlCarousel({
 		  	navigation:false,
-		  	slideSpeed:300,
+		  	slideSpeed:250,
 		  	paginationSpeed:400,
 		  	singleItem:true,
 		  	autoPlay:true,
