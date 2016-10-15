@@ -18,10 +18,11 @@
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.1.1",
+    "jquery": "jQuery#1.7.1",
     "components-font-awesome": "^4.6.3",
     "angularfire": "^2.0.2",
     "underscore": "^1.8.3",
-    "angular-upload": "^1.0.12"
+    "angular-upload": "^1.0.12",
+    "jQuery": "^3.1.1"
   }
 }

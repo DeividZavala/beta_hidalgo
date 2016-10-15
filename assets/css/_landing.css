@@ -1,4 +1,27 @@
+#owl-demo .item img{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
 
+.slider{
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.slider-text{
+padding-top: 30%;
+font-size: 5rem;
+color:white;
+}
+
+.slider-text {
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
 
 
 .iconosLanding{
