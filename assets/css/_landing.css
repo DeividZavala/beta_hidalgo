@@ -13,7 +13,7 @@
 }
 .slider-text{
 padding-top: 20%;
-font-size: 5rem;
+font-size: 4rem;
 color:white;
 }
 
@@ -553,4 +553,13 @@ span.l-icon-ej{
   animation-delay: 23s;
   -webkit-animation-delay: 23s;
   animation-iteration-count: infinite;
+}
+
+@media (max-width:425px){
+  .slider-img{
+    margin-top: 10%;
+  }
+  .slider-text{
+    padding-top: 40%;
+  }
 }
