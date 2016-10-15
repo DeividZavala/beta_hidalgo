@@ -1,3 +1,7 @@
+<div style="text-align:center" ng-show="mensaje.success" class="alert alert-success" role="alert">
+        {{mensaje.success}}
+    </div>
+
 
 
 <div class="containerm">
@@ -203,84 +207,7 @@
               </div>
 
             </div>
-<<<<<<< HEAD
-            <!-- Imagen del proyecto-->
-            <div class="container3">
 
-              <div class="row">
-                  <div class="col-xs-6 col-md-3">
-                      <h3 class="name">Imágen</h3>
-                      <p>Sube una imágen relacionada</p>
-                      <h1>{{theFile.name}}</h1>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-9">
-                      <div class="well">
-                          <div class="row">
-                              <div class="col-md-1">
-                                  <i class="fa fa-picture-o" aria-hidden="true"></i>
-                              </div>
-                              <div class="col-md-11">
-                                  <div class="input-group image-preview">
-                                      <input type="text" class="form-control required image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                      <span class="input-group-btn">
-                                          <!-- image-preview-clear button -->
-                                          <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                              <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
-                                          </button>
-                                          <!-- image-preview-input -->
-                                          <div class="btn btn-default image-preview-input">
-                                              <span class="foldercito glyphicon glyphicon-folder-open"></span>
-                                              <span class="image-preview-input-title">Buscar</span>
-                                              <input onchange="setFile(this)" type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
-                                          </div>
-                                      </span>
-                                  </div><!-- /input-group image-preview [TO HERE]-->
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-            </div>
-            <!-- Anexo-->
-            <div class="container3">
-
-              <div class="row">
-                  <div class="col-xs-6 col-md-3">
-                      <h3 class="name">Anexo</h3>
-                      <p>Sube archivos anexos del proyecto</p>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-9">
-                      <div class="well">
-                          <div class="row">
-                              <div class="col-md-1">
-                                  <i class="fa fa-file-word-o" aria-hidden="true"></i>
-                              </div>
-                              <div class="col-md-11">
-                                  <div class="input-group file-preview">
-                                      <input type="text" class="form-control file-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                      <span class="input-group-btn">
-                                          <!-- file-preview-clear button -->
-                                          <button type="button" class="btn btn-default file-preview-clear" style="display:none;">
-                                              <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
-                                          </button>
-                                          <!-- file-preview-input -->
-                                          <div class="btn btn-default file-preview-input">
-                                              <span class="foldercito glyphicon glyphicon-folder-open"></span>
-                                              <span class="file-preview-input-title">Buscar</span>
-                                              <input class="required" type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
-                                          </div>
-                                      </span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-            </div>
-=======
->>>>>>> 1e0f5283ce00c939a28b43430082f699b07260a2
             <!-- Problemática-->
             <div class="container3">
 

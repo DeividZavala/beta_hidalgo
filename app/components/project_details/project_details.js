@@ -73,6 +73,9 @@
             })
             .then(function(response){
                 console.log("guardado con éxito",response)
+                $scope.mensaje = {};
+                $scope.mensaje.success = "Tu Proyecto fué guardado con éxito";
+                $('body').scrollTop( 0 );
             })
             .catch(function(err){
                 console.log("Error al guardar",err)
