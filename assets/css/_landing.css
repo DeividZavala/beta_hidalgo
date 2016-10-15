@@ -12,8 +12,8 @@
   text-align: center;
 }
 .slider-text{
-padding-top: 30%;
-font-size: 5rem;
+padding-top: 20%;
+font-size: 4rem;
 color:white;
 }
 
@@ -537,4 +537,29 @@ span.l-icon-ej{
   font-family: 'Comfortaa', cursive;
 
 }
+.btn_landing a{
+  color: white ;
+  text-decoration: none;
+}
+.btn_rojo{
+  background: #E73C4E;
+}
+.btn_verde{
+  background: #71b631;
+}
+.slider-img{
+  margin-top: 5%;
+  animation-duration: 4s;
+  animation-delay: 23s;
+  -webkit-animation-delay: 23s;
+  animation-iteration-count: infinite;
+}
 
+@media (max-width:425px){
+  .slider-img{
+    margin-top: 10%;
+  }
+  .slider-text{
+    padding-top: 40%;
+  }
+}
