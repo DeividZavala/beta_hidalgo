@@ -9,6 +9,9 @@
         var projectDetails = this;
         var self = this;
 
+        //firebase bucket
+        
+
         console.log("entre al controller");
 
 
@@ -42,7 +45,8 @@
         // fd.append('file', self.theFile);
 
         $scope.updateProject = function(){
-            console.log($scope.proyecto.objetivo_general)
+            console.log($('#link').val());
+            self.downloadURL = $('#link').val();
             var objeto = {
                     'title':$scope.proyecto.title,
                     'eje':$scope.proyecto.eje,
@@ -52,7 +56,7 @@
                     'problematica':$scope.proyecto.problematica,
                     'municipio':$scope.proyecto.municipio,
                     'uid':self.user.uid,
-                    'file':self.theFile
+                    'imagen':self.downloadURL
                     // 'img':self.theFile
                         // mun:self.mun,
                         // prob:self.prob,
@@ -62,7 +66,7 @@
 
             $http({
                 method:'POST',
-                url:'http://hidalgo.fixter.org/projects/'+$scope.proyecto.pk+'/',
+                url:'http://localhost:8000/projects/'+$scope.proyecto.pk+'/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // headers: { 'Content-Type': 'multipart/form-data' },
                 // data: $httpParamSerializerJQLike(objeto),
@@ -81,10 +85,7 @@
 
         } //updateProject
 
-        $scope.uploadFile = function(){
-            var storage = firebase.storage();
-            console.log(storage);
-        }
+
 
 
         // projectDetailsController.prototype.$scope = $scope;
@@ -327,12 +328,29 @@
 })();
 
 
-
-
+//firebase bucket
+var ref = firebase.storage().ref().child('projects');
   var setFile =  function(element){
     // var $scope = this.$scope;
     // self.$apply(function() {
       self.theFile = element.files[0];
+      uploadFile(self.theFile);
       console.log(self.theFile)
     // });
   }
+
+  var uploadFile = function(){
+    console.log("llego",self.theFile)
+    var uploadTask = ref.child('images/'+self.theFile.name)
+    .put(self.theFile);
+    uploadTask.on('state_changed',function(snap){
+        console.log(snap);
+    },
+    function(err){
+        console.log(err)
+    },
+    function(){
+        var downloadURL = uploadTask.snapshot.downloadURL;
+        $('#link').val(downloadURL);
+    });
+}
