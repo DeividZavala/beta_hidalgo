@@ -537,4 +537,13 @@ span.l-icon-ej{
   font-family: 'Comfortaa', cursive;
 
 }
-
+.btn_landing a{
+  color: white ;
+  text-decoration: none;
+}
+.btn_rojo{
+  background: #E73C4E;
+}
+.btn_verde{
+  background: #71b631;
+}
