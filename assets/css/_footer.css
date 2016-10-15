@@ -15,5 +15,20 @@
 
 .footer_container{
 	padding-top: 5%;
-	margin-right: 0 !important;
+	/*margin-right: 0 !important;*/
+}
+.redes{
+	padding-top: 20%;
+}
+.redes a{
+	color:white;
+}
+.redes i{
+	color:white;
+	font-size: 4rem;
+	margin: 2rem;
+	transition:all 0.3s ease;
+}
+.redes i:hover{
+	color:grey;
 }
