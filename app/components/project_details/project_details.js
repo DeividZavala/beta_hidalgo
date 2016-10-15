@@ -38,8 +38,8 @@
           }
         }); //checklogin
 
-        var fd = new FormData();
-        fd.append('file', self.theFile);
+        // var fd = new FormData();
+        // fd.append('file', self.theFile);
 
         $scope.updateProject = function(){
             console.log($scope.proyecto.objetivo_general)
@@ -59,8 +59,6 @@
                         // slug:self.user.photoURL
                     }
 
-            var formData = new FormData();
-            formData.append('file',self.theFile);
 
             $http({
                 method:'POST',
@@ -82,6 +80,11 @@
             });
 
         } //updateProject
+
+        $scope.uploadFile = function(){
+            var storage = firebase.storage();
+            console.log(storage);
+        }
 
 
         // projectDetailsController.prototype.$scope = $scope;
