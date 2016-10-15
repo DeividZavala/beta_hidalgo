@@ -23,7 +23,7 @@
                 projectDetails.data = response.data[0]
                 console.log(projectDetails.data)
                 console.log(projectDetails.data.fields.title)
-                console.log(projectDetails.data.fields.eje)
+                console.log("la imagen",projectDetails.data.fields.imagen)
                 $scope.proyecto = response.data[0].fields
                 $scope.proyecto.pk = response.data[0].pk
             })
@@ -44,9 +44,29 @@
         // var fd = new FormData();
         // fd.append('file', self.theFile);
 
+        $scope.quitarFoto = function(){
+            $scope.proyecto.imagen = null;
+            var referencia = firebase.storage().ref().child('projects');
+            referencia.child('images/'+$scope.proyecto.laRef).delete()
+            .then(function(res){
+                console.log('exito borrando: ',res)
+            })
+            .catch(function(err){
+                console.log("error",err);
+            });
+
+        }
+
+
         $scope.updateProject = function(){
-            console.log($('#link').val());
-            self.downloadURL = $('#link').val();
+            if ($scope.proyecto.imagen==""){
+            console.log("en controller link del dom: ",$('#imgLink').val());
+            self.downloadURL = $('#imgLink').val();
+            self.laRef = $('#imgLink').attr('ref');
+        }else{
+            self.downloadURL = $scope.proyecto.imagen;   
+        }
+            // self.downloadURL = 
             var objeto = {
                     'title':$scope.proyecto.title,
                     'eje':$scope.proyecto.eje,
@@ -56,7 +76,9 @@
                     'problematica':$scope.proyecto.problematica,
                     'municipio':$scope.proyecto.municipio,
                     'uid':self.user.uid,
-                    'imagen':self.downloadURL
+                    'imagen':self.downloadURL,
+                    'laRef':self.laRef,
+                    'file':self.fileLink
                     // 'img':self.theFile
                         // mun:self.mun,
                         // prob:self.prob,
@@ -66,7 +88,7 @@
 
             $http({
                 method:'POST',
-                url:'http://localhost:8000/projects/'+$scope.proyecto.pk+'/',
+                url:'http://hidalgo.fixter.org/projects/'+$scope.proyecto.pk+'/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // headers: { 'Content-Type': 'multipart/form-data' },
                 // data: $httpParamSerializerJQLike(objeto),
@@ -335,7 +357,7 @@ var ref = firebase.storage().ref().child('projects');
     // self.$apply(function() {
       self.theFile = element.files[0];
       uploadFile(self.theFile);
-      console.log(self.theFile)
+      console.log("el archivo como tal: ",self.theFile)
     // });
   }
 
@@ -351,6 +373,28 @@ var ref = firebase.storage().ref().child('projects');
     },
     function(){
         var downloadURL = uploadTask.snapshot.downloadURL;
-        $('#link').val(downloadURL);
+        $('#imgLink').val(downloadURL);
+        $('#imgLink').attr('ref',self.theFile.name);
+        console.log("la referencia: ",$('#imgLink').attr('ref'));
+    });
+}
+
+  var uploadDoc = function(element){
+    self.theFile = element.files[0];
+    uploadFile(self.theFile);
+    console.log("el archivo como tal: ",self.theFile)
+    console.log("llego",self.theFile)
+    var uploadTask = ref.child('images/'+self.theFile.name)
+    .put(self.theFile);
+    uploadTask.on('state_changed',function(snap){
+        console.log(snap);
+    },
+    function(err){
+        console.log(err)
+    },
+    function(){
+        var downloadURL = uploadTask.snapshot.downloadURL;
+        $('#fileLink').val(downloadURL);
+        console.log("el link en el dom: ",$('#fileLink').val());
     });
 }
