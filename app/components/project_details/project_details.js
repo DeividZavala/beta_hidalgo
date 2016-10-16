@@ -8,8 +8,52 @@
     function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth,$httpParamSerializerJQLike) {
         var projectDetails = this;
         var self = this;
+        // Barra de progreso
+        $scope.suma = [0,0,0,0,0];
+        $scope.total=$scope.suma[0]+$scope.suma[1]+$scope.suma[2]+$scope.suma[3]+$scope.suma[4];
+        
 
-        //firebase bucket
+
+
+        // La barra de progreso
+        
+        $scope.barra = function(){
+            $scope.total = 50;
+            if ($scope.proyecto.objetivo_general === ''){
+                    $scope.suma[0]=0;
+                }else{
+                    $scope.suma[0]=10; 
+                }
+                if ($scope.proyecto.indicador === ''){
+                    $scope.suma[1]=0;
+                }else{
+                    $scope.suma[1]=10;
+                }
+                if ($scope.proyecto.planteamiento === ''){
+                    $scope.suma[2]=0;
+                }else{
+                    $scope.suma[2]=10;
+                }
+                if ($scope.proyecto.alcance === ''){
+                    $scope.suma[3]=0;
+                }else{
+                    $scope.suma[3]=10;
+                }if ($scope.proyecto.municipio === ''){
+                    $scope.suma[4]=0;
+                }else{
+                    $scope.suma[4]=10;
+                }
+
+            for (i=0;i<=4;i++){
+                console.log($scope.total,$scope.suma)
+                $scope.total += $scope.suma[i]
+            }
+            // $scope.total+=40;
+            console.log("final",$scope.total,$scope.suma);
+            console.log($scope.proyecto.objetivo_general);
+        
+        } //barra
+                
         
 
         console.log("entre al controller");
@@ -26,7 +70,16 @@
                 console.log("la imagen",projectDetails.data.fields.imagen)
                 $scope.proyecto = response.data[0].fields
                 $scope.proyecto.pk = response.data[0].pk
+                $scope.pro = $scope.proyecto
+                $scope.barra();
+
+
+
             })
+
+
+
+
 
         //obtenemos al usuario si ya está
         var auth = $firebaseAuth();
@@ -54,6 +107,18 @@
             .catch(function(err){
                 console.log("error",err);
             });
+        }
+
+        $scope.quitarFile = function(){
+            $scope.proyecto.archivo = null;
+            var referencia = firebase.storage().ref().child('projects');
+            referencia.child('images/'+$scope.proyecto.fileRef).delete()
+            .then(function(res){
+                console.log('exito borrando: ',res)
+            })
+            .catch(function(err){
+                console.log("error",err);
+            });
 
         }
 
@@ -64,7 +129,16 @@
             self.downloadURL = $('#imgLink').val();
             self.laRef = $('#imgLink').attr('ref');
         }else{
-            self.downloadURL = $scope.proyecto.imagen;   
+            self.downloadURL = $scope.proyecto.imagen;
+            self.laRef = $scope.proyecto.laRef;
+        }
+
+        if($scope.proyecto.archivo == ""){
+            self.fileURL = $('#fileLink').val();
+            self.fileRef = $('#fileLink').attr('ref');
+        }else{
+            self.fileURL = $scope.proyecto.archivo;
+            self.fileRef = $scope.proyecto.fileRef;
         }
             // self.downloadURL = 
             var objeto = {
@@ -78,7 +152,8 @@
                     'uid':self.user.uid,
                     'imagen':self.downloadURL,
                     'laRef':self.laRef,
-                    'file':self.fileLink
+                    'archivo':self.fileURL,
+                    'fileRef':self.fileRef
                     // 'img':self.theFile
                         // mun:self.mun,
                         // prob:self.prob,
@@ -100,12 +175,40 @@
                 $scope.mensaje = {};
                 $scope.mensaje.success = "Tu Proyecto fué guardado con éxito";
                 $('body').scrollTop( 0 );
+                $scope.barra();
             })
             .catch(function(err){
                 console.log("Error al guardar",err)
             });
 
         } //updateProject
+
+        $scope.subir = function(){
+
+            $('#warning').modal('show');
+            $("#warning").on('hidden.bs.modal', function () {
+                // $location.path("/profile");
+                $scope.pro.cerrado = true;
+                $http({
+                method:'POST',
+                url:'http://hidalgo.fixter.org/projects/'+$scope.pro.pk+'/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                // headers: { 'Content-Type': 'multipart/form-data' },
+                // data: $httpParamSerializerJQLike(objeto),
+                data:$httpParamSerializerJQLike($scope.pro),
+                // file:self.theFile
+                })
+                .then(function(res){
+                    console.log(res)
+                })
+                .catch(function(err){
+                    console.log(err)
+                });
+                $scope.$apply();
+            });
+            
+            
+        }
 
 
 
@@ -216,11 +319,11 @@
             });
             // Create the preview file
             $(".file-preview-input input:file").change(function (){
-                var img = $('<img/>', {
-                    id: 'dynamic',
-                    width:250,
-                    height:200
-                });
+                // var img = $('<img/>', {
+                //     id: 'dynamic',
+                //     width:250,
+                //     height:200
+                // });
                 var file = this.files[0];
                 var reader = new FileReader();
                 // Set preview file into the popover data-content
@@ -380,6 +483,7 @@ var ref = firebase.storage().ref().child('projects');
 }
 
   var uploadDoc = function(element){
+    $('#loading').show();
     self.theFile = element.files[0];
     uploadFile(self.theFile);
     console.log("el archivo como tal: ",self.theFile)
@@ -393,8 +497,10 @@ var ref = firebase.storage().ref().child('projects');
         console.log(err)
     },
     function(){
+        $('#loading').slideToggle();
         var downloadURL = uploadTask.snapshot.downloadURL;
         $('#fileLink').val(downloadURL);
-        console.log("el link en el dom: ",$('#fileLink').val());
+        $('#fileLink').attr('ref',self.theFile.name);
+        console.log("el RefdelFile en el dom: ",$('#fileLink').attr('ref'));
     });
 }
