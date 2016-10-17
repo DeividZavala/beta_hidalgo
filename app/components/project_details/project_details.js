@@ -8,6 +8,53 @@
     function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth,$httpParamSerializerJQLike) {
         var projectDetails = this;
         var self = this;
+        // Barra de progreso
+        $scope.suma = [0,0,0,0,0];
+        $scope.total=$scope.suma[0]+$scope.suma[1]+$scope.suma[2]+$scope.suma[3]+$scope.suma[4];
+        
+
+
+
+        // La barra de progreso
+        
+        $scope.barra = function(){
+            $scope.total = 50;
+            if ($scope.proyecto.objetivo_general === ''){
+                    $scope.suma[0]=0;
+                }else{
+                    $scope.suma[0]=10; 
+                }
+                if ($scope.proyecto.indicador === ''){
+                    $scope.suma[1]=0;
+                }else{
+                    $scope.suma[1]=10;
+                }
+                if ($scope.proyecto.planteamiento === ''){
+                    $scope.suma[2]=0;
+                }else{
+                    $scope.suma[2]=10;
+                }
+                if ($scope.proyecto.alcance === ''){
+                    $scope.suma[3]=0;
+                }else{
+                    $scope.suma[3]=10;
+                }if ($scope.proyecto.municipio === ''){
+                    $scope.suma[4]=0;
+                }else{
+                    $scope.suma[4]=10;
+                }
+
+            for (i=0;i<=4;i++){
+                console.log($scope.total,$scope.suma)
+                $scope.total += $scope.suma[i]
+            }
+            // $scope.total+=40;
+            console.log("final",$scope.total,$scope.suma);
+            console.log($scope.proyecto.objetivo_general);
+        
+        } //barra
+                
+        
 
         console.log("entre al controller");
 
@@ -20,10 +67,19 @@
                 projectDetails.data = response.data[0]
                 console.log(projectDetails.data)
                 console.log(projectDetails.data.fields.title)
-                console.log(projectDetails.data.fields.eje)
+                console.log("la imagen",projectDetails.data.fields.imagen)
                 $scope.proyecto = response.data[0].fields
                 $scope.proyecto.pk = response.data[0].pk
+                $scope.pro = $scope.proyecto
+                $scope.barra();
+
+
+
             })
+
+
+
+
 
         //obtenemos al usuario si ya está
         var auth = $firebaseAuth();
@@ -38,11 +94,53 @@
           }
         }); //checklogin
 
-        var fd = new FormData();
-        fd.append('file', self.theFile);
+        // var fd = new FormData();
+        // fd.append('file', self.theFile);
+
+        $scope.quitarFoto = function(){
+            $scope.proyecto.imagen = null;
+            var referencia = firebase.storage().ref().child('projects');
+            referencia.child('images/'+$scope.proyecto.laRef).delete()
+            .then(function(res){
+                console.log('exito borrando: ',res)
+            })
+            .catch(function(err){
+                console.log("error",err);
+            });
+        }
+
+        $scope.quitarFile = function(){
+            $scope.proyecto.archivo = null;
+            var referencia = firebase.storage().ref().child('projects');
+            referencia.child('images/'+$scope.proyecto.fileRef).delete()
+            .then(function(res){
+                console.log('exito borrando: ',res)
+            })
+            .catch(function(err){
+                console.log("error",err);
+            });
+
+        }
+
 
         $scope.updateProject = function(){
-            console.log($scope.proyecto.objetivo_general)
+            if ($scope.proyecto.imagen==""){
+            console.log("en controller link del dom: ",$('#imgLink').val());
+            self.downloadURL = $('#imgLink').val();
+            self.laRef = $('#imgLink').attr('ref');
+        }else{
+            self.downloadURL = $scope.proyecto.imagen;
+            self.laRef = $scope.proyecto.laRef;
+        }
+
+        if($scope.proyecto.archivo == ""){
+            self.fileURL = $('#fileLink').val();
+            self.fileRef = $('#fileLink').attr('ref');
+        }else{
+            self.fileURL = $scope.proyecto.archivo;
+            self.fileRef = $scope.proyecto.fileRef;
+        }
+            // self.downloadURL = 
             var objeto = {
                     'title':$scope.proyecto.title,
                     'eje':$scope.proyecto.eje,
@@ -52,15 +150,16 @@
                     'problematica':$scope.proyecto.problematica,
                     'municipio':$scope.proyecto.municipio,
                     'uid':self.user.uid,
-                    'file':self.theFile
+                    'imagen':self.downloadURL,
+                    'laRef':self.laRef,
+                    'archivo':self.fileURL,
+                    'fileRef':self.fileRef
                     // 'img':self.theFile
                         // mun:self.mun,
                         // prob:self.prob,
                         // slug:self.user.photoURL
                     }
 
-            var formData = new FormData();
-            formData.append('file',self.theFile);
 
             $http({
                 method:'POST',
@@ -76,12 +175,42 @@
                 $scope.mensaje = {};
                 $scope.mensaje.success = "Tu Proyecto fué guardado con éxito";
                 $('body').scrollTop( 0 );
+                $scope.barra();
             })
             .catch(function(err){
                 console.log("Error al guardar",err)
             });
 
         } //updateProject
+
+        $scope.subir = function(){
+
+            $('#warning').modal('show');
+            $("#warning").on('hidden.bs.modal', function () {
+                // $location.path("/profile");
+                $scope.pro.cerrado = true;
+                $http({
+                method:'POST',
+                url:'http://hidalgo.fixter.org/projects/'+$scope.pro.pk+'/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                // headers: { 'Content-Type': 'multipart/form-data' },
+                // data: $httpParamSerializerJQLike(objeto),
+                data:$httpParamSerializerJQLike($scope.pro),
+                // file:self.theFile
+                })
+                .then(function(res){
+                    console.log(res)
+                })
+                .catch(function(err){
+                    console.log(err)
+                });
+                $scope.$apply();
+            });
+            
+            
+        }
+
+
 
 
         // projectDetailsController.prototype.$scope = $scope;
@@ -190,11 +319,11 @@
             });
             // Create the preview file
             $(".file-preview-input input:file").change(function (){
-                var img = $('<img/>', {
-                    id: 'dynamic',
-                    width:250,
-                    height:200
-                });
+                // var img = $('<img/>', {
+                //     id: 'dynamic',
+                //     width:250,
+                //     height:200
+                // });
                 var file = this.files[0];
                 var reader = new FileReader();
                 // Set preview file into the popover data-content
@@ -324,12 +453,54 @@
 })();
 
 
-
-
+//firebase bucket
+var ref = firebase.storage().ref().child('projects');
   var setFile =  function(element){
     // var $scope = this.$scope;
     // self.$apply(function() {
       self.theFile = element.files[0];
-      console.log(self.theFile)
+      uploadFile(self.theFile);
+      console.log("el archivo como tal: ",self.theFile)
     // });
   }
+
+  var uploadFile = function(){
+    console.log("llego",self.theFile)
+    var uploadTask = ref.child('images/'+self.theFile.name)
+    .put(self.theFile);
+    uploadTask.on('state_changed',function(snap){
+        console.log(snap);
+    },
+    function(err){
+        console.log(err)
+    },
+    function(){
+        var downloadURL = uploadTask.snapshot.downloadURL;
+        $('#imgLink').val(downloadURL);
+        $('#imgLink').attr('ref',self.theFile.name);
+        console.log("la referencia: ",$('#imgLink').attr('ref'));
+    });
+}
+
+  var uploadDoc = function(element){
+    $('#loading').show();
+    self.theFile = element.files[0];
+    uploadFile(self.theFile);
+    console.log("el archivo como tal: ",self.theFile)
+    console.log("llego",self.theFile)
+    var uploadTask = ref.child('images/'+self.theFile.name)
+    .put(self.theFile);
+    uploadTask.on('state_changed',function(snap){
+        console.log(snap);
+    },
+    function(err){
+        console.log(err)
+    },
+    function(){
+        $('#loading').slideToggle();
+        var downloadURL = uploadTask.snapshot.downloadURL;
+        $('#fileLink').val(downloadURL);
+        $('#fileLink').attr('ref',self.theFile.name);
+        console.log("el RefdelFile en el dom: ",$('#fileLink').attr('ref'));
+    });
+}

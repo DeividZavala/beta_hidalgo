@@ -1,4 +1,27 @@
+#owl-demo .item img{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
 
+.slider{
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.slider-text{
+padding-top: 20%;
+font-size: 4rem;
+color:white;
+}
+
+.slider-text {
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
 
 
 .iconosLanding{
@@ -510,10 +533,66 @@ span.l-icon-ej{
   padding-left:5%;
   padding-top:5%;
 }
-/*.container-fluid{
-  padding-left:55px;
-}*/
+.textos{
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+}
+.btn_landing a{
+  color: white ;
+  text-decoration: none;
+}
+.btn_rojo{
+  background: #E73C4E;
+}
+.btn_verde{
+  background: #71b631;
+}
+.slider-img{
+  text-align: center;
+  margin-top: 5%;
+  animation-duration: 4s;
+  animation-delay: 23s;
+  -webkit-animation-delay: 23s;
+  animation-iteration-count: infinite;
+}
 
-#anime{
-    -vendor-animation-iteration-count: infinite;
+
+@media (max-width:425px){
+  .slider-img{
+    margin-top: 10%;
+  }
+  .slider-text{
+    padding-top: 40%;
+  }
+}
+@media (min-width:1024px){
+  .slider-text{
+    font-size: 6rem;
+  }
+}
+
+/****************
+  Estilos de el carousel a mano
+*****************/
+
+#slider{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#slider .slides{
+    display: block;
+    width: 8000px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+#slider .slide{
+    float: left;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    list-style: none;
+    width: 100vw;
+    height: 100vh;
 }
