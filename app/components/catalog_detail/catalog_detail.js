@@ -48,7 +48,7 @@ e.preventDefault();
 FB.ui(
 {
 method: 'feed',
-name: 'Higal-Go',
+name: 'Plan Estatal de Desarrollo 2016-2022',
 link: 'http://planeacion.fixter.org',
 picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
 caption: 'planeacion.fixter.org',
