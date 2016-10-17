@@ -1,3 +1,65 @@
+/*Animaciones a manita by BlisS*/
+@keyframes agrandar{
+  0%{
+    transform:scale(0);
+    opacity: 0;
+    transform:scale3d(10px,100px,50px);
+  }
+  20%{
+    transform:scale(3);
+    opacity: 1;
+  }
+  80%{
+    transform:scale(4);
+    opacity: 1;
+  }
+  100%{
+    transform:scale(10);
+    opacity: 0;
+  }
+}
+.active{
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.active .texto{
+  animation:agrandar 5s ease infinite;
+  transform-origin:center center;
+
+  position: absolute;
+  top:20%;
+  left:20%;
+  opacity: 0;
+}
+
+.active .texto2{
+  animation:agrandar 3s 2s ease-in infinite;
+  transform-origin:center center;
+
+  position: absolute;
+  top:20%;
+  right:20%;
+  opacity: 0;
+}
+
+
+.active .texto3{
+  animation:agrandar 3s 1s ease-in-out infinite;
+  transform-origin:top bottom;
+
+  position: absolute;
+  bottom:20%;
+  left:50%;
+  opacity: 0;
+}
+/*Animaciones a manita by BlisS*/
+
+
+
+
 #owl-demo .item img{
     display: block;
     width: 100vw;
@@ -551,6 +613,7 @@ span.l-icon-ej{
 .textito{
   font-size:18px;
   font-family: 'Montserrat Alternates', sans-serif;
+  min-height: 50px;
 }
 #mensaje{
   margin-top:20%;
