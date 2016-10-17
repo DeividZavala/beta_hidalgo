@@ -11,7 +11,7 @@
         hidalgoService.getAllProjects()
             .then(function (response) {
                 self.projects = response.data;
-                console.log(self.projects);
+                //console.log(self.projects);
 
                 self.pager = {};
                 self.setPage = setPage;

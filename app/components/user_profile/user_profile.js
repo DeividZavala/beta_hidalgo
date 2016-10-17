@@ -22,12 +22,12 @@
           if(self.usuario){
             // self.alert = "Bienvenido "+self.user.displayName;
             // self.cuentale()
-            console.log('rayos: ',self.usuario.photoURL);
-            console.log('mi user: ',self.usuario);
+           // console.log('rayos: ',self.usuario.photoURL);
+            //console.log('mi user: ',self.usuario);
             hidalgoService.getUserProjects(self.usuario.uid)
                 .then(function (response) {
                     self.userProjects = response.data
-                    console.log(self.userProjects)
+                    //console.log(self.userProjects)
                 })
 
           }else{
