@@ -9,42 +9,18 @@
   background-size: cover;
   background-image: url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-57201.jpg");
   background-repeat: no-repeat;
-  /*width: 100%;
-  height: 100%;*/
 }
 
 #container-pro {
   padding: 0;
   margin: 0;
-  /*padding-top: 5%;*/
-  /*position: relative;*/
   min-height: 1000px;
   height: 100vh;
-  /*display: block;*/
 
 }
 
 
-/*.opacos {
-  background: rgba(0,0,0,0.3);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top:0;
 
-}
-.blur{
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(3px);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  top:0;
-}*/
 
 .en_medio{
   vertical-align: middle;

@@ -9,17 +9,6 @@
 
 	function landingController($scope){
 
-		
-		  /*$(".owl-carousel").owlCarousel({
-		  	navigation:false,
-		  	slideSpeed:250,
-		  	paginationSpeed:400,
-		  	singleItem:true,
-		  	autoPlay:true,
-		  	stopOnHover:false,
-		  	// paginationNumbers:true
-		  });*/
-
 		var width = 100;
 		var animationSpeed = 1000;
 		var pause = 5000;

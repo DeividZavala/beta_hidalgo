@@ -56,18 +56,18 @@
                 
         
 
-        console.log("entre al controller");
+        //console.log("entre al controller");
 
 
         projectDetails.id = $routeParams.id;
-        console.log(projectDetails.id)
+        //console.log(projectDetails.id)
 
         hidalgoService.getProjectDetail(projectDetails.id)
             .then(function (response) {
                 projectDetails.data = response.data[0]
-                console.log(projectDetails.data)
-                console.log(projectDetails.data.fields.title)
-                console.log("la imagen",projectDetails.data.fields.imagen)
+                //console.log(projectDetails.data)
+                //console.log(projectDetails.data.fields.title)
+                //console.log("la imagen",projectDetails.data.fields.imagen)
                 $scope.proyecto = response.data[0].fields
                 $scope.proyecto.pk = response.data[0].pk
                 $scope.pro = $scope.proyecto
