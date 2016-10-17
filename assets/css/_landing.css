@@ -613,6 +613,7 @@ span.l-icon-ej{
 .textito{
   font-size:18px;
   font-family: 'Montserrat Alternates', sans-serif;
+  min-height: 50px;
 }
 #mensaje{
   margin-top:20%;
