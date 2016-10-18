@@ -58,11 +58,7 @@
 
         //console.log("entre al controller");
 
-
-
-
-
-
+        
 
 
         //obtenemos al usuario si ya está
