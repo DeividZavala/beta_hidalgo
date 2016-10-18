@@ -11,18 +11,18 @@
         // Barra de progreso
         $scope.suma = [0,0,0,0,0];
         $scope.total=$scope.suma[0]+$scope.suma[1]+$scope.suma[2]+$scope.suma[3]+$scope.suma[4];
-        
+
 
 
 
         // La barra de progreso
-        
+
         $scope.barra = function(){
             $scope.total = 50;
             if ($scope.proyecto.objetivo_general === ''){
                     $scope.suma[0]=0;
                 }else{
-                    $scope.suma[0]=10; 
+                    $scope.suma[0]=10;
                 }
                 if ($scope.proyecto.indicador === ''){
                     $scope.suma[1]=0;
@@ -51,18 +51,14 @@
             // $scope.total+=40;
             console.log("final",$scope.total,$scope.suma);
             console.log($scope.proyecto.objetivo_general);
-        
+
         } //barra
-                
-        
+
+
 
         //console.log("entre al controller");
 
-
-
-
-
-
+        
 
 
         //obtenemos al usuario si ya está
@@ -75,7 +71,7 @@
             // self.cuentale()
 
           }else{
-            
+
           }
         }); //checklogin
 
@@ -154,7 +150,7 @@
             self.fileURL = $scope.proyecto.archivo;
             self.fileRef = $scope.proyecto.fileRef;
         }
-            // self.downloadURL = 
+            // self.downloadURL =
             var objeto = {
                     'title':$scope.proyecto.title,
                     'eje':$scope.proyecto.eje,
@@ -222,8 +218,8 @@
                 });
                 $scope.$apply();
             });
-            
-            
+
+
         }
 
 
@@ -234,7 +230,55 @@
 
 
 
-    //desmadre de la barra de progreso        
+    //desmadre de la barra de progreso
+
+    //share w FB
+        window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '694502364033651',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  $(document).ready(function(){
+$('#share_button').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: 'Plan Estatal de Desarrollo 2016-2022',
+link: 'http://planeacion.fixter.org/catalogo',
+picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
+caption: 'planeacion.fixter.org',
+description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
+message: "blabla"
+});
+});
+});
+  $(document).ready(function(){
+$('#share_button2').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: 'Plan Estatal de Desarrollo 2016-2022',
+link: 'http://planeacion.fixter.org/catalogo',
+picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
+caption: 'planeacion.fixter.org',
+description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
+message: "blabla"
+});
+});
+});
     //Upload images
         $(document).on('click', '#close-preview', function(){
             // Hover befor close the preview
@@ -461,6 +505,7 @@
             });
         //progress finishes
 
+
     }
 
     angular
@@ -519,4 +564,7 @@ var ref = firebase.storage().ref().child('projects');
         $('#fileLink').attr('ref',self.theFile.name);
         console.log("el RefdelFile en el dom: ",$('#fileLink').attr('ref'));
     });
+
+    
+
 }
