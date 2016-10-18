@@ -38,33 +38,33 @@
 		}
 
 		this.pruebale = function(){
-			// $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
-			// data = {
-			// 	'test':'testing',
-			// 	// 'X-CSRFToken':self.laCookie
-			// }
-			// // $http.defaults.headers.post['X-CSRFToken'] = self.laCookie;
-			// $http({
-			// 	url:'http://localhost:8000/projects/testing/',
-			// 	method:'POST',
-			// 	// headers:{'X-CSRFToken':self.laCookie},
-			// 	data:data,
-			// })
-			// .then(function(response){
-			// 	console.log('Testing-then: ',response);
-			// })
-			// .catch(function(err){
-			// 	console.log('Testing-catch: ',err)
-			// });
-
-			$.ajax({
+			$http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+			data = {
+				'test':'testing',
+				// 'X-CSRFToken':self.laCookie
+			}
+			$http.defaults.headers.post['X-CSRFToken'] = self.laCookie;
+			$http({
 				url:'http://localhost:8000/projects/testing/',
 				method:'POST',
-				data:{test:'test'},
-				success:function(r){console.log('ya mijo',r)},
-				error:function(e){console.log('error',e)}
-
+				// headers:{'X-CSRFToken':self.laCookie},
+				data:data,
 			})
+			.then(function(response){
+				console.log('Testing-then: ',response);
+			})
+			.catch(function(err){
+				console.log('Testing-catch: ',err)
+			});
+
+			// $.ajax({
+			// 	url:'http://localhost:8000/projects/testing/',
+			// 	method:'POST',
+			// 	data:{test:'test'},
+			// 	success:function(r){console.log('ya mijo',r)},
+			// 	error:function(e){console.log('error',e)}
+
+			// })
 		}
 
 
