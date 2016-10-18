@@ -45,12 +45,12 @@
                 }
 
             for (i=0;i<=4;i++){
-                console.log($scope.total,$scope.suma)
+                //console.log($scope.total,$scope.suma)
                 $scope.total += $scope.suma[i]
             }
             // $scope.total+=40;
-            console.log("final",$scope.total,$scope.suma);
-            console.log($scope.proyecto.objetivo_general);
+            //console.log("final",$scope.total,$scope.suma);
+            //console.log($scope.proyecto.objetivo_general);
 
         } //barra
 
