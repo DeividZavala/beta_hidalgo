@@ -606,14 +606,15 @@ span.l-icon-ej{
 .image{
   width:80%;
   margin-left:10%;
+  margin-bottom: 10%;
 }
 .centrando{
   text-align:center;
 }
 .textito{
-  font-size:18px;
+  font-size:20px;
   font-family: 'Montserrat Alternates', sans-serif;
-  min-height: 50px;
+  min-height: 60px;
 }
 #mensaje{
   margin-top:20%;

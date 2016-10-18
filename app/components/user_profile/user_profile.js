@@ -27,7 +27,7 @@
             hidalgoService.getUserProjects(self.usuario.uid)
                 .then(function (response) {
                     self.userProjects = response.data
-                    //console.log(self.userProjects)
+                    console.log(self.userProjects)
                 })
 
           }else{
