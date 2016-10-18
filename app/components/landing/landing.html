@@ -289,4 +289,41 @@
 		 </div>
 	
 
+
 </div>
+
+  
+  
+
+
+<script type="text/javascript">
+	
+// 	$('.carousel').carousel({
+//   interval: 10000,
+//   pause: null
+// });
+
+
+
+
+$('.image').mouseover(function(){
+
+
+	$(this).addClass('animated rubberBand');
+
+	var self = this;
+
+setTimeout(function(){
+
+	$(self).removeClass('pulse');
+	$(self).removeClass('rubberBand');
+
+},1000)
+	
+
+
+});
+</script>
+
+</div>
+
