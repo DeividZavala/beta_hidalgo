@@ -80,7 +80,7 @@ color:white;
 }
 
 .slider-text {
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-delay: 0s;
   animation-iteration-count: infinite;
 }
@@ -638,8 +638,8 @@ span.l-icon-ej{
   text-align: center;
   margin-top: 5%;
   animation-duration: 4s;
-  animation-delay: 23s;
-  -webkit-animation-delay: 23s;
+  animation-delay: 43s;
+  -webkit-animation-delay: 43s;
   animation-iteration-count: infinite;
 }
 

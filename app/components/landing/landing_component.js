@@ -11,7 +11,7 @@
 
 		var width = 100;
 		var animationSpeed = 1000;
-		var pause = 5000;
+		var pause = 10000;
 		var currentSlide = 1;
 
 		var $slider =$('#slider');
