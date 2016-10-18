@@ -7,6 +7,7 @@
 
             $httpProvider.defaults.xsrfCookieName = 'csrftoken';
             $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+            // $httpProvider.defaults.withCredentials = true;
         }
 
 
@@ -18,12 +19,12 @@
     	
     	
 
- //    	// $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
- //    	// $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-	// 	// $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
- //        // $httpProvider.defaults.withCredentials = false;
+ //    	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+ // //    	// $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+	// // 	// $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+        // $httpProvider.defaults.withCredentials = false;
         
- //        // $httpProvider.defaults.headers.post['X-CSRFToken'] = $cookies.get('csrftoken');
+ //        $httpProvider.defaults.headers.post['X-CSRFToken'] = $cookies.get('csrftoken');
 
 	// // var token = $('input[name=csrfmiddlewaretoken]').val();
  // //    $httpProvider.defaults.headers.post['X-CSRFToken'] = token;
