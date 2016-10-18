@@ -11,18 +11,18 @@
         // Barra de progreso
         $scope.suma = [0,0,0,0,0];
         $scope.total=$scope.suma[0]+$scope.suma[1]+$scope.suma[2]+$scope.suma[3]+$scope.suma[4];
-        
+
 
 
 
         // La barra de progreso
-        
+
         $scope.barra = function(){
             $scope.total = 50;
             if ($scope.proyecto.objetivo_general === ''){
                     $scope.suma[0]=0;
                 }else{
-                    $scope.suma[0]=10; 
+                    $scope.suma[0]=10;
                 }
                 if ($scope.proyecto.indicador === ''){
                     $scope.suma[1]=0;
@@ -51,10 +51,10 @@
             // $scope.total+=40;
             console.log("final",$scope.total,$scope.suma);
             console.log($scope.proyecto.objetivo_general);
-        
+
         } //barra
-                
-        
+
+
 
         //console.log("entre al controller");
 
@@ -90,7 +90,7 @@
             // self.cuentale()
 
           }else{
-            
+
           }
         }); //checklogin
 
@@ -140,7 +140,7 @@
             self.fileURL = $scope.proyecto.archivo;
             self.fileRef = $scope.proyecto.fileRef;
         }
-            // self.downloadURL = 
+            // self.downloadURL =
             var objeto = {
                     'title':$scope.proyecto.title,
                     'eje':$scope.proyecto.eje,
@@ -206,8 +206,8 @@
                 });
                 $scope.$apply();
             });
-            
-            
+
+
         }
 
 
@@ -218,7 +218,7 @@
 
 
 
-    //desmadre de la barra de progreso        
+    //desmadre de la barra de progreso
     //Upload images
         $(document).on('click', '#close-preview', function(){
             // Hover befor close the preview
@@ -445,6 +445,7 @@
             });
         //progress finishes
 
+
     }
 
     angular
@@ -503,4 +504,5 @@ var ref = firebase.storage().ref().child('projects');
         $('#fileLink').attr('ref',self.theFile.name);
         console.log("el RefdelFile en el dom: ",$('#fileLink').attr('ref'));
     });
+
 }
