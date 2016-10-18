@@ -1,6 +1,6 @@
 <section class="catalogo_header row">
     <article class="container filter_container">
-        <h2 class="titulo">Explora Proyectos</h2>
+        <h2 class="titulo">Explora Propuestas</h2>
         <div class="input-group input-group-lg col-md-4">
             <span class="input-group-addon" id="sizing-addon1">
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -18,7 +18,7 @@
                 <div class="thumbnail efectito_y">
                     <a href="#/catalogo/{{project.pk}}/">
                         <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto">
-                        <img ng-hide="project.fields.imagen" ng-src="http://impulsa.guadalinfo.es/wp-content/uploads/2015/08/img-no-disponible-425x300.png" alt="foto  de proyecto">
+                        <img ng-hide="project.fields.imagen" ng-src="/assets/images/img_default.png" alt="foto  de proyecto">
                     </a>
                     <div class="caption">
                         <h3>{{project.fields.title}}</h3>

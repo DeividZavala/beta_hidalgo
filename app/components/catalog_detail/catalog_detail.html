@@ -8,17 +8,20 @@
 
 	<div class="well row">
 
-		<img class="img-responsive col-sm-5" src="/assets/images/port.jpg">
+		<img ng-hide="proyecto.imagen" class="img-responsive col-sm-5" src="/assets/images/port.jpg">
+		<img ng-show="proyecto.imagen" class="img-responsive col-sm-5" ng-src="{{proyecto.imagen}}" alt="imagen de la propuesta">
 		<div class="izquierda col-sm-6 col-sm-offset-1">
-			<h3>Eje:</h3>
+			<h3>Eje de la Propuesta:</h3>
 			<span>
 				{{proyecto.eje}}
 			</span>	
 			<h4>
-				In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, uam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.
+				{{proyecto.objetivo_general}}
 			</h4>
-			<button class="btn btn-success">Patrocinar este proyecto</button>
-			<button class="btn btn-danger">Reportar este proyecto</button>
+			<button ng-show="false" class="btn btn-success">Patrocinar este proyecto</button>
+			<button ng-show="false" class="btn btn-danger">Reportar este proyecto</button>
+			<div ng-show="false" class="botoncillos">
+
 
 			<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 
@@ -39,20 +42,26 @@
 		<div class="well">
 
 			<ul class="nav nav-tabs">
-			  <li role="presentation" ng-class="{active: tab==1}"><a href="" ng-click="tab=1">Objetivo general</a></li>
+			  <li role="presentation" ng-class="{active: tab==1}"><a href="" ng-click="tab=1">Planteamiento</a></li>
 			  <li role="presentation" ng-class="{active: tab==2}"><a href="" ng-click="tab=2">Líneas de acción</a></li>
-			  <li role="presentation" ng-class="{active: tab==3}"><a href="" ng-click="tab=3">Programas asociados</a></li>
-			  <li role="presentation" ng-class="{active: tab==4}"><a href="" ng-click="tab=4">Indicadores de gestión</a></li>
+			  <li role="presentation" ng-class="{active: tab==3}"><a href="" ng-click="tab=3">Indicadores de gestión</a></li>
 			</ul>
 
 		</div>
 
 		<div class="well">
-			<p ng-show="tab==1">Objetivo general</p>
-			<p ng-show="tab==2">Líneas de acción</p>
-			<p ng-show="tab==3">Programas Asociados</p>
-			<p ng-show="tab==4">Indicadores de gestión</p>
-			{{tab}}
+			<div ng-show="tab==1">
+				<h5>Planteamiento</h5>
+				<p>{{proyecto.planteamiento}}</p>
+			</div>
+			<div ng-show="tab==2">
+				<h5>Situación a resolver</h5>
+				<p>{{proyecto.problematica}}</p>
+			</div>
+			<div ng-show="tab==3">
+				<h5>Indicadores de gestión</h5>
+				<p>{{proyecto.indicador}}</p>
+			</div>
 		</div>
 
 

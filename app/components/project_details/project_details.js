@@ -5,7 +5,7 @@
         controller: projectDetailsController
     }
 
-    function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth,$httpParamSerializerJQLike) {
+    function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth,$httpParamSerializerJQLike,$location) {
         var projectDetails = this;
         var self = this;
         // Barra de progreso
@@ -59,7 +59,31 @@
         //console.log("entre al controller");
 
 
-        projectDetails.id = $routeParams.id;
+
+
+
+
+
+
+        //obtenemos al usuario si ya está
+        var auth = $firebaseAuth();
+        auth.$onAuthStateChanged(function(firebaseUser) {
+          self.user = firebaseUser;
+          if(self.user){
+            
+            // self.alert = "Bienvenido "+self.user.displayName;
+            // self.cuentale()
+
+          }else{
+
+          }
+        }); //checklogin
+
+
+        //traemos datos
+
+
+            projectDetails.id = $routeParams.id;
         //console.log(projectDetails.id)
 
         hidalgoService.getProjectDetail(projectDetails.id)
@@ -75,24 +99,9 @@
 
 
 
-            })
+            });
 
 
-
-
-
-        //obtenemos al usuario si ya está
-        var auth = $firebaseAuth();
-        auth.$onAuthStateChanged(function(firebaseUser) {
-          self.user = firebaseUser;
-          if(self.user){
-            // self.alert = "Bienvenido "+self.user.displayName;
-            // self.cuentale()
-
-          }else{
-
-          }
-        }); //checklogin
 
         // var fd = new FormData();
         // fd.append('file', self.theFile);
@@ -124,6 +133,11 @@
 
 
         $scope.updateProject = function(){
+            // permiso para editar
+            if(self.user.uid !== $scope.proyecto.uid){
+                $location.path('/profile')
+            }else{
+
             if ($scope.proyecto.imagen==""){
             console.log("en controller link del dom: ",$('#imgLink').val());
             self.downloadURL = $('#imgLink').val();
@@ -180,6 +194,8 @@
             .catch(function(err){
                 console.log("Error al guardar",err)
             });
+
+        } //else
 
         } //updateProject
 

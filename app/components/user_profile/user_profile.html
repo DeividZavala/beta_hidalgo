@@ -36,7 +36,8 @@
                             {{project.fields.eje}}
                         </p>
                         <p>
-                            <a class="btn btn-primary" href="#/project/{{project.pk}}/details">Completa tu proyecto</a>
+                            <a ng-hide="{{project.fields.cerrado}}" class="btn btn-primary" href="#/project/{{project.pk}}/details">Completa tu proyecto</a>
+                            <a ng-show="{{project.fields.cerrado}}" class="btn btn-success" href="">Completado!</a>
                         </p>
                     </div>
                 </div>

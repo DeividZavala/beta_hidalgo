@@ -13,7 +13,7 @@
 		//Bajamos la rama de proyectos
 		$http.get('http://hidalgo.fixter.org/projects/'+$routeParams.id+'/')
 		.then(function(project){
-			//console.log(project);
+			console.log(project);
 			$scope.proyecto = project.data[0].fields;
 		})
 		.catch(function(err){
