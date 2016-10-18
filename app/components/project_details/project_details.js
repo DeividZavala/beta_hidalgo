@@ -58,11 +58,7 @@
 
         //console.log("entre al controller");
 
-
-
-
-
-
+        
 
 
         //obtenemos al usuario si ya está
@@ -235,6 +231,54 @@
 
 
     //desmadre de la barra de progreso
+
+    //share w FB
+        window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '694502364033651',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  $(document).ready(function(){
+$('#share_button').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: 'Plan Estatal de Desarrollo 2016-2022',
+link: 'http://planeacion.fixter.org/catalogo',
+picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
+caption: 'planeacion.fixter.org',
+description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
+message: "blabla"
+});
+});
+});
+  $(document).ready(function(){
+$('#share_button2').click(function(e){
+e.preventDefault();
+FB.ui(
+{
+method: 'feed',
+name: 'Plan Estatal de Desarrollo 2016-2022',
+link: 'http://planeacion.fixter.org/catalogo',
+picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
+caption: 'planeacion.fixter.org',
+description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
+message: "blabla"
+});
+});
+});
     //Upload images
         $(document).on('click', '#close-preview', function(){
             // Hover befor close the preview
@@ -520,5 +564,7 @@ var ref = firebase.storage().ref().child('projects');
         $('#fileLink').attr('ref',self.theFile.name);
         console.log("el RefdelFile en el dom: ",$('#fileLink').attr('ref'));
     });
+
+    
 
 }
