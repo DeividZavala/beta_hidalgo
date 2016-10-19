@@ -4,8 +4,8 @@
                 <!-- <div class=" textos zoomInDown slider-text"> -->
                 <div class="active">
                     <!-- <p>¡Éntrale y apuéstale!</p> -->
-                    <p class="texto textos">¿Qué propones?</p>
-                    <p class="texto2 textos">¿Qué propones?</p>
+                    <p class="texto textos">¿Que propones?</p>
+                    <p class="texto2 textos">¿Que propones?</p>
                     <p class="texto3 textos">En este plan estas tú</p>
                    <!--  <button class="btn btn-lg btn_landing btn_rojo"><a href="#/project/new">Subir propuesta</a></button> -->
                 </div>
@@ -24,28 +24,22 @@
             </li>
             <li class="slide" style="background-image:url('assets/images/slider/campo.png');">
                 <div class=" textos zoomInDown slider-text">
-                    <p>¿Qué mejorar? ¿Cómo?</p>
+                    <p>¿Qué mejorar? ¿Como?</p>
                     <button class="btn btn-lg btn_landing btn_verde"><a href="#/project/new">Subir propuesta</a></button>
                 </div>
             </li>
-            <li class="slide" style="background-image:url('/assets/images/slider/SHAX5017.jpg');">
-
+            <li class="slide" style="background-image:url('/assets/images/landing/formemos.png');">
                 <div class="textos animated zoomInUp slider-text">
-					<p>¿Cómo quieres ver a Hidalgo?</p>
+					<p>¿Como quieres ver a Hidalgo?</p>
 				</div>
 				<div class="animated zoomIn slider-img">
 					<img style='height:120px' src="/assets/images/landing/logohg.png">
 				</div>
             </li>
-			<li class="slide" style="background-image:url('assets/images/slider/jovenes-alegres.png');">
-                <!-- <div class=" textos zoomInDown slider-text"> -->
-                <div class="active">
-                    <!-- <p>¡Éntrale y apuéstale!</p> -->
-                    <p class="texto textos">¿Qué propones?</p>
-                    <p class="texto2 textos">¿Qué propones?</p>
-                    <p class="texto3 textos">En este plan estas tú</p>
+			<li class="slide" style="background-image:url('/assets/images/landing/entrale_1.png');">
+                <div class=" textos zoomInDown slider-text">
+                    <p>¡Éntrale y apuéstale!</p>
                     <button class="btn btn-lg btn_landing btn_rojo"><a href="#/project/new">Subir propuesta</a></button>
-
                 </div>
             </li>
         </ul>
@@ -78,22 +72,13 @@
 					 			<p style='font-family: gobierno, tahoma, sans-serif;' class="text-justify">
 									 Hoy tenemos la oportunidad de  trazar juntos el rumbo que tomará Hidalgo en los próximos 25 años y de avanzar hacia el futuro  que queremos, ayúdame a lograrlo, Hidalgo necesita tus propuestas. ¡Participa!
 								</p>
-								<p>
-									<strong>
-										Omar Fayad Meneses
-									</strong>
-								</p>
-							</div>
+								</div>
 
 		 		</div>
-		 		<!-- <div class="col-md-6 col-sm-12 text-center lvideo">
+		 		<div class="col-md-6 col-sm-12 text-center lvideo">
 		 		<br>
 		 			<iframe width="100%" height="450" src="https://www.youtube.com/embed/EQwMOYhkSHM" frameborder="0" allowfullscreen></iframe>
-		 		</div> -->
-		 		<video id="video" class="col-md-6 col-sm-12" autoplay loop src="assets/video/PED.mp4">
-				  Tu navegador no implementa el elemento <code>video</code>.
-				</video>
-
+		 		</div>
 		 	</div>
 
 
@@ -341,58 +326,3 @@ setTimeout(function(){
 </script>
 
 </div>
-
-
-
-
-<script type="text/javascript">
-	
-		// using jQuery
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-var csrftoken = getCookie('csrftoken');
-console.log('la cookie ^-: ',csrftoken);
-
-function csrfSafeMethod(method) {
-    // these HTTP methods do not require CSRF protection
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-}
-$.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        }
-    }
-});	
-
-
-</script>
-
-<script>
-	
-	$('#pucho').on('click',function(){
-		$.ajax({
-				url:'http://localhost:8000/projects/testing/',
-				method:'POST',
-				headers:{'X-CSRFToken':'efPWetpKYCKapDKn1JLiWH7UlJT2chVlyVeIlpf6FPT4ZVEJPe6KLSwrWj78J3oq'},
-				data:{'test':'testing'},
-				success:function(r){console.log('ya mijo',r)},
-				error:function(e){console.log('error',e)}
-
-			});
-	});
-
-</script>
