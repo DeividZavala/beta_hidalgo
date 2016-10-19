@@ -651,6 +651,16 @@ span.l-icon-ej{
   .slider-text{
     padding-top: 40%;
   }
+  .texto, .texto3{
+    text-align:center;
+    font-size:50%;
+  }
+  .texto2{
+    color:transparent;
+  }
+  .textito{
+    font-size:20px;
+  }
 }
 @media (min-width:1024px){
   .slider-text{
