@@ -22,7 +22,7 @@
                     <button class="btn btn-lg btn_landing btn_rojo"><a href="#/project/new">Subir propuesta</a></button>
                 </div>
             </li>
-            <li class="slide" style="background-image:url('assets/images/slider/paisajes.jpg');">
+            <li class="slide" style="background-image:url('assets/images/slider/ninos.png');">
                 <div class=" textos zoomInDown slider-text">
                     <p>¿Qué mejorar? ¿Cómo?</p>
                     <button class="btn btn-lg btn_landing btn_verde"><a href="#/project/new">Subir propuesta</a></button>
@@ -44,11 +44,11 @@
             </li>
         </ul>
 </section>
-
-<!-- <button ng-click="$ctrl.traetela()" class="btn btn-lg btn-info">
+<!-- 
+<button ng-click="$ctrl.traetela()" class="btn btn-lg btn-info">
 	traetela
 </button>
-<button ng-click="$ctrl.pruebale()" class="btn btn-lg btn-info">
+<button id="pucho" class="btn btn-lg btn-info">
 	Testing
 </button> -->
 
@@ -70,7 +70,7 @@
 
 		 		</div>
 
-		 		<div class=" col-sm-12 col-md-12 l-articulo">
+		 		<div class=" col-sm-12 col-md-6 l-articulo">
 		 					<div id='mensaje'>
 		 						<h2 class="l-negro text-center">A todos los hidalguenses</h2>
 
@@ -90,6 +90,10 @@
 		 		<br>
 		 			<iframe width="100%" height="450" src="https://www.youtube.com/embed/EQwMOYhkSHM" frameborder="0" allowfullscreen></iframe>
 		 		</div> -->
+		 		<video class="col-md-6 col-sm-12" autoplay loop src="assets/video/PED.mp4">
+				  Tu navegador no implementa el elemento <code>video</code>.
+				</video>
+
 		 	</div>
 
 
@@ -337,3 +341,58 @@ setTimeout(function(){
 </script>
 
 </div>
+
+
+
+
+<script type="text/javascript">
+	
+		// using jQuery
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+console.log('la cookie ^-: ',csrftoken);
+
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});	
+
+
+</script>
+
+<script>
+	
+	$('#pucho').on('click',function(){
+		$.ajax({
+				url:'http://localhost:8000/projects/testing/',
+				method:'POST',
+				headers:{'X-CSRFToken':'efPWetpKYCKapDKn1JLiWH7UlJT2chVlyVeIlpf6FPT4ZVEJPe6KLSwrWj78J3oq'},
+				data:{'test':'testing'},
+				success:function(r){console.log('ya mijo',r)},
+				error:function(e){console.log('error',e)}
+
+			});
+	});
+
+</script>

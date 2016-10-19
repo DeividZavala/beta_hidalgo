@@ -17,6 +17,9 @@
 
 
 
+
+
+
 		//testing csrf
 		this.traetela = function(){
 
@@ -38,29 +41,31 @@
 		}
 
 		this.pruebale = function(){
-			$http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+			// $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
 			data = {
 				'test':'testing',
 				// 'X-CSRFToken':self.laCookie
 			}
-			$http.defaults.headers.post['X-CSRFToken'] = self.laCookie;
-			$http({
-				url:'http://localhost:8000/projects/testing/',
-				method:'POST',
-				// headers:{'X-CSRFToken':self.laCookie},
-				data:data,
-			})
-			.then(function(response){
-				console.log('Testing-then: ',response);
-			})
-			.catch(function(err){
-				console.log('Testing-catch: ',err)
-			});
+			// $http.defaults.headers.post['X-CSRFToken'] = self.laCookie;
+			// $http.defaults.xsrfHeaderName = 'X-CSRFToken';
+			// $http.defaults.xsrfCookieName = 'csrftoken';
+			// $http({
+			// 	url:'http://localhost:8000/projects/testing/',
+			// 	method:'POST',
+			// 	// headers:{'X-CSRFToken':self.laCookie},
+			// 	data:data,
+			// })
+			// .then(function(response){
+			// 	console.log('Testing-then: ',response);
+			// })
+			// .catch(function(err){
+			// 	console.log('Testing-catch: ',err)
+			// });
 
 			// $.ajax({
 			// 	url:'http://localhost:8000/projects/testing/',
 			// 	method:'POST',
-			// 	data:{test:'test'},
+			// 	data:{'test':'testing'},
 			// 	success:function(r){console.log('ya mijo',r)},
 			// 	error:function(e){console.log('error',e)}
 
