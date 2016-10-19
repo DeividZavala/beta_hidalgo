@@ -703,3 +703,13 @@ span.l-icon-ej{
 .lvideo{
   width: 100%;
 }
+
+.link_foros{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.link_foros a{
+  text-decoration: none;
+}
