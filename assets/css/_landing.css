@@ -399,7 +399,7 @@ div.greenBox p{
 
 	width:100%;
 	height: 250px;
-	background: url("/assets/images/parallax.png") center 360px;
+	background: url("/assets/images/parallax.png") center top;
 	background-size: cover;
 	color:#fff;
 	vertical-align: middle;
