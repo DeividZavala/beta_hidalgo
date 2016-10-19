@@ -240,7 +240,8 @@
                                    <i class="fa fa-check-square" aria-hidden="true"></i>
                                </div>
                                <div class="col-md-11">
-                                   <select ng-model="proyecto.indicador" class="form-control required" >
+                                   <div ng-hide="add">
+                                     <select ng-model="proyecto.indicador" class="form-control required" >
                                        <option value="">Selecciona una opción</option>
                                        <option  value='Tasa de Prevalencia de Corrupción (INEGI)'>Tasa de Prevalencia de Corrupción (INEGI)</option>
                                        <option  value='Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)'>Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)</option>
@@ -262,8 +263,13 @@
                                        <option value='Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)'>Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)</option>
                                        <option value='Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)'>* Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)</option>
                                    </select>
+                                   </div>
+                                   <div ng-show="add">
+                                     <input  ng-model="proyecto.indicador" id="percent" width="100%" type="text" class="form-control required" placeholder="Nuevo Indicador">
+                                   </div>
+                                   Nuevo Indicador: <input type="checkbox" ng-model="add" ><br/>
                                </div>
-                               Nuevo Indicador: <input type="checkbox" ng-model="checkedIndicador" aria-label="Toggle ngHide"><br/>
+                               
                            </div>
                        </div>
                    </div>
