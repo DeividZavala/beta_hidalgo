@@ -614,7 +614,7 @@ span.l-icon-ej{
 .textito{
   font-size:30px;
   font-family: 'Montserrat Alternates', sans-serif;
-  min-height: 60px;
+  min-height:200px;
 }
 #mensaje{
   margin-top:20%;
@@ -650,6 +650,16 @@ span.l-icon-ej{
   }
   .slider-text{
     padding-top: 40%;
+  }
+  .texto, .texto3{
+    text-align:center;
+    font-size:50%;
+  }
+  .texto2{
+    color:transparent;
+  }
+  .textito{
+    font-size:20px;
   }
 }
 @media (min-width:1024px){
@@ -688,4 +698,18 @@ span.l-icon-ej{
   #video{
     max-width: 400px;
   }
+}
+
+.lvideo{
+  width: 100%;
+}
+
+.link_foros{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.link_foros a{
+  text-decoration: none;
 }
