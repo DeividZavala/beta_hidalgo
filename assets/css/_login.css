@@ -75,5 +75,14 @@
 }
 .login_container{
 	margin-top: 5%;
-	margin-bottom: 5%; 
+	margin-bottom: 5%;
+}
+
+.fondo {
+  background-color: red;
+  border-radius: 20px;
+}
+
+strong {
+  color: white;
 }
