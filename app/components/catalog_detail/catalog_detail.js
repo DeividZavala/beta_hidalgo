@@ -29,7 +29,7 @@
 			.catch(function(err){
 				window.location.replace('/');
 			});
-		
+
 
 		$scope.titulo = "Proyecto enfocado a los borrachos"
 
@@ -66,7 +66,11 @@ message: "blabla"
 });
 });
 
-  
+
+
+							map.estoy = function(ruta){
+									return $location.path() == ruta;
+							}
 
 	}
 

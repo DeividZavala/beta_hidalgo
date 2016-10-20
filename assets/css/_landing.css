@@ -772,3 +772,43 @@ margin: 0 auto;
 margin-top: 200px;
 }
 
+.divforos{
+  padding: 1%;
+
+}
+
+.foros{
+  margin:0 auto;
+  padding: 0 2% 0 2%;
+  background-color: #efefef;
+}
+.foro{
+  margin-left: 7%;
+}
+
+.foros .foro .row h3{
+  padding-bottom: 10%;
+  font-size: 1em;
+  margin-left: 10%;
+  
+}
+.foros .foro .row{
+  margin:5%;
+}
+.foro .row:hover{
+  background-color: rgba(0,0,0,.3);
+}
+.foro .row{
+  border-radius:5px;
+}
+.divforos .foros h1{
+  font-family: gobierno, tahoma, sans-serif;
+}
+ 
+.divforos .well{
+  margin:0 auto;
+  background-color: rgba(245,245,245,.3);
+}
+
+
+
