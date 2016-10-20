@@ -713,3 +713,13 @@ span.l-icon-ej{
 .link_foros a{
   text-decoration: none;
 }
+
+/*Inicia svg*/
+
+.mapa{
+ /* width:50%;*/
+width: 450px;
+margin: 0 auto;
+margin-top: 200px;
+}
+
