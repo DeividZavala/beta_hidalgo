@@ -19,7 +19,7 @@
             // self.cuentale()
 
           }else{
-            
+
           }
         }); //checklogin
 
@@ -53,7 +53,7 @@
                   if(error.code === "auth/user-not-found"){
                     self.createUser();
                   }
-                   
+
                 });
 
               } //el else
@@ -76,7 +76,7 @@
 
         // self.cuentale = function(){
         //     self.timeInMs = 3;
-  
+
         //     var countDown = function() {
         //         self.timeInMs-= 1;
         //         if(self.timeInMs<1){
@@ -84,16 +84,11 @@
         //     }
         //         $timeout(countDown,1000);
         //     }
-            
+
         //     $timeout(countDown,1000);
-            
+
 
         // } //cuentale
-
-
-
-
-
 
 
 } //controller
