@@ -15,7 +15,7 @@
         }
 
         function addProject(data) {
-            $http.post('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/',data)
+            $http.post('http://planeacion.fixter.org/projects/',data)
             .then(function(response){
                 return response
             })
@@ -25,7 +25,7 @@
         }
 
         function createNewUser(data) {
-            $http.post('http://planestataldedesarrollo.hidalgo.gob.mx:8000/users/',data)
+            $http.post('http://planeacion.fixter.org/users/',data)
             .then(function(response){
                 return response
             })
@@ -35,15 +35,15 @@
         }
 
         function getUserProjects(uid) {
-             return $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects?user_id='+uid)
+             return $http.get('http://planeacion.fixter.org/projects?user_id='+uid)
         }
 
         function getAllProjects() {
-            return $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/')
+            return $http.get('http://planeacion.fixter.org/projects/')
         }
 
         function getProjectDetail(id) {
-            return $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+id+'/')
+            return $http.get('http://planeacion.fixter.org/projects/'+id+'/')
         }
     }
 })();

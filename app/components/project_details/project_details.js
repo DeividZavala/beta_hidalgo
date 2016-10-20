@@ -58,7 +58,7 @@
 
         //console.log("entre al controller");
 
-        
+
 
 
         //obtenemos al usuario si ya está
@@ -66,7 +66,7 @@
         auth.$onAuthStateChanged(function(firebaseUser) {
           self.user = firebaseUser;
           if(self.user){
-            
+
             // self.alert = "Bienvenido "+self.user.displayName;
             // self.cuentale()
 
@@ -173,7 +173,7 @@
 
             $http({
                 method:'POST',
-                url:'http://hidalgo.fixter.org/projects/'+$scope.proyecto.pk+'/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/'+$scope.proyecto.pk+'/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // headers: { 'Content-Type': 'multipart/form-data' },
                 // data: $httpParamSerializerJQLike(objeto),
@@ -203,7 +203,7 @@
                 $scope.pro.cerrado = true;
                 $http({
                 method:'POST',
-                url:'http://hidalgo.fixter.org/projects/'+$scope.pro.pk+'/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/'+$scope.pro.pk+'/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // headers: { 'Content-Type': 'multipart/form-data' },
                 // data: $httpParamSerializerJQLike(objeto),
@@ -256,8 +256,8 @@ FB.ui(
 {
 method: 'feed',
 name: 'Plan Estatal de Desarrollo 2016-2022',
-link: 'http://planeacion.fixter.org/catalogo',
-picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
+link: 'http://planestataldedesarrollo.hidalgo.gob.mx:8000/catalogo',
+picture: 'http://planestataldedesarrollo.hidalgo.gob.mx:8000/assets/images/logoGrande.jpg',
 caption: 'planeacion.fixter.org',
 description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
 message: "blabla"
@@ -271,8 +271,8 @@ FB.ui(
 {
 method: 'feed',
 name: 'Plan Estatal de Desarrollo 2016-2022',
-link: 'http://planeacion.fixter.org/catalogo',
-picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
+link: 'http://planestataldedesarrollo.hidalgo.gob.mx:8000/catalogo',
+picture: 'http://planestataldedesarrollo.hidalgo.gob.mx:8000/assets/images/logoGrande.jpg',
 caption: 'planeacion.fixter.org',
 description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
 message: "blabla"
@@ -408,7 +408,7 @@ message: "blabla"
                             bubble: false,
                             selector: ".required",
                             minPercent: false,
-                            message: "Please complete all required fields !"
+                            message: "Por favor completa todos los campos"
                         };
                         if (options) {
                             $.extend(st, options);
@@ -565,6 +565,6 @@ var ref = firebase.storage().ref().child('projects');
         console.log("el RefdelFile en el dom: ",$('#fileLink').attr('ref'));
     });
 
-    
+
 
 }
