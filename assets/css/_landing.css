@@ -801,7 +801,9 @@ margin-top: 200px;
 .foro .row{
   border-radius:5px;
 }
-
+.divforos .foros h1{
+  font-family: gobierno, tahoma, sans-serif;
+}
  
 .divforos .well{
   margin:0 auto;
