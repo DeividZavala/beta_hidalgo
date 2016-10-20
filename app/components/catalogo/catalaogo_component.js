@@ -79,11 +79,11 @@
             }
 
             // calculate start and end item indexes
+            var pages = _.range(startPage, endPage + 1);
             var startIndex = (currentPage - 1) * pageSize;
             var endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
 
             // create an array of pages to ng-repeat in the pager control
-            var pages = _.range(startPage, endPage + 1);
 
             // return object with all pager properties required by the view
             return {
