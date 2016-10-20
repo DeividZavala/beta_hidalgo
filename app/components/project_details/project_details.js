@@ -173,7 +173,7 @@
 
             $http({
                 method:'POST',
-                url:'http://hidalgo.fixter.org/projects/'+$scope.proyecto.pk+'/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/'+$scope.proyecto.pk+'/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // headers: { 'Content-Type': 'multipart/form-data' },
                 // data: $httpParamSerializerJQLike(objeto),

@@ -31,7 +31,7 @@
 
 			        $http({
 		                method:'POST',
-		                url:'http://hidalgo.fixter.org/projects/',
+		                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/',
 		                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		                // headers: { 'Content-Type': 'multipart/form-data' },
 		                // data: $httpParamSerializerJQLike(objeto),
@@ -97,7 +97,7 @@ FB.ui(
 method: 'feed',
 name: 'Plan Estatal de Desarrollo 2016-2022',
 link: 'http://planeacion.fixter.org',
-picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
+picture: 'http://planestataldedesarrollo.hidalgo.gob.mx:8000/assets/images/logoGrande.jpg',
 caption: 'planeacion.fixter.org',
 description: "Yo ya participé, mi idea ya esta considerada para el plan de desarrollo, ahora hazlo tú.",
 message: "blabla"
