@@ -65,9 +65,10 @@
         var auth = $firebaseAuth();
         auth.$onAuthStateChanged(function(firebaseUser) {
           self.user = firebaseUser;
+
           if(self.user){
 
-            // self.alert = "Bienvenido "+self.user.displayName;
+             self.alert = "Bienvenido "+self.user.displayName;
             // self.cuentale()
 
           }else{
@@ -79,22 +80,20 @@
         //traemos datos
 
 
-            projectDetails.id = $routeParams.id;
-        //console.log(projectDetails.id)
+        projectDetails.id = $routeParams.id;
+        console.log(projectDetails.id)
 
-        hidalgoService.getProjectDetail(projectDetails.id)
+       hidalgoService.getProjectDetail(projectDetails.id)
             .then(function (response) {
-                projectDetails.data = response.data[0]
+                //projectDetails.data = response.data[0]
+                console.log(response)
                 //console.log(projectDetails.data)
-                //console.log(projectDetails.data.fields.title)
+               // console.log(projectDetails.data.fields.title)
                 //console.log("la imagen",projectDetails.data.fields.imagen)
-                $scope.proyecto = response.data[0].fields
-                $scope.proyecto.pk = response.data[0].pk
-                $scope.pro = $scope.proyecto
-                $scope.barra();
-
-
-
+                //$scope.proyecto = response.data[0].fields
+                //$scope.proyecto.pk = response.data[0].pk
+                //$scope.pro = $scope.proyecto
+               // $scope.barra();
             });
 
 
@@ -102,7 +101,7 @@
         // var fd = new FormData();
         // fd.append('file', self.theFile);
 
-        $scope.quitarFoto = function(){
+      /* $scope.quitarFoto = function(){
             $scope.proyecto.imagen = null;
             var referencia = firebase.storage().ref().child('projects');
             referencia.child('images/'+$scope.proyecto.laRef).delete()
@@ -112,9 +111,9 @@
             .catch(function(err){
                 console.log("error",err);
             });
-        }
+        }*/
 
-        $scope.quitarFile = function(){
+     /* $scope.quitarFile = function(){
             $scope.proyecto.archivo = null;
             var referencia = firebase.storage().ref().child('projects');
             referencia.child('images/'+$scope.proyecto.fileRef).delete()
@@ -125,10 +124,10 @@
                 console.log("error",err);
             });
 
-        }
+        }*/
 
 
-        $scope.updateProject = function(){
+ /*        $scope.updateProject = function(){
             // permiso para editar
             if(self.user.uid !== $scope.proyecto.uid){
                 $location.path('/profile')
@@ -193,9 +192,9 @@
 
         } //else
 
-        } //updateProject
+        } //updateProject*/
 
-        $scope.subir = function(){
+      /* $scope.subir = function(){
 
             $('#warning').modal('show');
             $("#warning").on('hidden.bs.modal', function () {
@@ -220,7 +219,7 @@
             });
 
 
-        }
+        }*/
 
 
 
@@ -230,10 +229,10 @@
 
 
 
-    //desmadre de la barra de progreso
+    //Asunto de la barra de progreso
 
     //share w FB
-        window.fbAsyncInit = function() {
+   /* window.fbAsyncInit = function() {
     FB.init({
       appId      : '694502364033651',
       xfbml      : true,
@@ -278,8 +277,8 @@ description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del pl
 message: "blabla"
 });
 });
-});
-    //Upload images
+});*/
+   /* //Upload images
         $(document).on('click', '#close-preview', function(){
             // Hover befor close the preview
             $('.image-preview').hover(
@@ -397,9 +396,9 @@ message: "blabla"
                 reader.readAsDataURL(file);
             });
         });
-        //finish uploading files
+        //finish uploading files*/
         //progress bar
-            (function($) {
+            /*(function($) {
             $.fn.extend({
                 formProgress: function(options) {
                     var st = {
@@ -503,7 +502,7 @@ message: "blabla"
             selector : '.required' // La clase asignada a cada campo
             });
             });
-        //progress finishes
+        //progress finishes*/
 
 
     }
