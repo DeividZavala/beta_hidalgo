@@ -10,13 +10,15 @@
     </article>
 </section>
 
-<section class="catalogo container">
-    <article class="row projects_container">
 
 <div class="alert alert-info" align="center" ng-hide="$ctrl.items"><h1><strong>¡Atento!</strong> Por el momento estamos analizando tus proyectos,
   proximamente podras explorarlos.</h1></div>
 
         <div ng-repeat="project in $ctrl.items | filter:searchField |orderBy:'-pk'">
+
+
+<!-- <section class="catalogo container">
+    <article class="row projects_container">
 
             <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
 
@@ -45,22 +47,22 @@
                 <div class="pagination_container">
                     <ul  class="pagination">
                         <li ng-class="{disabled:$ctrl.pager.currentPage === 1}" class="page">
-                            <a ng-click="$ctrl.setPage(1)">First</a>
+                            <a ng-click="$ctrl.setPage(1)">Inicio</a>
                         </li>
                         <li ng-class="{disabled:$ctrl.pager.currentPage === 1}" class="page">
-                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage - 1)">Previous</a>
+                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage - 1)">Anterior</a>
                         </li>
                         <li ng-repeat="page in $ctrl.pager.pages" ng-class="{active:$ctrl.pager.currentPage === page}" class="page">
                             <a ng-click="$ctrl.setPage(page)">{{page}}</a>
                         </li>
                         <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}" class="page">
-                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage + 1)">Next</a>
+                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage + 1)">Siguiente</a>
                         </li>
                         <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}" class="page">
-                            <a ng-click="$ctrl.setPage($ctrl.pager.totalPages)">Last</a>
+                            <a ng-click="$ctrl.setPage($ctrl.pager.totalPages)">Ultimo</a>
                         </li>
                     </ul>
                 </div>
             </nav>
          </div>
-</section>
+</section> -->
