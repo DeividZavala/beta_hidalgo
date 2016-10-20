@@ -203,7 +203,7 @@
                 $scope.pro.cerrado = true;
                 $http({
                 method:'POST',
-                url:'http://hidalgo.fixter.org/projects/'+$scope.pro.pk+'/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/'+$scope.pro.pk+'/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // headers: { 'Content-Type': 'multipart/form-data' },
                 // data: $httpParamSerializerJQLike(objeto),
@@ -256,8 +256,8 @@ FB.ui(
 {
 method: 'feed',
 name: 'Plan Estatal de Desarrollo 2016-2022',
-link: 'http://planeacion.fixter.org/catalogo',
-picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
+link: 'http://planestataldedesarrollo.hidalgo.gob.mx:8000/catalogo',
+picture: 'http://planestataldedesarrollo.hidalgo.gob.mx:8000/assets/images/logoGrande.jpg',
 caption: 'planeacion.fixter.org',
 description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
 message: "blabla"
@@ -271,8 +271,8 @@ FB.ui(
 {
 method: 'feed',
 name: 'Plan Estatal de Desarrollo 2016-2022',
-link: 'http://planeacion.fixter.org/catalogo',
-picture: 'http://planeacion.fixter.org/assets/images/logoGrande.jpg',
+link: 'http://planestataldedesarrollo.hidalgo.gob.mx:8000/catalogo',
+picture: 'http://planestataldedesarrollo.hidalgo.gob.mx:8000/assets/images/logoGrande.jpg',
 caption: 'planeacion.fixter.org',
 description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
 message: "blabla"
