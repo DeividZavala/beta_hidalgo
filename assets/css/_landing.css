@@ -807,7 +807,8 @@ margin-top: 200px;
  
 .divforos .well{
   margin:0 auto;
-  background-color: rgba(245,245,245,.3);
+  background-color: #fff;
+  border-color: #fff;
 }
 
 
