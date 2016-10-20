@@ -59,20 +59,20 @@
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Edad:</span>
-                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... 23'>
+                <input type="number" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... 23' ng-model="$ctrl.info.edad">
             </div>
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Ocupación:</span>
-                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Abogado"'>
+                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Abogado"' ng-model="$ctrl.info.ocupacion">
             </div>
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Teléfono:</span>
-                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "7712454545"'>
+                <input type="number" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "7712454545"' ng-model="$ctrl.info.telefono">
             </div>
 
-            <button type="button" class="btn btn-success">
+            <button type="button" ng-click="$ctrl.actualizarDatos($ctrl.info)" class="btn btn-success">
                 Guardar Perfil</button>
 
         </div>
