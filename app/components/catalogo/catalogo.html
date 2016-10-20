@@ -45,19 +45,19 @@
                 <div class="pagination_container">
                     <ul  class="pagination">
                         <li ng-class="{disabled:$ctrl.pager.currentPage === 1}" class="page">
-                            <a ng-click="$ctrl.setPage(1)">First</a>
+                            <a ng-click="$ctrl.setPage(1)">Inicio</a>
                         </li>
                         <li ng-class="{disabled:$ctrl.pager.currentPage === 1}" class="page">
-                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage - 1)">Previous</a>
+                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage - 1)">Anterior</a>
                         </li>
                         <li ng-repeat="page in $ctrl.pager.pages" ng-class="{active:$ctrl.pager.currentPage === page}" class="page">
                             <a ng-click="$ctrl.setPage(page)">{{page}}</a>
                         </li>
                         <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}" class="page">
-                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage + 1)">Next</a>
+                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage + 1)">Siguiente</a>
                         </li>
                         <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}" class="page">
-                            <a ng-click="$ctrl.setPage($ctrl.pager.totalPages)">Last</a>
+                            <a ng-click="$ctrl.setPage($ctrl.pager.totalPages)">Ultimo</a>
                         </li>
                     </ul>
                 </div>
