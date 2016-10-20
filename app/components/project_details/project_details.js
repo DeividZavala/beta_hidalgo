@@ -58,7 +58,7 @@
 
         //console.log("entre al controller");
 
-        
+
 
 
         //obtenemos al usuario si ya está
@@ -66,7 +66,7 @@
         auth.$onAuthStateChanged(function(firebaseUser) {
           self.user = firebaseUser;
           if(self.user){
-            
+
             // self.alert = "Bienvenido "+self.user.displayName;
             // self.cuentale()
 
@@ -408,7 +408,7 @@ message: "blabla"
                             bubble: false,
                             selector: ".required",
                             minPercent: false,
-                            message: "Please complete all required fields !"
+                            message: "Por favor completa todos los campos"
                         };
                         if (options) {
                             $.extend(st, options);
@@ -565,6 +565,6 @@ var ref = firebase.storage().ref().child('projects');
         console.log("el RefdelFile en el dom: ",$('#fileLink').attr('ref'));
     });
 
-    
+
 
 }
