@@ -75,7 +75,7 @@
 }
 
 .active .texto{
-  animation:agrandar 5s ease infinite;
+  animation:agrandar 7s 3s ease infinite;
   transform-origin:center center;
 
   position: absolute;
@@ -85,7 +85,7 @@
 }
 
 .active .texto2{
-  animation:agrandar 3s 2s ease-in infinite;
+  animation:agrandar 3s 7s ease-in infinite;
   transform-origin:center center;
 
   position: absolute;
@@ -96,7 +96,7 @@
 
 
 .active .texto3{
-  animation:agrandar 3s 1s ease-in-out infinite;
+  animation:agrandar 5s 5s ease-in-out infinite;
   transform-origin:top bottom;
 
   position: absolute;
