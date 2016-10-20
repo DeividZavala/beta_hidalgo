@@ -10,15 +10,17 @@
     </article>
 </section>
 
-
-<div class="alert alert-info" align="center" ng-hide="$ctrl.items"><h1><strong>¡Atento!</strong> Por el momento estamos analizando tus proyectos,
-  proximamente podras explorarlos.</h1></div>
-
-        <div ng-repeat="project in $ctrl.items | filter:searchField |orderBy:'-pk'">
-
+<div class="alert alert-info" align="center" ng-hide="$ctrl.items">
+    <h1>
+        <strong>¡Atento!</strong>
+        Por el momento estamos analizando tus proyectos, proximamente podras explorarlos.</h1>
+</div>
 
 <!-- <section class="catalogo container">
     <article class="row projects_container">
+
+
+        <div ng-repeat="project in $ctrl.items | filter:searchField |orderBy:'-pk'">
 
             <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
 
