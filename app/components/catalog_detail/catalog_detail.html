@@ -6,8 +6,6 @@
 		<h1>{{proyecto.title}}</h1>
 	</div>
 
-	<div class="well row">
-
 		<img ng-hide="proyecto.imagen" class="img-responsive col-sm-5" src="/assets/images/port.jpg">
 		<img ng-show="proyecto.imagen" class="img-responsive col-sm-5" ng-src="{{proyecto.imagen}}" alt="imagen de la propuesta">
 		<div class="izquierda col-sm-6 col-sm-offset-1">
@@ -18,27 +16,45 @@
 			<h4>
 				{{proyecto.objetivo_general}}
 			</h4>
-			<button ng-show="false" class="btn btn-success">Patrocinar este proyecto</button>
-			<button ng-show="false" class="btn btn-danger">Reportar este proyecto</button>
-			<div ng-show="false" class="botoncillos">
 
+
+									<div class="botoncillos">
+										<i class="fa fa-heart-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Seguir Proyecto"></i>
+										<i id="share_button" class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Comparte en Facebook"></i>
+										<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+										<a href="https://twitter.com/intent/tweet?text=Esta idea está genial, chéca esta y más ideas del plan estatal de desarrollo.&url=http://planestataldedesarrollo.hidalgo.gob.mx">
+											<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Comparte en Twitter"></i>
+										</a>
+
+										<i class="fa fa-link" aria-hidden="true" data-toggle="tooltip" data-placement="bottom"  id="copiar">
+										</i>
+
+										    <script>
+										        //Inicio del boton de copia
+										        var playButton = $('#copiar');  // Se obtiene el id del boton clicable
+										        playButton.click(function(){    // Acá se pone a escucha el evento click para el boton antes definido
+										            copyToClipboard();          // Esto llama a la funcion copyToClipboard() (Está mas abajo)
+										        });
+										        //fin del boton de copia
+										        //Funcion copytoClipboard
+										        function copyToClipboard() {
+										        $("body").append("<input type='text' id='temp'>"); // Acá se crea un input dinamicamente con un id para luego asignarle un valor sombreado
+										        $("#temp").val("http://planestataldedesarrollo.hidalgo.gob.mx/#/catalogo/").select(); // Acá se obtiene el id del boton que hemos creado antes y se le agrega un valor y luego se le sombrea con select(). Para agregar lo que se quiere copiar editas val("EDITAESTOAQUÍ")
+										        document.execCommand("copy"); // document.execCommand("copy") manda a copiar el texto seleccionado en el documento
+										        $("#temp").remove();
+
+										    }
+										    </script>
+
+									</div>
+
+<br>
+
+			<div ng-show="false" class="botoncillos">
 
 			<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 
-
-			<div class="botoncillos">
-				<i class="fa fa-heart-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Seguir Proyecto"></i>
-				<i id="share_button" class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Comparte en Facebook"></i>
-				<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
-				<a href="https://twitter.com/intent/tweet?text=Esta idea está genial, chéca esta y más ideas del plan estatal de desarrollo.&url=http://planestataldedesarrollo.hidalgo.gob.mx">
-					<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Comparte en Twitter"></i>
-				</a>
-
-				<i class="fa fa-link" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Copia el link"></i>
-
-			</div>
 		</div>
-
 		<div class="well">
 
 			<ul class="nav nav-tabs">
