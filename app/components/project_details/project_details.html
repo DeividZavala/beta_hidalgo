@@ -179,47 +179,54 @@
                    </div>
                </div>
             </div>
+
+
             <!-- Alcance-->
+
             <div class="container3">
 
-              <div class="row">
-                  <div class="col-xs-6 col-md-3">
-                      <h3 class="name">Alcance</h3>
-                      <p>¿A qué nivel geográfico impacta el proyecto?</p>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-9">
-                      <div class="well">
-                          <div class="row">
-                              <div class="col-md-1">
-                                  <i class="fa fa-thumb-tack" aria-hidden="true"></i>
-                              </div>
-                              <div class="col-md-11">
-                                  <div class="radio">
-                                    <label>
-                                      <input class="required" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
-                                      Estatal
-                                    </label>
-                                  </div>
-                                  <div class="radio">
-                                    <label>
-                                      <input class="required" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Regional
-                                    </label>
-                                  </div>
-                                  <div class="radio">
-                                    <label>
-                                      <input class="required" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Metropolitano
-                                    </label>
-                                  </div>
-                                  <div class="radio">
-                                    <label>
-                                      <input class="required" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Otro
-                                    </label>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                <div class="row">
+                    <div class="col-xs-6 col-md-3">
+                        <h3 class="name">Alcance</h3>
+                        <p>¿A qué nivel geográfico impacta el proyecto?</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <i class="fa fa-arrows" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-11">
+
+                                    <div>
+
+                                      <div ng-hide="checked">
+                                        <select ng-model="proyecto.alcance" class="form-control required" >
+                                          <option value="{{proyecto.alcance}}">{{proyecto.alcance}}</option>
+                                          <option value="Gobierno Honesto Cercano y Moderno" >Estatal</option>
+                                          <option value="Hidalgo Próspero y Dinámico">Regional</option>
+                                          <option value="Hidalgo Humano e Igualitario">Metropolitano</option>
+                                          <option value="Un Hidalgo Seguro con Justicia y Paz">Otro</option>
+                                          
+
+                                        </select>
+                                      </div>
+                                    </div>
+
+                                    <div>
+
+                                      <div class="check-element animate-show" ng-show="checked">
+                                        <input  ng-model="proyecto.eje" id="percent" width="100%" type="text" class="form-control required" placeholder="Nuevo Eje">
+                                      </div>
+                                    </div>
+                                    Nuevo Eje: <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
