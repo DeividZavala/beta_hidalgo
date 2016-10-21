@@ -1,3 +1,12 @@
+<!-- Alerts -->
+<div ng-show="$ctrl.exito" class="alert alert-success" role="alert">
+    Tus datos se Guardarón con éxito
+</div>
+<div ng-show="$ctrl.error" class="alert alert-danger" role="alert">
+    Hubo un error intentalo más tarde
+</div>
+
+
 <br>
 <section class="user_profile row">
     <article class="user_menu_container col-md-3 col-xs-12 col-sm-12">
@@ -59,17 +68,17 @@
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Edad:</span>
-                <input type="number" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... 23' ng-model="$ctrl.info.edad">
+                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... 23' ng-model="$ctrl.perfil.edad">
             </div>
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Ocupación:</span>
-                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Abogado"' ng-model="$ctrl.info.ocupacion">
+                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Abogado"' ng-model="$ctrl.perfil.ocupacion">
             </div>
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Teléfono:</span>
-                <input type="number" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "7712454545"' ng-model="$ctrl.info.telefono">
+                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "7712454545"' ng-model="$ctrl.perfil.telefono">
             </div>
 
             <button type="button" ng-click="$ctrl.actualizarDatos($ctrl.info)" class="btn btn-success">
