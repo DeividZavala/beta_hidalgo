@@ -161,7 +161,8 @@
                     'imagen':self.downloadURL,
                     'laRef':self.laRef,
                     'archivo':self.fileURL,
-                    'fileRef':self.fileRef
+                    'fileRef':self.fileRef,
+                    'alcance':$scope.proyecto.alcance
                     // 'img':self.theFile
                         // mun:self.mun,
                         // prob:self.prob,
@@ -171,7 +172,7 @@
 
             $http({
                 method:'POST',
-                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/'+$scope.proyecto.pk+'/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$scope.proyecto.pk+'/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // headers: { 'Content-Type': 'multipart/form-data' },
                 // data: $httpParamSerializerJQLike(objeto),
