@@ -84,6 +84,7 @@
         console.log(projectDetails.id)
 
        hidalgoService.getProjectDetail(projectDetails.id)
+       // $http.get('http://localhost:8000/projects/'+projectDetails.id+'/')
             .then(function (response) {
                 projectDetails.data = response.data[0]
                 //console.log(projectDetails.data)
@@ -202,7 +203,7 @@
                 $scope.pro.cerrado = true;
                 $http({
                 method:'POST',
-                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/'+$scope.pro.pk+'/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$scope.pro.pk+'/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // headers: { 'Content-Type': 'multipart/form-data' },
                 // data: $httpParamSerializerJQLike(objeto),

@@ -1,10 +1,8 @@
 <!-- Alerts -->
-<div ng-show="$ctrl.exito" class="alert alert-success" role="alert">
-    Tus datos se Guardarón con éxito
+<div style="text-align:center" ng-show="$ctrl.exito" class="alert alert-success" role="alert">
+    Tus datos se Guardaron con éxito
 </div>
-<div ng-show="$ctrl.error" class="alert alert-danger" role="alert">
-    Hubo un error intentalo más tarde
-</div>
+
 
 
 <br>
@@ -58,7 +56,7 @@
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Nombre:</span>
                 <input ng-show="$ctrl.usuario.photoURL" disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
-                <input ng-hide="$ctrl.usuario.photoURL" type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
+                <input ng-hide="$ctrl.usuario.photoURL" type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' ng-model="$ctrl.perfil.name">
             </div>
 
             <div class="input-group">
