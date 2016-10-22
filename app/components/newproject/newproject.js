@@ -24,7 +24,7 @@
 						uid:self.user.uid,
 						municipio:self.mun,
 						problematica:self.prob,
-						// slug:self.user.photoURL
+						foro:self.foro
 						};
 
 	          if(self.user){

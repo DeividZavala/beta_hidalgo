@@ -53,16 +53,16 @@
 
 				<div class="col-md-6">
 					<label><h4 class="textt">¿A qué eje pertenece tu proyecto?</h4></label>
-				<select required ng-model="$ctrl.eje" class="form-control input-lg">
+					<select required ng-model="$ctrl.eje" class="form-control input-lg">
 
-					<option value="">Selecciona un Eje</option>
-					<option value="Gobierno Honesto, Cercano y Moderno">Gobierno Honesto, Cercano y Moderno</option>
-					<option value="Hidalgo Próspero y Dinámico">Hidalgo Próspero y Dinámico</option>
-					<option value="Hidalgo Humano e Igualitario">Hidalgo Humano e Igualitario</option>
-					<option value="Un Hidalgo Seguro con Justicia y en Paz">Un Hidalgo Seguro con Justicia y en Paz</option>
-					<option value="Un Hidalgo Con Desarrollo Sustentable">Un Hidalgo Con Desarrollo Sustentable</option>
-					<option value="Otro">Otro</option>
-				</select>
+						<option value="">Selecciona un Eje</option>
+						<option value="Gobierno Honesto, Cercano y Moderno">Gobierno Honesto, Cercano y Moderno</option>
+						<option value="Hidalgo Próspero y Dinámico">Hidalgo Próspero y Dinámico</option>
+						<option value="Hidalgo Humano e Igualitario">Hidalgo Humano e Igualitario</option>
+						<option value="Un Hidalgo Seguro con Justicia y en Paz">Un Hidalgo Seguro con Justicia y en Paz</option>
+						<option value="Un Hidalgo Con Desarrollo Sustentable">Un Hidalgo Con Desarrollo Sustentable</option>
+						<option value="Otro">Otro</option>
+					</select>
 				</div>
 
 						<div class="col-md-6">
@@ -161,10 +161,26 @@
 
 						</div>
 
+						
+
+					</div>
+					<div class="col-md-6 col-md-offset-3 foros_presenciales">
+						<label><h4 class="textt">¿Formas Parte de algun foro Presencial?, Cuentanos cual</h4></label>
+						<select required ng-model="$ctrl.foro" class="form-control input-lg">
+
+							<option value="">Selecciona un Foro</option>
+							<option value="Huejutla">Huejutla</option>
+							<option value="Pachuca">Pachuca</option>
+							<option value="Tulancingo">Tulancingo</option>
+							<option value="Ixmiquilpan">Ixmiquilpan</option>
+							<option value="Tula">Tula</option>
+							
+						</select>
+
 					</div>
 
 				<br><br><br><br><br>
-				<div align="center">
+				<div align="center" class="col-md-12">
 									<input type="Submit" class="btn btn-primary btn-lg" value="Sube tu Proyecto">
 
 									<br>
