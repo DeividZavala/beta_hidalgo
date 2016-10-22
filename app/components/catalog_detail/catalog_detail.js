@@ -11,14 +11,14 @@
 		$('[data-toggle="tooltip"]').tooltip();
 
 		//Bajamos la rama de proyectos
-		/*$http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$routeParams.id+'/')
-		.then(function(project){
-			console.log(project);
-			$scope.proyecto = project.data[0].fields;
-		})
-		.catch(function(err){
-			 window.location.replace('/');
-		});*/
+		// $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$routeParams.id+'/')
+		// .then(function(project){
+		// 	console.log(project);
+		// 	$scope.proyecto = project.data[0].fields;
+		// })
+		// .catch(function(err){
+		// 	 window.location.replace('/');
+		// });
 		//Bajammos al usuario
 
 		hidalgoService.getProjectDetail($routeParams.id)

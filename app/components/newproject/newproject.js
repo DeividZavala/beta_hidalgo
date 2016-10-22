@@ -5,8 +5,8 @@
 		controller: newProjectController
 	}
 
-	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth','$location','$scope','$httpParamSerializerJQLike'];
-	function newProjectController(hidalgoService,$http,$firebaseAuth,$location,$scope,$httpParamSerializerJQLike) {
+	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth','$location','$scope','$httpParamSerializerJQLike','$cookies'];
+	function newProjectController(hidalgoService,$http,$firebaseAuth,$location,$scope,$httpParamSerializerJQLike,$cookies) {
 		var new_project = this;
 		var self = this;
 		var auth = $firebaseAuth();
@@ -18,13 +18,17 @@
 	        auth.$onAuthStateChanged(function(firebaseUser) {
 	          self.user = firebaseUser;
 
+	          var csrf = $cookies.get('csrftoken');
+	          console.log('El cookie: ',csrf);
 	          var objeto = {
 						title:self.title,
 						eje:self.eje,
 						uid:self.user.uid,
 						municipio:self.mun,
 						problematica:self.prob,
-						foro:self.foro
+						foro:self.foro,
+						csrfmiddlewaretoken: csrf
+
 						};
 
 	          if(self.user){
@@ -32,6 +36,7 @@
 			        $http({
 		                method:'POST',
 		                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/',
+		                // url:'http://localhost:8000/projects/',
 		                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		                // headers: { 'Content-Type': 'multipart/form-data' },
 		                // data: $httpParamSerializerJQLike(objeto),
@@ -49,6 +54,7 @@
 					})
 					.catch(function(err){
 						console.log("Error",err)
+						// console.log('prro')
 					})
 
 	          }else{

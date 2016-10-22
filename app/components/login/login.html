@@ -1,6 +1,6 @@
 
-<div style="text-align:center" ng-show="$ctrl.timeInMs" class="alert alert-success" role="alert">
-        {{$ctrl.alert}} seras redireccionado en: {{$ctrl.timeInMs}}
+<div style="text-align:center" ng-show="$ctrl.error" class="alert alert-warning" role="alert">
+        Tu correo electrónico y contraseña no coinciden, verifícalos porfavor.
     </div>
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -58,7 +58,7 @@
                     </div>
 
                     <br>
-                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Entrar" onclick="myFunction()">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Entrar">
                 </form>
             </div>
         </div>
@@ -77,17 +77,3 @@
 
     </div>
 </div>
-
-<script>
-function myFunction() {
-    var x, text;
-
-    x = document.getElementById("email").value;
-
-    if (x =! email) {
-    } else {
-        text = "<strong>Error tu correo o contraseña son incorrectos, intenta otra vez</strong>";
-    }
-    document.getElementById("email").innerHTML = text;
-}
-</script>

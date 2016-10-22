@@ -27,6 +27,7 @@
            // console.log('rayos: ',self.usuario.photoURL);
             console.log('mi user: ',self.usuario);
             hidalgoService.getUserProjects(self.usuario.uid)
+            // $http.get('http://localhost:8000/projects?user_id='+self.usuario.uid)
                 .then(function (response) {
                     self.userProjects = response.data
                     console.log(self.userProjects)
@@ -40,7 +41,8 @@
         self.actualizarDatos = function (info) {
 
             self.newData = {
-                'name': self.usuario.displayName,
+                'name': self.perfil.name,
+                'displayName':self.usuario.displayName,
                 'email':self.usuario.email,
                 'edad': self.perfil.edad,
                 'ocupacion': self.perfil.ocupacion,
@@ -87,7 +89,7 @@
             })
             .catch(function(err){
                 console.log(err)
-                self.error = true;
+                // self.error = true;
             });
         }
 
