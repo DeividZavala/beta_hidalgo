@@ -34,8 +34,8 @@
 
 			        $http({
 		                method:'POST',
-		                // url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/',
-		                url:'http://localhost:8000/projects/',
+		                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/',
+		                // url:'http://localhost:8000/projects/',
 		                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		                // headers: { 'Content-Type': 'multipart/form-data' },
 		                // data: $httpParamSerializerJQLike(objeto),
