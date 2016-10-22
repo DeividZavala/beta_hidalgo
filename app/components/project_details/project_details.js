@@ -5,7 +5,7 @@
         controller: projectDetailsController
     }
 
-    function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth,$httpParamSerializerJQLike,$location) {
+    function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth,$httpParamSerializerJQLike,$location,$cookies) {
         var projectDetails = this;
         var self = this;
         // Barra de progreso
@@ -13,7 +13,40 @@
         $scope.total=$scope.suma[0]+$scope.suma[1]+$scope.suma[2]+$scope.suma[3]+$scope.suma[4];
 
 
-
+        // Subir imagen flow
+        $scope.obj = {};
+        $scope.consola = function(){
+            // console.log($flow.files);
+            console.log($scope.obj.flow.files[0].file);
+            var csrf = $cookies.get('csrftoken');
+            var fd = new FormData();
+            var objeto = {
+                'title':'orale papud',
+                'uid':'maria y lupe',
+                'csrfmiddlewaretoken': csrf
+            }
+            for ( var key in objeto ) {
+                    fd.append(key, objeto[key]);
+                }
+            fd.append('img',$scope.obj.flow.files[0].file);
+            $http({
+                method:'POST',
+                url:'http://localhost:8000/projects/'+21+'/',
+                data:fd,
+                headers: {'Content-Type': undefined},
+                // transformRequest: angular.identity
+                // headers: { 'Content-Type': 'multipart/form-data' },
+                // data: $httpParamSerializerJQLike(objeto),
+                // data:$httpParamSerializerJQLike(objeto),
+                // file:{'img':$scope.obj.flow.files[0]}
+            })
+            .then(function(res){
+                console.log(res)
+            })
+            .catch(function(err){
+                console.log(err)
+            })
+        }
 
         // La barra de progreso
 
@@ -221,6 +254,8 @@
 
 
         }
+
+        
 
 
 
