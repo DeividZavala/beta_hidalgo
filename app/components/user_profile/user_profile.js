@@ -26,6 +26,22 @@
             //self.cuentale()
            // console.log('rayos: ',self.usuario.photoURL);
             console.log('mi user: ',self.usuario);
+            var data = {'uid':self.usuario.uid}
+            $http({
+                method:'POST',
+                // url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/save/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/profile/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $httpParamSerializerJQLike(data)
+            })
+            .then(function(res){
+                console.log(res)
+                self.perfil = res.data[0].fields
+            })
+            .catch(function(err){
+                console.log(err)
+                // self.error = true;
+            });
             hidalgoService.getUserProjects(self.usuario.uid)
             // $http.get('http://localhost:8000/projects?user_id='+self.usuario.uid)
                 .then(function (response) {
@@ -68,8 +84,25 @@
 
         }
 
+        /*var data = {'uid':self.usuario.uid}
+            $http({
+                method:'POST',
+                // url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/save/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/profile/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $httpParamSerializerJQLike(data)
+            })
+            .then(function(res){
+                console.log(res)
+                self.perfil = res.data[0].fields
+            })
+            .catch(function(err){
+                console.log(err)
+                // self.error = true;
+            });*/
 
-        self.panelSetTab = panelSetTab;
+
+        /*self.panelSetTab = panelSetTab;
         self.checkTab = checkTab;
         self.tab = 1;
         
@@ -95,7 +128,7 @@
 
         function checkTab(checkTab) {
             return self.tab === checkTab;
-        }
+        }*/
     }
 
     angular
