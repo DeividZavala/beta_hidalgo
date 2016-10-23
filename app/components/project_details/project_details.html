@@ -527,6 +527,46 @@
 
             </div>
 
+            <!-- Foro presencial -->
+            <div class="container3">
+
+                <div class="row">
+                    <div class="col-xs-6 col-md-3">
+                        <h3 class="name">Foro</h3>
+                        <p>¿Formas parte de algún foro presencial?</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <i class="fa fa-arrows" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-11">
+
+                                    <div>
+
+                                      <div ng-hide="checked">
+                                        <select ng-model="proyecto.foro" class="form-control required" >
+                                          <option value="{{proyecto.foro}}">{{proyecto.foro}}</option>
+                                          <option value="Huehutla" >Huejutla</option>
+                                          <option value="Pachuca" >Pachuca</option>
+                                          <option value="Tulancingo" >Tulancingo</option>
+                                          <option value="Ixmiquilpan" >Ixmiquilpan</option>
+                                          <option value="Tula" >Tula</option>
+                                          
+
+                                        </select>
+                                      </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
 
 <!-- Botones para guardar y enviar -->
 <div class="col-sm-6 col-sm-offset-6">

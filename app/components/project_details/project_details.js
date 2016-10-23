@@ -159,6 +159,7 @@
                     'problematica':$scope.proyecto.problematica,
                     'municipio':$scope.proyecto.municipio,
                     'uid':self.user.uid,
+                    'foro':$scope.proyecto.foro,
                     // 'imagen':self.downloadURL,
                     // 'laRef':self.laRef,
                     // 'archivo':self.fileURL,
@@ -182,7 +183,7 @@
             
             $http({
                 method:'POST',
-                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+21+'/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$routeParams.id+'/',
                 data:fd,
                 headers: {'Content-Type': undefined},
                 transformRequest: angular.identity
@@ -210,15 +211,35 @@
         } //updateProject
 
        $scope.subir = function(){
+            var csrf = $cookies.get('csrftoken');
+            var objeto = {
+                    'csrfmiddlewaretoken': csrf,
+                    'title':$scope.proyecto.title,
+                    'eje':$scope.proyecto.eje,
+                    'objetivo_general':$scope.proyecto.objetivo_general,
+                    'indicador':$scope.proyecto.indicador,
+                    'planteamiento':$scope.proyecto.planteamiento,
+                    'problematica':$scope.proyecto.problematica,
+                    'municipio':$scope.proyecto.municipio,
+                    'uid':self.user.uid,
+                    'foro':$scope.proyecto.foro,
+                    // 'imagen':self.downloadURL,
+                    // 'laRef':self.laRef,
+                    // 'archivo':self.fileURL,
+                    // 'fileRef':self.fileRef,
+                    'alcance':$scope.proyecto.alcance
+                    // 'img':self.theFile
+                        // mun:self.mun,
+                        // prob:self.prob,
+                        // slug:self.user.photoURL
+                    }
 
             $('#warning').modal('show');
             $("#warning").on('hidden.bs.modal', function () {
                 // $location.path("/profile");
-                var csrf = $cookies.get('csrftoken');
                 var fd = new FormData();
-                fd.append('csrfmiddlewaretoken',csrf);
-                for (key in $scope.proyecto){
-                    fd.append(key,$scope.proyecto[key])
+                for (key in objeto){
+                    fd.append(key,objeto[key])
                 }
                 if ($scope.obj.flow.files[0] !== undefined){
                 fd.append('img',$scope.obj.flow.files[0].file);
