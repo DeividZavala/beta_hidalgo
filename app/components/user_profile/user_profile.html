@@ -2,7 +2,7 @@
 <div ng-show="$ctrl.error" class="alert alert-danger" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     Hubo un error intentalo más tarde
-
+</div>
 <div style="text-align:center" ng-show="$ctrl.exito" class="alert alert-success" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     Tus datos se Guardaron con éxito
@@ -81,6 +81,7 @@
                         Guardar Perfil</button>
 
                 </div>
+                <!-- Fin de Formulario -->
             </div>
         </aside>
     </article>
@@ -105,58 +106,6 @@
                 </div>
             </div>
 </div>
-
-<!-- Formulario de completar el perfil -->
-                <!--<div class="perfil" ng-show="$ctrl.checkTab(2)">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">Nombre:</span>
-                        <input ng-show="$ctrl.usuario.photoURL" disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
-                        <input ng-hide="$ctrl.usuario.photoURL" type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
-                    </div>
-
-<<<<<<< HEAD
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">Correo:</span>
-                        <input disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "juan@hotmail.com"' value="{{$ctrl.usuario.email}}">
-                    </div>
-=======
-        <div class="perfil col-md-8" ng-show="$ctrl.checkTab(2)">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Nombre:</span>
-                <input ng-show="$ctrl.usuario.photoURL" disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
-                <input ng-hide="$ctrl.usuario.photoURL" type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' ng-model="$ctrl.perfil.name">
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Correo:</span>
-                <input disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "juan@hotmail.com"' value="{{$ctrl.usuario.email}}">
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Edad:</span>
-                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... 23' ng-model="$ctrl.perfil.edad">
-            </div>
->>>>>>> ca7a902c703bb67e1ec464b01102d7549f7c88ca
-
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">Edad:</span>
-                        <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... 23' ng-model="$ctrl.perfil.edad">
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">Ocupación:</span>
-                        <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Abogado"' ng-model="$ctrl.perfil.ocupacion">
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">Teléfono:</span>
-                        <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "7712454545"' ng-model="$ctrl.perfil.telefono">
-                    </div>
-
-                    <button type="button" ng-click="$ctrl.actualizarDatos($ctrl.info)" class="btn btn-success">
-                        Guardar Perfil</button>
-
-                </div>-->
         
     </article>
 </section>
