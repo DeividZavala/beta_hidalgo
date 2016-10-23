@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('hidalgo',['ngRoute','firebase','ngCookies'])
+        .module('hidalgo',['ngRoute','firebase','ngCookies','flow'])
         .config(configura);
         
         function configura($httpProvider){
