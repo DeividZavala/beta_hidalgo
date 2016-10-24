@@ -147,6 +147,8 @@
 
 
         $scope.updateProject = function(){
+            $('#loader').show();
+            $('#guardar').hide();
             var csrf = $cookies.get('csrftoken');
             var fd = new FormData();
             var objeto = {
@@ -208,6 +210,8 @@
             })
 
 
+            $('#loader').hide();
+            $('#guardar').show();
         } //updateProject
 
        $scope.subir = function(){
