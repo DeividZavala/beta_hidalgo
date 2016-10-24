@@ -26,7 +26,7 @@
 						uid:self.user.uid,
 						municipio:self.mun,
 						problematica:self.prob,
-						foro:self.foro,
+						//foro:self.foro,
 						csrfmiddlewaretoken: csrf
 
 						};
