@@ -37,7 +37,7 @@
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Nombre:</span>
                         <input ng-show="$ctrl.usuario.photoURL" disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
-                        <input ng-hide="$ctrl.usuario.photoURL" type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
+                        <input ng-hide="$ctrl.usuario.photoURL" type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.perfil.name}}" ng-model="$ctrl.perfil.name">
                     </div>
 
                     <div class="input-group">
