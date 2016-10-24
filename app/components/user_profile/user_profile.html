@@ -16,7 +16,8 @@
     <article class="user_menu_container col-md-3 col-xs-12 col-sm-12">
         <aside class="user_menu">
 
-            <img class="user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
+            <img ng-show="$ctrl.usuario.photoURL" class="user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
+            <img ng-hide="$ctrl.usuario.photoURL" class="user_img" src="/assets/images/default_profile_img.jpg" alt="imagen de perfil">
 
             <div class="user_data">
                 <p>
