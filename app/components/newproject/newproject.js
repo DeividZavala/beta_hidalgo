@@ -108,7 +108,7 @@ method: 'feed',
 name: 'Plan Estatal de Desarrollo 2016-2022',
 link: 'http://planestataldedesarrollo.hidalgo.gob.mx',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx/assets/images/logoGrande.jpg',
-caption: 'planeacion.fixter.org',
+caption: 'planestataldedesarrollo.hidalgo.gob.mx',
 description: "Yo ya participé, mi idea ya esta considerada para el plan de desarrollo, ahora hazlo tú.",
 message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 });
