@@ -147,6 +147,7 @@
 
 
         $scope.updateProject = function(){
+            $scope.loader = true;
             var csrf = $cookies.get('csrftoken');
             var fd = new FormData();
             var objeto = {
@@ -208,6 +209,7 @@
             })
 
 
+            $scope.loader = false;
         } //updateProject
 
        $scope.subir = function(){
