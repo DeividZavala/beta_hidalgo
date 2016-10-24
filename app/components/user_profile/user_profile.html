@@ -28,7 +28,7 @@
 
             </div>
             <div class="list-group col-md-offset-1">
-                <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(1)}" ng-click="$ctrl.panelSetTab(1)">Mis proyectos
+                <button type="button" class="list-group-item active">Mis proyectos
                     <span class="badge">{{$ctrl.userProjects.length}}</span>
                 </button>
                <!-- <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(2)}" ng-click="$ctrl.panelSetTab(2)">Mi Perfil</button>-->
@@ -88,7 +88,7 @@
     <article class="user_option col-md-9 col-sm-12">
 
 
-<div ng-show="$ctrl.checkTab(1) || $ctrl.checkTab(2)" ng-repeat="project in $ctrl.userProjects |orderBy:'-pk'">
+<div ng-repeat="project in $ctrl.userProjects |orderBy:'-pk'">
             <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
                 <div class="thumbnail efectito_y">
                     <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto">
