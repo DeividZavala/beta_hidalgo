@@ -14,6 +14,18 @@
 
 		self.addProject = function() {
 
+			//obtenemos la cookie
+			$http({
+                method:'GET',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/',
+                // url:'http://localhost:8000/projects/',
+                headers: {'Content-Type': undefined},
+                // headers: { 'Content-Type': 'multipart/form-data' },
+                // data: $httpParamSerializerJQLike(objeto),
+                // data:$httpParamSerializerJQLike(objeto),
+                // file:self.theFile
+            })
+
 				//obtenemos al usuario si ya está
 	        auth.$onAuthStateChanged(function(firebaseUser) {
 	          self.user = firebaseUser;
