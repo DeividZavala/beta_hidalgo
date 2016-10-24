@@ -570,9 +570,9 @@
 
 <!-- Botones para guardar y enviar -->
 <div class="col-sm-6 col-sm-offset-6">
-<button id="guardar" ng-click="updateProject()" data-toggle="tooltip" data-placement="top" title="Puedes guardar el progreso de tu proyecto y terminarlo despues" class="btn btn-lg btn-warning" >Guardar Progreso</button>
+<button ng-hide="loader" ng-click="updateProject()" data-toggle="tooltip" data-placement="top" title="Puedes guardar el progreso de tu proyecto y terminarlo despues" class="btn btn-lg btn-warning" >Guardar Progreso</button>
 
-  <img style="display:none" id="loader" src="http://www.valassis.com/images/ui/loading.gif">
+<img ng-show="loader" src="http://www.valassis.com/images/ui/loading.gif">
 
 <button ng-show="total === 100" ng-click="subir()" data-toggle="tooltip" data-placement="top" title="Una vez enviado ya no podrás editar tu proyecto" class="btn btn-lg btn-success">Enviar proyecto</button>
 </div>
