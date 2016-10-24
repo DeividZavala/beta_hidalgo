@@ -8,7 +8,7 @@
     function projectDetailsController(hidalgoService,$routeParams,$scope,$http,$firebaseAuth,$httpParamSerializerJQLike,$location,$cookies,$route) {
         var projectDetails = this;
         var self = this;
-        self.gif = false;
+        $scope.gif = false;
         //tooltips
         $('[data-toggle="tooltip"]').tooltip();
         // Barra de progreso
@@ -147,7 +147,7 @@
 
 
         $scope.updateProject = function(){
-            self.gif = true;
+            $scope.gif = true;
             var csrf = $cookies.get('csrftoken');
             var fd = new FormData();
             var objeto = {
@@ -209,7 +209,7 @@
             })
 
 
-            self.gif = false;
+            
         } //updateProject
 
        $scope.subir = function(){
