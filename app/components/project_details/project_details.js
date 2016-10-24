@@ -208,7 +208,7 @@
             .catch(function(err){
                 console.log(err)
                 alert('Algo ocurrió, intentalo más tarde');
-                $scope.gif = true;
+                $scope.gif = false;
             })
 
 
