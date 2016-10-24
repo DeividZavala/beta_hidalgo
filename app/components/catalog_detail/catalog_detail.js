@@ -4,7 +4,7 @@
 		controller:CatDetController
 	}
 
-	function CatDetController($firebaseAuth,$firebaseArray,$scope,$routeParams,$http,hidalgoService){
+	function CatDetController($firebaseAuth,$firebaseArray,$scope,$routeParams,$http,hidalgoService,$location){
 		var self = this;
 		$scope.tab=1;
 		//tooltip
@@ -27,11 +27,11 @@
 				$scope.proyecto = project.data[0].fields;
 			})
 			.catch(function(err){
-				window.location.replace('/');
+				$location.path('/')
 			});
 
 
-		$scope.titulo = "Proyecto enfocado a los borrachos"
+		// $scope.titulo = "Proyecto enfocado a los borrachos"
 
 		//share w FB
 		window.fbAsyncInit = function() {
@@ -68,11 +68,9 @@ message: "blabla"
 
 
 
-							map.estoy = function(ruta){
-									return $location.path() == ruta;
-							}
+							
 
-	}
+	} //conroller
 
 
 
