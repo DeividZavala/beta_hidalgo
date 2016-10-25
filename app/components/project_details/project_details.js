@@ -314,7 +314,7 @@ name: 'Plan Estatal de Desarrollo 2016-2022',
 link: 'http://planestataldedesarrollo.hidalgo.gob.mx/catalogo',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx/assets/images/logoGrande.jpg',
 caption: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
-description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
+description: "Mi idea ya está por ser aprobada, checa esta y más ideas del plan estatal de desarrollo.",
 message: "blabla"
 });
 });
@@ -329,7 +329,7 @@ name: 'Plan Estatal de Desarrollo 2016-2022',
 link: 'http://planestataldedesarrollo.hidalgo.gob.mx',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx/assets/images/logoGrande.jpg',
 caption: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
-description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
+description: "Mi idea ya está por ser aprobada, checa esta y más ideas del plan estatal de desarrollo.",
 message: "blabla"
 });
 });
