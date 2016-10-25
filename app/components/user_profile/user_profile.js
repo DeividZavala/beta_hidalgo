@@ -25,7 +25,7 @@
             self.alert = "Bienvenido " + self.usuario.displayName;
             //self.cuentale()
            // console.log('rayos: ',self.usuario.photoURL);
-            console.log('mi user: ',self.usuario);
+            //console.log('mi user: ',self.usuario);
             var data = {'uid':self.usuario.uid}
             $http({
                 method:'POST',
@@ -35,7 +35,7 @@
                 data: $httpParamSerializerJQLike(data)
             })
             .then(function(res){
-                console.log(res)
+                //console.log(res)
                 self.perfil = res.data[0].fields
             })
             .catch(function(err){
@@ -46,7 +46,7 @@
             // $http.get('http://localhost:8000/projects?user_id='+self.usuario.uid)
                 .then(function (response) {
                     self.userProjects = response.data
-                    console.log(self.userProjects)
+                    //console.log(self.userProjects)
                 })
 
           }else{

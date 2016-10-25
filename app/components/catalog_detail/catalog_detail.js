@@ -6,7 +6,7 @@
 
 	function CatDetController($firebaseAuth,$firebaseArray,$scope,$routeParams,$http,hidalgoService,$location){
 		var self = this;
-		$scope.tab="Que show";
+		$scope.tab=1;
 		//tooltip
 		$('[data-toggle="tooltip"]').tooltip();
 
@@ -60,8 +60,8 @@ name: 'Plan Estatal de Desarrollo 2016-2022',
 link: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx//assets/images/logoGrande.jpg',
 caption: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
-description: "Esta idea está genial, chéca esta y más ideas del plan estatal de desarrollo.",
-message: "blabla"
+description: "Esta idea está genial, checa esta y más ideas del plan estatal de desarrollo.",
+message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 });
 });
 });
