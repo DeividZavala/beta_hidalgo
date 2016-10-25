@@ -2,7 +2,7 @@
     background-image: url('/assets/images/slider/gobernador.jpeg');
     background-size: cover;
     background-position: center;
-    height: 25vh;
+    height: auto;
     margin-bottom: 3%;
 }
 .catalogo_header .filter_container .titulo{
