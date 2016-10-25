@@ -1,13 +1,21 @@
 (function () {
     angular
-        .module('hidalgo',['ngRoute','firebase','ngCookies'])
+        .module('hidalgo',['ngRoute','firebase','ngCookies','flow'])
         .config(configura);
         
         function configura($httpProvider){
 
-            $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-            $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
-            // $httpProvider.defaults.withCredentials = true;
+              $httpProvider.defaults.withCredentials = true;
+              $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+              $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+              // $httpProvider.interceptors.push(function($cookies) {
+              //   return {
+              //     'request': function(config) {
+              //       config.headers['X-CSRFToken'] = $cookies.get('csrftoken');
+              //       return config;
+              //     }
+              //   };
+              // });
         }
 
 

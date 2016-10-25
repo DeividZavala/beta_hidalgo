@@ -5,8 +5,8 @@
 		controller: newProjectController
 	}
 
-	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth','$location','$scope','$httpParamSerializerJQLike'];
-	function newProjectController(hidalgoService,$http,$firebaseAuth,$location,$scope,$httpParamSerializerJQLike) {
+	newProjectController.$inject = ['hidalgoService','$http','$firebaseAuth','$location','$scope','$httpParamSerializerJQLike','$cookies'];
+	function newProjectController(hidalgoService,$http,$firebaseAuth,$location,$scope,$httpParamSerializerJQLike,$cookies) {
 		var new_project = this;
 		var self = this;
 		var auth = $firebaseAuth();
@@ -18,24 +18,33 @@
 	        auth.$onAuthStateChanged(function(firebaseUser) {
 	          self.user = firebaseUser;
 
+	          var csrf = $cookies.get('csrftoken');
+	          console.log('El cookie: ',csrf);
+	          var fd = new FormData();
 	          var objeto = {
 						title:self.title,
 						eje:self.eje,
 						uid:self.user.uid,
 						municipio:self.mun,
 						problematica:self.prob,
-						// slug:self.user.photoURL
+						//foro:self.foro,
+						csrfmiddlewaretoken: csrf
+
 						};
+				for (key in objeto){
+					fd.append(key,objeto[key]);
+				}
 
 	          if(self.user){
 
 			        $http({
 		                method:'POST',
 		                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/',
-		                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+		                // url:'http://localhost:8000/projects/',
+		                headers: {'Content-Type': undefined},
 		                // headers: { 'Content-Type': 'multipart/form-data' },
 		                // data: $httpParamSerializerJQLike(objeto),
-		                data:$httpParamSerializerJQLike(objeto),
+		                data:fd,
 		                // file:self.theFile
 		            })
 					.then(function(response){
@@ -49,6 +58,7 @@
 					})
 					.catch(function(err){
 						console.log("Error",err)
+						// console.log('prro')
 					})
 
 	          }else{
@@ -98,7 +108,7 @@ method: 'feed',
 name: 'Plan Estatal de Desarrollo 2016-2022',
 link: 'http://planestataldedesarrollo.hidalgo.gob.mx',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx/assets/images/logoGrande.jpg',
-caption: 'planeacion.fixter.org',
+caption: 'planestataldedesarrollo.hidalgo.gob.mx',
 description: "Yo ya participé, mi idea ya esta considerada para el plan de desarrollo, ahora hazlo tú.",
 message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 });

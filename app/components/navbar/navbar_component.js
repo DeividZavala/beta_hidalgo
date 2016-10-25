@@ -30,6 +30,7 @@
         //logout del usuario
         self.logOut = function(){
         	auth.$signOut();
+          $location.path('/')
         	self.user = null;
         }
         	

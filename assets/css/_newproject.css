@@ -14,11 +14,13 @@
 #container-pro {
   padding: 0;
   margin: 0;
-  min-height: 1000px;
-  height: 100vh;
+  /*min-height: 1000px;*/
+  height: auto;
 
 }
-
+.foros_presenciales{
+  margin-bottom: 5%;
+}
 
 
 
