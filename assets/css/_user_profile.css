@@ -60,5 +60,8 @@ img{
 .perfil{
 	margin-top: 10%;
 }
-
+.img_proyecto-userProfile{
+	max-height: 200px;
+	min-height: 200px;
+}
 
