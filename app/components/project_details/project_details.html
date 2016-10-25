@@ -2,7 +2,7 @@
 
 <div style="text-align:center" ng-show="mensaje.success" class="alert alert-success" role="alert">
         {{mensaje.success}}
-    </div>
+</div>
 
 
 
@@ -393,7 +393,7 @@
             </div>
             <!-- Imagen del proyecto-->
 
-  <div class="container3">
+            <div class="container3">
 
               <div flow-init flow-files-submitted="$flow.upload()"
                   
@@ -409,7 +409,7 @@
 
 
                       <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"
-     ng-style="style" class="well">
+               ng-style="style" class="well">
 
 
                           <div flow-drop  class="row">
@@ -459,73 +459,73 @@
 
             </div>
 
-
-
             <!-- Anexo-->
 
-<div class="container3">
+            <div class="container3">
 
-              <div flow-init flow-files-submitted="$flow.upload()"
-                  
-                 flow-name="obj2.flow" class="row">
-                  <div class="col-xs-6 col-md-3">
-                      <h3 class="name">Anexo</h3>
-                      <p>¿Tienes un documento que complemente tu proyecto?</p>
-                      <p>(Puedes explorar o arrastrar tus archivos)</p>
+                <div flow-init flow-files-submitted="$flow.upload()"
+                    
+                   flow-name="obj2.flow" class="row">
+                    <div class="col-xs-6 col-md-3">
+                        <h3 class="name">Anexo</h3>
+                        <p>¿Tienes un documento que complemente tu proyecto?</p>
+                        <p>(Puedes explorar o arrastrar tus archivos)</p>
 
-                      <h3 ng-model="proyecto.anexo">{{$flow.files[0].name}}</h3>
-                      <h4 ng-show="proyecto.anexo">Archivo Actual:</h4>
-                      <a href="{{proyecto.archivo}}">{{proyecto.anexo}}</a>
+                        <h3 ng-model="proyecto.anexo">{{$flow.files[0].name}}</h3>
+                        <h4 ng-show="proyecto.anexo">Archivo Actual:</h4>
+                        <a href="{{proyecto.archivo}}">{{proyecto.anexo}}</a>
 
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-9">
-
-
-                      <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"
-     ng-style="style" class="well">
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
 
 
-                          <div flow-drop  class="row">
+                        <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"
+               ng-style="style" class="well">
 
 
-                              <div class="col-md-1">
-                                  <i class="fa fa-file-word-o" aria-hidden="true"></i>
-                              </div>
-                              <div class="col-md-11">
-                                  <div class="input-group image-preview">
-                                      <input type="text" class="form-control required image-preview-filename" disabled="disabled" value="{{proyecto.laRef}}"> <!-- don't give a name === doesn't send on POST/GET -->
-                                      <span class="input-group-btn">
-                                          <!-- image-preview-clear button -->
-                                          <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                              <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
-                                          </button>
-                                          <!-- Flow drop -->
+                            <div flow-drop  class="row">
 
 
+                                <div class="col-md-1">
+                                    <i class="fa fa-file-word-o" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="input-group image-preview">
+                                        <input type="text" class="form-control required image-preview-filename" disabled="disabled" value="{{proyecto.laRef}}"> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <span class="input-group-btn">
+                                            <!-- image-preview-clear button -->
+                                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
+                                            </button>
+                                            <!-- Flow drop -->
 
 
 
-                  
-                                          <div ng-hide="obj2.flow.files[0]" class="btn btn-default image-preview-input">
-                                              <span class="foldercito glyphicon glyphicon-folder-open"></span>
-                                              <span >Buscar</span>
-                                              <input flow-btn type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
-                                          </div>
 
 
-                                          <div>
-                                              <div ng-show="obj2.flow.files[0]" ng-click="borra(2)" class="btn btn-danger">
-                                                  X Quitar Archivo
-                                              </div>
-                                          </div>
-                                      </span>
-                                  </div><!-- /input-group image-preview [TO HERE]-->
-                                  <div class="alert alert-info info_projectDetails" role="alert">Este campo es opcional. Recuerda subir archivos pequeños</div>
-                              </div>
-                          </div>
-                      </div> <!--flow init-->
-                  </div>
-              </div>
+                    
+                                            <div ng-hide="obj2.flow.files[0]" class="btn btn-default image-preview-input">
+                                                <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                                                <span >Buscar</span>
+                                                <input flow-btn type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
+                                            </div>
+
+
+
+                                            <div>
+                                                <div ng-show="obj2.flow.files[0]" ng-click="borra(2)" class="btn btn-danger">
+                                                    X Quitar Archivo
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div><!-- /input-group image-preview [TO HERE]-->
+                                    <div class="alert alert-info" role="alert">Este campo es opcional. Recuerda subir archivos pequeños</div>
+                                </div>
+                            </div>
+                        </div> <!--flow init-->
+                    </div>
+                </div>
+
 
             </div>
 
@@ -571,25 +571,17 @@
             </div>
 
 
-<!-- Botones para guardar y enviar -->
-<div ng-hide="gif" class="col-sm-6 col-sm-offset-6">
-<button ng-click="updateProject()" data-toggle="tooltip" data-placement="top" title="Puedes guardar el progreso de tu proyecto y terminarlo despues" class="btn btn-lg btn-warning" >Guardar Progreso</button>
+            <!-- Botones para guardar y enviar -->
+            <div ng-hide="gif" class="col-sm-6 col-sm-offset-6">
+            <button ng-click="updateProject()" data-toggle="tooltip" data-placement="top" title="Puedes guardar el progreso de tu proyecto y terminarlo despues" class="btn btn-lg btn-warning" >Guardar Progreso</button>
 
-<button ng-show="total === 100" ng-click="subir()" data-toggle="tooltip" data-placement="top" title="Una vez enviado ya no podrás editar tu proyecto" class="btn btn-lg btn-success">Enviar proyecto</button>
-</div>
-<figure ng-show="gif" class="col-sm-6 col-sm-offset-4">
-  <p>Espera, podriamos tardar unos minutos. Estamos subiendo tu proyecto y archivos...</p>
-<img style="max-width:100px" src="https://calculators.infochoice.com.au/Content/Images/ajax-loader.gif">
-</figure>
-
-
-
-
-
-
-
-
-
+            <button ng-show="total === 100" ng-click="subir()" data-toggle="tooltip" data-placement="top" title="Una vez enviado ya no podrás editar tu proyecto" class="btn btn-lg btn-success">Enviar proyecto</button>
+            </div>
+            <figure ng-show="gif" class="col-sm-6 col-sm-offset-4">
+              <p>Espera, podriamos tardar unos minutos. Estamos subiendo tu proyecto y archivos...</p>
+            <img style="max-width:100px" src="https://calculators.infochoice.com.au/Content/Images/ajax-loader.gif">
+            </figure>
+        </form>
 
 </div> <!--todo-->
 
@@ -609,16 +601,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -698,10 +680,7 @@
             Continuar
         </button>
 
-
-
-
-      </div>
+</div>
 
 
 
