@@ -1,14 +1,50 @@
-<section class="catalogo_header row">
+<section class="catalogo_header">
     <article class="container filter_container">
         <h2 class="titulo">Explora Propuestas</h2>
-        <div class="input-group input-group-lg col-md-4">
-            <span class="input-group-addon" id="sizing-addon1">
+        <br>
+
+         <div class="col-md-6">
+            <div class="input-group">
+
+                <span class="input-group-addon" id="sizing-addon1">
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </span>
-            <input ng-model="searchField" type="text" class="form-control" placeholder="Buscar" aria-describedby="sizing-addon1">
+                </span>
+                <input ng-model="searchField.srch" type="text" class="form-control" placeholder="Buscar" aria-describedby="sizing-addon1">
+                
+
+            </div>
+                
+                
         </div>
+        <div class="col-md-6">
+             <div class="input-group">
+
+                <span class="input-group-addon" id="sizing-addon1">
+                    <span class="glyphicon   glyphicon-filter " aria-hidden="true"></span>
+                </span>   
+
+            
+
+                    <select ng-model="searchField.eje" class="form-control">
+                        <option value="">Filtro por eje</option>
+                        <option value="Gobierno Honesto Cercano y Moderno" >Gobierno Honesto Cercano y Moderno</option>
+                        <option value="Hidalgo Próspero y Dinámico">Hidalgo Próspero y Dinámico</option>
+                        <option value="Hidalgo Humano e Igualitario">Hidalgo Humano e Igualitario</option>
+                        <option value="Un Hidalgo Seguro con Justicia y Paz">Un Hidalgo Seguro con Justicia y Paz</option>
+                        <option value="Un Hidalgo con Desarrollo Sustentable">Un Hidalgo con Desarrollo Sustentable</option>
+                </select>
+             </div>   
+
+
+           
+            
+        </div>
+       
     </article>
+
 </section>
+
+
 
 <div class="alert alert-info" align="center" ng-hide="$ctrl.items.length > 0">
     <h1>
@@ -16,11 +52,12 @@
         Recuerda que podrás consultar los proyectos una vez completados.</h1>
 </div>
 
-<section class="catalogo container">
+<section class="catalogo container">     
+
     <article class="row projects_container">
 
 
-        <div ng-repeat="project in $ctrl.items | filter:searchField |orderBy:'-pk'">
+        <div ng-repeat="project in $ctrl.items | filter: searchField.srch | filter: searchField.eje |orderBy:'-pk'">
 
             <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
 
