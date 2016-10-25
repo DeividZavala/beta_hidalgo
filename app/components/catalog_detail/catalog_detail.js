@@ -6,7 +6,7 @@
 
 	function CatDetController($firebaseAuth,$firebaseArray,$scope,$routeParams,$http,hidalgoService,$location){
 		var self = this;
-		$scope.tab=1;
+		$scope.tab="Que show";
 		//tooltip
 		$('[data-toggle="tooltip"]').tooltip();
 
