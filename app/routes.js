@@ -56,7 +56,16 @@
                 template:`<h1>Editar Proyecto</h1>`
             })
             .when('/project/:id/details',{
-                template:`<project-details-component></project-details-component>`
+                template:`<project-details-component></project-details-component>`,
+                resolve: {
+                  // controller will not be loaded until $requireSignIn resolves
+                  // Auth refers to our $firebaseAuth wrapper in the factory below
+                  "currentAuth": ["Auth", function(Auth) {
+                    // $requireSignIn returns a promise so the resolve waits for it to complete
+                    // If the promise is rejected, it will throw a $stateChangeError (see above)
+                    return Auth.$requireSignIn();
+                  }]
+                } //resolve
             })
             //catalogo routes
             .when('/catalogo/:id',{
