@@ -1,6 +1,6 @@
 
-<div style="text-align:center" ng-show="$ctrl.timeInMs" class="alert alert-success" role="alert">
-        {{$ctrl.alert}} seras redireccionado en: {{$ctrl.timeInMs}}
+<div style="text-align:center" ng-show="$ctrl.error" class="alert alert-warning" role="alert">
+        Tu correo electrónico y contraseña no coinciden, verifícalos porfavor.
     </div>
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -56,9 +56,13 @@
                         </span>
                         <input id="email" ng-model="$ctrl.password" required type="password" class="form-control" name="password" placeholder="Contraseña">
                     </div>
+                    <div class="alert alert-info alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Recuerda!</strong> Tu contraseña debe ser de mínimo 6 caracteres.
+                    </div>
 
                     <br>
-                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Entrar" onclick="myFunction()">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Entrar">
                 </form>
             </div>
         </div>
@@ -70,24 +74,10 @@
             </div>
             <div class="col-xs-12 col-sm-3">
                 <p class="omb_forgotPwd">
-                    <a href="">Olvidaste tu contraseña?</a>
+                    <a href="mailto:contacto@fixter.org">Olvidaste tu contraseña?</a>
                 </p>
             </div>
         </div>
 
     </div>
 </div>
-
-<script>
-function myFunction() {
-    var x, text;
-
-    x = document.getElementById("email").value;
-
-    if (x =! email) {
-    } else {
-        text = "<strong>Error tu correo o contraseña son incorrectos, intenta otra vez</strong>";
-    }
-    document.getElementById("email").innerHTML = text;
-}
-</script>

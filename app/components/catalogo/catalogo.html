@@ -10,11 +10,11 @@
     </article>
 </section>
 
-<!--<div class="alert alert-info" align="center" ng-show="$ctrl.items">
+<div class="alert alert-info" align="center" ng-hide="$ctrl.items.length > 0">
     <h1>
-        <strong>¡Atento!</strong>
-        Por el momento estámos analizando tus proyectos, próximamente podras explorarlos.</h1>
-</div>-->
+        <strong>¡Hola!</strong>
+        Recuerda que podrás consultar los proyectos una vez completados.</h1>
+</div>
 
 <section class="catalogo container">
     <article class="row projects_container">
@@ -27,7 +27,7 @@
                 <div class="thumbnail efectito_y">
                     <a href="#/catalogo/{{project.pk}}/">
                         <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto">
-                        <img ng-hide="project.fields.imagen" ng-src="/assets/images/img_default.png" alt="foto  de proyecto">
+                        <img ng-hide="project.fields.imagen" ng-src="/assets/images/slider/manos.png" alt="foto  de proyecto">
                     </a>
                     <div class="caption">
                         <h3>{{project.fields.title}}</h3>

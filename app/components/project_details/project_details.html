@@ -1,4 +1,4 @@
-<div ng-hide="proyecto.cerrado" id="todo">
+<div ng-hide="proyecto.cerrado" id="todo" flow-prevent-drop>
 
 <div style="text-align:center" ng-show="mensaje.success" class="alert alert-success" role="alert">
         {{mensaje.success}}
@@ -203,23 +203,23 @@
                                       <div ng-hide="checked">
                                         <select ng-model="proyecto.alcance" class="form-control required" >
                                           <option value="{{proyecto.alcance}}">{{proyecto.alcance}}</option>
-                                          <option value="Gobierno Honesto Cercano y Moderno" >Estatal</option>
-                                          <option value="Hidalgo Próspero y Dinámico">Regional</option>
-                                          <option value="Hidalgo Humano e Igualitario">Metropolitano</option>
-                                          <option value="Un Hidalgo Seguro con Justicia y Paz">Otro</option>
+                                          <option value="Estatal" >Estatal</option>
+                                          <option value="Regional">Regional</option>
+                                          <option value="Metropolitano">Metropolitano</option>
+                                          <option value="Otro">Otro</option>
                                           
 
                                         </select>
                                       </div>
                                     </div>
 
-                                    <div>
+                                    <!-- <div>
 
                                       <div class="check-element animate-show" ng-show="checked">
                                         <input  ng-model="proyecto.eje" id="percent" width="100%" type="text" class="form-control required" placeholder="Nuevo Eje">
                                       </div>
                                     </div>
-                                    Nuevo Eje: <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/>
+                                    Nuevo Eje: <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/> -->
 
 
                                 </div>
@@ -392,17 +392,29 @@
 
             </div>
             <!-- Imagen del proyecto-->
-            <div class="container3">
 
-              <div class="row">
+  <div class="container3">
+
+              <div flow-init flow-files-submitted="$flow.upload()"
+                  
+                 flow-name="obj.flow" class="row">
                   <div class="col-xs-6 col-md-3">
                       <h3 class="name">Imagen</h3>
                       <p>Sube una imagen acorde al proyecto</p>
+                      <p>(Puedes explorar o arrastrar tus archivos)</p>
+                      <img style="width:150px" ng-show="obj.flow.files[0]" flow-img="$flow.files[0]" ng-src="{{proyecto.imagen}}"/>
 
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-9">
-                      <div class="well">
-                          <div class="row">
+
+
+                      <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"
+     ng-style="style" class="well">
+
+
+                          <div flow-drop  class="row">
+
+
                               <div class="col-md-1">
                                   <i class="fa fa-picture-o" aria-hidden="true"></i>
                               </div>
@@ -414,14 +426,22 @@
                                           <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
                                               <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
                                           </button>
-                                          <!-- image-preview-input -->
-                                          <div ng-hide="proyecto.imagen"  class="btn btn-default image-preview-input">
+                                          <!-- Flow drop -->
+
+
+
+
+
+                  
+                                          <div ng-hide="obj.flow.files[0]" class="btn btn-default image-preview-input">
                                               <span class="foldercito glyphicon glyphicon-folder-open"></span>
-                                              <span class="image-preview-input-title">Buscar</span>
-                                              <input id="laimg" onchange="setFile(this)" type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                              <span >Buscar</span>
+                                              <input flow-btn type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
                                           </div>
-                                          <div ng-show="proyecto.imagen">
-                                              <div ng-click="quitarFoto()" class="btn btn-danger">
+
+
+                                          <div>
+                                              <div ng-show="obj.flow.files[0]" ng-click="borra(1)" class="btn btn-danger">
                                                   X Quitar Foto
                                               </div>
                                           </div>
@@ -429,7 +449,7 @@
                                   </div><!-- /input-group image-preview [TO HERE]-->
                               </div>
                           </div>
-                      </div>
+                      </div> <!--flow init-->
                   </div>
                   <div class="col-md-12">
                     <img ng-show="proyecto.imagen" style="width:100px" ng-src="{{proyecto.imagen}}">
@@ -437,136 +457,179 @@
               </div>
 
             </div>
-            <!-- Anexo-->
-            <div class="container3">
 
-              <div class="row">
+
+
+            <!-- Anexo-->
+
+<div class="container3">
+
+              <div flow-init flow-files-submitted="$flow.upload()"
+                  
+                 flow-name="obj2.flow" class="row">
                   <div class="col-xs-6 col-md-3">
                       <h3 class="name">Anexo</h3>
-                      <p>¿Tienes algún anexo del proyecto? Súbelo</p>
+                      <p>¿Tienes un documento que complemente tu proyecto?</p>
+                      <p>(Puedes explorar o arrastrar tus archivos)</p>
+
+                      <h3 ng-model="proyecto.anexo">{{$flow.files[0].name}}</h3>
+                      <h4 ng-show="proyecto.anexo">Archivo Actual:</h4>
+                      <a href="{{proyecto.archivo}}">{{proyecto.anexo}}</a>
+
                   </div>
                   <div class="col-xs-12 col-sm-6 col-md-9">
-                      <div class="well">
-                          <div class="row">
+
+
+                      <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"
+     ng-style="style" class="well">
+
+
+                          <div flow-drop  class="row">
+
+
                               <div class="col-md-1">
                                   <i class="fa fa-file-word-o" aria-hidden="true"></i>
                               </div>
                               <div class="col-md-11">
-                                  <div class="input-group file-preview">
-                                      <input value="{{proyecto.fileRef}}" type="text" class="form-control file-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                  <div class="input-group image-preview">
+                                      <input type="text" class="form-control required image-preview-filename" disabled="disabled" value="{{proyecto.laRef}}"> <!-- don't give a name === doesn't send on POST/GET -->
                                       <span class="input-group-btn">
-                                          <!-- file-preview-clear button -->
-                                          <button type="button" class="btn btn-default file-preview-clear" style="display:none;">
+                                          <!-- image-preview-clear button -->
+                                          <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
                                               <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
                                           </button>
-                                          <!-- file-preview-input -->
-                                          <div ng-hide="proyecto.archivo" class="btn btn-default file-preview-input">
+                                          <!-- Flow drop -->
+
+
+
+
+
+                  
+                                          <div ng-hide="obj2.flow.files[0]" class="btn btn-default image-preview-input">
                                               <span class="foldercito glyphicon glyphicon-folder-open"></span>
-                                              <span class="file-preview-input-title">Buscar</span>
-                                              <img id="loading" style="display:none;width:50px" src="http://www.apppics.com/img/loading.gif">
-                                              <input onchange="uploadDoc(this)" class="required" type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
+                                              <span >Buscar</span>
+                                              <input flow-btn type="file" accept="file_extension" name="input-file-preview"/> <!-- rename it -->
                                           </div>
-                                          <div ng-show="proyecto.archivo">
-                                              <div ng-click="quitarFile()" class="btn btn-danger">
+
+
+                                          <div>
+                                              <div ng-show="obj2.flow.files[0]" ng-click="borra(2)" class="btn btn-danger">
                                                   X Quitar Archivo
                                               </div>
                                           </div>
                                       </span>
-                                  </div>
+                                  </div><!-- /input-group image-preview [TO HERE]-->
                               </div>
                           </div>
-                      </div>
+                      </div> <!--flow init-->
                   </div>
               </div>
 
             </div>
-             <!-- Indicador estratégico-->
-            <!--<div class="container3">
 
-               <div class="row">
-                   <div class="col-xs-6 col-md-3">
-                       <h3 class="name">Indicador</h3>
-                       <p>¿Con qué indicador se podría medir el resultado de tu propuesta?</p>
-                   </div>
-                   <div class="col-xs-12 col-sm-6 col-md-9">
-                       <div class="well">
-                           <div class="row">
-                               <div class="col-md-1">
-                                   <i class="fa fa-check-square" aria-hidden="true"></i>
-                               </div>
-                               <div class="col-md-11">
-                                   <select ng-model="proyecto.indicador" class="form-control required" >
-                                       <option value="">Selecciona una opción</option>
-                                       <option  value='Tasa de Prevalencia de Corrupción (INEGI)'>Tasa de Prevalencia de Corrupción (INEGI)</option>
-                                       <option  value='Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)'>Proporción de la población que se sintió satisfecha o muy satisfecha en la realización de trámites y solicitudes de servicios con alguna dependencia estatal (INEGI)</option>
-                                       <option  value='Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)'>Porcentaje de trámites y servicios públicos del tipo transaccional que se ofrecen en línea en la Administración Pública Estatal (INEGI)</option>
-                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población en condición de pobreza</option>
-                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por acceso a los servicios de salud</option>
-                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por rezago educativo</option>
-                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Porcentaje de población con carencia por calidad y espacios de la vivienda</option>
-                                       <option value='Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)'>Proporción de Nuevos Kilómetros de infraestructura carretera (estatal, federal, municipal) (INEGI/SCT)</option>
-                                       <option value='Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria'>Proporción de alumnos en el nivel insuficiente  de competencias matemáticas y de comprensión lectora para sexto  grado de primaria y tercer año de secundaria</option>
-                                       <option value='Tasa de informalidad laboral'>Tasa de informalidad laboral</option>
-                                       <option value='Tasa de personas de 18 años y más que considera inseguro su municipio '>Tasa de personas de 18 años y más que considera inseguro su municipio </option>
-                                       <option  value='Tasa de prevalencia delictiva'>Tasa de prevalencia delictiva</option>
-                                       <option  value='Tasa de crecimiento anual del PIB per cápita (INEGI)'>Tasa de crecimiento anual del PIB per cápita (INEGI)</option>
-                                       <option  value='Porcentaje de hogares con conectividad a internet (INEGI)'>Porcentaje de hogares con conectividad a internet (INEGI)</option>
-                                       <option  value='Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)'>Porcentaje de Usuarios con acceso a internet en el Estado de Hidalgo (INEGI)</option>
-                                       <option  value='Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)'>Unidades Económicas del Sector Privado y Paraestatal que efectuaron actividades de innovación en el Estado de Hidalgo (INEGI)</option>
-                                       <option value='Volumen tratado de aguas residuales'>Volumen tratado de aguas residuales</option>
-                                       <option value='Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)'>Superficie de áreas naturales con acciones de conservación y/o aprovechamiento de competencia federal, estatal y municipal (INEGI)</option>
-                                       <option value='Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)'>* Porcentaje de Residuos Sólidos Urbanos (RSU) y de Manejo Especial (RME) con manejo adecuado (INEGI)</option>
-                                   </select>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
+            <!-- Foro presencial -->
+            <div class="container3">
 
-            </div>-->
+                <div class="row">
+                    <div class="col-xs-6 col-md-3">
+                        <h3 class="name">Foro</h3>
+                        <p>¿Formas parte de algún foro presencial?</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <i class="fa fa-arrows" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-11">
+
+                                    <div>
+
+                                      <div ng-hide="checked">
+                                        <select ng-model="proyecto.foro" class="form-control required" >
+                                          <option value="{{proyecto.foro}}">{{proyecto.foro}}</option>
+                                          <option value="Huehutla" >Huejutla</option>
+                                          <option value="Pachuca" >Pachuca</option>
+                                          <option value="Tulancingo" >Tulancingo</option>
+                                          <option value="Ixmiquilpan" >Ixmiquilpan</option>
+                                          <option value="Tula" >Tula</option>
+                                          
+
+                                        </select>
+                                      </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
 
+<!-- Botones para guardar y enviar -->
+<div ng-hide="gif" class="col-sm-6 col-sm-offset-6">
+<button ng-click="updateProject()" data-toggle="tooltip" data-placement="top" title="Puedes guardar el progreso de tu proyecto y terminarlo despues" class="btn btn-lg btn-warning" >Guardar Progreso</button>
 
-
-
-
-          <div class="container">
-
-              <input class="osw-btn" type="submit" value="Guardar" ng-click="updateProject()">
-
-              <div ng-click="subir()" ng-show="total==100" class="btn btn-lg btn-success">
-                Subir Proyecto
-              </div>
-          </div>
-      </form>
-
-
-  </div>
+<button ng-show="total === 100" ng-click="subir()" data-toggle="tooltip" data-placement="top" title="Una vez enviado ya no podrás editar tu proyecto" class="btn btn-lg btn-success">Enviar proyecto</button>
 </div>
+<figure ng-show="gif" class="col-sm-6 col-sm-offset-4">
+  <p>Espera, podriamos tardar unos minutos. Estamos subiendo tu proyecto y archivos...</p>
+<img style="max-width:100px" src="https://calculators.infochoice.com.au/Content/Images/ajax-loader.gif">
+</figure>
 
 
-<script type="text/javascript">
-
-</script>
 
 
-<input type="hidden" id="imgLink">
-<input type="hidden" id="fileLink">
+
+
+
 
 
 
 </div> <!--todo-->
 
+
+
+
+<!-- Guardado modal -->
+<div id="guardado_modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="alert alert-success" role="alert">
+        Tu proyecto se ha guardado con éxito
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div> <!--Desaparece al estar cerrado-->
+
+
 <div style="text-align:center" ng-show="proyecto.cerrado" id="cerrado">
 
-        <h1 class="modal-title" id="exampleModalLabel">¡Felicitaciones!</h1>
+        <h1 class="modal-title" id="exampleModalLabel">¡Gracias!</h1>
 
 
         <img style="width:200px" src="/assets/images/logoGrande.jpg">
         <div style="color:balck">
-            <h2 style="color:black" >¡Gracias!</h2>
             <h3 style="color:black">Tu idea ya está considerada para</h3>
             <h3 style="color:black">El Plan de Desarrollo Estatal</h3>
+            <h2 style="color:black" >¡Felicidades!</h2>
         </div>
         <h4>Compartelo en tus redes sociales</h4>
 
@@ -633,3 +696,13 @@
 
 
       </div>
+
+
+
+
+
+
+
+
+
+

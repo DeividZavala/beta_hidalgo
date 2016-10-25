@@ -52,6 +52,8 @@
                   console.error("Authentication failed:", error);
                   if(error.code === "auth/user-not-found"){
                     self.createUser();
+                  }else{
+                    self.error = true
                   }
 
                 });
