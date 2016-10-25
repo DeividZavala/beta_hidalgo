@@ -480,7 +480,7 @@
 
 
                         <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"
-               ng-style="style" class="well">
+                          ng-style="style" class="well">
 
 
                             <div flow-drop  class="row">
@@ -573,16 +573,16 @@
 
             <!-- Botones para guardar y enviar -->
             <div ng-hide="gif" class="col-sm-6 col-sm-offset-6">
-            <button ng-click="updateProject()" data-toggle="tooltip" data-placement="top" title="Puedes guardar el progreso de tu proyecto y terminarlo despues" class="btn btn-lg btn-warning" >Guardar Progreso</button>
+              <button ng-click="updateProject()" data-toggle="tooltip" data-placement="top" title="Puedes guardar el progreso de tu proyecto y terminarlo despues" class="btn btn-lg btn-warning" >Guardar Progreso</button>
 
-            <button ng-show="total === 100" ng-click="subir()" data-toggle="tooltip" data-placement="top" title="Una vez enviado ya no podrás editar tu proyecto" class="btn btn-lg btn-success">Enviar proyecto</button>
+              <button ng-show="total === 100" ng-click="subir()" data-toggle="tooltip" data-placement="top" title="Una vez enviado ya no podrás editar tu proyecto" class="btn btn-lg btn-success">Enviar proyecto</button>
             </div>
             <figure ng-show="gif" class="col-sm-6 col-sm-offset-4">
               <p>Espera, podriamos tardar unos minutos. Estamos subiendo tu proyecto y archivos...</p>
-            <img style="max-width:100px" src="https://calculators.infochoice.com.au/Content/Images/ajax-loader.gif">
+              <img style="max-width:100px" src="https://calculators.infochoice.com.au/Content/Images/ajax-loader.gif">
             </figure>
         </form>
-
+  </div>
 </div> <!--todo-->
 
 
