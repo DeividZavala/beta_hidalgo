@@ -447,7 +447,7 @@
                                           </div>
                                       </span>
                                   </div><!-- /input-group image-preview [TO HERE]-->
-                                  <div class="alert alert-info" role="alert">Este campo es opcional. Recuerda subir archivos pequeños</div>
+                                  <div class="alert alert-info info_projectDetails" role="alert">Este campo es opcional. Recuerda subir archivos pequeños</div>
                               </div>
                           </div>
                       </div> <!--flow init-->
@@ -511,6 +511,7 @@
                                             </div>
 
 
+
                                             <div>
                                                 <div ng-show="obj2.flow.files[0]" ng-click="borra(2)" class="btn btn-danger">
                                                     X Quitar Archivo
@@ -524,6 +525,7 @@
                         </div> <!--flow init-->
                     </div>
                 </div>
+
 
             </div>
 
@@ -539,7 +541,7 @@
                         <div class="well">
                             <div class="row">
                                 <div class="col-md-1">
-                                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                                    <i class="fa fa-users" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-11">
 
@@ -558,7 +560,7 @@
                                         </select>
                                       
                                     </div>
-                                    <div class="alert alert-info" role="alert">Rellena este campo si eres parte de algún Foro Presencial</div>
+                                    <div class="alert alert-info info_projectDetails" role="alert">Rellena este campo si eres parte de algún Foro Presencial</div>
 
                                 </div>
                             </div>
@@ -592,6 +594,9 @@
     <div class="modal-content">
       <div class="alert alert-success" role="alert">
         Tu proyecto se ha guardado con éxito
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
