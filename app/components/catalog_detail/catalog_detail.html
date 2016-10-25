@@ -7,7 +7,7 @@
 	</div>
 
 		<img ng-hide="proyecto.imagen" class="img-responsive col-sm-5" src="/assets/images/port.jpg">
-		<img ng-show="proyecto.imagen" class="img-responsive col-sm-5" ng-src="{{proyecto.imagen}}" alt="imagen de la propuesta">
+		<img ng-show="proyecto.imagen" class="img-responsive col-sm-5 img_proyecto-Catalogo_detalle" ng-src="{{proyecto.imagen}}" alt="imagen de la propuesta">
 		<div class="izquierda col-sm-6 col-sm-offset-1">
 			<h3>Eje de la Propuesta:</h3>
 			<span>
@@ -19,14 +19,14 @@
 
 
 									<div class="botoncillos">
-										<i class="fa fa-heart-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Seguir Proyecto"></i>
+										<!--<i class="fa fa-heart-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Seguir Proyecto"></i>-->
 										<i id="share_button" class="fa fa-facebook" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Comparte en Facebook"></i>
 										<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 										<a href="https://twitter.com/intent/tweet?text=Esta idea está genial, chéca esta y más ideas del plan estatal de desarrollo.&url=http://planestataldedesarrollo.hidalgo.gob.mx">
 											<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Comparte en Twitter"></i>
 										</a>
 
-										<i class="fa fa-link" aria-hidden="true" data-toggle="tooltip" data-placement="bottom"  id="copiar">
+										<i class="fa fa-link" aria-hidden="true" data-toggle="tooltip" data-placement="bottom"  id="copiar" title="Copiar Link">
 										</i>
 
 										    <script>

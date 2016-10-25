@@ -26,11 +26,11 @@
 
                 <div class="thumbnail efectito_y">
                     <a href="#/catalogo/{{project.pk}}/">
-                        <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto">
-                        <img ng-hide="project.fields.imagen" ng-src="/assets/images/slider/manos.png" alt="foto  de proyecto">
+                        <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto" class="img_proyecto-Catalogo">
+                        <img ng-hide="project.fields.imagen" ng-src="/assets/images/slider/manos.png" alt="foto  de proyecto" class="img_proyecto-Catalogo">
                     </a>
                     <div class="caption">
-                        <h3>{{project.fields.title}}</h3>
+                        <h3 class="titulo_proyecto-catalago">{{project.fields.title}}</h3>
                         <p ng-model="$ctrl.cuerpon" class="description">
                             <strong style="display:block;">{{project.fields.eje}}</strong>
                             {{project.fields.objetivo_general}}
