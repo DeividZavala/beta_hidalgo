@@ -16,8 +16,10 @@
     padding-top: 3%;
 }
 .user_option .thumbnail .caption .description{
+    max-height: 130px;
+    min-height: 130px;
+    height: 130px;
     overflow: scroll;
-    height: 100px;
 }
 .user_img{
 	width: 50%;
@@ -57,6 +59,14 @@ img{
 .en-linea{
 	display: inline-block;
 }
-
-
-
+.perfil{
+	margin-top: 10%;
+}
+.img_proyecto-userProfile{
+	max-height: 200px;
+	min-height: 200px;
+}
+.caption .titulo_proyecto-userProfile{
+    min-height: 55px;
+    max-height: 55px
+}

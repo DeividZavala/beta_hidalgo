@@ -1,9 +1,23 @@
+<!-- Alerts -->
+<div ng-show="$ctrl.error" class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Hubo un error intentalo más tarde
+</div>
+<div style="text-align:center" ng-show="$ctrl.exito" class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Tus datos se Guardaron con éxito
+
+</div>
+
+
+
 <br>
 <section class="user_profile row">
     <article class="user_menu_container col-md-3 col-xs-12 col-sm-12">
         <aside class="user_menu">
 
-            <img class="user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
+            <img ng-show="$ctrl.usuario.photoURL" class="user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
+            <img ng-hide="$ctrl.usuario.photoURL" class="user_img" src="/assets/images/default_profile_img.jpg" alt="imagen de perfil">
 
             <div class="user_data">
                 <p>
@@ -15,23 +29,73 @@
 
             </div>
             <div class="list-group col-md-offset-1">
-                <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(1)}" ng-click="$ctrl.panelSetTab(1)">Mis proyectos
+                <button type="button" class="list-group-item active">Mis proyectos
                     <span class="badge">{{$ctrl.userProjects.length}}</span>
                 </button>
-                <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(2)}" ng-click="$ctrl.panelSetTab(2)">Mi Perfil</button>
+               <!-- <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(2)}" ng-click="$ctrl.panelSetTab(2)">Mi Perfil</button>-->
+                <!-- Formulario de completar el perfil -->
+                <div class="perfil">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Nombre:</span>
+                        <input ng-show="$ctrl.usuario.photoURL" disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
+                        <input ng-hide="$ctrl.usuario.photoURL" type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.perfil.name}}" ng-model="$ctrl.perfil.name">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Correo:</span>
+                        <input disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "juan@hotmail.com"' value="{{$ctrl.usuario.email}}">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Edad:</span>
+                        <select class="form-control" ng-model="$ctrl.perfil.edad">
+                            <option disabled value="" ng-hide="$ctrl.perfil.edad">Edad</option>
+                            <option disabled ng-show="$ctrl.perfil.edad" value="{{$ctrl.perfil.edad}}">{{$ctrl.perfil.edad}}</option>
+                            <option value="Menos de 15">Menos de 15</option>
+                            <option value="de 15 a 19">de 15 a 19</option>
+                            <option value="de 20 a 24">de 20 a 24</option>
+                            <option value="de 25 a 34">de 25 a 34</option>
+                            <option value="de 35 a 49">de 35 a 49</option>
+                            <option value="50 y más">50 y más</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Sector de Ocupación:</span>
+                        <select class="form-control" ng-model="$ctrl.perfil.ocupacion">
+                            <option disabled value="" ng-hide="$ctrk.perfil.ocupacion">Sector</option>
+                            <option disabled value="{{$ctrl.perfil.ocupacion}}" ng-show="$ctrl.perfil.ocupacion">{{$ctrl.perfil.ocupacion}}</option>
+                            <option value="Público">Público</option>
+                            <option value="Privado">Privado</option>
+                            <option value="Social">Social</option>
+                            <option value="Académico">Académico</option>
+                            <option value="Estudiantil">Estudiantil</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Teléfono:</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "7712454545"' ng-model="$ctrl.perfil.telefono">
+                    </div>
+
+                    <button type="button" ng-click="$ctrl.actualizarDatos($ctrl.info)" class="btn btn-success">
+                        Guardar Perfil</button>
+
+                </div>
+                <!-- Fin de Formulario -->
             </div>
         </aside>
     </article>
     <article class="user_option col-md-9 col-sm-12">
 
 
-<div ng-show="$ctrl.checkTab(1)" ng-repeat="project in $ctrl.userProjects |orderBy:'-pk'">
+<div ng-repeat="project in $ctrl.userProjects |orderBy:'-pk'">
             <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
                 <div class="thumbnail efectito_y">
-                    <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto">
-                    <img ng-hide="project.fields.imagen" src="http://impulsa.guadalinfo.es/wp-content/uploads/2015/08/img-no-disponible-425x300.png">
+                    <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto" class="img_proyecto-userProfile">
+                    <img ng-hide="project.fields.imagen" src="http://impulsa.guadalinfo.es/wp-content/uploads/2015/08/img-no-disponible-425x300.png" class="img_proyecto-userProfile">
                     <div class="caption">
-                        <h3>{{project.fields.title}}</h3>
+                        <h3 class="titulo_proyecto-userProfile">{{project.fields.title}}</h3>
                         <p ng-model="$ctrl.cuerpon" class="description">
                             {{project.fields.eje}}
                         </p>
@@ -43,40 +107,7 @@
                 </div>
             </div>
 </div>
-
-
-        <div class="perfil col-md-8" ng-show="$ctrl.checkTab(2)">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Nombre:</span>
-                <input ng-show="$ctrl.usuario.photoURL" disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
-                <input ng-hide="$ctrl.usuario.photoURL" type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Correo:</span>
-                <input type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "juan@hotmail.com"' value="{{$ctrl.usuario.email}}">
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Edad:</span>
-                <input type="number" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... 23' ng-model="$ctrl.info.edad">
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Ocupación:</span>
-                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Abogado"' ng-model="$ctrl.info.ocupacion">
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Teléfono:</span>
-                <input type="number" class="form-control" aria-describedby="basic-addon1" placeholder='ejem:... "7712454545"' ng-model="$ctrl.info.telefono">
-            </div>
-
-            <button type="button" ng-click="$ctrl.actualizarDatos($ctrl.info)" class="btn btn-success">
-                Guardar Perfil</button>
-
-        </div>
-
+        
     </article>
 </section>
 

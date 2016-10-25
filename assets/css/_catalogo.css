@@ -10,12 +10,22 @@
     color: white;
 }
 .catalogo .projects_container .description{
-    overflow: scroll;
+    max-height: 100px;
+    min-height: 100px;
     height: 100px;
+    overflow: scroll;
 }
 .pagination_container{
     text-align: center;
 }
 .page{
     cursor: pointer;
+}
+.img_proyecto-Catalogo{
+	max-height: 200px;
+	min-height: 200px;
+}
+.caption .titulo_proyecto-catalago{
+    min-height: 55px;
+    max-height: 55px
 }

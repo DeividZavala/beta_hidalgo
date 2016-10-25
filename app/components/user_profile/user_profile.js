@@ -9,6 +9,7 @@
     function profileController($routeParams,hidalgoService,$firebaseAuth,$http,$httpParamSerializerJQLike) {
 
         var self = this;
+        self.perfil = {}
 
         $('#myModal').modal('toggle')
 
@@ -25,7 +26,24 @@
             //self.cuentale()
            // console.log('rayos: ',self.usuario.photoURL);
             console.log('mi user: ',self.usuario);
+            var data = {'uid':self.usuario.uid}
+            $http({
+                method:'POST',
+                // url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/save/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/profile/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $httpParamSerializerJQLike(data)
+            })
+            .then(function(res){
+                console.log(res)
+                self.perfil = res.data[0].fields
+            })
+            .catch(function(err){
+                console.log(err)
+                // self.error = true;
+            });
             hidalgoService.getUserProjects(self.usuario.uid)
+            // $http.get('http://localhost:8000/projects?user_id='+self.usuario.uid)
                 .then(function (response) {
                     self.userProjects = response.data
                     console.log(self.userProjects)
@@ -39,41 +57,78 @@
         self.actualizarDatos = function (info) {
 
             self.newData = {
-                'name': self.usuario.displayName,
+                'name': self.perfil.name,
+                'displayName':self.usuario.displayName,
                 'email':self.usuario.email,
-                'edad': info.edad,
-                'ocupacion': info.ocupacion,
-                'telefono': info.telefono,
+                'edad': self.perfil.edad,
+                'ocupacion': self.perfil.ocupacion,
+                'telefono': self.perfil.telefono,
                 'uid':self.usuario.uid
             }
 
             $http({
                 method:'POST',
                 url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/save/',
+                // url:'http://localhost:8000/account/save/',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $httpParamSerializerJQLike(self.newData)
             })
             .then(function(res){
+                self.exito = true;
                 console.log(res)
             })
             .catch(function(err){
+                self.error = true;
                 console.log(err)
             });
 
         }
 
+        /*var data = {'uid':self.usuario.uid}
+            $http({
+                method:'POST',
+                // url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/save/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/profile/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $httpParamSerializerJQLike(data)
+            })
+            .then(function(res){
+                console.log(res)
+                self.perfil = res.data[0].fields
+            })
+            .catch(function(err){
+                console.log(err)
+                // self.error = true;
+            });*/
 
-        self.panelSetTab = panelSetTab;
+
+        /*self.panelSetTab = panelSetTab;
         self.checkTab = checkTab;
         self.tab = 1;
         
         function panelSetTab(setTab) {
             self.tab = setTab;
+            var data = {'uid':self.usuario.uid}
+            $http({
+                method:'POST',
+                // url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/save/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/profile/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $httpParamSerializerJQLike(data)
+            })
+            .then(function(res){
+                console.log(res)
+                self.perfil = res.data[0].fields
+            })
+            .catch(function(err){
+                console.log(err)
+                // self.error = true;
+            });
         }
 
         function checkTab(checkTab) {
             return self.tab === checkTab;
-        }
+        }*/
     }
 
     angular
