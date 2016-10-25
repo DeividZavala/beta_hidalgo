@@ -207,7 +207,7 @@
             })
             .catch(function(err){
                 console.log(err)
-                alert('Algo ocurrió, intentalo más tarde');
+                alert('Hey!..Parece que tu archivo o imagen son muy grandes,prueba con una más pequeña.');
                 $scope.gif = false;
             })
 
