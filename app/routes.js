@@ -74,6 +74,9 @@
             .when('/catalogo',{
                 template:`<catalogo-component></catalogo-component>`
             })
+            .when('/certificado',{
+                template:`<certificado-component></certificado-component>`
+            })
             .otherwise({
                 redirectTo:'/'
             })
