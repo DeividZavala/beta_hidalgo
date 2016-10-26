@@ -8,7 +8,16 @@
 		var self = this;
 
 		self.id = $routeParams.id;
+
+		
+		$scope.reloadRoute = function() {
+			
+			location.reload();
+		}
+
+
 		console.log(self.id);
+
 
 		var auth = $firebaseAuth();
 		//obtenemos al usuario si ya está
@@ -58,13 +67,23 @@
 			.then(function(project){
 				console.log(project);
 				$scope.proyecto = project.data[0].fields;
+				console.log(self.id)
+
+
 			})
 			.catch(function(err){
 				$location.path('/')
 			});
 
 
+				//commments
+
+
+				//comments
+				
+
 		// $scope.titulo = "Proyecto enfocado a los borrachos"
+
 
 		//share w FB
 		window.fbAsyncInit = function() {

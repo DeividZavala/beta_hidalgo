@@ -101,7 +101,7 @@
 			  <li role="presentation" ng-class="{active: tab==1}"><a href="" ng-click="tab=1">Planteamiento</a></li>
 			  <li role="presentation" ng-class="{active: tab==2}"><a href="" ng-click="tab=2">Líneas de acción</a></li>
 			  <li role="presentation" ng-class="{active: tab==3}"><a href="" ng-click="tab=3">Objetivo General</a></li>
-			  <li role="presentation" ng-class="{active: tab==4}"><a href="" ng-click="tab=4">Comentarios</a></li>
+			  <li role="presentation" ng-class="{active: tab==4}"><a href="" ng-click="tab=4; ">Comentarios</a></li>
 			</ul>
 
 		</div>
@@ -120,15 +120,24 @@
 				<p>{{proyecto.objetivo_general}}</p>
 			</div>
 			<div ng-show="tab==4">
-				<div id="fb-root"></div>
-					<script>(function(d, s, id) {
-					  var js, fjs = d.getElementsByTagName(s)[0];
-					  if (d.getElementById(id)) return;
-					  js = d.createElement(s); js.id = id;
-					  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=694502364033651";
-					  fjs.parentNode.insertBefore(js, fjs);
-					}(document, 'script', 'facebook-jssdk'));</script>
 
+				
+				<button ng-click="reloadRoute()">Ver comentarios</button>
+				
+
+
+				<div id="fb-root"></div>
+
+				<script>
+					(function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s); js.id = id;
+					js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=694502364033651";
+					fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));
+				</script>
+					
 					<div class="fb-comments" data-href="http://planestataldedesarrollo.hidalgo.gob.mx/#/catalogo/{{$ctrl.id}}" data-width="100%" data-numposts="5"></div>
 			</div>
 		</div>

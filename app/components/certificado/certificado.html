@@ -1,13 +1,17 @@
-<section class="certificado container">
-    <div class="row">
-        <div style="display:flex;justify-content:space-between;margin-top:5%;">
-            <div class="col-md-2">
-                <img class="img-responsive" style="width:165px;height:131px" src="/assets/images/imagotipo_oficial_vertical_gob_H.jpg" alt="">
+<section class="certificado">
+    <div class="img_back">
+        <img src="/assets/images/background-01.png" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+        <div style="display:flex;justify-content:space-between;">
+            <div class="col-md-2 logo">
+                <img class="img-responsive" style="width:165px;height:131px;margin-left:30%" src="/assets/images/PNG/1 imagotipo_oficial_vertical_gob_H.png" alt="Logo_Hidalgo">
             </div>
             <p class="encabezado col-md-6">
                 El Gobierno del Estado de Hidalgo
             </p>
-            <div class="col-md-2">
+            <div class="col-md-2 logo">
                 <img class="img-responsive" src="/assets/images/footer_escudo.png" alt="">
             </div>
         </div>
@@ -34,8 +38,9 @@
             </small>
         </p>
         <p class="fecha">
-            Pachuca Hgo., {{$ctrl.fecha | date : "d MMM yyyy"}}
+            Pachuca Hgo., {{$ctrl.fecha | date : "d 'de' MMMM 'de' yyyy"}}
         </p>
     
+    </div>
     </div>
 </section>
