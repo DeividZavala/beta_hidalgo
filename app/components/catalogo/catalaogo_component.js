@@ -5,8 +5,11 @@
         controller:catalogController
     }
 
-    function catalogController(hidalgoService,PagerService) {
+    function catalogController(hidalgoService,PagerService,$routeParams) {
         var self = this;
+
+        self.eje_llego = $routeParams.eje;
+        console.log(self.eje_llego);
 
         hidalgoService.getAllProjects()
             .then(function (response) {

@@ -62,7 +62,7 @@
             .when('/catalogo/:id',{
                 template:`<catalog-detail-component></catalog-detail-component>`
             })
-            .when('/catalogo',{
+            .when('/catalogo/eje/:eje',{
                 template:`<catalogo-component></catalogo-component>`
             })
             .otherwise({
