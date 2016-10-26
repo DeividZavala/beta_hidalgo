@@ -13,10 +13,16 @@
 			<span>
 				{{proyecto.eje}}
 			</span>
-			<h4>
-				{{proyecto.objetivo_general}}
-			</h4>
-
+			<h4>Alcance:</h4>
+			<span>
+				{{proyecto.alcance}}
+			</span>
+			<h4>Indicador:</h4>
+			<span>
+				{{proyecto.indicador}}
+			</span>
+			
+			<br><br>
 
 									<div class="botoncillos">
 										<!--<i class="fa fa-heart-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Seguir Proyecto"></i>-->
@@ -53,31 +59,7 @@
 
 			<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 
-		</div>
-		<div class="well">
 
-			<ul class="nav nav-tabs">
-			  <li role="presentation" ng-class="{active: tab==1}"><a href="" ng-click="tab=1">Planteamiento</a></li>
-			  <li role="presentation" ng-class="{active: tab==2}"><a href="" ng-click="tab=2">Líneas de acción</a></li>
-			  <li role="presentation" ng-class="{active: tab==3}"><a href="" ng-click="tab=3">Indicadores de gestión</a></li>
-			</ul>
-
-		</div>
-
-		<div class="well">
-			<div ng-show="tab==1">
-				<h5>Planteamiento</h5>
-				<p>{{proyecto.planteamiento}}</p>
-			</div>
-			<div ng-show="tab==2">
-				<h5>Situación a resolver</h5>
-				<p>{{proyecto.problematica}}</p>
-			</div>
-			<div ng-show="tab==3">
-				<h5>Indicadores de gestión</h5>
-				<p>{{proyecto.indicador}}</p>
-			</div>
-		</div>
 
 
 
@@ -109,18 +91,45 @@
 		<input type="submit" class="btn btn-default" value="Enviar">
 	</form>
 </article>-->
+<br>
+<hr>
+<div class="well">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=694502364033651";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+			<ul class="nav nav-tabs">
+			  <li role="presentation" ng-class="{active: tab==1}"><a href="" ng-click="tab=1">Planteamiento</a></li>
+			  <li role="presentation" ng-class="{active: tab==2}"><a href="" ng-click="tab=2">Líneas de acción</a></li>
+			  <li role="presentation" ng-class="{active: tab==3}"><a href="" ng-click="tab=3">Objetivo General</a></li>
+			  <li role="presentation" ng-class="{active: tab==4}"><a href="" ng-click="tab=4">Comentarios</a></li>
+			</ul>
 
-<div class="fb-comments" data-href="http://planestataldedesarrollo.hidalgo.gob.mx/#/catalogo/{{$ctrl.id}}" data-width="100" data-numposts="5"></div>
+		</div>
 
+		<div class="well">
+			<div ng-show="tab==1">
+				<h5>Planteamiento</h5>
+				<p>{{proyecto.planteamiento}}</p>
+			</div>
+			<div ng-show="tab==2">
+				<h5>Situación a resolver</h5>
+				<p>{{proyecto.problematica}}</p>
+			</div>
+			<div ng-show="tab==3">
+				<h5>Objetivo General</h5>
+				<p>{{proyecto.objetivo_general}}</p>
+			</div>
+			<div ng-show="tab==4">
+				<div id="fb-root"></div>
+					<script>(function(d, s, id) {
+					  var js, fjs = d.getElementsByTagName(s)[0];
+					  if (d.getElementById(id)) return;
+					  js = d.createElement(s); js.id = id;
+					  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=694502364033651";
+					  fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));</script>
+
+					<div class="fb-comments" data-href="http://planestataldedesarrollo.hidalgo.gob.mx/#/catalogo/{{$ctrl.id}}" data-width="100%" data-numposts="5"></div>
+			</div>
+		</div>
 
 
 
