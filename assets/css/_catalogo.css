@@ -27,5 +27,6 @@
 }
 .caption .titulo_proyecto-catalago{
     min-height: 55px;
-    max-height: 55px
+    max-height: 55px;
+    overflow: hidden;
 }
