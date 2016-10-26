@@ -13,7 +13,7 @@
 
 <br>
 <section class="user_profile row">
-    <article class="user_menu_container col-md-3 col-xs-12 col-sm-12">
+    <article class="user_menu_container col-md-3 col-xs-12 col-sm-10">
         <aside class="user_menu">
 
             <img ng-show="$ctrl.usuario.photoURL" class="user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
@@ -90,7 +90,7 @@
 
 
 <div ng-repeat="project in $ctrl.userProjects |orderBy:'-pk'">
-            <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
+            <div class="col-xs-12 col-sm-6 col-lg-4 col-md-3">
                 <div class="thumbnail efectito_y">
                     <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto" class="img_proyecto-userProfile">
                     <img ng-hide="project.fields.imagen" src="http://impulsa.guadalinfo.es/wp-content/uploads/2015/08/img-no-disponible-425x300.png" class="img_proyecto-userProfile">
