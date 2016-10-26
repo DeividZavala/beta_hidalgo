@@ -35,3 +35,14 @@
 .nav-tabs a{
 	color:green;
 }
+.img_proyecto-Catalogo_detalle{
+	max-height: 60vh;
+	margin-bottom: 3%;
+}
+.container_comentarios{
+	height: 150px;
+	overflow: scroll;
+}
+.comentario{
+	margin-top: 5%;
+}

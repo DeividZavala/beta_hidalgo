@@ -1,7 +1,7 @@
 @import "_user_profile.css";
 
 @import "_landing.css";
-
+@import "_certificado.css";
 
 @import "_newproject.css";
 @import "_login.css";
@@ -31,7 +31,9 @@ body *{
 h4, h3{
 	color:black;
 }
-
+.ruta_certificado{
+  display: none;
+}
 
 
 

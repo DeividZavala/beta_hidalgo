@@ -207,7 +207,7 @@
             })
             .catch(function(err){
                 console.log(err)
-                alert('Algo ocurrió, intentalo más tarde');
+                alert('Hey!..Parece que tu archivo o imagen son muy grandes,prueba con una más pequeña.');
                 $scope.gif = false;
             })
 
@@ -314,8 +314,8 @@ name: 'Plan Estatal de Desarrollo 2016-2022',
 link: 'http://planestataldedesarrollo.hidalgo.gob.mx/catalogo',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx/assets/images/logoGrande.jpg',
 caption: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
-description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
-message: "blabla"
+description: "Mi idea ya está por ser aprobada, checa esta y más ideas del plan estatal de desarrollo.",
+message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 });
 });
 });
@@ -326,11 +326,11 @@ FB.ui(
 {
 method: 'feed',
 name: 'Plan Estatal de Desarrollo 2016-2022',
-link: 'http://planestataldedesarrollo.hidalgo.gob.mx/catalogo',
+link: 'http://planestataldedesarrollo.hidalgo.gob.mx',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx/assets/images/logoGrande.jpg',
 caption: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
-description: "Mi idea ya está por ser aprobada, chéca esta y más ideas del plan estatal de desarrollo.",
-message: "blabla"
+description: "Mi idea ya está por ser aprobada, checa esta y más ideas del plan estatal de desarrollo.",
+message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 });
 });
 });

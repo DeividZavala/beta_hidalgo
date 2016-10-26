@@ -4,8 +4,38 @@
 		controller:CatDetController
 	}
 
-	function CatDetController($firebaseAuth,$firebaseArray,$scope,$routeParams,$http,hidalgoService,$location){
+	function CatDetController($firebaseAuth,$firebaseArray,$scope,$routeParams,$http,hidalgoService,$location,$httpParamSerializerJQLike){
 		var self = this;
+
+		var auth = $firebaseAuth();
+		//obtenemos al usuario si ya está
+        auth.$onAuthStateChanged(function(firebaseUser) {
+          self.usuario = firebaseUser;
+          if(self.usuario){
+            //self.alert = "Bienvenido " + self.usuario.displayName;
+            //self.cuentale()
+           // console.log('rayos: ',self.usuario.photoURL);
+		   var data = {'uid':self.usuario.uid}
+            $http({
+                method:'POST',
+                // url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/save/',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/profile/',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $httpParamSerializerJQLike(data)
+            })
+            .then(function(res){
+                console.log(res)
+                self.perfil = res.data[0].fields.name
+            })
+            .catch(function(err){
+                console.log(err)
+                // self.error = true;
+            });
+            console.log('mi user: ',self.usuario);
+		  }
+        }); //checklogin
+
+
 		$scope.tab=1;
 		//tooltip
 		$('[data-toggle="tooltip"]').tooltip();
@@ -60,13 +90,37 @@ name: 'Plan Estatal de Desarrollo 2016-2022',
 link: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx//assets/images/logoGrande.jpg',
 caption: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
-description: "Esta idea está genial, chéca esta y más ideas del plan estatal de desarrollo.",
-message: "blabla"
+description: "Esta idea está genial, checa esta y más ideas del plan estatal de desarrollo.",
+message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 });
 });
 });
 
 
+
+	$scope.coment = function comentar() {
+
+		$scope.com = []
+
+		$scope.com.push({
+			'name':self.perfil,
+			'displayName':self.usuario.displayName,
+			'comentario':self.comentario
+		})
+
+		console.log($scope.com)
+
+		/*var comentarios = {
+			'name':self.perfil,
+			'displayName':self.usuario.displayName,
+			'comentario':self.comentario
+		}
+		$http({
+			method:'POST',
+			url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$routeParams.id+'/',
+			data: $httpParamSerializerJQLike(comentarios),
+		})*/
+	}
 
 							
 

@@ -33,6 +33,10 @@
           $location.path('/')
         	self.user = null;
         }
+
+        self.isActive = function (route) {
+            return route === $location.path();
+        }
         	
 
     }//controller
