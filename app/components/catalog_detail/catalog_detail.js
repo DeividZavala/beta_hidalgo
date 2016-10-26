@@ -75,6 +75,8 @@
     });
   };
 
+
+
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -113,6 +115,8 @@ message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 
 		console.log($scope.com)
 
+
+
 		/*var comentarios = {
 			'name':self.perfil,
 			'displayName':self.usuario.displayName,
@@ -128,7 +132,6 @@ message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 
 
 	} //conroller
-
 
 
 

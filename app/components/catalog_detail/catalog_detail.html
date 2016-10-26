@@ -32,10 +32,11 @@
 											<i class="fa fa-twitter" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Comparte en Twitter"></i>
 										</a>
 
-										<i class="fa fa-link" aria-hidden="true" data-toggle="tooltip" data-placement="bottom"  id="copiar" title="Copiar Link">
+										<i  class="fa fa-link" id="copiar" tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Copiar Link"
+										data-content="Tu link a sido copiado">
 										</i>
 
-										    <script>
+												<script>
 										        //Inicio del boton de copia
 										        var playButton = $('#copiar');  // Se obtiene el id del boton clicable
 										        playButton.click(function(){    // Acá se pone a escucha el evento click para el boton antes definido
@@ -45,10 +46,11 @@
 										        //Funcion copytoClipboard
 										        function copyToClipboard() {
 										        $("body").append("<input type='text' id='temp'>"); // Acá se crea un input dinamicamente con un id para luego asignarle un valor sombreado
-										        $("#temp").val("http://planestataldedesarrollo.hidalgo.gob.mx/#/catalogo/{{$ctrl.id}}").select(); // Acá se obtiene el id del boton que hemos creado antes y se le agrega un valor y luego se le sombrea con select(). Para agregar lo que se quiere copiar editas val("EDITAESTOAQUÍ")
+										        $("#temp").val("http://planestataldedesarrollo.hidalgo.gob.mx/#/catalogo/").select(); // Acá se obtiene el id del boton que hemos creado antes y se le agrega un valor y luego se le sombrea con select(). Para agregar lo que se quiere copiar editas val("EDITAESTOAQUÍ")
 										        document.execCommand("copy"); // document.execCommand("copy") manda a copiar el texto seleccionado en el documento
 										        $("#temp").remove();
 										    }
+														$('#copiar').popover()
 										    </script>
 
 									</div>
@@ -130,6 +132,7 @@
 					<div class="fb-comments" data-href="http://planestataldedesarrollo.hidalgo.gob.mx/#/catalogo/{{$ctrl.id}}" data-width="100%" data-numposts="5"></div>
 			</div>
 		</div>
+
 
 
 </section>
