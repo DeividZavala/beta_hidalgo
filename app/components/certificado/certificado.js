@@ -30,7 +30,7 @@
             .then(function(res){
                 //console.log(res)
                 certificado.perfil = res.data[0].fields.name
-                setTimeout(imprimir, 1000);
+                //setTimeout(imprimir, 1000);
             })
             .catch(function(err){
                 console.log(err)
