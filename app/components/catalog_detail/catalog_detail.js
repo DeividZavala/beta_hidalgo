@@ -7,6 +7,10 @@
 	function CatDetController($firebaseAuth,$firebaseArray,$scope,$routeParams,$http,hidalgoService,$location,$httpParamSerializerJQLike){
 		var self = this;
 
+		self.id = $routeParams.id;
+		console.log(self.id);
+		
+
 		var auth = $firebaseAuth();
 		//obtenemos al usuario si ya está
         auth.$onAuthStateChanged(function(firebaseUser) {
