@@ -9,7 +9,6 @@
 
 		self.id = $routeParams.id;
 		console.log(self.id);
-		
 
 		var auth = $firebaseAuth();
 		//obtenemos al usuario si ya está
@@ -126,7 +125,7 @@ message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 		})*/
 	}
 
-							
+
 
 	} //conroller
 
