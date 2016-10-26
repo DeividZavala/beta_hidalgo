@@ -8,11 +8,15 @@
 		var self = this;
 
 		self.id = $routeParams.id;
+
 		
 		$scope.reloadRoute = function() {
 			
 			location.reload();
 		}
+
+
+		console.log(self.id);
 
 
 		var auth = $firebaseAuth();
@@ -140,7 +144,7 @@ message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 		})*/
 	}
 
-							
+
 
 	} //conroller
 

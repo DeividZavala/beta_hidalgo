@@ -13,7 +13,7 @@
 
 <br>
 <section class="user_profile row">
-    <article class="user_menu_container col-md-3 col-xs-12 col-sm-12">
+    <article class="user_menu_container col-md-3 col-xs-12 col-sm-10">
         <aside class="user_menu">
 
             <img ng-show="$ctrl.usuario.photoURL" class="user_img" ng-src="{{$ctrl.usuario.photoURL}}" alt="profile_img">
@@ -35,10 +35,15 @@
                <!-- <button type="button" class="list-group-item" ng-class="{active:$ctrl.checkTab(2)}" ng-click="$ctrl.panelSetTab(2)">Mi Perfil</button>-->
                 <!-- Formulario de completar el perfil -->
                 <div class="perfil">
+
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Nombre:</span>
-                        <input ng-show="$ctrl.usuario.photoURL" disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
-                        <input ng-hide="$ctrl.usuario.photoURL" type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.perfil.name}}" ng-model="$ctrl.perfil.name">
+                        <input type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.perfil.name}}" ng-model="$ctrl.perfil.name">
+                    </div>
+
+                    <div class="input-group" ng-show="$ctrl.usuario.photoURL">
+                        <span class="input-group-addon" id="basic-addon1">Usuario:</span>
+                        <input disabled type="text" class="border-green form-control" aria-describedby="basic-addon1" placeholder='ejem:... "Juan López"' value="{{$ctrl.usuario.displayName}}">
                     </div>
 
                     <div class="input-group">
@@ -90,7 +95,7 @@
 
 
 <div ng-repeat="project in $ctrl.userProjects |orderBy:'-pk'">
-            <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
+            <div class="col-xs-12 col-sm-6 col-lg-4 col-md-3">
                 <div class="thumbnail efectito_y">
                     <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto" class="img_proyecto-userProfile">
                     <img ng-hide="project.fields.imagen" src="http://impulsa.guadalinfo.es/wp-content/uploads/2015/08/img-no-disponible-425x300.png" class="img_proyecto-userProfile">
@@ -107,6 +112,9 @@
                                 </div>
                                 <div class="btn-group" role="group" ng-show="{{project.fields.cerrado}}">
                                     <a ng-show="{{project.fields.cerrado}}" class="btn btn-success" href="#/catalogo/{{project.pk}}/">Completado!</a>
+                                </div>
+                                <div class="btn-group" role="group" ng-show="{{project.fields.cerrado}}">
+                                    <a ng-show="{{project.fields.cerrado}}" class="btn btn-primary" href="#/certificado" target="_blank">Certificado</a>
                                 </div>
                                 
                             </div>
