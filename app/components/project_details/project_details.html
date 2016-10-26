@@ -41,7 +41,7 @@
             <div class="container3">
 
                 <div class="row">
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <h3 class="name">Título</h3>
                         <p>¿Cuál es el título de tu proyecto?</p>
                     </div>
@@ -66,7 +66,7 @@
             <div class="container3">
 
                 <div class="row">
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <h3 class="name">Eje</h3>
                         <p>¿A qué eje pertenece?</p>
                     </div>
@@ -114,7 +114,7 @@
             <div class="container3">
 
                 <div class="row">
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <h3 class="name">Objetivo General</h3>
                         <p>¿Cuál es el objetivo de tu proyecto?</p>
                     </div>
@@ -137,7 +137,7 @@
             <div class="container3">
 
                 <div class="row">
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <h3 class="name">Problemática</h3>
                         <p>¿Qué problemática resuelve?</p>
                     </div>
@@ -161,7 +161,7 @@
             <div class="container3">
 
                <div class="row">
-                   <div class="col-xs-6 col-md-3">
+                   <div class="col-xs-12 col-md-3">
                        <h3 class="name">Planteamiento</h3>
                        <p>¿En qué consiste el proyecto?</p>
                    </div>
@@ -186,7 +186,7 @@
             <div class="container3">
 
                 <div class="row">
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <h3 class="name">Alcance</h3>
                         <p>¿A qué nivel geográfico impacta el proyecto?</p>
                     </div>
@@ -234,7 +234,7 @@
             <div class="container3">
 
                <div class="row">
-                   <div class="col-xs-6 col-md-3">
+                   <div class="col-xs-12 col-md-3">
                        <h3 class="name">Indicador</h3>
                        <p>¿Con qué indicador se podría medir el resultado de tu propuesta?</p>
                    </div>
@@ -286,7 +286,7 @@
             <div class="container3">
 
                 <div class="row">
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <h3 class="name">Municipio</h3>
                         <p>¿En que municipio vives?</p>
                     </div>
@@ -398,7 +398,7 @@
               <div flow-init flow-files-submitted="$flow.upload()"
                   
                  flow-name="obj.flow" class="row">
-                  <div class="col-xs-6 col-md-3">
+                  <div class="col-xs-12 col-md-3">
                       <h3 class="name">Imagen</h3>
                       <p>Sube una imagen acorde al proyecto</p>
                       <p>(Puedes explorar o arrastrar tus archivos)</p>
@@ -408,8 +408,7 @@
                   <div class="col-xs-12 col-sm-6 col-md-9">
 
 
-                      <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"
-               ng-style="style" class="well">
+                      <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"                           ng-style="style" class="well">
 
 
                           <div flow-drop  class="row">
@@ -428,11 +427,6 @@
                                           </button>
                                           <!-- Flow drop -->
 
-
-
-
-
-                  
                                           <div ng-hide="obj.flow.files[0]" class="btn btn-default image-preview-input">
                                               <span class="foldercito glyphicon glyphicon-folder-open"></span>
                                               <span >Buscar</span>
@@ -466,7 +460,7 @@
                 <div flow-init flow-files-submitted="$flow.upload()"
                     
                    flow-name="obj2.flow" class="row">
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <h3 class="name">Anexo</h3>
                         <p>¿Tienes un documento que complemente tu proyecto?</p>
                         <p>(Puedes explorar o arrastrar tus archivos)</p>
@@ -480,7 +474,7 @@
 
 
                         <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"
-               ng-style="style" class="well">
+                          ng-style="style" class="well">
 
 
                             <div flow-drop  class="row">
@@ -522,10 +516,9 @@
                                     <div class="alert alert-info" role="alert">Este campo es opcional. Recuerda subir archivos pequeños</div>
                                 </div>
                             </div>
-                        </div> <!--flow init-->
+                        </div> 
                     </div>
-                </div>
-
+                </div> <!--flow init-->
 
             </div>
 
@@ -533,7 +526,7 @@
             <div class="container3">
 
                 <div class="row">
-                    <div class="col-xs-6 col-md-3">
+                    <div class="col-xs-12 col-md-3">
                         <h3 class="name">Foro</h3>
                         <p>¿Formas parte de algún foro presencial?</p>
                     </div>
@@ -573,16 +566,16 @@
 
             <!-- Botones para guardar y enviar -->
             <div ng-hide="gif" class="col-sm-6 col-sm-offset-6">
-            <button ng-click="updateProject()" data-toggle="tooltip" data-placement="top" title="Puedes guardar el progreso de tu proyecto y terminarlo despues" class="btn btn-lg btn-warning" >Guardar Progreso</button>
+              <button ng-click="updateProject()" data-toggle="tooltip" data-placement="top" title="Puedes guardar el progreso de tu proyecto y terminarlo despues" class="btn btn-lg btn-warning" >Guardar Progreso</button>
 
-            <button ng-show="total === 100" ng-click="subir()" data-toggle="tooltip" data-placement="top" title="Una vez enviado ya no podrás editar tu proyecto" class="btn btn-lg btn-success">Enviar proyecto</button>
+              <button ng-show="total === 100" ng-click="subir()" data-toggle="tooltip" data-placement="top" title="Una vez enviado ya no podrás editar tu proyecto" class="btn btn-lg btn-success">Enviar proyecto</button>
             </div>
             <figure ng-show="gif" class="col-sm-6 col-sm-offset-4">
               <p>Espera, podriamos tardar unos minutos. Estamos subiendo tu proyecto y archivos...</p>
-            <img style="max-width:100px" src="https://calculators.infochoice.com.au/Content/Images/ajax-loader.gif">
+              <img style="max-width:100px" src="https://calculators.infochoice.com.au/Content/Images/ajax-loader.gif">
             </figure>
         </form>
-
+  </div>
 </div> <!--todo-->
 
 
@@ -604,7 +597,7 @@
 
 
 
-</div>
+
 </div> <!--Desaparece al estar cerrado-->
 
 
