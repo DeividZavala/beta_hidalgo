@@ -1,0 +1,29 @@
+.certificado{
+    text-align: center;
+}
+.certificado .encabezado{
+    margin-top: 7%;
+    font-size: 25px;
+}
+.certificado .encabezado + .otorga{
+    margin-bottom: 5%;
+}
+.certificado .reconocimiento{
+    font-size: 60px;
+    color: #002F52;
+}
+.certificado .ciudadano{
+    font-size: 25px;
+    margin: 3% 0;
+}
+.certificado .participacion{
+    font-size: 20px;
+    padding: 0 30%;
+    margin-bottom: 5%;
+}
+.certificado .nombre_gobernador{
+    display: block;
+}
+.certificado .fecha{
+    text-align: right;
+}

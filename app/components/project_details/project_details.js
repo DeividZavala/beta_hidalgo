@@ -315,7 +315,7 @@ link: 'http://planestataldedesarrollo.hidalgo.gob.mx/catalogo',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx/assets/images/logoGrande.jpg',
 caption: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
 description: "Mi idea ya está por ser aprobada, checa esta y más ideas del plan estatal de desarrollo.",
-message: "blabla"
+message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 });
 });
 });
@@ -330,7 +330,7 @@ link: 'http://planestataldedesarrollo.hidalgo.gob.mx',
 picture: 'http://planestataldedesarrollo.hidalgo.gob.mx/assets/images/logoGrande.jpg',
 caption: 'http://planestataldedesarrollo.hidalgo.gob.mx/',
 description: "Mi idea ya está por ser aprobada, checa esta y más ideas del plan estatal de desarrollo.",
-message: "blabla"
+message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 });
 });
 });
