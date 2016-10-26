@@ -68,5 +68,6 @@ img{
 }
 .caption .titulo_proyecto-userProfile{
     min-height: 55px;
-    max-height: 55px
+    max-height: 55px;
+	overflow: hidden;
 }
