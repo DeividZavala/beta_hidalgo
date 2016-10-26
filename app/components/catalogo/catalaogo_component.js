@@ -5,11 +5,25 @@
         controller:catalogController
     }
 
-    function catalogController(hidalgoService,PagerService,$routeParams) {
+    function catalogController(hidalgoService,PagerService,$routeParams,$scope) {
         var self = this;
 
+        //filtro por eje desde landing
         self.eje_llego = $routeParams.eje;
-        console.log(self.eje_llego);
+        console.log('el eje: ',self.eje_llego);
+        $scope.searchField = {};
+                     
+        self.losEjes = {
+            "1":"Gobierno Honesto Cercano y Moderno",
+            "2":"Hidalgo Próspero y Dinámico",
+            "3":"Hidalgo Humano e Igualitario",
+            "4":"Un Hidalgo Seguro con Justicia y en Paz",
+            "5":"Un Hidalgo con Desarrollo Sustentable"
+         };
+         $scope.searchField.eje = self.losEjes[self.eje_llego];
+         console.log('el eje ahora: ',$scope.searchField.eje);
+
+
 
         hidalgoService.getAllProjects()
             .then(function (response) {

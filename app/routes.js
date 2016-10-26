@@ -74,6 +74,9 @@
             .when('/catalogo/eje/:eje',{
                 template:`<catalogo-component></catalogo-component>`
             })
+            .when('/catalogo',{
+                template:`<catalogo-component></catalogo-component>`
+            })
             .when('/certificado',{
                 template:`<certificado-component></certificado-component>`
             })
