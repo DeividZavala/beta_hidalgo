@@ -19,6 +19,8 @@
     <!-- main -->
     <link rel="stylesheet" href="assets/css/main.css">
 
+    <link href="/assets/css/print.css" rel="stylesheet" type="text/css" media="print">
+
 </head>
 <body>
     <div class="carga"></div>
@@ -26,7 +28,7 @@
     <!-- <img class="carga" src="/assets/images/loader.png"> -->
 
     <navbar-component></navbar-component>
-    <main ng-view></main>
+    <main ng-view style="min-height: 300px;"></main>
     <footer-component></footer-component>
 
     <!-- jquery -->
@@ -38,6 +40,8 @@
     <!-- Angular Dependencies -->
     <script src="assets/bower_components/angular/angular.js"></script>
     <script src="assets/bower_components/angular-route/angular-route.js"></script>
+    <!-- Internacionalizacion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.8/angular-locale_es-mx.js"></script>
     <!-- Firebase -->
     <script src="assets/bower_components/firebase/firebase.js"></script>
     <!-- AngularFire -->
@@ -62,7 +66,6 @@
     <script src="assets/owl-carousel/owl.carousel.js"></script>
     <!-- ng-flow -->
     <script src="assets/bower_components/ng-flow/dist/ng-flow-standalone.js"></script>
-
     <!-- Angular Modules -->
     <script src="app/app.js"></script>
     <script src="app/routes.js"></script>

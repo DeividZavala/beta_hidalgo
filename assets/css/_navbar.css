@@ -36,7 +36,16 @@
     font-weight: 700;
 
 }
-
+.btn_explorar{
+	background-color: #e73c4e !important;
+	background: #e73c4e;
+	color: white;
+	margin-top: 8%;
+}
+.btn_explorar:hover{
+	background-color: #bc1826 !important;
+	background: #bc1826;
+}
 
 
 
