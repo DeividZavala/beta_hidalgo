@@ -6,39 +6,17 @@
     width: 100%;
     z-index: -9999;
 }
-.certificado .logo{
-    margin-top: 5%;
-}
 .certificado .img_back img{
     width: 100%;
     max-height: 1500px;
 }
-.certificado .encabezado{
-    margin-top: 15%;
-    font-size: 25px;
-}
-.certificado .otorga{
-    margin-bottom: 10%;
-}
-.certificado .reconocimiento{
-    font-size: 80px;
-    color: #002F52;
-}
 .certificado .ciudadano{
     font-size: 35px;
-    margin: 10% 0;
+    padding-top: 55vh;
 }
-.certificado .participacion{
-    font-size: 20px;
-    padding: 0 30%;
-    margin-bottom: 5%;
-}
-.certificado .nombre_gobernador{
-    display: block;
-}
+
 .certificado .fecha{
     text-align: right;
-}
-.certificado .gobernador{
-    margin: 15% 0;
+    padding-top: 31.5vh;
+    margin-right: 6%;
 }

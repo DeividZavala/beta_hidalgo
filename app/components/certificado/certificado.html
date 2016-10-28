@@ -1,46 +1,11 @@
 <section class="certificado">
     <div class="img_back">
-        <img src="/assets/images/background-01.png" alt="">
+        <img src="/assets/images/reconocimiento sin datos-01 (1).png" alt="">
     </div>
-    <div class="container">
-        <div class="row">
-        <div style="display:flex;justify-content:space-between;">
-            <div class="col-md-2 logo">
-                <img class="img-responsive" style="width:165px;height:131px;margin-left:30%" src="/assets/images/PNG/1 imagotipo_oficial_vertical_gob_H.png" alt="Logo_Hidalgo">
-            </div>
-            <p class="encabezado col-md-6">
-                El Gobierno del Estado de Hidalgo
-            </p>
-            <div class="col-md-2 logo">
-                <img class="img-responsive" src="/assets/images/footer_escudo.png" alt="">
-            </div>
-        </div>
-
-        <p class="encabezado otorga">
-            Otorga el presente
-        </p>
-        <p class="reconocimiento">
-            Reconocimiento
-        </p>
-        <p style="font-size:25px;">a</p>
-        <p class="ciudadano">
-            C. {{$ctrl.perfil}}
-        </p>
-        <p class="participacion">
-            Por su participación en los foros de consulta para el Plan Estatal de Desarrollo
-        </p>
-        <p class="gobernador">
-            <strong class="nombre_gobernador">Omar Fayad Meneses</strong>
-            <small>
-                <strong>
-                    Gobernador Constitucional del Estado de Hidalgo
-                </strong>
-            </small>
-        </p>
-        <p class="fecha">
-            Pachuca Hgo., {{$ctrl.fecha | date : "d 'de' MMMM 'de' yyyy"}}
-        </p>
-    
+    <div class="ciudadano">
+        C. {{$ctrl.perfil}}
     </div>
+    <div class="fecha">
+        {{$ctrl.fecha | date : "d 'de' MMMM 'de' yyyy"}}
     </div>
 </section>
