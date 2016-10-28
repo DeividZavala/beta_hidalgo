@@ -14,6 +14,8 @@
 
 @import "_catalog_detail.css";
 
+@import "_counter.css";
+
 @font-face {
   font-family: gobierno;
   font-weight: bold;

@@ -1,0 +1,33 @@
+.bbb{
+	/*-color: #71b631;*/
+	padding: 1%;
+}
+.countdown_title{
+	text-align: center;
+	font-size: 60px;
+}
+.contador{
+  margin: 5%;
+  padding: 5%;
+  background-color: #e73c4e;
+  border-radius: 5px;
+}
+
+
+#countdown{
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+#countdown .number{
+	font-size: 60px;
+	text-align: center;
+	color: white;
+}
+
+.label{
+	text-align: center;
+	font-size: 40px;
+}

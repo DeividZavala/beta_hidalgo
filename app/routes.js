@@ -80,6 +80,9 @@
             .when('/certificado',{
                 template:`<certificado-component></certificado-component>`
             })
+            .when('/counter', {
+                template:`<counter-component></counter-component>`
+            })
             .otherwise({
                 redirectTo:'/'
             })
