@@ -6,13 +6,13 @@
     }
 
     function navController($firebaseAuth,$location){
-    	var self = this;
-    	var auth = $firebaseAuth();
+        var self = this;
+        var auth = $firebaseAuth();
 
-    	//Tooltips
-		  $('[data-toggle="tooltip"]').tooltip();
+        //Tooltips
+          $('[data-toggle="tooltip"]').tooltip();
 
-    	//obtenemos al usuario si ya está
+        //obtenemos al usuario si ya está
         auth.$onAuthStateChanged(function(firebaseUser) {
           self.user = firebaseUser;
           if(self.user){
@@ -24,20 +24,20 @@
         }); //checklogin
 
         self.goProfile = function(){
-        	$location.path('/profile');
+            $location.path('/profile');
         } //go profile
 
         //logout del usuario
         self.logOut = function(){
-        	auth.$signOut();
+            auth.$signOut();
           $location.path('/')
-        	self.user = null;
+            self.user = null;
         }
 
         self.isActive = function (route) {
             return route === $location.path();
         }
-        	
+            
 
     }//controller
 

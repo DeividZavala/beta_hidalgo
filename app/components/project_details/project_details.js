@@ -153,7 +153,7 @@
 
         $scope.updateProject = function(){
             $scope.gif = true;
-            $scope.agree = true;
+            
             var csrf = $cookies.get('csrftoken');
             console.log('la cookie: ',csrf);
             var fd = new FormData();
@@ -224,7 +224,7 @@
 
        $scope.subir = function(){
             var csrf = $cookies.get('csrftoken');
-            $scope.agree = true;
+            
             var objeto = {
                     'csrfmiddlewaretoken': csrf,
                     'title':$scope.proyecto.title,
