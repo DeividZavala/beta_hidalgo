@@ -118,6 +118,33 @@
              // self.alert = "Bienvenido "+self.user.displayName;
             // self.cuentale()
             self.uid = self.user.uid
+            $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$routeParams.id+'/')
+            .then(function (response) {
+
+               /*projectDetails.data = response.data[0]
+                    //console.log(projectDetails.data.fields.uid)
+                    // console.log(projectDetails.data.fields.title)
+                    //console.log("la imagen",projectDetails.data.fields.imagen)
+                    $scope.proyecto = response.data[0].fields
+                    $scope.proyecto.pk = response.data[0].pk
+                    $scope.pro = $scope.proyecto
+                    $scope.barra();*/
+
+                self.project_uid = response.data[0].fields.uid
+                if(self.project_uid != self.uid){
+                    $location.path('/')
+                }else{           
+                    projectDetails.data = response.data[0]
+                    //console.log(projectDetails.data.fields.uid)
+                    // console.log(projectDetails.data.fields.title)
+                    //console.log("la imagen",projectDetails.data.fields.imagen)
+                    $scope.proyecto = response.data[0].fields
+                    $scope.proyecto.pk = response.data[0].pk
+                    $scope.pro = $scope.proyecto
+                    $scope.barra();
+                }
+                
+            });
 
           }else{
 
@@ -135,17 +162,19 @@
        $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$routeParams.id+'/')
             .then(function (response) {
 
-               /* projectDetails.data = response.data[0]
+               projectDetails.data = response.data[0]
                     //console.log(projectDetails.data.fields.uid)
                     // console.log(projectDetails.data.fields.title)
                     //console.log("la imagen",projectDetails.data.fields.imagen)
                     $scope.proyecto = response.data[0].fields
                     $scope.proyecto.pk = response.data[0].pk
                     $scope.pro = $scope.proyecto
-                    $scope.barra();*/
+                    $scope.barra();
 
-                self.project_uid = response.data[0].fields.uid
-                if(self.project_uid == self.uid){
+                /*self.project_uid = response.data[0].fields.uid
+                if(self.project_uid != self.uid){
+                    $location.path('/')
+                }else{           
                     projectDetails.data = response.data[0]
                     //console.log(projectDetails.data.fields.uid)
                     // console.log(projectDetails.data.fields.title)
@@ -154,9 +183,7 @@
                     $scope.proyecto.pk = response.data[0].pk
                     $scope.pro = $scope.proyecto
                     $scope.barra();
-                }else{
-                    $location.path('/')
-                }
+                }*/
                 
             });
 
