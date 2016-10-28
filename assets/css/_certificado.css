@@ -8,15 +8,15 @@
 }
 .certificado .img_back img{
     width: 100%;
-    max-height: 1500px;
+    max-height: 950px;
 }
 .certificado .ciudadano{
     font-size: 35px;
-    padding-top: 55vh;
+    padding-top: 50vh;
 }
 
 .certificado .fecha{
     text-align: right;
-    padding-top: 31.5vh;
+    padding-top: 37vh;
     margin-right: 6%;
 }
