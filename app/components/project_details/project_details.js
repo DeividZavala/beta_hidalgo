@@ -134,7 +134,17 @@
        // hidalgoService.getProjectDetail(projectDetails.id)
        $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$routeParams.id+'/')
             .then(function (response) {
-                self.project_uid = response.data[0].fields.uid
+
+                projectDetails.data = response.data[0]
+                    //console.log(projectDetails.data.fields.uid)
+                    // console.log(projectDetails.data.fields.title)
+                    //console.log("la imagen",projectDetails.data.fields.imagen)
+                    $scope.proyecto = response.data[0].fields
+                    $scope.proyecto.pk = response.data[0].pk
+                    $scope.pro = $scope.proyecto
+                    $scope.barra();
+
+                /*self.project_uid = response.data[0].fields.uid
                 if(self.project_uid === self.uid){
                     projectDetails.data = response.data[0]
                     //console.log(projectDetails.data.fields.uid)
@@ -146,7 +156,7 @@
                     $scope.barra();
                 }else{
                     $location.path('/')
-                }
+                }*/
                 
             });
 
