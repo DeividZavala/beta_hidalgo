@@ -1,5 +1,5 @@
 <!-- Alerts -->
-<div ng-show="$ctrl.error" class="alert alert-danger" role="alert">
+<!--<div ng-show="$ctrl.error" class="alert alert-danger" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     Hubo un error intentalo más tarde
 </div>
@@ -7,7 +7,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     Tus datos se Guardaron con éxito
 
-</div>
+</div>-->
 
 
 
@@ -89,6 +89,16 @@
 
                 </div>
                 <!-- Fin de Formulario -->
+                <!-- Alerts -->
+<div ng-show="$ctrl.error" class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Hubo un error intentalo más tarde
+</div>
+<div style="text-align:center" ng-show="$ctrl.exito" class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Tus datos se Guardaron con éxito
+
+</div>
             </div>
         </aside>
     </article>

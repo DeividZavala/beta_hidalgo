@@ -1,9 +1,10 @@
 .catalogo_header{
     background-image: url('/assets/images/slider/gobernador.jpeg');
     background-size: cover;
-    background-position: center;
+    background-position: 0% 35%;
     height: auto;
     margin-bottom: 3%;
+    padding-top: 10vh;
 }
 .catalogo_header .filter_container .titulo{
     text-align: center;
@@ -29,4 +30,9 @@
     min-height: 55px;
     max-height: 55px;
     overflow: hidden;
+}
+@media (max-width: 768px){
+    .catalogo_header{
+        background-position: center;
+    }
 }
