@@ -7,11 +7,25 @@
 		controller:landingController
 	}
 
-	function landingController($scope,$http,$cookies){
+	function landingController($scope,$http,$cookies,hidalgoService){
 			var self = this;
 			self.laCookie = null;
 
-		// con jquery
+		$http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/totales/')
+			.then(function (response) {
+				console.log(response.data)
+				self.projects = response.data.publicados
+				self.participantes = response.data.participantes
+				self.proyetos = response.data.proyectos
+
+				function numeros() {
+					$('.number1').animateNumber({ number: self.projects });
+					$('.number2').animateNumber({ number: self.proyetos });
+					$('.number3').animateNumber({ number: self.participantes });
+				}
+
+				setTimeout(numeros,1500)
+			})
 
 
 

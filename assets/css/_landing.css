@@ -905,8 +905,20 @@ margin-top: 200px;
 .izquierda{
   text-align: left;
 }
-
-
+.cantida_propuestas{
+  text-align: center;
+  font-size: 30px;
+  color: #092432;
+  margin: 3% 0;
+}
+.cantida_propuestas strong{
+  font-size: 40px;
+}
+.texto_contador{
+  display: block;
+  font-weight: 300;
+  font-size: 20px;
+}
 
 
 
