@@ -52,8 +52,8 @@
                   }]
                 } //resolve
             })
-            .when('/project/:id/edit',{
-                template:`<h1>Editar Proyecto</h1>`
+            .when('/project/new/children',{
+                template:`<new-project-children></new-project-children>`
             })
             .when('/project/:id/details',{
                 template:`<project-details-component></project-details-component>`,
@@ -75,6 +75,9 @@
                 template:`<catalogo-component></catalogo-component>`
             })
             .when('/catalogo',{
+                template:`<catalogo-component></catalogo-component>`
+            })
+            .when('/catalogo/niños',{
                 template:`<catalogo-component></catalogo-component>`
             })
             .when('/certificado',{

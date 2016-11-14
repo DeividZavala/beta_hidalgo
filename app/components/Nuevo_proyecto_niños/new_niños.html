@@ -1,0 +1,46 @@
+<section class="new_project_child">
+    <div class="opacity"></div>
+    <article class="container">
+        <div class="row">
+            <div class="text-center en_medio animated bounceInDown text_niños">
+				<h1><strong>¡Comparte tu idea!</strong></h1>
+				<h3 class="textt">
+				Este espacio es para ti, y tus ideas el motor para transformar Hidalgo.
+				<cite>Plan Estatal de Desarrollo 2016-2022</cite>
+
+				</h3>
+			</div><!-- text-center -->
+
+            <div class="col-md-8 col-md-offset-2 animated fadeInRight">
+                <form ng-submit="">
+
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿Cúal es tu nombre?</h4></label>
+						<input ng-trim="false" maxlength="200" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Problemática" autofocus ng-model="project.child_name"></input>
+					</div>
+
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿En qué rango de edad te encuentras?</h4></label>
+						<select class="form-control" ng-model="$ctrl.perfil.edad">
+                            <option disabled value="" ng-hide="$ctrl.perfil.edad">Edad</option>
+                            <option disabled ng-show="$ctrl.perfil.edad" value="{{$ctrl.perfil.edad}}">{{$ctrl.perfil.edad}}</option>
+                            <option value="Menos de 10">Menos de 10</option>
+                            <option value="de 10 a 14">de 10 a 14</option>
+                            <option value="de 15 a 18">de 15 a 18</option>
+                        </select>
+					</div>
+					
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿Qué problemática resuelve?</h4></label>
+						<textarea ng-trim="false" maxlength="200" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Problemática" autofocus ng-model="project.idea"></textarea>
+						<small class="textt">{{2000-project.idea.length}} caracteres máximo</small>
+					</div>
+                    <div align="center" class="col-md-12">
+						<input type="Submit" class="btn btn-primary btn-lg" value="Sube tu Proyecto">
+				    </div>
+
+                </form>
+            </div>
+        </div>
+    </article>
+</section>

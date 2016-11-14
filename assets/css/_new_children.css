@@ -1,0 +1,17 @@
+.opacity{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+.new_project_child{
+    background-image: url("/assets/images/jovenes-990x660.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%
+}
+.text_niños{
+    margin-bottom: 10vh;
+}
