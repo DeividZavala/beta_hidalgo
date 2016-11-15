@@ -1,4 +1,4 @@
-<section class="new_project_child">
+<!--<section class="new_project_child">
     <div class="opacity"></div>
     <article class="container">
         <div class="row">
@@ -9,7 +9,7 @@
 				<cite>Plan Estatal de Desarrollo 2016-2022</cite>
 
 				</h3>
-			</div><!-- text-center -->
+			</div><!-- text-center 
 
             <div class="col-md-8 col-md-offset-2 animated fadeInRight">
                 <form ng-submit="">
@@ -43,4 +43,127 @@
             </div>
         </div>
     </article>
+</section>-->
+
+
+<section>
+    <div id="backkk">
+        <div id="frontt">
+            <div class="row" id="container-pro">
+
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="text-center en_medio animated bounceInDown">
+                        <h1><strong>¡Comparte tu idea!</strong></h1>
+                        <h3 class="textt">
+                        Este espacio es para ti, y tus ideas el motor para transformar Hidalgo.
+                        <cite>Plan Estatal de Desarrollo 2016-2022</cite>
+
+                        </h3>
+                    </div><!-- text-center -->
+				</div>
+
+                <div class="col-md-8 col-md-offset-2 animated fadeInRight form_child">
+                <form ng-submit="">
+
+                    <div class="col-md-6">
+						<label><h4 class="textt">¿Cúal es tu nombre?</h4></label>
+						<input ng-trim="false" maxlength="200" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Tu Nombre" autofocus ng-model="project.child_name"></input>
+					</div>
+
+                    <div class="col-md-6">
+						<label><h4 class="textt">¿En qué rango de edad te encuentras?</h4></label>
+						<select class="form-control input-lg" ng-model="$ctrl.perfil.edad">
+                            <option disabled value="" ng-hide="$ctrl.perfil.edad">Edad</option>
+                            <option disabled ng-show="$ctrl.perfil.edad" value="{{$ctrl.perfil.edad}}">{{$ctrl.perfil.edad}}</option>
+                            <option value="Menos de 10">Menos de 10</option>
+                            <option value="de 10 a 14">de 10 a 14</option>
+                            <option value="de 15 a 18">de 15 a 18</option>
+                        </select>
+					</div>
+
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿Cúal es el nombre de tu idea?</h4></label>
+						<input maxlength="150" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi propuesta" autofocus ng-model="project.titulo"></input>
+						<small class="textt">{{150-project.titulo.length}} caracteres máximo</small>
+					</div>
+
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿Tienes un dibujo o imagen?, compartelo</h4></label>
+						<input ng-trim="false" required type="file" class="form-control input-lg" id="imagen" placeholder="Imagen" ng-model="project.imagen"></input>
+					</div>
+					
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿Qué problemática resuelve?</h4></label>
+						<textarea ng-trim="false" maxlength="2000" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Problemática" autofocus ng-model="project.problematica"></textarea>
+						<small class="textt">{{2000-project.problematica.length}} caracteres máximo</small>
+					</div>
+                    <div align="center" class="col-md-12">
+						<input type="Submit" class="btn btn-primary btn-lg" value="Sube tu Proyecto">
+				    </div>
+
+                </form>
+            </div>
+
+            </div> <!--container pro-->
+        </div>
+    </div>
 </section>
+
+
+
+
+
+
+
+
+<!-- el modal -->
+
+<div class="modal fade" id="badge" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">¡Felicitaciones!</h4>
+      </div>
+      <div style="text-align:center;" class="modal-body">
+      <!-- Share-->
+
+
+
+
+
+
+      <!-- Share-->
+
+
+        <img style="width:200px" src="/assets/images/logoGrande.jpg">
+        <div style="color:blue">
+            <h2 style="color:green" >¡Gracias!</h2>
+            <h3 style="color:red">Tu idea ya está considerada para</h3>
+            <h3 style="color:green">El Plan de Desarrollo Estatal</h3>
+        </div>
+        <h4>Compártelo en tus redes sociales</h4>
+
+        <button id="share_button" class="btn btn-primary">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            Facebook
+        </button>
+
+		<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+		<a href="https://twitter.com/intent/tweet?text=Yo Ya participé, mi idea ya esta considerada para el plan de desarrollo, ahora hazlo tú. &url=http://planestataldedesarrollo.hidalgo.gob.mx">
+			<button class="btn btn-info">
+	            <i class="fa fa-twitter" aria-hidden="true"></i>
+	            Twitter
+	        </button>
+	    </a>
+
+
+
+        <h5>Ahora completa los detalles de tu proyecto:</h5>
+        <button data-dismiss="modal" class="btn btn-success btn-lg">
+            Continuar
+        </button>
+
+
+
+      </div>

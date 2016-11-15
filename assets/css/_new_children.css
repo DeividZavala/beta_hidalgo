@@ -15,3 +15,12 @@
 .text_niños{
     margin-bottom: 10vh;
 }
+.form_child{
+    margin-bottom: 5%;
+}
+#backkk{
+    background-image: url("/assets/images/jovenes-990x660.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
