@@ -23,4 +23,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+} 
+.omb_btn-facebook {
+    background: #3b5998;
+    color: white;
 }

@@ -67,34 +67,52 @@
 
                     <div class="col-md-6">
 						<label><h4 class="textt">¿Cúal es tu nombre?</h4></label>
-						<input ng-trim="false" maxlength="200" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Tu Nombre" autofocus ng-model="project.child_name"></input>
+						<input ng-hide="$ctrl.nombre_face" ng-trim="false" maxlength="200" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Tu Nombre" autofocus ng-model="$ctrl.child_name"></input>
+                        <input ng-show="$ctrl.nombre_face" ng-trim="false" maxlength="200" required type="text" disabled class="form-control input-lg" id="problematicaProyecto" value="{{$ctrl.child_name}}" autofocus ng-model="$ctrl.child_name"></input>
 					</div>
+
+                    <div class="col-md-6">
+                        <label><h4 class="textt">Trae tu nombre de facebook</h4></label>
+                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                            <div class="btn-group" role="group" >
+                                <a ng-click="$ctrl.signIn('facebook')" class="btn btn-lg btn-block omb_btn-facebook">
+                                    <i class="fa fa-facebook visible-xs"></i>
+                                    <span class="hidden-xs">Facebook</span>
+                                </a>
+                            </div>                            
+                        </div>
+                    </div>
 
                     <div class="col-md-6">
 						<label><h4 class="textt">¿En qué rango de edad te encuentras?</h4></label>
 						<select class="form-control input-lg" ng-model="$ctrl.perfil.edad">
-                            <option disabled value="" ng-hide="$ctrl.perfil.edad">Edad</option>
-                            <option disabled ng-show="$ctrl.perfil.edad" value="{{$ctrl.perfil.edad}}">{{$ctrl.perfil.edad}}</option>
+                            <option disabled value="">Edad</option>
                             <option value="Menos de 10">Menos de 10</option>
                             <option value="de 10 a 14">de 10 a 14</option>
                             <option value="de 15 a 18">de 15 a 18</option>
                         </select>
 					</div>
 
+                    <div class="col-md-6">
+						<label><h4 class="textt">¿Cúal es tu correo?</h4></label>
+						<input ng-hide="$ctrl.nombre_face" maxlength="150" ng-trim="false" required type="email" class="form-control input-lg" id="tituloProyecto" placeholder="Correo" autofocus ng-model="$ctrl.correo"></input>
+                        <input ng-show="$ctrl.nombre_face" ng-trim="false" maxlength="200" required type="text" disabled class="form-control input-lg" id="problematicaProyecto" value="{{$ctrl.correo}}" autofocus ng-model="$ctrl.correo"></input>
+					</div>
+
                     <div class="col-md-12">
 						<label><h4 class="textt">¿Cúal es el nombre de tu idea?</h4></label>
-						<input maxlength="150" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi propuesta" autofocus ng-model="project.titulo"></input>
+						<input maxlength="150" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi propuesta" autofocus ng-model="$ctrl.titulo"></input>
 						<small class="textt">{{150-project.titulo.length}} caracteres máximo</small>
 					</div>
 
                     <div class="col-md-12">
 						<label><h4 class="textt">¿Tienes un dibujo o imagen?, compartelo</h4></label>
-						<input ng-trim="false" required type="file" class="form-control input-lg" id="imagen" placeholder="Imagen" ng-model="project.imagen"></input>
+						<input ng-trim="false" required type="file" class="form-control input-lg" id="imagen" placeholder="Imagen" ng-model="$ctrl.imagen"></input>
 					</div>
 					
                     <div class="col-md-12">
 						<label><h4 class="textt">¿Qué problemática resuelve?</h4></label>
-						<textarea ng-trim="false" maxlength="2000" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Problemática" autofocus ng-model="project.problematica"></textarea>
+						<textarea ng-trim="false" maxlength="2000" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Problemática" autofocus ng-model="$ctrl.problematica"></textarea>
 						<small class="textt">{{2000-project.problematica.length}} caracteres máximo</small>
 					</div>
                     <div align="center" class="col-md-12">

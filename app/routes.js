@@ -77,7 +77,7 @@
             .when('/catalogo',{
                 template:`<catalogo-component></catalogo-component>`
             })
-            .when('/catalogo/niños',{
+            .when('/catalogo/children',{
                 template:`<catalogo-component></catalogo-component>`
             })
             .when('/certificado',{

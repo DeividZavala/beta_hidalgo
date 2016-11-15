@@ -5,8 +5,11 @@
         controller:projectChildController
     }
 
-    function projectChildController() {
+    function projectChildController($firebaseAuth) {
         var project_child = this;
+
+        var auth = $firebaseAuth();
+        project_child.nombre_face = false;
 
         project_child.signIn = function(provider){
 
@@ -16,9 +19,13 @@
 
             auth.$signInWithPopup(provider)
             .then(function(result) {
-              console.log("Signed in as:", result.user.uid);
-              project_child.name = "Bienvenido "+result.user.displayName;
-
+              //console.log("Signed in as:", result.user.uid);
+              //project_child.name = "Bienvenido "+result.user.displayName;
+              project_child.child_name = result.user.displayName
+              project_child.correo = result.user.email
+              project_child.nombre_face = true;
+              console.log(result)
+              console.log(project_child.user_name)
             })
             .catch(function(error) {
               console.error("Authentication failed:", error);

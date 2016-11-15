@@ -7,7 +7,9 @@
 
     function catalogController(hidalgoService,PagerService,$routeParams,$scope,$location,$http) {
         var self = this;
-   
+        
+        self.ruta_child = false;
+
         if($location.path() == "/catalogo"){
             console.log("catalogo")
              hidalgoService.getAllProjects()
@@ -43,8 +45,9 @@
             .catch(function(err){
                 console.log(err)
             });
-        }else if($location.path() == "/catalogo/niños"){
+        }else if($location.path() == "/catalogo/children"){
             console.log("catalogo")
+            self.ruta_child = true;
              hidalgoService.getAllProjects()
             .then(function (response) {
                 self.projects = response.data;
