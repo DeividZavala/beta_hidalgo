@@ -45,10 +45,10 @@
             .catch(function(err){
                 console.log(err)
             });
-        }else if($location.path() == "/catalogo/children"){
-            console.log("catalogo")
+        }else if($location.path() == "/children"){
+            console.log("children")
             self.ruta_child = true;
-             hidalgoService.getAllProjects()
+             hidalgoService.getAllChildrenProjects()
             .then(function (response) {
                 self.projects = response.data;
                 //console.log('then: ',response);

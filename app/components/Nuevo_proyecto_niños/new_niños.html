@@ -63,7 +63,7 @@
 				</div>
 
                 <div class="col-md-8 col-md-offset-2 animated fadeInRight form_child">
-                <form ng-submit="">
+                <form ng-submit="sendData()">
 
                     <div class="col-md-6">
 						<label><h4 class="textt">¿Cúal es tu nombre?</h4></label>
@@ -85,7 +85,7 @@
 
                     <div class="col-md-6">
 						<label><h4 class="textt">¿En qué rango de edad te encuentras?</h4></label>
-						<select class="form-control input-lg" ng-model="$ctrl.perfil.edad">
+						<select class="form-control input-lg" ng-model="$ctrl.edad">
                             <option disabled value="">Edad</option>
                             <option value="Menos de 10">Menos de 10</option>
                             <option value="de 10 a 14">de 10 a 14</option>
@@ -96,7 +96,7 @@
                     <div class="col-md-6">
 						<label><h4 class="textt">¿Cúal es tu correo?</h4></label>
 						<input ng-hide="$ctrl.nombre_face" maxlength="150" ng-trim="false" required type="email" class="form-control input-lg" id="tituloProyecto" placeholder="Correo" autofocus ng-model="$ctrl.correo"></input>
-                        <input ng-show="$ctrl.nombre_face" ng-trim="false" maxlength="200" required type="text" disabled class="form-control input-lg" id="problematicaProyecto" value="{{$ctrl.correo}}" autofocus ng-model="$ctrl.correo"></input>
+                        <input ng-show="$ctrl.nombre_face" ng-trim="false" maxlength="200" required type="email" disabled class="form-control input-lg" id="problematicaProyecto" value="{{$ctrl.correo}}" autofocus ng-model="$ctrl.correo"></input>
 					</div>
 
                     <div class="col-md-12">
@@ -105,10 +105,27 @@
 						<small class="textt">{{150-project.titulo.length}} caracteres máximo</small>
 					</div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-12" flow-init flow-files-submitted="$flow.upload()"  flow-name="obj.flow">
 						<label><h4 class="textt">¿Tienes un dibujo o imagen?, compartelo</h4></label>
-						<input ng-trim="false" required type="file" class="form-control input-lg" id="imagen" placeholder="Imagen" ng-model="$ctrl.imagen"></input>
+                        <input flow-btn type="file" class="form-control input-lg" accept="file_extension"  ng-hide="obj.flow.files[0]" name="input-file-preview"/>
+                        <div class="alert alert-info alert-dismissible" role="alert" ng-hide="obj.flow.files[0]">
+                            <strong>OJO!</strong> Este campo es opcional y recuerda una vez seleccionada tu imagen no podrás cambiarla.
+                        </div>
+
+                        <div class="alert alert-success alert-dismissible" role="alert" ng-show="obj.flow.files[0]">
+                            <strong>Listo!</strong> Tenemos tu imagen.
+                        </div>
 					</div>
+                    
+
+                    <!--<div flow-init flow-files-submitted="$flow.upload()"
+                  
+                 flow-name="obj.flow" class="btn btn-default image-preview-input">
+                                                <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                                                <span >Buscar</span>
+                                                <input flow-btn type="file" accept="file_extension" name="input-file-preview"/>
+                                            </div>-->
+
 					
                     <div class="col-md-12">
 						<label><h4 class="textt">¿Qué problemática resuelve?</h4></label>

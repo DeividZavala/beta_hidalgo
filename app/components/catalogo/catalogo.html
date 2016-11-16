@@ -3,7 +3,7 @@
         <h2 class="titulo">Explora Propuestas</h2>
         <br>
 
-         <div class="col-md-3">
+         <div class="col-md-3" ng-if="!$ctrl.ruta_child">
             <div class="input-group">
 
                 <span class="input-group-addon" id="sizing-addon1">
@@ -16,7 +16,7 @@
                 
                 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" ng-if="!$ctrl.ruta_child">
              <div class="input-group">
 
                 <!--<span class="input-group-addon" id="sizing-addon1">
@@ -86,7 +86,7 @@
 <!-- Proyectos niños -->
     <article class="row projects_container" ng-if="$ctrl.ruta_child">
 
-        <div ng-repeat="project in $ctrl.items | filter: searchField.srch | filter: searchField.eje |orderBy:'-pk'">
+        <div ng-repeat="project in $ctrl.items">
 
             <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
 
@@ -96,10 +96,9 @@
                         <img ng-hide="project.fields.imagen" ng-src="/assets/images/slider/manos.png" alt="foto  de proyecto" class="img_proyecto-Catalogo">
                     </a>
                     <div class="caption">
-                        <h3 class="titulo_proyecto-catalago">{{project.fields.title | cut:true:50:' ...'}}</h3>
+                        <h3 class="titulo_proyecto-catalago">{{project.fields.titulo | cut:true:50:' ...'}}</h3>
                         <p ng-model="$ctrl.cuerpon" class="description">
-                            <strong style="display:block;">{{project.fields.eje}}</strong>
-                            {{project.fields.objetivo_general}}
+                            {{project.fields.problematica}}
                         </p>
                     </div>
                 </div>

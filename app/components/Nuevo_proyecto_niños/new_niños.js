@@ -5,7 +5,8 @@
         controller:projectChildController
     }
 
-    function projectChildController($firebaseAuth) {
+    function projectChildController($firebaseAuth,$http,$cookies,$scope,$route) {
+
         var project_child = this;
 
         var auth = $firebaseAuth();
@@ -32,6 +33,55 @@
             });
         } //el if
         } //signIn
+
+
+// Subir imagen flow
+        $scope.obj = {};
+        
+$scope.sendData = function(){
+    var csrf = $cookies.get('csrftoken');
+            var fd = new FormData();
+            var objeto = {
+                    'csrfmiddlewaretoken': csrf,
+                    "nombre":project_child.child_name,
+                    "edad":project_child.edad,
+                    "img":project_child,
+                    "titulo":project_child.titulo,
+                    "problematica":project_child.problematica,
+                    "email":project_child.correo
+                    }
+
+            for ( var key in objeto ) {
+                    fd.append(key, objeto[key]);
+                }
+            if ($scope.obj.flow.files[0] !== undefined){
+                fd.append('img',$scope.obj.flow.files[0].file);
+            }
+            
+            $http({
+                method:'POST',
+                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/ninos/',
+                data:fd,
+                headers: {'Content-Type': undefined},
+                transformRequest: angular.identity
+                // headers: { 'Content-Type': 'multipart/form-data' },
+                // data: $httpParamSerializerJQLike(objeto),
+                // data:$httpParamSerializerJQLike(objeto),
+                // file:{'img':$scope.obj.flow.files[0]}
+            })
+            .then(function(res){
+                console.log(res)
+                $route.reload();
+            })
+            .catch(function(err){
+                console.log(err)
+                alert('Hey!..Parece que tu archivo o imagen son muy grandes,prueba con una más pequeña.');
+            })
+
+
+            
+        } //updateProject
+
     }
 
     angular
