@@ -105,10 +105,10 @@
 					</div>
 
                     <div class="col-md-12" flow-init flow-files-submitted="$flow.upload()"  flow-name="obj.flow">
-						<label><h4 class="textt">¿Tienes un dibujo o imagen?, compartelo</h4></label>
-                        <input flow-btn type="file" class="form-control input-lg" accept="file_extension"  ng-hide="obj.flow.files[0]" name="input-file-preview"/>
+						<label><h4 class="textt">Agrega una imagen</h4></label>
+                        <input required flow-btn type="file" class="form-control input-lg" accept="file_extension"  ng-hide="obj.flow.files[0]" name="input-file-preview"/>
                         <div class="alert alert-info alert-dismissible" role="alert" ng-hide="obj.flow.files[0]">
-                            <strong>OJO!</strong> Este campo es opcional y recuerda una vez seleccionada tu imagen no podrás cambiarla.
+                            <strong>Recuerda!</strong> Una vez seleccionada tu imagen no podrás cambiarla.
                         </div>
 
                         <div class="alert alert-success alert-dismissible" role="alert" ng-show="obj.flow.files[0]">
