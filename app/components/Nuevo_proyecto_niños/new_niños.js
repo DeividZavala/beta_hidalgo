@@ -37,6 +37,17 @@
 
 // Subir imagen flow
         $scope.obj = {};
+
+        $scope.borra = function(que){
+            // console.log($scope.obj);
+            if (que === 1){
+                $scope.obj.flow.files.splice(0, 1);
+            }else{
+                $scope.obj2.flow.files.splice(0, 1);
+            }
+             
+            // console.log($scope.obj);
+        }
         
 $scope.sendData = function(){
     var csrf = $cookies.get('csrftoken');

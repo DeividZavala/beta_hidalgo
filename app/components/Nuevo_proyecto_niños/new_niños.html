@@ -105,15 +105,77 @@
 					</div>
 
                     <div class="col-md-12" flow-init flow-files-submitted="$flow.upload()"  flow-name="obj.flow">
-						<label><h4 class="textt">Agrega una imagen</h4></label>
-                        <input required flow-btn type="file" class="form-control input-lg" accept="file_extension"  ng-hide="obj.flow.files[0]" name="input-file-preview"/>
+						<!--<label><h4 class="textt">Agrega una imagen</h4></label>
+                        <input required flow-btn type="file" class="form-control input-lg" accept="image/png, image/jpeg, image/gif"  ng-hide="obj.flow.files[0]" name="input-file-preview"/>
                         <div class="alert alert-info alert-dismissible" role="alert" ng-hide="obj.flow.files[0]">
                             <strong>Recuerda!</strong> Una vez seleccionada tu imagen no podrás cambiarla.
                         </div>
 
                         <div class="alert alert-success alert-dismissible" role="alert" ng-show="obj.flow.files[0]">
                             <strong>Listo!</strong> Tenemos tu imagen.
-                        </div>
+                        </div>-->
+
+                        <!-- Imagen del proyecto-->
+
+            <div class="container3 cont_imagen_niños">
+
+              <div flow-init flow-files-submitted="$flow.upload()"
+                  
+                 flow-name="obj.flow" class="row">
+                  <div class="col-xs-12 col-md-3">
+                      <h3 class="name">Imagen</h3>
+                      <p>Sube una imagen acorde al proyecto</p>
+                      <p>(Puedes explorar o arrastrar tus archivos)</p>
+                      <img style="width:150px" ng-show="obj.flow.files[0]" flow-img="$flow.files[0]" ng-src="{{proyecto.imagen}}"/>
+
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-9">
+
+
+                      <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"                           ng-style="style" class="well">
+
+
+                          <div flow-drop  class="row">
+
+
+                              <div class="col-md-1">
+                                  <i class="fa fa-picture-o" aria-hidden="true"></i>
+                              </div>
+                              <div class="col-md-11">
+                                  <div class="input-group image-preview">
+                                      <input type="text" class="form-control required image-preview-filename" disabled="disabled" value="{{proyecto.laRef}}"> <!-- don't give a name === doesn't send on POST/GET -->
+                                      <span class="input-group-btn">
+                                          <!-- image-preview-clear button -->
+                                          <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                              <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
+                                          </button>
+                                          <!-- Flow drop -->
+
+                                          <div ng-hide="obj.flow.files[0]" class="btn btn-default image-preview-input">
+                                              <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                                              <span >Buscar</span>
+                                              <input flow-btn type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                          </div>
+
+
+                                          <div>
+                                              <div ng-show="obj.flow.files[0]" ng-click="borra(1)" class="btn btn-danger">
+                                                  X Quitar Foto
+                                              </div>
+                                          </div>
+                                      </span>
+                                  </div><!-- /input-group image-preview [TO HERE]-->
+                                  <div class="alert alert-info info_projectDetails" role="alert">Este Campo es requerido,Recuerda subir archivos pequeños</div>
+                              </div>
+                          </div>
+                      </div> <!--flow init-->
+                  </div>
+                  <div class="col-md-12">
+                    <img ng-show="proyecto.imagen" style="width:100px" ng-src="{{proyecto.imagen}}">
+                  </div>
+              </div>
+
+            </div>
 					</div>
                     
 
