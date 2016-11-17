@@ -922,6 +922,10 @@ margin-top: 200px;
 .menores{
   margin: 5% 0;
   background-color: #092432;
+  background-image: url("/assets/images/ninos-01.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center;
   color: white;
   font-size: 2rem;
@@ -934,5 +938,8 @@ margin-top: 200px;
   display: block;
   font-size: 30px;
 }
-
+.btn_rojo_niños{
+  background-color: #E73C4E;
+  color: white !important;
+}
 

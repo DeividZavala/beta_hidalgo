@@ -5,7 +5,7 @@
   position: absolute;
 }
 .new_project_child{
-    background-image: url("/assets/images/jovenes-990x660.jpg");
+    background-image: url("/assets/images/kinder-small.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -19,7 +19,7 @@
     margin-bottom: 5%;
 }
 #backkk{
-    background-image: url("/assets/images/jovenes-990x660.jpg");
+    background-image: url("/assets/images/kinder-small.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
