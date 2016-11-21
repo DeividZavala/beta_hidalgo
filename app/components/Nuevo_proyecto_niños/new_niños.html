@@ -1,0 +1,265 @@
+<!--<section class="new_project_child">
+    <div class="opacity"></div>
+    <article class="container">
+        <div class="row">
+            <div class="text-center en_medio animated bounceInDown text_niños">
+				<h1><strong>¡Comparte tu idea!</strong></h1>
+				<h3 class="textt">
+				Este espacio es para ti, y tus ideas el motor para transformar Hidalgo.
+				<cite>Plan Estatal de Desarrollo 2016-2022</cite>
+
+				</h3>
+			</div><!-- text-center 
+
+            <div class="col-md-8 col-md-offset-2 animated fadeInRight">
+                <form ng-submit="">
+
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿Cúal es tu nombre?</h4></label>
+						<input ng-trim="false" maxlength="200" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Problemática" autofocus ng-model="project.child_name"></input>
+					</div>
+
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿En qué rango de edad te encuentras?</h4></label>
+						<select class="form-control" ng-model="$ctrl.perfil.edad">
+                            <option disabled value="" ng-hide="$ctrl.perfil.edad">Edad</option>
+                            <option disabled ng-show="$ctrl.perfil.edad" value="{{$ctrl.perfil.edad}}">{{$ctrl.perfil.edad}}</option>
+                            <option value="Menos de 10">Menos de 10</option>
+                            <option value="de 10 a 14">de 10 a 14</option>
+                            <option value="de 15 a 18">de 15 a 18</option>
+                        </select>
+					</div>
+					
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿Qué problemática resuelve?</h4></label>
+						<textarea ng-trim="false" maxlength="200" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Problemática" autofocus ng-model="project.idea"></textarea>
+						<small class="textt">{{2000-project.idea.length}} caracteres máximo</small>
+					</div>
+                    <div align="center" class="col-md-12">
+						<input type="Submit" class="btn btn-primary btn-lg" value="Sube tu Proyecto">
+				    </div>
+
+                </form>
+            </div>
+        </div>
+    </article>
+</section>-->
+
+
+<section>
+    <div id="backkk">
+        <div id="frontt">
+            <div class="row" id="container-pro">
+
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="text-center en_medio animated bounceInDown">
+                        <h1><strong>¡Comparte tu idea!</strong></h1>
+                        <h3 class="textt">
+                        Este espacio es para ti, y tus ideas el motor para transformar Hidalgo.
+                        <cite>Plan Estatal de Desarrollo 2016-2022</cite>
+
+                        </h3>
+                    </div><!-- text-center -->
+				</div>
+
+                <div class="col-md-8 col-md-offset-2 animated fadeInRight form_child">
+                <form ng-submit="sendData()">
+
+                    <div class="col-md-6">
+						<label><h4 class="textt">¿Cúal es tu nombre?</h4></label>
+						<input ng-hide="$ctrl.nombre_face" ng-trim="false" maxlength="200" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Tu Nombre" autofocus ng-model="$ctrl.child_name"></input>
+                        <input ng-show="$ctrl.nombre_face" ng-trim="false" maxlength="200" required type="text" disabled class="form-control input-lg" id="problematicaProyecto" value="{{$ctrl.child_name}}" autofocus ng-model="$ctrl.child_name"></input>
+					</div>
+
+                    <div class="col-md-6">
+                        <label><h4 class="textt">Trae tu nombre de facebook</h4></label>
+                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                            <div class="btn-group" role="group" >
+                                <a ng-click="$ctrl.signIn('facebook')" class="btn btn-lg btn-block omb_btn-facebook">
+                                    <i class="fa fa-facebook visible-xs"></i>
+                                    <span class="hidden-xs">Facebook</span>
+                                </a>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+						<label><h4 class="textt">¿En qué rango de edad te encuentras?</h4></label>
+						<select class="form-control input-lg" ng-model="$ctrl.edad">
+                            <option disabled value="">Edad</option>
+                            <option value="Menos de 10">Menos de 10</option>
+                            <option value="de 10 a 14">de 10 a 14</option>
+                        </select>
+					</div>
+
+                    <div class="col-md-6">
+						<label><h4 class="textt">¿Cúal es tu correo?</h4></label>
+						<input ng-hide="$ctrl.nombre_face" maxlength="150" ng-trim="false" required type="email" class="form-control input-lg" id="tituloProyecto" placeholder="Correo" autofocus ng-model="$ctrl.correo"></input>
+                        <input ng-show="$ctrl.nombre_face" ng-trim="false" maxlength="200" required type="email" disabled class="form-control input-lg" id="problematicaProyecto" value="{{$ctrl.correo}}" autofocus ng-model="$ctrl.correo"></input>
+					</div>
+
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿Cúal es el nombre de tu idea?</h4></label>
+						<input maxlength="150" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Esta es mi propuesta" autofocus ng-model="$ctrl.titulo"></input>
+						<small class="textt">{{150-project.titulo.length}} caracteres máximo</small>
+					</div>
+
+                    <div class="col-md-12" flow-init flow-files-submitted="$flow.upload()"  flow-name="obj.flow">
+						<!--<label><h4 class="textt">Agrega una imagen</h4></label>
+                        <input required flow-btn type="file" class="form-control input-lg" accept="image/png, image/jpeg, image/gif"  ng-hide="obj.flow.files[0]" name="input-file-preview"/>
+                        <div class="alert alert-info alert-dismissible" role="alert" ng-hide="obj.flow.files[0]">
+                            <strong>Recuerda!</strong> Una vez seleccionada tu imagen no podrás cambiarla.
+                        </div>
+
+                        <div class="alert alert-success alert-dismissible" role="alert" ng-show="obj.flow.files[0]">
+                            <strong>Listo!</strong> Tenemos tu imagen.
+                        </div>-->
+
+                        <!-- Imagen del proyecto-->
+
+            <div class="container3 cont_imagen_niños">
+
+              <div flow-init flow-files-submitted="$flow.upload()"
+                  
+                 flow-name="obj.flow" class="row">
+                  <div class="col-xs-12 col-md-3">
+                      <h3 class="name">Imagen</h3>
+                      <p>Sube una imagen acorde al proyecto</p>
+                      <p>(Puedes explorar o arrastrar tus archivos)</p>
+                      <img style="width:150px" ng-show="obj.flow.files[0]" flow-img="$flow.files[0]" ng-src="{{proyecto.imagen}}"/>
+
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-9">
+
+
+                      <div flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"                           ng-style="style" class="well">
+
+
+                          <div flow-drop  class="row">
+
+
+                              <div class="col-md-1">
+                                  <i class="fa fa-picture-o" aria-hidden="true"></i>
+                              </div>
+                              <div class="col-md-11">
+                                  <div class="input-group image-preview">
+                                      <input type="text" class="form-control required image-preview-filename" disabled="disabled" value="{{proyecto.laRef}}"> <!-- don't give a name === doesn't send on POST/GET -->
+                                      <span class="input-group-btn">
+                                          <!-- image-preview-clear button -->
+                                          <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                              <span class="foldercito glyphicon glyphicon-remove"></span> Borrar
+                                          </button>
+                                          <!-- Flow drop -->
+
+                                          <div ng-hide="obj.flow.files[0]" class="btn btn-default image-preview-input">
+                                              <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                                              <span >Buscar</span>
+                                              <input flow-btn type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                          </div>
+
+
+                                          <div>
+                                              <div ng-show="obj.flow.files[0]" ng-click="borra(1)" class="btn btn-danger">
+                                                  X Quitar Foto
+                                              </div>
+                                          </div>
+                                      </span>
+                                  </div><!-- /input-group image-preview [TO HERE]-->
+                                  <div class="alert alert-info info_projectDetails" role="alert">Este campo es requerido,Recuerda subir archivos pequeños</div>
+                              </div>
+                          </div>
+                      </div> <!--flow init-->
+                  </div>
+                  <div class="col-md-12">
+                    <img ng-show="proyecto.imagen" style="width:100px" ng-src="{{proyecto.imagen}}">
+                  </div>
+              </div>
+
+            </div>
+					</div>
+                    
+
+                    <!--<div flow-init flow-files-submitted="$flow.upload()"
+                  
+                 flow-name="obj.flow" class="btn btn-default image-preview-input">
+                                                <span class="foldercito glyphicon glyphicon-folder-open"></span>
+                                                <span >Buscar</span>
+                                                <input flow-btn type="file" accept="file_extension" name="input-file-preview"/>
+                                            </div>-->
+
+					
+                    <div class="col-md-12">
+						<label><h4 class="textt">¿Qué problemática resuelve?</h4></label>
+						<textarea ng-trim="false" maxlength="2000" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Problemática" autofocus ng-model="$ctrl.problematica"></textarea>
+						<small class="textt">{{2000-project.problematica.length}} caracteres máximo</small>
+					</div>
+                    <div align="center" class="col-md-12">
+						<input type="Submit" class="btn btn-primary btn-lg" value="Sube tu Proyecto">
+				    </div>
+
+                </form>
+            </div>
+
+            </div> <!--container pro-->
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- el modal -->
+
+<div class="modal fade" id="badge" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">¡Felicitaciones!</h4>
+      </div>
+      <div style="text-align:center;" class="modal-body">
+      <!-- Share-->
+
+
+
+
+
+
+      <!-- Share-->
+
+
+        <img style="width:200px" src="/assets/images/logoGrande.jpg">
+        <div style="color:blue">
+            <h2 style="color:green" >¡Gracias!</h2>
+            <h3 style="color:red">Tu idea ya está considerada para</h3>
+            <h3 style="color:green">El Plan de Desarrollo Estatal</h3>
+        </div>
+        <h4>Compártelo en tus redes sociales</h4>
+
+        <button id="share_button" class="btn btn-primary">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+            Facebook
+        </button>
+
+		<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+		<a href="https://twitter.com/intent/tweet?text=Yo Ya participé, mi idea ya esta considerada para el plan de desarrollo, ahora hazlo tú. &url=http://planestataldedesarrollo.hidalgo.gob.mx">
+			<button class="btn btn-info">
+	            <i class="fa fa-twitter" aria-hidden="true"></i>
+	            Twitter
+	        </button>
+	    </a>
+
+
+
+        <h5>Ahora completa los detalles de tu proyecto:</h5>
+        <button data-dismiss="modal" class="btn btn-success btn-lg">
+            Continuar
+        </button>
+
+
+
+      </div>

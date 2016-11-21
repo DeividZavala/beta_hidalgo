@@ -83,7 +83,7 @@
                                       <div ng-hide="checked">
                                         <select ng-model="proyecto.eje" class="form-control required" >
                                           <option value="{{proyecto.eje}}">{{proyecto.eje}}</option>
-                                          <option value="Gobierno Honesto Cercano y Moderno" >Gobierno Honesto Cercano y Moderno</option>
+                                          <option value="Gobierno Honesto, Cercano y Moderno" >Gobierno Honesto, Cercano y Moderno</option>
                                           <option value="Hidalgo Próspero y Dinámico">Hidalgo Próspero y Dinámico</option>
                                           <option value="Hidalgo Humano e Igualitario">Hidalgo Humano e Igualitario</option>
                                           <option value="Un Hidalgo Seguro con Justicia y Paz">Un Hidalgo Seguro con Justicia y Paz</option>
@@ -172,7 +172,8 @@
                                    <i class="fa fa-tasks" aria-hidden="true"></i>
                                </div>
                                <div class="col-md-11">
-                                  <textarea ng-model="proyecto.planteamiento" class="form-control required" rows="3"></textarea>
+                                  <textarea ng-model="proyecto.planteamiento" maxlength="2000" class="form-control required" rows="3"></textarea>
+                                  <small class="textt" style="color:black;">{{2000-proyecto.planteamiento.length}} caracteres máximo</small>
                                </div>
                            </div>
                        </div>
@@ -543,7 +544,7 @@
                                       
                                         <select ng-model="proyecto.foro" class="form-control required" >
                                           <option value="{{proyecto.foro}}">{{proyecto.foro}}</option>
-                                          <option value="Huehutla" >Huejutla</option>
+                                          <option value="Huejutla" >Huejutla</option>
                                           <option value="Pachuca" >Pachuca</option>
                                           <option value="Tulancingo" >Tulancingo</option>
                                           <option value="Ixmiquilpan" >Ixmiquilpan</option>
@@ -593,6 +594,10 @@
                 </div>
 
             </div>-->
+
+            <div class="container3">
+                <div class="g-recaptcha" data-sitekey="6LcsCAkUAAAAAKgM9QH_wHM0Ku2MWSdQt2pAvXQp"></div>
+            </div>
 
 
             <!-- Botones para guardar y enviar -->

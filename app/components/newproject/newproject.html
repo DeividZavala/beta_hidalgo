@@ -39,7 +39,8 @@
 						<div class="col-md-6">
 							<label><h4 class="textt">¿Qué problemática resuelve?</h4></label>
 							<br>
-							<input ng-model="$ctrl.prob" ng-trim="false" required type="text" class="form-control input-lg" id="tituloProyecto" placeholder="Problemática" autofocus ng-model="project.titulo"></input>
+							<input ng-model="$ctrl.prob" ng-trim="false" maxlength="200" required type="text" class="form-control input-lg" id="problematicaProyecto" placeholder="Problemática" autofocus ng-model="project.titulo"></input>
+							<small class="textt">{{200-$ctrl.prob.length}} caracteres máximo</small>
 						</div>
 
 
@@ -187,7 +188,7 @@
 				</div>
 									<!--<div align="center" class="g-recaptcha" data-sitekey="6LcsCAkUAAAAAKgM9QH_wHM0Ku2MWSdQt2pAvXQp"></div>-->
 					</div> <!-- div form-group -->
-
+					
 				</form> <!-- form -->
 				</div>
 			</div>

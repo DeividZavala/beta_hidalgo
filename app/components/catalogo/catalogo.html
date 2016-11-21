@@ -3,7 +3,7 @@
         <h2 class="titulo">Explora Propuestas</h2>
         <br>
 
-         <div class="col-md-3">
+         <div class="col-md-3" ng-if="!$ctrl.ruta_child">
             <div class="input-group">
 
                 <span class="input-group-addon" id="sizing-addon1">
@@ -16,7 +16,7 @@
                 
                 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" ng-if="!$ctrl.ruta_child">
              <div class="input-group">
 
                 <!--<span class="input-group-addon" id="sizing-addon1">
@@ -27,10 +27,10 @@
 
                     <select ng-model="searchField.eje" class="form-control">
                         <option value="">Filtro por eje</option>
-                        <option value="Gobierno Honesto Cercano y Moderno" >Gobierno Honesto Cercano y Moderno</option>
+                        <option value="Gobierno Honesto, Cercano y Moderno" >Gobierno Honesto Cercano y Moderno</option>
                         <option value="Hidalgo Próspero y Dinámico">Hidalgo Próspero y Dinámico</option>
                         <option value="Hidalgo Humano e Igualitario">Hidalgo Humano e Igualitario</option>
-                        <option value="Un Hidalgo Seguro con Justicia y en Paz">Un Hidalgo Seguro con Justicia y Paz</option>
+                        <option value="Un Hidalgo Seguro con Justicia y en Paz">Un Hidalgo Seguro con Justicia y en Paz</option>
                         <option value="Un Hidalgo Con Desarrollo Sustentable">Un Hidalgo Con Desarrollo Sustentable</option>
                 </select>
              </div>   
@@ -54,8 +54,8 @@
 
 <section class="catalogo container">     
 
-    <article class="row projects_container">
-
+<!-- Proyectos Generales -->
+    <article class="row projects_container" ng-if="!$ctrl.ruta_child">
 
         <div ng-repeat="project in $ctrl.items | filter: searchField.srch | filter: searchField.eje |orderBy:'-pk'">
 
@@ -81,6 +81,34 @@
             </div>
          </div>
     </article>
+<!-- Fin Proyectos Generales -->
+
+<!-- Proyectos niños -->
+    <article class="row projects_container" ng-if="$ctrl.ruta_child">
+
+        <div ng-repeat="project in $ctrl.items">
+
+            <div class="col-xs-12 col-sm-12 col-lg-4 col-md-3">
+
+                <div class="thumbnail efectito_y">
+                    <a>
+                        <img ng-show="project.fields.imagen" ng-src="{{project.fields.imagen}}" alt="imagen de proyecto" class="img_proyecto-Catalogo">
+                        <img ng-hide="project.fields.imagen" ng-src="/assets/images/slider/manos.png" alt="foto  de proyecto" class="img_proyecto-Catalogo">
+                    </a>
+                    <div class="caption">
+                        <h3 class="titulo_proyecto-catalago">{{project.fields.titulo | cut:true:50:' ...'}}</h3>
+                        <p ng-model="$ctrl.cuerpon" class="description">
+                            {{project.fields.problematica}}
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+         </div>
+    </article>
+<!-- Fin proyectos Niños -->
+
     <div class="pagination_container">
              <nav ng-if="$ctrl.pager.pages.length" aria-label="Page navigation">
                 <div class="pagination_container">

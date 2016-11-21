@@ -7,14 +7,52 @@
 
     function catalogController(hidalgoService,PagerService,$routeParams,$scope,$location,$http) {
         var self = this;
-   
+        
+        self.ruta_child = false;
+
         if($location.path() == "/catalogo"){
             console.log("catalogo")
              hidalgoService.getAllProjects()
             .then(function (response) {
                 self.projects = response.data;
                 //console.log('then: ',response);
-                console.log(self.projects);
+                //console.log(self.projects);
+
+                self.pager = {};
+                self.setPage = setPage;
+
+                initController();
+
+                function initController() {
+                    // initialize to page 1
+                    self.setPage(1);
+                }
+
+                function setPage(page) {
+                    if (page < 1 || page > self.pager.totalPages) {
+                        return;
+                    }
+
+                    // get pager object from service
+                    self.pager = PagerService.GetPager(self.projects.length, page);
+
+                    // get current page of items
+                    self.items = self.projects.slice(self.pager.startIndex, self.pager.endIndex + 1);
+                }
+
+
+            })
+            .catch(function(err){
+                console.log(err)
+            });
+        }else if($location.path() == "/children"){
+            console.log("children")
+            self.ruta_child = true;
+             hidalgoService.getAllChildrenProjects()
+            .then(function (response) {
+                self.projects = response.data;
+                //console.log('then: ',response);
+                //console.log(self.projects);
 
                 self.pager = {};
                 self.setPage = setPage;

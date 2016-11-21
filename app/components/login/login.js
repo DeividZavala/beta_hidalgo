@@ -45,7 +45,7 @@
             //con email
              auth.$signInWithEmailAndPassword(self.email, self.password)
              .then(function(firebaseUser) {
-                  console.log("Signed in as:", firebaseUser.uid);
+                  //console.log("Signed in as:", firebaseUser.uid);
                   $location.path('/project/new');
 
                 }).catch(function(error) {

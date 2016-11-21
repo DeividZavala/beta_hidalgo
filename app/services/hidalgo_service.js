@@ -11,7 +11,8 @@
             getProjectDetail: getProjectDetail,
             addProject : addProject,
             createNewUser : createNewUser,
-            getUserProjects : getUserProjects
+            getUserProjects : getUserProjects,
+            getAllChildrenProjects,getAllChildrenProjects
         }
 
         function addProject(data) {
@@ -40,6 +41,10 @@
 
         function getAllProjects() {
             return $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/')
+        }
+
+        function getAllChildrenProjects() {
+            return $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/ninos/')
         }
 
         function getProjectDetail(id) {
