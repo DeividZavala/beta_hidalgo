@@ -74,23 +74,7 @@
               });
 
 
-        } //createUser
-
-        // self.cuentale = function(){
-        //     self.timeInMs = 3;
-
-        //     var countDown = function() {
-        //         self.timeInMs-= 1;
-        //         if(self.timeInMs<1){
-        //         $location.path('/project/new');
-        //     }
-        //         $timeout(countDown,1000);
-        //     }
-
-        //     $timeout(countDown,1000);
-
-
-        // } //cuentale
+        }
 
 
 } //controller

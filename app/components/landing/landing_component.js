@@ -13,7 +13,7 @@
 
 		$http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/totales/')
 			.then(function (response) {
-				console.log(response.data)
+				//console.log(response.data)
 				self.projects = response.data.publicados
 				self.participantes = response.data.participantes
 				self.proyetos = response.data.proyectos

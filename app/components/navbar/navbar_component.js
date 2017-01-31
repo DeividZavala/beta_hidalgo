@@ -19,7 +19,7 @@
             // self.alert = "Bienvenido "+self.user.displayName;
             // self.cuentale()
           }else{
-            console.log(self.user);
+            //console.log(self.user);
           }
         }); //checklogin
 

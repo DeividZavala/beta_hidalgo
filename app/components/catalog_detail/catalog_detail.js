@@ -52,17 +52,6 @@
 		//tooltip
 		$('[data-toggle="tooltip"]').tooltip();
 
-		//Bajamos la rama de proyectos
-		// $http.get('http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$routeParams.id+'/')
-		// .then(function(project){
-		// 	console.log(project);
-		// 	$scope.proyecto = project.data[0].fields;
-		// })
-		// .catch(function(err){
-		// 	 window.location.replace('/');
-		// });
-		//Bajammos al usuario
-
 		hidalgoService.getProjectDetail($routeParams.id)
 			.then(function(project){
 				console.log(project);
@@ -74,15 +63,6 @@
 			.catch(function(err){
 				$location.path('/')
 			});
-
-
-				//commments
-
-
-				//comments
-				
-
-		// $scope.titulo = "Proyecto enfocado a los borrachos"
 
 
 		//share w FB
@@ -134,18 +114,6 @@ message: "Visita http://planestataldedesarrollo.hidalgo.gob.mx/"
 
 		console.log($scope.com)
 
-
-
-		/*var comentarios = {
-			'name':self.perfil,
-			'displayName':self.usuario.displayName,
-			'comentario':self.comentario
-		}
-		$http({
-			method:'POST',
-			url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/projects/'+$routeParams.id+'/',
-			data: $httpParamSerializerJQLike(comentarios),
-		})*/
 	}
 
 

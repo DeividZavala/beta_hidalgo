@@ -11,7 +11,7 @@
         self.ruta_child = false;
 
         if($location.path() == "/catalogo"){
-            console.log("catalogo")
+            //console.log("catalogo")
              hidalgoService.getAllProjects()
             .then(function (response) {
                 self.projects = response.data;
@@ -118,56 +118,7 @@
             });
         }
 
-        //filtro por eje desde landing
-       /* self.eje_llego = $routeParams.eje;
-        console.log('el eje: ',self.eje_llego);
-        $scope.searchField = {};
-                     
-        self.losEjes = {
-            "1":"Gobierno Honesto Cercano y Moderno",
-            "2":"Hidalgo Próspero y Dinámico",
-            "3":"Hidalgo Humano e Igualitario",
-            "4":"Un Hidalgo Seguro con Justicia y en Paz",
-            "5":"Un Hidalgo Con Desarrollo Sustentable"
-         };
-         $scope.searchField.eje = self.losEjes[self.eje_llego];
-         console.log('el eje ahora: ',$scope.searchField.eje);
-
-
-
-        hidalgoService.getAllProjects()
-            .then(function (response) {
-                self.projects = response.data;
-                //console.log('then: ',response);
-                //console.log(self.projects);
-
-                self.pager = {};
-                self.setPage = setPage;
-
-                initController();
-
-                function initController() {
-                    // initialize to page 1
-                    self.setPage(1);
-                }
-
-                function setPage(page) {
-                    if (page < 1 || page > self.pager.totalPages) {
-                        return;
-                    }
-
-                    // get pager object from service
-                    self.pager = PagerService.GetPager(self.projects.length, page);
-
-                    // get current page of items
-                    self.items = self.projects.slice(self.pager.startIndex, self.pager.endIndex + 1);
-                }
-
-
-            })
-            .catch(function(err){
-                console.log(err)
-            });*/           
+        //filtro por eje desde landing        
 
     }
 

@@ -83,52 +83,6 @@
             });
 
         }
-
-        /*var data = {'uid':self.usuario.uid}
-            $http({
-                method:'POST',
-                // url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/save/',
-                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/profile/',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                data: $httpParamSerializerJQLike(data)
-            })
-            .then(function(res){
-                console.log(res)
-                self.perfil = res.data[0].fields
-            })
-            .catch(function(err){
-                console.log(err)
-                // self.error = true;
-            });*/
-
-
-        /*self.panelSetTab = panelSetTab;
-        self.checkTab = checkTab;
-        self.tab = 1;
-        
-        function panelSetTab(setTab) {
-            self.tab = setTab;
-            var data = {'uid':self.usuario.uid}
-            $http({
-                method:'POST',
-                // url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/save/',
-                url:'http://planestataldedesarrollo.hidalgo.gob.mx:8000/account/profile/',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                data: $httpParamSerializerJQLike(data)
-            })
-            .then(function(res){
-                console.log(res)
-                self.perfil = res.data[0].fields
-            })
-            .catch(function(err){
-                console.log(err)
-                // self.error = true;
-            });
-        }
-
-        function checkTab(checkTab) {
-            return self.tab === checkTab;
-        }*/
     }
 
     angular
